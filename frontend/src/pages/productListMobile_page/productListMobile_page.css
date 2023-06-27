@@ -1,0 +1,45 @@
+@media screen and (max-width: 400px) {
+    .productListMobile_page_navBar{
+        display: flex;
+        height: 30px;
+        align-items: center;
+        justify-content: space-between;
+        /* justify-content: center; */
+    }
+    
+    .productListMobile_page_heading{
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+
+    .productListMobile_page_left{
+        display: flex;
+    }
+
+    /* .productListMobile_page_right{
+      
+    } */
+    .productListMobile_page_categorybar{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .productListMobile_page_items{
+        margin: 5px 4px;
+        padding: 4px 3px;
+
+    }
+    .productListMobile_page_text{
+        font-size: 17px;
+        padding: 4px 6px;
+        width: 50px;
+        border-radius: 20px;
+        border: 2px solid black;
+    }
+
+    .productListMobile_page_mobile_cart{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

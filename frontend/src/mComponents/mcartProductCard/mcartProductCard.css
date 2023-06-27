@@ -1,0 +1,206 @@
+.Mobile-productcard-Container{
+    display: flex;
+    /* height: 18vh; */
+    padding: 0px 0px;
+    /* width: 40vw; */
+    /* border: 2px solid #929292; */
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    align-items: center;
+    font-family: sans-serif;
+    border-bottom: 1vh solid lightgrey;
+    
+  }
+  .Mobile-checkBox{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 2vh;
+      left: 2vh;
+      background-color: white;
+      height: 15px;
+      width: 15px;
+      border-radius: 2px;
+      border: 2px solid #554BDA;
+  }
+  
+  .Mobile-closeB {
+      position: absolute;
+      right: 3vw;
+      top: 2vw;
+    }
+  
+    .fa-remove:hover{
+      color: red;
+    }
+    /* .Mobile-close:hover {
+      opacity: 1;
+      color: white;
+    }
+    .Mobile-close:before, .Mobile-close:after {
+      position: absolute;
+      left: 13px;
+      content: ' ';
+      height: 27px;
+      width: 2px;
+      background-color: #333;
+    }
+    .Mobile-close:hover:before, .Mobile-close:hover::after {
+      color: white;
+   }
+    .Mobile-close:before {
+      transform: rotate(45deg);
+    }
+    .Mobile-close:after {
+      transform: rotate(-45deg);
+    } */
+  
+  .Mobile-img-Container {
+    display: flex;
+    background-color: white;
+    /* width: 14vh;
+    height: 14vh; */
+    margin: 2vh;
+  }  
+  
+    .Mobile-product-img{
+      width: 23vw;
+      height: 23vw;
+      }
+  
+    .Mobile-brandC{
+      font-weight: bold;
+      color: black;
+      font-size: small;
+    }
+  
+    .Mobile-titleC{
+      font-size: small;
+      font-weight: 300;
+      /* margin-bottom: 2vh; */
+    }
+  
+  
+    .Mobile-details-Container{
+      display: flex;
+      flex-direction: column;
+      width: 63vw;
+      margin-top: 1vh;
+      /* margin: 7px 12px;
+      padding: 7px 9px; */
+    }
+  
+    .Mobile-quantityBox{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 1vh;
+      /* margin-bottom: 2vh; */
+    }
+  
+    .Mobile-quantityText{
+      font-size: small;
+      font-weight: 400;
+      margin-right: 2vw;
+    }
+  
+    .Mobile-quantityBox p{
+      font-size: medium;
+      margin: 0px 3vw;
+    }
+
+    .mvariantBox{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 1vh 0vw;
+    }
+
+      .mvariantBoxSize {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .mvariantBoxSizeHead{
+        align-self: center;
+        font-size: 12px;
+        font-weight: 400;
+        margin-right: 1px;
+      }
+
+      .mvariantBoxSizeValue {
+        align-self: center;
+        font-size: small;
+        font-weight: bold;
+        margin: 0px 4vw 0px 1vw;
+      }
+
+      .mvariantBoxColor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .mvariantBoxColorHead{
+        align-self: center;
+        font-size: 12px;
+        font-weight: 400;
+        margin-right: 1px;
+      }
+
+      .mvariantBoxColorValue {
+        align-self: center;
+        font-size: small;
+        font-weight: bold;
+        margin: 0px 4vw 0px 1vw;
+      }
+  
+    .Mobile-card-Price{
+      display: flex;
+      margin-bottom: 1vh;
+      justify-content: flex-start;
+      align-items: center;
+      width: 63vw;
+    }
+    .Mobile-discount-Price{
+      font-weight: 500;
+      font-size: medium;
+      color: black;
+      margin: 0px 2vw;
+    }
+    
+    .Mobile-actual-Price{
+      font-weight: 500;
+      font-size: small;
+      color: rgb(150, 142, 142);
+    }
+    
+    .Mobile-discount-Percent{
+      color: #2FB84D;
+      font-size: 10px;
+    }
+  
+    .Mobile-card-Info {
+      display: flex;
+      align-items: center;
+    }
+    
+   
+    
+    .Mobile-card-Logo {
+      margin: 2px 0.Mobile-4rem;
+      padding: 4px 4px;
+      border-radius: 40px;
+      width: 50px;
+      height: 50px;
+    }
+    
+  
+  
+  

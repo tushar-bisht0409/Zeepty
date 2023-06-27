@@ -1,0 +1,126 @@
+.fobi{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 2px solid #ecebff;
+    border-right: 2px solid #ecebff;
+    border-bottom: 2px solid #ecebff;
+    padding: 1.5vh 1vw;
+    width: 47vw;
+}
+
+.fobi-head{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fobi-head-orderid{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fobi-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fobi-body-img{
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 2px;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.fobi-body-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 14.5vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.fobi-body-product-skuid{
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fobi-body-product-skuid-value{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fobi-body-product-brand{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.fobi-body-product-brand-name{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fobi-body-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.fobi-body-info-price{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fobi-body-info-quantity{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.fobi-body-info-quantity-value{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fobi-body-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 19vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.fobi-body-time-dispatch{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fobi-body-time-dispatch-value{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 2vh;
+}
+
+.fobi-body-time-days{
+    font-size: 12px;
+    font-weight: bold;
+    color: green;
+}
+
+.fobi-body-time-red{
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+}

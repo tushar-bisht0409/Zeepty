@@ -1,0 +1,12 @@
+.ratingContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center,
+  }
+  .ratingsText {
+    font-family: 'Montserrate';
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 2px;
+    color: #929292;
+  }

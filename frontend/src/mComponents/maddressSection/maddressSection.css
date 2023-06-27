@@ -1,0 +1,54 @@
+.masBigBox {
+    display: flex;
+    /* height: 18vh; */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    width: 100vw;
+    /* margin: 2vh 5vw; */
+    position: relative;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.masHead {
+    align-self: center;
+    padding: 2vh 0vw;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1vh solid lightgrey;
+}
+
+.masNoAddress{
+    align-self: center;
+    margin-top: 20vh;
+    color: #554BDA;
+    font-size: small;
+    font-weight: 500;
+    padding: 1vh 8vw;
+    border-radius: 5px;
+    border: 1.5px dashed #554BDA;
+}
+
+.mselectAdrTitle {
+    margin-left: 3vw;
+    align-self: center;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    align-self: center;
+}
+
+.manaButton{
+    margin-right: 3vw;
+    padding: 1vh 2vh;
+    background-color: #554BDA;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: small;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+

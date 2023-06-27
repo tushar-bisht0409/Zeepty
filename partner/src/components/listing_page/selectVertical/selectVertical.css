@@ -1,0 +1,64 @@
+.vertical{
+    display: flex;
+}
+
+.heading{
+    font-weight: 700;
+    padding-left: 4vw;
+}
+
+
+#selectProductVertical{
+   padding-top:2vw;
+}
+
+#selectProductCategory{
+  padding-top: 3vw;
+}
+
+form.nosubmit{
+    border: none;
+    padding-top: 1.4vw;
+    padding-left: 2vw;
+  }
+  
+input.nosubmit{
+    width: 40vw;
+    border: 0.15vw solid lightgrey;
+    border-radius: 0.4vw;
+    display: block;
+    padding: 0.8vw 0.2vw 0.6vw 2.5vw;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  }
+
+  .activebtn{
+    padding-top: 2vw;
+    padding-left: 2vw;
+  }
+
+
+
+  #selectProductSubCategory{
+    padding-top: 3vw;
+  }
+
+
+
+  #bttn{
+    padding-left: 18vw;
+    padding-top: 5vw;
+  }
+  
+
+  #addProductInfoBtn{
+    height: 3vw;
+    width: 40vw;
+    color: whitesmoke;
+    background-color: #3F2B96;
+    font-weight: 650;
+    border-radius: 0.3vw;
+    border-color:  #3F2B96;
+    border: solid;
+  }
+
+  

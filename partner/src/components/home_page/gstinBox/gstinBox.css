@@ -1,0 +1,146 @@
+.gstinBBox{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 4vh 2vw;
+    border-left: 4px solid lightgrey;
+    border-right: 4px solid lightgrey;
+    border-bottom: 4px solid lightgrey;
+}
+
+.gstinBPHead{
+    font-size: large;
+    font-weight: 900;
+    margin-bottom: 2vh;
+}
+
+.gstinBPBody{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gstinBPBodyL{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 30vw;
+}
+
+.gstinBPBodyLT1{
+    font-size: medium;
+    font-weight: 300;
+    margin-left: 1vw;
+}
+
+.gstinBPBodyR{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 30vw;
+}
+
+.gstinBPBodyRT1{
+    font-size: medium;
+    font-weight: 300;
+    margin-left: 1vw;
+}
+
+.gstinBGHead{
+    font-size: large;
+    font-weight: 900;
+    margin-bottom: 2vh;
+    margin-top: 8vh;
+}
+
+.gstinBGBody{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gstinBGBodyL{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 30vw;
+}
+
+.gstinBGBodyLInput{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+    width: 20vw;
+    margin-right: 1vw;
+}
+
+.gstinBGBodyLSave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5vh 2vw;
+    background-color: #554BDA;
+    color: white;
+    font-size: small;
+    font-weight: 900;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.gstinBGBodyLT1{
+    font-size: medium;
+    font-weight: 300;
+    margin-left: 1vw;
+}
+
+.gstinBGBodyR{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 30vw;
+}
+
+.gstinBGBodyRT1{
+    font-size: medium;
+    font-weight: 300;
+    margin-left: 1vw;
+}
+
+.gstinBAHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2vh;
+    margin-top: 8vh;
+}
+
+.gstinBAHeadT1{
+    font-size: large;
+    font-weight: 900;   
+    margin-right: 4vw;
+}
+
+.gstinBABody{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.gstinBABodyT1{
+    font-size: medium;
+    font-weight: 300;
+    width: 25vw;
+    margin-bottom: 5px;
+}
+
+.gstinBABodyT2{
+    font-size: medium;
+    font-weight: 900;
+    width: 25vw;
+}

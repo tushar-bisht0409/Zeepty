@@ -1,0 +1,77 @@
+.tdb{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 6vh 2vw;
+    border-left: 6px solid #ecebff;
+    border-right: 6px solid #ecebff;
+    border-bottom: 6px solid #ecebff;
+    border-radius: 10px;
+    width: 55vw;
+    background-color: white;
+}
+
+.tdb-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tdb-head-text{
+    margin-left: 1vh;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tdb-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4vh;
+}
+
+.tdb-body-item {
+    display: flex;
+    width: 12vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0vw;
+    border-radius: 5px;
+    border: 2px solid #ecebff;
+    cursor: pointer;
+}
+
+.tdb-body-item-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.tdb-body-item-head-icon{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 14px; 
+    color: #554BDA;
+    background-color: #ecebff;
+}
+
+.tdb-body-item-head-text{
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    margin-left: 1vw;
+}
+
+.tdb-body-item-value{
+    font-size: large;
+    font-weight: bold;
+}

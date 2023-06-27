@@ -1,0 +1,365 @@
+#ratingHeading{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.35vw;
+    line-height: 1.2vw;
+    color: #000000;  
+}
+
+
+.feedback{
+    display: flex;
+}
+
+.ratingReviews{
+    padding-left: 4vw;
+    padding-top: 13vh;
+    font-weight: 200;
+}
+
+
+
+#ratingNumbers{
+    padding-top: 13vh;
+    padding-left: 0.5vw;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 3vh;
+    color: grey;
+}
+
+
+#rateProduct{
+    margin-left: 5.5vw;
+    margin-top: 11.8vh;
+    background: #3F2B96;
+    border: 2px solid #3F2B96;
+    border-radius: 2px;
+    width: 7vw;
+    height: 5vh;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+mark{
+    background-color:  #2FB84D;
+    border-radius: 15px;
+    color: white;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-bottom: 0.2vh;
+    padding-top: 0.2vh;
+}
+
+
+
+.imagesByCustomers{
+    margin-left: 7vw;
+}
+
+
+
+.insideRatingsReviews{
+    display: flex;
+    padding-top: 4vh;
+    padding-left: 4vw;
+}
+
+.customersFelt{
+    width: 50vw;
+    height: 30vh;
+    background-color:white;
+    /* border: 1px solid red; */
+}
+.imagesReview {
+    border: 1px solid black;
+    margin: auto;
+    position: relative;
+    top: 2rem;
+    display: flex;
+}
+.img1 {
+    position: relative;
+    top: 1rem;
+    /* border: 1px solid red; */
+    width: 30%;
+    height: 30%;
+}
+.imagesByCustomers{
+    width: 50vw;
+    height: 30vh;
+    background-color: white;
+    /* border: 1px solid red; */
+    /* display: flex;
+    justify-content: center;
+    align-items:flex-start; */
+    /* flex-wrap: wrap; */
+}
+
+#customerReviews{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1vw;
+    color: #000000;
+    /* border: 1px solid red; */
+    width: fit-content;
+    margin: auto;
+}
+
+#customerImages{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1vw;
+    color: #000000;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    /* margin-top: 1rem; */
+}
+#costumerImages p {
+    /* text-align: center; */
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1vw;
+    color: #000000;
+}
+
+
+.emojiSection{
+    display: flex;
+    padding-top: 2.3vh;
+}
+
+.bttn1{
+    margin-left: 0.8vw;
+    margin-top: 1.2vh;
+    margin-bottom: 2vh;
+    background-color: white;
+    box-shadow: 0 0.3vw 0.3vw 0 rgba(0,0,0,0.2), 0 0.3vw 0.3vw 0 rgba(0,0,0,0.19);
+    border: 0px;
+}
+
+.bttn2{
+    margin-left: 0.8vw;
+    margin-top: 1.2vh;
+    margin-bottom: 2vh;
+    background-color: white;
+    box-shadow: 0 0.3vw 0.3vw 0 rgba(0,0,0,0.2), 0 0.3vw 0.3vw 0 rgba(0,0,0,0.19);
+    border: 0px;
+}
+
+.button2{
+    display: flex;
+    padding-left: 1.5vw;
+}
+
+.sedEmoji{
+    display: flex;
+}
+
+
+
+
+.imagesReview{
+    padding-top: 3vh;
+    display: flex;
+    height: 10vh;
+    width: 10vw;
+    
+}
+
+.img1{
+    margin: 0.2vw;
+}
+
+
+.userReview{
+    display: flex;
+    padding-left: 4vw;
+    padding-top: 3vh;
+}
+
+
+
+#mark1{
+    background-color:  #2FB84D;
+    border-radius: 15px;
+    color: white;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+    padding-bottom: 0vh;
+    padding-top: 0vh;
+}
+
+#review1{
+    font-size: 1vw;
+    margin-left: 1vw;
+}
+
+
+.reviewImages{
+    display: flex;
+    padding-top: 3vh;
+    padding-left: 4vw;
+}
+
+.rimages{
+    height: 10vh;
+    width: 5vw;
+    margin: 0.15vw;
+}
+
+
+
+.nameDate{
+    display: flex;
+    padding-top: 1.3vh;
+    padding-left: 4vw;
+}
+
+#name{
+    font-size: 0.95vw;
+    font-weight: 500;
+    font-family: 'Montserrat';
+    color: grey;
+    margin-right: 1.2vw;
+}
+
+
+#date{
+    font-size: 0.95vw;
+    font-weight: 500;
+    font-family: 'Montserrat';
+    color: grey;
+}
+
+
+.userReview1{
+    display: flex;
+    padding-left: 4vw;
+    padding-top: 4vh;
+}
+
+
+.userReview2{
+    display: flex;
+    padding-left: 4vw;
+    padding-top: 4vh;
+}
+
+
+.allReviews{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 2vw;
+    color: #3F2B96;
+}
+
+.reviewPlus{
+    display: flex;
+    padding-left: 4vw;
+    padding-top: 4.5vh;
+}
+
+
+.plus{
+   margin-left: 33vw;
+   color: #3F2B96;
+   font-size: 1.2vw;
+}
+
+
+
+
+.questionAnswers{
+    padding-top: 11vh;
+    padding-left: 4vw;
+}
+
+.qaHeading{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.35vw;
+    line-height: 1.2vw;
+    color: #000000;
+}
+
+.question1{
+    padding-top: 2vh;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.answer1{
+    padding-top: 1.5vh;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.questionAnswers2{
+    padding-top: 3vh;
+    padding-left: 4vw;
+}
+
+#ratingBoxO{
+padding-left: 4vw;
+padding-top: 2vh;
+width: 35vw;
+display: flex;
+flex-direction: row;
+}
+
+.rateCountBig{
+    position: absolute;
+    /* left: 7.5vh; */
+    margin-left: 5.5vh;
+    color: #000;
+    font-size: 4vh;
+}
+.ratingAllBox{
+display: flex;
+flex-direction: column;
+align-self: center;
+margin-left: 3vw;
+}
+
+.ratingSingle{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-bottom: 1vh;
+    }    
+
+.ratingLine{
+    display: flex;
+    width: 15vw;
+    height: 1vh;
+    background-color: lightgray;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.ratingSingle p{
+    margin-left: 2vw;
+    margin-right: 0.5vw;
+    align-self: center;
+    font-size: small;
+}
+
+.ratIconBig{
+    font-size: 5vh;
+}
+
+.reviewBoxBig{
+    padding-top: 3vh;
+}
+

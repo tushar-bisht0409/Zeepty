@@ -1,0 +1,65 @@
+.drafttitle_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ecebff;
+    list-style: none;
+    width: 100%;
+    padding: 1.5vh 0px;
+  }
+  .drafttitle_bar li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+.drafttitleImg{
+    min-width: 8%;
+    max-width: 8%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+  }
+.drafttitleInfo{
+    min-width: 24%;
+    max-width: 24%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+  }
+.drafttitleCategory{
+    min-width: 15%;
+    max-width: 15%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+.drafttitleSKU{
+    min-width: 20%;
+    max-width: 20%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+.drafttitleCreated{
+    min-width: 13%;
+    max-width: 13%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+.drafttitleModified{
+    min-width: 13%;
+    max-width: 13%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.drafttitleMore{
+    min-width: 13%;
+    max-width: 9%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}

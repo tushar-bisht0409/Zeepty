@@ -1,0 +1,1009 @@
+.titleBar{
+    background-color: #554BDA;
+    padding: 3vh 0;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0px;
+    z-index: 9;
+}
+.titleBar p{
+    padding-left: 40px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+.imageaddLayout{
+    padding: 0%;
+    margin: 0%;
+    max-height: 24.85vw;
+    max-width: 24.85vw;
+    align-self: center;
+    background-color: black;
+    object-fit: cover;
+}
+
+.videoLayout{
+    padding: 0%;
+    margin: 0%;
+    max-height: 24.85vw;
+    max-width: 24.85vw;
+    align-self: center;
+    background-color: black;
+}
+
+.picso{
+    height: 25vw;
+    width: 25vw;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    /* margin-left: 15vw; */
+    /* margin-right: 1vw; */
+    margin-top: 3vh;
+    border: 0.15vw solid lightgrey;
+}
+
+
+.smallImg{
+    margin-right: 2vw;
+    height: 6vw;
+    width: 6vw;
+    border: 0.15vw solid lightgrey;
+    
+}
+
+.smallImg:hover {
+    border-color: #554BDA;
+  }
+
+.smallImages{
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 2vw;
+}
+
+
+.addProductInfo{
+    display: flex;
+}
+
+.productPhotos{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px; 
+    max-height: 100vh;
+    z-index: 8;
+}
+
+.uploadPhoto{
+    margin-top: 1.5vw;
+    background-color: transparent;
+    height: 8vh;
+    border-radius: 5px;
+    color: whitesmoke;
+    width: 32vw;
+    border: 0px solid transparent;
+    font-size: 1vw;
+    /* margin-left: 9vw; */
+}
+
+.uploadPhoto::-webkit-file-upload-button { 
+    visibility: hidden;
+    -webkit-appearance:none;
+   -webkit-box-sizing:border-box;
+   content: none;
+  }
+
+  .uploadPhoto::before {
+    width: 100%;
+    height: 100%;
+    content: 'Upload Photos And Videos';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background: #554BDA;
+    border-radius: 5px;
+    color: whitesmoke;
+    border: 1.5px solid #554BDA;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: medium;
+  }
+
+  .uploadPhoto:hover::before {
+    background-color: #211266;
+  }
+
+.addInfo1{
+    width: 50vw;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#priceDetails{
+    padding-top: 3vh;
+}
+
+
+.headings{
+   font-size: 1.15vw;
+   font-weight: 700;
+}
+
+.subHeadingStar{
+    display: flex;
+}
+
+.subHeadings{
+    font-size: 0.95vw;
+    padding-top: 0.8vw;
+    font-weight: 580;
+}
+
+.star{
+    color: red;
+    padding-top: 0.8vw;
+}
+
+
+.inputBox{
+    width: 40vw;
+    height: 2.8vw;
+    border-radius: 0.4vw;
+    border: 0.15vw solid #DADADA;
+    padding-left: 1vw;
+}
+
+
+.description{
+    padding-top: 0.2vw;
+    font-size: 0.7vw;
+    font-weight: 580;
+    color: grey;
+}
+
+
+.dropdown{
+    font-size: 0.95vw;
+    font-weight: 580;
+}
+
+.dropdownOption {
+    width: 40vw;
+    font-size: 0.95vw;
+    font-weight: 580;
+}
+
+.dropbtnOption{
+    background-color: white;
+    height: 6vh;
+    border-radius: 8px;
+    font-weight: 580;
+    width: 40vw;
+    border: 0.15vw solid lightgray;
+    font-size: 1vw;
+}
+
+.dropbtn{
+    background-color: white;
+    height: 6vh;
+    border-radius: 8px;
+    font-weight: 580;
+    width: 15vw;
+    border: 0.15vw solid lightgray;
+    font-size: 1vw;
+}
+
+.option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropbtn1{
+    background-color: white;
+    height: 6vh;
+    border-radius: 8px;
+    font-weight: 580;
+    width: 15vw;
+    border: 0.15vw solid lightgray;
+    font-size: 1vw;
+    margin-left: 2vw;
+}
+
+.btn{
+    margin-top: 2vw;
+    margin-left: 6.5vw;
+    background-color: #554BDA;
+    height: 7vh;
+    border-radius: 8px;
+    color: whitesmoke;
+    width: 30vw;
+    border: 0.15vw solid #554BDA;
+    font-size: 1vw;
+}
+
+
+.btn:hover{
+    border-color: lightgray;
+}
+
+
+.coladeal{
+    display: flex;
+    padding-top: 1vw;
+}
+
+#idealFor{
+    margin-left: 13.5vw;
+}
+
+.variantsZ{
+    display: flex;
+}
+
+#priceFor{
+    margin-left: 10.8vw;
+}
+
+#sizze{
+    margin-top: 1vw;
+}
+
+
+#newpriceDetails{
+    padding-top: 5vh;
+}
+
+
+.varImages{
+    padding-top: 2vw;
+    padding-left: 2.5vw;
+    display: flex;
+}
+
+
+.varImg{
+    height: 5vw;
+    width: 5vw;
+    margin-right: 1.5vw;
+    border: 0.15vw solid lightgrey;
+    border-style: dashed;
+}
+
+
+
+
+.varImg:hover {
+    border-color: #554BDA;
+  }
+
+
+.diva{
+    margin-top: 1vw;
+    margin-left: 6.5vw;
+    width: 30vw;
+    height: 6vh;
+    /* border: 0.15vw solid lightgray; */
+    /* border-style: dashed; */
+}
+
+.diva:hover{
+    border-color: #554BDA;
+}
+.addVariantBox {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vw;
+    margin-bottom: 4vh;
+    align-items: center;
+}
+.addVariantBox p{
+    font-size: larger;
+    font-weight: bold;
+    margin-right: 0.1vw;
+}
+
+.variantBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4vh;
+}
+
+.variantName{
+    width: 10vw;
+    font-size: large;
+    font-weight: 500;
+}
+
+.variantEdit{
+    background-color: #554BDA;
+    padding: 1.5vh 3vw;
+    font-size: medium;
+    border-radius: 5px;
+    margin-right: 2vw;
+    color: white;
+}
+
+.variantDelete{
+    background-color: lightgrey;
+    padding: 1.5vh 3vw;
+    font-size: medium;
+    border-radius: 5px;
+    color: black;
+
+}
+
+/* .addNewVariant{
+    color:#554BDA;
+    padding-left: 8.5vw;
+    padding-top: 0.8vw;
+} */
+
+.apibAction{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 10vh 5vw;
+}
+
+.apibActionR{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:2px solid #554BDA;
+    background-color: #554BDA;
+    border-radius: 5px;
+    padding: 2vh 0vw;
+    width: 20vw;
+    color: white;
+    font-size: medium;
+    font-weight: 900;
+    margin-left: 2vw;
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+}
+
+.apibActionL{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:2px solid #554BDA;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2vh 0vw;
+    width: 20vw;
+    color: #554BDA;
+    font-size: medium;
+    font-weight: 900;
+}
+
+.saveProductBtn{
+    color: whitesmoke;
+    padding-top: 1vw;
+    font-size: medium;
+    font-weight: 500;
+    padding-left: 18vw;
+}
+
+
+.saveProduct:hover{
+    border-color:  lightgray;
+}
+
+.variant {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
+    height: 5rem;
+    flex-wrap: wrap;
+}
+
+
+.apibiBox {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+    margin-top: 4vh;
+}
+
+.apibipHead{
+    font-size: medium;
+    font-weight: 900;
+    color: black;
+    margin-bottom: 2vh;
+}
+
+.apibiBox-Brand{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 45vw;
+    margin-top: 4vh;
+}
+
+.apibiBox-Brand-Or{
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.apibiBox-Brand-Select{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 2vh;
+    position: relative;
+}
+
+.apibiBox-Brand-Custom{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 2vh;
+    position: relative;
+}
+
+.apibiBox-Brand-Custom-Button{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    padding: 2vh 0vw;
+    position: relative;
+    background-color: #e3ddff;
+    color: #554BDA;
+    font-size: small;
+    font-weight: 500;
+    border-radius: 2px;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    height: fit-content;
+}
+
+.apibipBox{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.apibip{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 2vh;
+    position: relative;
+}
+
+.apibipT1{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    margin-right: 2px;
+}
+
+.apibipT2{
+    font-size: small;
+    font-weight: 500;
+    color: red;
+}
+
+.apibipInput{
+    width: 20vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 2vh 1vw;
+}
+
+.apibipInputError{
+    width: 20vw;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 2vh 1vw;
+}
+
+.apibipInputSize{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 20vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 2vh 1vw;
+}
+
+.apibipInputSizeError{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 20vw;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 2vh 1vw;
+}
+
+.apibipInputT1{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.apibipDD {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2vh 1vw;
+    width: 20vw;
+    border: 1px solid lightgray;
+}
+
+.apibipDDError {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2vh 1vw;
+    width: 20vw;
+    border: 2px solid red;
+}
+
+.apibipInputSizeDD{
+    position: absolute;
+    margin-top: 5vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+    padding: 1vh 1vw;
+}
+
+.apibipInputSizeDDInactive{
+    display: none;
+}
+
+.apibipInputSizeDDI{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 1vw;
+}
+
+.apibipInputSizeDDIC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #554BDA;
+    border-radius: 2px;
+    border: 2px solid #554BDA;
+    height: 15px;
+    width: 15px;
+}
+
+.apibipInputSizeDDICInactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 2px solid #554BDA;
+    height: 15px;
+    width: 15px;
+}
+
+.apibipInputSizeDDIT1{
+    font-size: medium;
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+.apibipInputSizeDDB{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+}
+.apibipInputSizeDDBL{
+    font-size: small;
+    font-weight: 900;
+    color: #554BDA;
+    margin: 1vh 0vw;
+}
+
+.apibipInputSizeDDBR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #554BDA;
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 900;
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+}
+
+.apibipSTable{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 2vh 0vw;
+    max-height: 70vh;
+    overflow: scroll;
+}
+
+.apibipSTableInactive{
+    display: none;
+}
+
+.apibipSTableTB{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.apibipSTableTBD1 {
+    font-size: small;
+    color: black;
+    font-weight: 900;
+    min-width: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e4ff;
+    padding: 1vh 0; 
+}
+
+.apibipSTableTBD2 {
+    font-size: small;
+    color: black;
+    font-weight: 900;
+    min-width: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e4ff;
+    padding: 1vh 0; 
+}
+
+.apibipSTableTBD3 {
+    font-size: small;
+    color: black;
+    font-weight: 900;
+    min-width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e4ff;
+    padding: 1vh 0; 
+}
+
+.apibipSTableTBD4 {
+    font-size: small;
+    color: black;
+    font-weight: 900;
+    min-width: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e4ff;
+    padding: 1vh 0; 
+}
+
+.apibipSTableTBD5 {
+    font-size: small;
+    color: black;
+    font-weight: 900;
+    min-width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e4ff;
+    padding: 1vh 0; 
+    color: transparent;
+}
+
+.apibipSTableBody {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.apibipSTableBodyD1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #554BDA;
+    border-bottom: 1px solid #554BDA;
+    min-width: 9vw;
+    height: 100%;
+    padding: 5vh 3vw;
+}
+
+.apibipSTableBodyD2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #554BDA;
+    border-bottom: 1px solid #554BDA;
+    min-width: 12vw;
+    height: 100%;
+    flex-direction: column;
+}
+
+.apibipSTableBodyD2I{
+    max-width: 6vw;
+    padding: 1vh 2px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5vh 3vw;
+}
+
+.apibipSTableBodyD2IError{
+    max-width: 6vw;
+    padding: 1vh 2px;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 5vh 3vw 0vh 3vw;
+}
+
+.apibipSTableBodyD3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #554BDA;
+    border-bottom: 1px solid #554BDA;
+    min-width: 15vw;
+    height: 100%;
+}
+
+.apibipSTableBodyD3I{
+    min-width: 9vw;
+    padding: 1vh 2px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5vh 3vw ;
+}
+
+.apibipSTableBodyD3IError{
+    min-width: 9vw;
+    padding: 1vh 2px;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 5vh 3vw 0vh 3vw;
+}
+
+.apibipSTableBodyD4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #554BDA;
+    border-bottom: 1px solid #554BDA;
+    min-width: 12vw;
+    height: 100%;
+}
+
+.apibipSTableBodyD4DD{
+    min-width: 6vw;
+    padding: 1vh 2px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5vh 3vw;
+}
+
+.apibipSTableBodyD5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #554BDA;
+    border-right: 1px solid #554BDA;
+    border-bottom: 1px solid #554BDA;
+    height: 100%;
+    min-width: 5vw;
+    padding: 5vh 0vw;
+    color: grey;
+}
+
+.apibipSTableBodyD5:hover{
+    color: red;
+}
+
+
+.apibvBox {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.apibv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2vw;
+    background-color: #554BDA;
+    padding: 1vh;
+    border-radius: 5px;
+    margin-top: 2vh;
+}
+
+.apibvInactive{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2vw;
+    margin-top: 2vh;
+}
+
+.apibvImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    margin: 0%;
+    height: 5vw;
+    width: 5vw;
+    border-radius: 5px;
+    color: white;
+    font-size: x-small;
+    align-self: center;
+    background-color: black;
+    object-fit: cover;
+}
+
+.apibvVideo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    margin: 0%;
+    height: 5vw;
+    width: 5vw;
+    object-fit: cover;
+    border-radius: 5px;
+    align-self: center;
+    background-color: black;
+}
+
+.apibvT1{
+    font-size: small;
+    font-weight: 500;
+    color: white;
+    margin-top: 1vh;
+}
+
+.apibvT1Inactive{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+}
+
+.apibvAddBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+.apibvAddInput{
+    background-color: transparent;
+    color: transparent;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 5px;
+    border: 1.5px dashed #554BDA;
+}
+
+.apibvAddInput::-webkit-file-upload-button { 
+    display: none;
+    visibility: hidden;
+    -webkit-appearance:none;
+   -webkit-box-sizing:border-box;
+   content: none;
+  }
+
+
+  .apibvAddInput::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    content: '+';
+    font-size: 3vw;
+    font-weight: 500;
+    color: #554BDA;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .apibvAddInput:hover::before {
+    background-color: #ded7ff;
+  }
+
+.apibvAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    border-radius: 5px;
+    border: 1px dashed #554BDA;
+    margin-bottom: 2px;
+}
+
+.apibvT2{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+}
+
+.aibDelete{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: start;
+    margin-left: 4vw;
+    flex-direction: row;
+    color: #554BDA;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+}
+
+.aibDelete:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.aibDeleteT1{
+    font-size: medium;
+    font-weight: 900;
+    margin-left: 1vw;
+}
+
+.apibErrorT1{
+    font-size: 12px;
+    font-weight: 500;
+    color: red;
+    margin: 1vh 2px 2vh 2px;
+}
+
+.apibErrorT1Inactive{
+    display: none;
+}

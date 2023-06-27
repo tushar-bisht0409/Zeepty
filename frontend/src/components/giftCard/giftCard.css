@@ -1,0 +1,70 @@
+.giftCard{
+    display: flex;
+    width: 30vw;
+    height: 25vh;
+    /* border: 2px solid black; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title{
+    font-size: 20px;
+    color: black;
+}
+.giftContainer{
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    width: 400px;
+    padding: 2px 2px;
+    margin: 2px 2px;
+}
+
+.details{
+    display: flex;
+    padding: 4px 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13px;
+    
+    /* justify-content: center; */
+}
+
+.img{
+    height: 109px;
+    width: 133px;
+}
+
+.contentContainer{
+    display: flex;
+}
+.message{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.message-sm{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gift-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    height: 38px;
+    border-radius: 2px;
+    color: white;
+    background-color: #554BDA;;
+    padding: 4px 4px;
+    width: 70%;
+}

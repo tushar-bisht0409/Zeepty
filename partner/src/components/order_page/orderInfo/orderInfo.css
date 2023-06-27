@@ -1,0 +1,102 @@
+.dsid{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 20px;
+    margin-left: 112px;
+
+    color: #000000;
+    
+}
+.dphoto{
+    position: absolute;
+    width: 88px;
+    height: 89px;
+    position: absolute;
+   
+    margin-left: 15px;
+    margin-top: 20px;
+    
+}
+.dsiddata{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 184px;
+
+
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+     
+}
+.dbrand{
+    position: absolute;
+    margin-top: 44px;
+    margin-left: 112px;
+
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: #000000;
+    
+}
+.ddis{
+    position: absolute;
+   
+    margin-top: 75px;
+    margin-left: 112px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+    
+    
+}
+
+.dprice{
+    position: absolute;
+   
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: #000000;
+    margin-top: 45px;
+    margin-left: 485px;
+}
+.dsold{
+
+    position: absolute;
+    
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: #000000;
+    margin-top: 44px;
+    margin-left: 577px;
+}
+
+    

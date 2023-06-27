@@ -1,0 +1,424 @@
+.minNCPC-Box {
+  position: relative;
+    width: 45vw;
+    z-index: 1; 
+    margin-bottom: 4vh;
+  }
+
+.minNCPC-Box-check{
+  position: absolute;
+  right: 1vw;
+  top:1vh;
+  height: 6.5vw;
+  width: 6.5vw;
+  border-radius: 50%;
+  background-color: #554BDA;
+  border: 2px solid #554BDA;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+}
+
+.minNCPC-Box-check-inactive{
+  position: absolute;
+  right: 1vw;
+  top:1vh;
+  height: 6.5vw;
+  width: 6.5vw;
+  border-radius: 50%;
+  border: 2px solid #554BDA;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+}
+  
+  
+  .minNCPC-ImageBox {
+    display: flex;
+    position: relative;
+    height: 45vw;
+    width: 45vw;
+    text-align: center;
+    justify-content: center;
+    z-index: 1; 
+  }
+  
+  
+  .minMPcardWishlist{
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+    justify-content: flex-end;
+    z-index: 1;
+  }
+  .minNCPC-Image {
+    width: 40vw;
+    height: 40vw;
+    z-index: 1; 
+  }
+  
+  .minNCPC-InfoBox {
+    display: flex;
+    flex-direction: column;
+    margin: 0vh 2vw;
+  }
+  
+  .minNCPC-InfoB {
+    margin-bottom: 0.5vh;
+    font-size: small;
+    font-weight: 500;
+    align-items: center;
+    color:#929292;
+    width: fit-content;
+    
+  }
+  
+  .minNCPC-InfoT {
+    margin-bottom: 0.5vh;
+    font-size: x-small;
+    font-weight: 300;
+    align-items: center;
+    color: black;
+    width: fit-content;
+  }
+  
+  .minNCPC-InfoP{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .minNCPC-InfoPP{
+    font-weight: 500;
+    font-size: small;
+  }
+  
+  .minNCPC-InfoPM{
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
+    color: rgb(150, 142, 142);
+    font-size: small;
+  }
+  
+  .minNCPC-InfoPD{
+    align-content: center;
+    margin-left: 1vw;
+    font-weight: 400;
+    font-size: x-small;
+    color: #1a6d2c;
+  }
+
+  .minNCPC-InfoRB {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1vh;
+  }
+
+  .minNCPC-InfoRBText{
+    margin-left: 1vw;
+    font-weight: 300;
+    font-size: x-small;
+  }
+
+  .minNCPC-Added{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 35vw;
+    padding: 1.5vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: #554BDA;
+    border: 1px solid #554BDA;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minNCPC-InfoBox-ats{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    border: 1px solid #554BDA;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minNCPC-InfoBox-rfs{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: 10px;
+    font-weight: bold;
+    color: red;
+    border: 1px solid red;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minNCPC-InfoBox-ep{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: #554BDA;
+    border: 1px solid #554BDA;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minNCPC-Add{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    border: 1px solid #554BDA;
+    width: 35vw;
+    padding: 1.5vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minNCPC-Modal{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  .minNCPC-ModalClose{
+    position: absolute;
+    top: 1vh;
+    right: 2vw;
+  }
+
+  .minNCPC-ModalPB{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 3vh 2vw 0vh 3vw;
+  }
+
+  .minNCPC-ModalPBImage{
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .minNCPC-ModalPBInfoBox{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 4vw;
+  }
+
+
+  .minNCPC-ModalPBInfoBoxB {
+    margin-bottom: 0.5vh;
+    font-size: small;
+    font-weight: 500;
+    align-items: center;
+    color:#929292;
+    width: fit-content;
+    
+  }
+  
+  .minNCPC-ModalPBInfoBoxT {
+    margin-bottom: 0.5vh;
+    font-size: x-small;
+    font-weight: 300;
+    align-items: center;
+    color: black;
+    width: fit-content;
+  }
+
+  .minNCPC-ModalPBInfoBoxP{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .minNCPC-ModalPBInfoBoxPP{
+    font-weight: 500;
+    font-size: small;
+  }
+  
+  .minNCPC-ModalPBInfoBoxPM{
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
+    color: rgb(150, 142, 142);
+    font-size: small;
+  }
+  
+  .minNCPC-ModalPBInfoBoxPD{
+    align-content: center;
+    margin-left: 1vw;
+    font-weight: 400;
+    font-size: x-small;
+    color: #1a6d2c;
+  }
+
+  .minNCPC-ModalPBInfoBoxRB {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1vh;
+  }
+
+  .minNCPC-ModalPBInfoBoxRBText{
+    margin-left: 1vw;
+    font-weight: 300;
+    font-size: x-small;
+  }
+
+
+  .minNCPC-ModalPBEditBox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 35vw;
+    margin: 1vh 0vw;
+  }
+
+  .minNCPC-ModalPBEditBoxT{
+    font-weight: 500;
+    font-size: small;
+    margin-bottom: 0.5vh;
+  }
+
+  .minNCPC-ModalPBEditBoxI{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 35vw;
+    font-size: medium;
+    text-align: center;
+  }
+
+  .minNCPC-ModalAddButton{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    width: 30vw;
+    padding: 1.5vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minNCPC-removeModal {
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+    overflow: scroll;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.minNCPC-removeModalHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.minNCPC-removeModalHeadT1{
+  margin-left: 2vw;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minNCPC-removeModalBodyT1{
+  margin: 1vh 0vw;
+  font-size: small;
+}
+
+.minNCPC-removeModalAction{
+  display: flex;
+  width: 40vw;
+  margin: 3vh 0vw 0vh 30vw;
+  justify-content: space-between;
+}
+
+.minNCPC-removeModalActionN{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minNCPC-removeModalActionY{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+  .minNCPC-Loader1{
+    display: flex;
+    align-self: center;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    margin-bottom: 1vh;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

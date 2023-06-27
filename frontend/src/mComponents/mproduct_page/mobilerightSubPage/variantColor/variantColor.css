@@ -1,0 +1,34 @@
+.mobilebigBoxV{
+    /* width: 5vw;
+    height: 5vw; */
+    margin: 0px 3vw 1vh 0px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mobilepImage{
+    width: 7vh;
+    height: 7vh;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid lightgrey ;
+}
+
+.mobilepImageActive{
+    width: 7vh;
+    height: 7vh;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid #554BDA ;
+}
+
+.mobilepImage:hover{
+    border: 2px solid #554BDA ;
+}
+
+.mobilevName{
+    padding-top: 0.5vh;
+    font-size: small;
+    font-weight: 400;
+}

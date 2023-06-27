@@ -1,0 +1,41 @@
+.sBox{
+    height: 7vw;
+    width: 6vw;
+    margin-right: 2vw;
+    display: flex;
+}
+
+#sIcon{
+    position: absolute;
+    margin-left: 4.5vw;
+    margin-top: 0.4vw;
+    font-size: 1.9vw;
+    color: grey;
+    stop-color: white;
+    background-color: white;
+    border-radius: 100px;
+    border: 0px solid transparent;
+}
+
+#sIcon:hover{
+    color: red;
+}
+
+.sImageActive{
+    align-self: flex-end;
+    height: 6vw;
+    width: 6vw;
+    border: 4px solid #6f57db;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.sImageInActive{
+    align-self: flex-end;
+    height: 6vw;
+    width: 6vw;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    background-color: black;
+}
+

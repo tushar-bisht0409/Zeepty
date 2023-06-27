@@ -1,0 +1,93 @@
+
+  .ulPage-titlebar{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ulPage-titlebar-active{
+    width: 26.66vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4vh 0vw;
+    border-bottom: 4px solid #554BDA;
+    font-size: 14px;
+    color: #554BDA;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .ulPage-titlebar-inactive{
+    width: 26.66vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4vh;
+    padding-bottom: calc(4vh + 3px);
+    border-bottom: 1px solid #ecebff;
+    font-size: 14px;
+    color: grey;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .ulPage-addbox{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4vh 4vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ecebff;
+    cursor: pointer;
+  }
+
+  .ulPage-addbox-left{
+    width: 45vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .ulPage-addbox-left-icon{
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background-color: #ecebff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #554BDA;
+    font-size: 20px;
+  }
+
+  .ulPage-addbox-left-text{
+    margin-left: 1vw;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .ulPage-addbox-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+  }
+
+  .ulPage-addbox-right-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc8019;
+    width: 80%;
+    padding: 2vh 0vw;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
+  }

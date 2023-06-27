@@ -1,0 +1,410 @@
+.minCPC-Box {
+    width: 45vw;
+    z-index: 1; 
+    margin-bottom: 4vh;
+  }
+  
+  
+  .minCPC-ImageBox {
+    display: flex;
+    position: relative;
+    height: 45vw;
+    width: 45vw;
+    text-align: center;
+    justify-content: center;
+    z-index: 1; 
+  }
+  
+  
+  .minMPcardWishlist{
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+    justify-content: flex-end;
+    z-index: 1;
+  }
+  .minCPC-Image {
+    width: 40vw;
+    height: 40vw;
+    z-index: 1; 
+  }
+  
+  .minCPC-InfoBox {
+    display: flex;
+    flex-direction: column;
+    margin: 0vh 2vw;
+  }
+  
+  .minCPC-InfoB {
+    margin-bottom: 0.5vh;
+    font-size: small;
+    font-weight: 500;
+    align-items: center;
+    color:#929292;
+    width: fit-content;
+    
+  }
+  
+  .minCPC-InfoT {
+    margin-bottom: 0.5vh;
+    font-size: x-small;
+    font-weight: 300;
+    align-items: center;
+    color: black;
+    width: fit-content;
+  }
+  
+  .minCPC-InfoP{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .minCPC-InfoPP{
+    font-weight: 500;
+    font-size: small;
+  }
+  
+  .minCPC-InfoPM{
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
+    color: rgb(150, 142, 142);
+    font-size: small;
+  }
+  
+  .minCPC-InfoPD{
+    align-content: center;
+    margin-left: 1vw;
+    font-weight: 400;
+    font-size: x-small;
+    color: #1a6d2c;
+  }
+
+  .minCPC-InfoRB {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1vh;
+  }
+
+  .minCPC-InfoRBText{
+    margin-left: 1vw;
+    font-weight: 300;
+    font-size: x-small;
+  }
+
+  .minCPC-Added{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 35vw;
+    padding: 1.5vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: #554BDA;
+    border: 1px solid #554BDA;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minCPC-InfoBox-ats{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    border: 1px solid #554BDA;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minCPC-InfoBox-rfsundo{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: lightgrey;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+    cursor: pointer;
+  }
+
+  .minCPC-InfoBox-rfs{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: 10px;
+    font-weight: bold;
+    color: red;
+    border: 1px solid red;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+    cursor: pointer;
+  }
+
+  .minCPC-InfoBox-ep{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 35vw;
+    padding: 1vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: #554BDA;
+    border: 1px solid #554BDA;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minCPC-Add{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    border: 1px solid #554BDA;
+    width: 35vw;
+    padding: 1.5vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    border-radius: 40px;
+    margin-bottom: 1vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minCPC-Modal{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  .minCPC-ModalClose{
+    position: absolute;
+    top: 1vh;
+    right: 2vw;
+  }
+
+  .minCPC-ModalPB{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 3vh 2vw 0vh 3vw;
+  }
+
+  .minCPC-ModalPBImage{
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .minCPC-ModalPBInfoBox{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 4vw;
+  }
+
+
+  .minCPC-ModalPBInfoBoxB {
+    margin-bottom: 0.5vh;
+    font-size: small;
+    font-weight: 500;
+    align-items: center;
+    color:#929292;
+    width: fit-content;
+    
+  }
+  
+  .minCPC-ModalPBInfoBoxT {
+    margin-bottom: 0.5vh;
+    font-size: x-small;
+    font-weight: 300;
+    align-items: center;
+    color: black;
+    width: fit-content;
+  }
+
+  .minCPC-ModalPBInfoBoxP{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .minCPC-ModalPBInfoBoxPP{
+    font-weight: 500;
+    font-size: small;
+  }
+  
+  .minCPC-ModalPBInfoBoxPM{
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
+    color: rgb(150, 142, 142);
+    font-size: small;
+  }
+  
+  .minCPC-ModalPBInfoBoxPD{
+    align-content: center;
+    margin-left: 1vw;
+    font-weight: 400;
+    font-size: x-small;
+    color: #1a6d2c;
+  }
+
+  .minCPC-ModalPBInfoBoxRB {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1vh;
+  }
+
+  .minCPC-ModalPBInfoBoxRBText{
+    margin-left: 1vw;
+    font-weight: 300;
+    font-size: x-small;
+  }
+
+
+  .minCPC-ModalPBEditBox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 35vw;
+    margin: 1vh 0vw;
+  }
+
+  .minCPC-ModalPBEditBoxT{
+    font-weight: 500;
+    font-size: small;
+    margin-bottom: 0.5vh;
+  }
+
+  .minCPC-ModalPBEditBoxI{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 35vw;
+    font-size: medium;
+    text-align: center;
+  }
+
+  .minCPC-ModalAddButton{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    width: 30vw;
+    padding: 1.5vh 0px;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .minCPC-removeModal {
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+    overflow: scroll;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.minCPC-removeModalHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.minCPC-removeModalHeadT1{
+  margin-left: 2vw;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minCPC-removeModalBodyT1{
+  margin: 1vh 0vw;
+  font-size: small;
+}
+
+.minCPC-removeModalAction{
+  display: flex;
+  width: 40vw;
+  margin: 3vh 0vw 0vh 30vw;
+  justify-content: space-between;
+}
+
+.minCPC-removeModalActionN{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minCPC-removeModalActionY{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+  .minCPC-Loader1{
+    display: flex;
+    align-self: center;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    margin-bottom: 1vh;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

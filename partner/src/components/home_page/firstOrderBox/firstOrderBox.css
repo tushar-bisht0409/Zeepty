@@ -1,0 +1,421 @@
+.fob{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0vh 4vw 6vh 4vw;
+    width: 55vw;
+    border-left: 6px solid #ecebff;
+    border-right: 6px solid #ecebff;
+    border-bottom: 6px solid #ecebff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+}
+
+.fob-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fob-head-text{
+    margin-left: 1vh;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.fob-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.fob-body-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fob-body-top-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.fob-body-top-left-titlebar{
+    width: 47vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #ecebff;
+    padding: 1vh 0vw;
+}
+
+.fob-body-top-left-titlebar-listing{
+    width: 18vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-titlebar-price{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-titlebar-dispatch{
+    width: 19vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-order{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 2px solid #ecebff;
+    border-right: 2px solid #ecebff;
+    border-bottom: 2px solid #ecebff;
+    padding: 1.5vh 1vw;
+    width: 47vw;
+}
+
+.fob-body-top-left-order-head{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fob-body-top-left-order-head-orderid{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fob-body-top-left-order-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fob-body-top-left-order-body-img{
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 2px;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-order-body-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 14.5vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-order-body-product-skuid{
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fob-body-top-left-order-body-product-skuid-value{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fob-body-top-left-order-body-product-brand{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.fob-body-top-left-order-body-product-brand-name{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fob-body-top-left-order-body-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-order-body-info-price{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fob-body-top-left-order-body-info-quantity{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.fob-body-top-left-order-body-info-quantity-value{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fob-body-top-left-order-body-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 19vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.fob-body-top-left-order-body-time-dispatch{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.fob-body-top-left-order-body-time-dispatch-value{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 2vh;
+}
+
+.fob-body-top-left-order-body-time-days{
+    font-size: 12px;
+    font-weight: bold;
+    color: green;
+}
+
+.fob-body-top-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fob-body-top-right-go{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0vw;
+    width: 28vw;
+    background-color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 2vh;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.fob-body-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8vh;
+}
+
+.fob-body-bottom-right{
+    align-self: center;
+    width: 22vw;
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.fob-body-bottom-right-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fob-body-right-line-circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    background-color: #554BDA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fob-body-bottom-right-line-text{
+    font-size: 14px;
+    width: calc(22vw - 20px);
+    font-weight: 500;
+    margin-left: 8px;
+    color: grey;
+}
+
+.fob-body-bottom-right-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0vw;
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: orange;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* sdsdsds */
+.fob-body-left{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+}
+
+.fob-body-left-titlebar{
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #ecebff;
+    padding: 1vh 0vw;
+    margin-bottom: 1vh;
+}
+
+.fob-body-left-titlebar-listing{
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fob-body-left-titlebar-status{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fob-body-left-item{
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1vh;
+}
+
+.fob-body-left-item-listing{
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-direction: row;
+}
+
+.fob-body-left-item-listing-img{
+    width: 5vw;
+    height: 6vw;
+    border-radius: 2px;
+    background-color: black;
+    margin-left: 2vw;
+}
+
+.fob-body-left-item-listing-info{
+    width: 16vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    margin-left: 2vw;
+}
+
+.fob-body-left-item-listing-info-brand{
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+}
+
+.fob-body-left-item-listing-info-name{
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+}
+
+.fob-body-left-item-status{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fob-body-left-item-status-text{
+
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 244, 224);
+    padding: 1vh 2vw;
+    font-size: 12px;
+    font-weight: 500;
+    color: orange;
+    border-radius: 2px;
+}
+
+.fob-body-right{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fob-body-right-text{
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+}
+
+.fob-body-right-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 4vw;
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: orange;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 4vh;
+}

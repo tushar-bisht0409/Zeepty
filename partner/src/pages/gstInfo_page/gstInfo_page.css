@@ -1,0 +1,348 @@
+.gipBox{
+    display: flex;
+    flex-direction: column;
+}
+
+.gipTB{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 2vw;
+}
+
+.gipTBLogo{
+    width: 5vw;
+    height: 5vw;
+}
+
+.gipRBox{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: 2px solid lightgrey;
+    width: 40vw;
+    border-radius: 5px;
+    margin: 2vh 4vw;
+    padding-bottom: 4vh;
+}
+
+.gipRH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
+    font-size: small;
+    font-weight: 500;
+    background-color: #f0efff;
+    padding: 2vh 4vw;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.gipRT{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 2vh 2vw 0vh 2vw;
+    margin-top: 2vh;
+    border-bottom: 1px solid lightgrey;
+    overflow: hidden;
+}
+
+.gipRTItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gipRTItemT1{
+    margin: 2vh 0vw;
+    font-size: small;
+    font-weight: 900;
+    color: #554BDA;
+}
+
+.gipRTItemT1Inactive{
+    margin: 2vh 0vw;
+    font-size: small;
+    font-weight: 900;
+    color: grey;
+}
+
+.gipRTItemD1{
+    margin-top: 2vh;
+    width: 9vw;
+    height: 4px;
+    background-color: #554BDA;
+}
+
+.gipRTItemD1Inactive{
+    margin-top: 2vh;
+    width: 9vw;
+    height: 4px;
+    background-color: transparent;
+}
+
+.gipRG{
+    margin: 4vh 2vw;
+}
+
+.gipRGHead{
+    font-size: large;
+    font-weight: 900;
+    margin-bottom: 2vh;
+}
+
+.gipRGBody{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gipRGBodyInput{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 2vh 2vw;
+    width: 25vw;
+    margin-right: 1vw;
+    font-size: medium;
+}
+
+.gipRGBodySave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 3vw;
+    background-color: #554BDA;
+    color: white;
+    font-size: medium;
+    font-weight: 900;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.gipRGBodyT1{
+    font-size: medium;
+    font-weight: 300;
+    margin-left: 0.5vw;
+    color: green;
+}
+
+.gipRGBodyI{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 6vh;
+}
+
+.gipRGBodyIT1{
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: 1vh;
+}
+
+.gipRGBodyIT2{
+    font-size: medium;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 3vh;
+}
+
+.gipRABody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4vh 4vw;
+}
+
+.gipRABodyT1{
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+    align-self: flex-start;
+    margin-bottom: 1vh;
+}
+
+.gipRABodyInput{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+    margin-bottom: 4vh;
+}
+
+.gipRABodyCheck{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: start;
+    margin-bottom: 4vh;
+}
+
+.gipRABodyCheck:hover{
+    cursor: pointer;
+}
+
+.gipRABodyCheck-boxActive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #554BDA;
+    padding: 2px;
+    border-radius: 2px;
+    border: 1px solid #554BDA
+}
+
+.gipRABodyCheck-boxInactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 2px;
+    border-radius: 2px;
+    border: 1px solid #554BDA
+}
+
+.gipRABodyCheck-T1{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+    margin-left: 0.5vw;
+}
+
+.gipRBBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4vh 4vw;
+}
+
+.gipRBBodyT1{
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+    align-self: flex-start;
+    margin-bottom: 1vh;
+}
+
+.gipRBBodyDD{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+    margin-bottom: 4vh; 
+}
+
+.gipRBBodyInput{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+    margin-bottom: 4vh;
+}
+
+.gipRSBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4vh 4vw;
+}
+
+.gipRSBodyStoreDiv{
+    position: relative;
+}
+
+.gipRSBodyT1{
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+    align-self: flex-start;
+    margin-bottom: 1vh;
+}
+
+.gipRSBodyInput{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+    margin-bottom: 4vh;
+}
+
+.gipRSBodyInputGreen{
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+}
+
+.gipRSBodyInputRed{
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+}
+
+.gipRSBodyStoreValid{
+    font-size: small;
+    font-weight: 500;
+    color: green;
+    margin-bottom: 4vh;
+}
+
+.gipRSBodyStoreInvalid{
+    font-size: small;
+    font-weight: 500;
+    color: red;
+    margin-bottom: 4vh;
+}
+
+.gipRContinue{
+    padding: 2vh 4vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    color: white;
+    align-self: center;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: medium;
+    font-weight: 900;
+}
+
+.gipLoader1{
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    animation: spin 1.5s linear infinite;
+}
+
+.gipLoader2{
+    position: absolute;
+    right: 0;
+    margin: 1.5vh 1vw;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

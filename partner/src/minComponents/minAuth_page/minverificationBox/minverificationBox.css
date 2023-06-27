@@ -1,0 +1,149 @@
+.averBox{
+    width: 100vw;
+    margin-top: 5vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.averInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3vh;
+}
+
+.averInfoHead{
+    font-size: small;
+    font-weight: 300;
+    margin-right: 4vw;
+}
+
+.averInfoText{
+    font-size: small;
+    font-weight: bold;
+    margin-right: 4vw;
+
+}
+
+.averInfoChange{
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+}
+
+
+.averHead{
+    margin: 0vh 10vw;
+    width: 70vw;
+    font-size: small;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+.averInputBox {
+    margin: 0vh 10vw;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.averInput91 {
+    position: absolute;
+    left: 20vw;
+    font-size: medium;
+}
+
+.averInput{
+    width: 70vw;
+    padding: 2vh 5vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.averInput::-webkit-inner-spin-button{
+    display: none;
+}
+
+.averOTP{
+    margin: 0vh 10vw;
+    width: 70vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content:end;
+    margin-bottom: 4vh;
+    font-size: 12px;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+}
+
+.averOTPInactive{
+    margin: 0vh 10vw;
+    width: 70vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content:end;
+    margin-bottom: 4vh;
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+}
+
+.averResendBox{
+    margin: 0vh 10vw;
+    width: 70vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content:end;
+    margin-bottom: 4vh;
+}
+
+.averResend{
+    font-size: smaller;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+}
+
+
+.averButton{
+    margin: 0vh 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #554BDA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: white;
+    width: 230px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.averButtonText {
+    color: white;
+    font-size: small;
+    font-weight: bold;
+}
+
+.averloader1{
+    margin-top: 2vh;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

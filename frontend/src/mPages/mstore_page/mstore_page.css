@@ -1,0 +1,285 @@
+.mSTBox{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.mSTTB{
+    margin: 0px;
+    padding-top: 5vh;
+    background-color: #554BDA;
+}
+
+.mSTTBTopL{
+    position: absolute;
+    top: 1vh;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.mSTTBTopLT{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(0,0,0,0.5);
+    padding: 1vw 2vw;
+    border-radius: 50px;
+    margin-bottom: 1vh;
+}
+
+.mSTTBTopLTText{
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    margin-left: 4px;
+}
+
+.mSTTBTopLB{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(0,0,0,0.5);
+    padding: 1vw 2vw;
+    border-radius: 50px;
+}
+
+.mSTTBTopLBText{
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    margin-left: 4px;
+}
+
+.mSTTBTopR{
+    position: absolute;
+    top: 1vh;
+    right: 4vw;
+}
+
+.mSTTBMid {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mSTTBMidImageBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mSTTBMidImage{
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.mSTTBMidF{
+    margin-bottom: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+}
+
+.mSTTBMidFT1{
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+}
+
+.mSTTBMidFButtonFollow{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 0.5vh 8vw;
+    border-radius: 2px;
+    background-color: white;
+    color: #554BDA;
+    font-size: small;
+    font-weight: 500;
+    margin-top: 2vh;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    border: 1.5px solid white;
+}
+
+.mSTTBMidFButtonFollowing{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 0.7vh 8vw;
+    border-radius: 2px;
+    background-color: transparent;
+    color: white;
+    font-size: small;
+    font-weight: 500;
+    margin-top: 2vh;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    border: 1.5px solid white;
+}
+
+.mSTTBMidFT2{
+    font-size: smaller;
+    font-weight: 300;
+    color: white;
+}
+
+.mSTTBMidName{
+    margin-top: 1vh;
+    align-self: center;
+    font-size: medium;
+    font-weight: 500;
+    color: white;
+}
+
+.mSTTBBottom{
+    margin: 1vh 2vw;
+    display: flex;
+    width: 96vw;
+    justify-content: space-between;
+}
+
+.mSTTBBottomL{
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mSTTBBottomLB{
+    margin-top: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+}
+
+.mSTTBBottomLT{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 1vh;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+
+.mSTTBBottomLTText{
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.mSTTBBottomM{
+    align-self: flex-end;
+    background-color: white;
+    height: fit-content;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    -webkit-clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.mSTTBBottomMText{
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.mSTTBBottomR{
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mSTTBBottomRB{
+    margin-top: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+}
+
+.mSTTBBottomRT{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 1vh;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+
+.mSTTBBottomRTText{
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.mSTSBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vh 10vw;
+}
+
+.mSTSBarItemActive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #554BDA;
+    padding: 1vh 3vw;
+    border-radius: 20px;
+}
+
+.mSTSBarItemTextActive {
+    font-size: small;
+    font-weight: bold;
+    color: white;
+    margin-left: 2vw;
+}
+
+.mSTSBarItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh 3vw;
+    border-radius: 20px;
+}
+
+.mSTSBarItemText {
+    font-size: small;
+    font-weight: bold;
+    color: lightgrey;
+    margin-left: 2vw;
+}
+
+.mSTLoader1{
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    display: flex;
+    align-self: center;
+    border: 3px solid #cecece;
+    border-top: 3px solid #554BDA;
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

@@ -1,0 +1,61 @@
+.title{
+    font-weight: 700;
+    margin-left: 2vw;
+    margin-top: 4vh;
+    font-size: 1.2vw;
+}
+
+.div11{
+    border-top: 0.15vw solid lightgrey;
+    border-left: 0.15vw solid lightgrey;
+    border-right: 0.15vw solid lightgrey;
+}
+
+.menu{
+    margin-left: 2vw;
+    margin-top: 5vh;
+    display: flex;
+}
+
+.activate{
+    color: grey;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-right: 3vw;
+    font-weight: 600;
+   
+}
+
+.activate:hover{
+    border-radius: 1vw;
+    background-color: slateblue;
+    color: white;
+}
+
+
+.nonActivate{
+    display: flex;
+}
+
+
+.subHeadii{
+    color: grey;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-right: 3vw;
+    font-weight: 600;
+}
+
+
+.subHeadii:hover{
+    border-radius: 1vw;
+    background-color: slateblue;
+    color: white;
+}
+
+
+

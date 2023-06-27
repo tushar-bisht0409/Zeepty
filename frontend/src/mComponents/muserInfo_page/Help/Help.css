@@ -1,0 +1,26 @@
+.help {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.helpItem {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 4rem;
+    margin: 0.6rem;
+    border-radius: 10px;
+    color: #554BDA;
+    font-weight: 600;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.helpItemText{
+    margin-left: 4vw;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+}

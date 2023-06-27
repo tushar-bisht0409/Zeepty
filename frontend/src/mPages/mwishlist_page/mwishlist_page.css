@@ -1,0 +1,27 @@
+.mwp {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.mwp-topbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-color: #554BDA;
+    padding: 2vh 4vw;
+}
+
+.mwp-topbar-head{
+    align-self: center;
+    color: white;
+    font-size: medium;
+    font-weight: 500;
+    margin-left: 8vw;
+}
+
+.mwp-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

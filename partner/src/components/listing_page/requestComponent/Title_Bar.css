@@ -1,0 +1,67 @@
+.requestTitle_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ecebff;
+    list-style: none;
+    width: 100%;
+    padding: 1.5vh 0px;
+  }
+  .requestTitle_bar li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+.requestTitleInfo{
+    min-width: 26%;
+    max-width: 26%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+  }
+.requestTitleCategory{
+    min-width: 12%;
+    max-width: 12%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+.requestTitleSKU{
+    min-width: 22%;
+    max-width: 22%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+.requestTitleCreated{
+    min-width: 15%;
+    max-width: 15%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+.requestTitleType{
+    min-width: 10%;
+    max-width: 10%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.requestTitleStatus{
+    min-width: 10%;
+    max-width: 10%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.requestTitleMore{
+    min-width: 5%;
+    max-width: 5%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}

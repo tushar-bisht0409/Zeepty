@@ -1,0 +1,199 @@
+.sgraphBox{
+    font-family: sans-serif;
+}
+
+.sgraphTB{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vh 2vw;
+}
+
+.sgraphTBLT1{
+    font-size: large;
+    font-weight: bold;
+}
+
+.sgraphTBR{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background-color: #dedcff;
+    /* border: 2px solid black; */
+    padding: 4px 3vw;
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,0.1);
+}
+
+.sgraphTBRT1{
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    margin-right: 2vw;
+}
+
+.sgraphTBRDD{
+    position: absolute;
+    right: 0;
+    margin-right: 4vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #dedcff;
+    padding: 2vh 4vw 0vh 4vw;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.1);
+    z-index: 9999;
+}
+
+.sgraphTBRDDInactive{
+    display: none;
+}
+
+.sgraphTBRDDText {
+    display: flex;
+    font-size: medium;
+    font-weight: 500;
+    width: 100%;
+    color: #000;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+.sgraphTBRDDText:hover{
+    color: white;
+}
+
+.sgraphGB{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin: 8vh 0vw 4vh 0vw;
+}
+
+.sgraphSB{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 12vw;
+}
+
+.sgraphSBB1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: 5px solid lightgrey;
+    border-radius: 5px;
+    padding: 2vh 2vw;
+}
+
+.sgraphSBB1T1{
+    font-size: medium;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.sgraphSBB1T1T1{
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+}
+
+.sgraphSBB1B{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 2vh;
+}
+
+.sgraphSBB1BT1{
+    font-size: larger;
+    font-weight: 900;
+    margin-right: 2vw;
+}
+
+.sgraphSBB1BD{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sgraphSBB1BDT1G{
+    font-size: medium;
+    font-weight: 900;
+    color: green;
+    margin-left: 5px;
+}
+
+.sgraphSBB1BDT1R{
+    font-size: medium;
+    font-weight: 900;
+    color: red;
+    margin-left: 5px;
+}
+
+.sgraphSBB2{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: 5px solid lightgrey;
+    border-radius: 5px;
+    padding: 2vh 2vw;
+    margin-left: 2vw;
+}
+
+.sgraphSBB2T1{
+    font-size: medium;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.sgraphSBB2T1T1{
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+}
+
+.sgraphSBB2B{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 2vh;
+}
+
+.sgraphSBB2BT1{
+    font-size: larger;
+    font-weight: 900;
+    margin-right: 2vw;
+}
+
+.sgraphSBB2BD{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sgraphSBB2BDT1G{
+    font-size: medium;
+    font-weight: 900;
+    color: green;
+    margin-left: 5px;
+}
+
+.sgraphSBB2BDT1R{
+    font-size: medium;
+    font-weight: 900;
+    color: red;
+    margin-left: 5px;
+}

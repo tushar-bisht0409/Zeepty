@@ -1,0 +1,40 @@
+.outterBox{
+    width: 3.1vw;
+    height: 3.1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2vw;
+    margin-bottom: 1vh;
+    margin-top: 1.2vh;
+
+}
+
+.variantAnyActive{
+    padding: 1vh 1vw;
+    border: 2px solid #3F2B96;
+    border-radius: 2px;
+}
+
+.variantAny{
+    padding: 1vh 1vw;
+    border: 2px solid lightgray;
+    border-radius: 2px;
+
+}
+
+.variantAny p{
+    font-size: large;
+    font-weight: 600;
+
+}
+
+.variantAnyActive p{
+    font-size: large;
+    font-weight: 600;
+
+}
+
+.variantAny:hover{
+    border: 3px solid #3F2B96;
+}

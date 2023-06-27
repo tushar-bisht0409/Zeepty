@@ -1,0 +1,51 @@
+.mehsp{
+    display: flex;
+    font-family: sans-serif;
+}
+.mehsp-topbar{
+    background-color: #554BDA;
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 1vh 4vw;
+    box-sizing: border-box;
+}
+
+
+.mehsp-topbar-body {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 92vw;
+}
+
+.mehsp-topbar-body-input {
+    padding-left: 4vw;
+    height: 4.5vh;
+    width: 92vw;
+    border-radius: 5px;
+    border: none;
+}
+
+.mehsp-topbar-body-icon {
+    border-radius: 5px;
+    position: absolute;
+    right: 0.3vh;
+    top: 0.3vh;
+    height: 3.9vh;
+    width: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    font-size: small;
+    color: lightgrey;
+}

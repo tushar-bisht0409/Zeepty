@@ -1,0 +1,34 @@
+.bigBoxV{
+    /* width: 5vw;
+    height: 5vw; */
+    margin: 0px 3vw 1vh 0px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.pImage{
+    width: 5vw;
+    height: 5vw;
+    background-color: black;
+    border-radius: 2px;
+    border: 2px solid lightgrey ;
+}
+
+.pImageActive{
+    width: 5vw;
+    height: 5vw;
+    background-color: black;
+    border-radius: 2px;
+    border: 2px solid #3F2B96 ;
+}
+
+.pImage:hover{
+    border: 2px solid #3F2B96 ;
+}
+
+.vName{
+    padding-top: 1vh;
+    font-size: medium;
+    font-weight: 700;
+}

@@ -1,0 +1,28 @@
+.snackbar{
+    position: fixed;
+    bottom: 2vh;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    align-self: center;
+    padding: 1vh 4vw;   
+    width: 90vw;
+    margin: 0vh 5vw;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px 10px rgb(0,0,0,0.1);
+    z-index: 9999999999999999999;
+}
+
+.snackbar-msz{
+    font-size: 10px;
+    font-weight: 500;
+    margin-right: 8vw;
+}
+
+.snackbar-ok{
+    font-size: 10px;
+    font-weight: bold; 
+    cursor: pointer;  
+}

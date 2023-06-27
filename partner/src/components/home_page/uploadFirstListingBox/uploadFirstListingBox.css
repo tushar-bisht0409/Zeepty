@@ -1,0 +1,87 @@
+.uflb{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 6vh 4vw;
+    border-left: 6px solid #ecebff;
+    border-right: 6px solid #ecebff;
+    border-bottom: 6px solid #ecebff;
+    width: 55vw;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+}
+
+.uflb-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.uflb-head-text{
+    margin-left: 1vh;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.uflb-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4vh;
+}
+
+.uflb-body-right{
+    align-self: center;
+    width: 22vw;
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.uflb-body-right-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.uflb-body-right-line-circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    background-color: #554BDA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uflb-body-right-line-text{
+    font-size: 14px;
+    width: calc(22vw - 20px);
+    font-weight: 500;
+    margin-left: 8px;
+    color: grey;
+}
+
+.uflb-body-right-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0vw;
+    background-color: orange;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+
+}
+
+.uflb-body-right-add:hover{
+    cursor: pointer;
+}

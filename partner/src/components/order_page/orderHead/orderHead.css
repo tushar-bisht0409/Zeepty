@@ -1,0 +1,59 @@
+.oh-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80vw;
+    padding: 1vh 0vw;
+    background-color: #ecebff;
+}
+
+.oh-box-orderid{
+    width: 16vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.oh-box-info{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.oh-box-quantity{
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.oh-box-price{
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.oh-box-dispatch{
+    width: 28vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}

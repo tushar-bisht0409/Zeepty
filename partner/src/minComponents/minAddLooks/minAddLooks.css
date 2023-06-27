@@ -1,0 +1,305 @@
+.minALBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.minALMAdd1Box{
+  position: fixed;
+  bottom: 5vh;
+  width: 100vw;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+}
+
+.minALMUpload1{
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  width: 100vw;
+  height: 5vh;
+  border: 0px solid transparent;
+  /* margin-left: 9vw; */
+}
+
+.minALMUpload1::-webkit-file-upload-button { 
+  visibility: hidden;
+  -webkit-appearance:none;
+ -webkit-box-sizing:border-box;
+ content: none;
+}
+
+.minALMAdd1{
+  padding: 1.5vh 20vw;
+  height: min-content;
+  border-radius: 5px;
+  background-color: #554BDA;
+}
+
+.minALMAdd1T1{
+  font-size: small;
+  font-weight: 500;
+  color: white;
+}
+
+.minALMDraftHead{
+  margin-top: 4vh;
+  margin-left: 4vw;
+  align-self: flex-start;
+  font-size: small;
+  font-weight: 900;
+}
+
+.minALMDraftNo{
+  margin-top: 30vh;
+  align-self: center;
+  font-size: small;
+  font-weight: 300;
+  color: grey;
+}
+
+.minALMDraftItem{
+  width: 92vw;
+  margin: 2vh 4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.minALMDraftItemVideo{
+  padding: 0%;
+    margin: 0%;
+    height: 25vw;
+    width: 18vw;
+    align-self: center;
+    border-radius: 3vw;
+    background-color: black;
+    object-fit: cover;
+}
+
+.minALMDraftItemCaption{
+  width: 50vw;
+  height: 20vw;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0vh 4vw;
+  font-size: small;
+  font-weight: 300;
+  color: grey;
+}
+
+.minALTB{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2vh 4vw;
+    width: 92vw;
+  }
+
+  .minALTB2{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2vh 4vw;
+    width: 92vw;
+  }
+
+  .minALTB2T1{
+    font-size: medium;
+    font-weight: 900;
+    margin-left: 8vw;
+  }
+  
+
+  .minALTBT1{
+    font-size: medium;
+    font-weight: 900;
+  }
+
+  .minALVideo{
+    padding: 0%;
+    margin: 0%;
+    height: 68vw;
+    width: 42vw;
+    align-self: center;
+    border-radius: 6vw;
+    background-color: black;
+    object-fit: cover;
+}
+
+.minALCaption{
+    width: 84vw;
+    margin: 4vh 8vw;
+    height: fit-content;
+    font-size: 3.5vw;
+    border: none;
+    overflow: hidden;
+    resize: none;
+    line-height: 4vw;
+}
+
+.minALCaption:focus{
+    outline: none;
+}
+
+.minALAP{
+    display: flex;
+    width: 96vw;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 4vw;
+}
+
+.minALAPT1{
+    font-size: small;
+    font-weight: 900;
+    margin-left: 2vw;
+}
+
+.minALProductGrid {
+  align-self: flex-start;
+  margin: 3vh 2vw;
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+}
+
+.minALSearchMore{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #887ffb;
+    width: 90vw;
+    padding: 1.5vh 0px;
+    font-size: small;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20vh;
+  }
+
+  .minALSearchMoreT1{
+    margin-left: 2vw;
+  }
+
+  .minALAction{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    border-top: 1px solid lightgrey;
+    bottom: 0px;
+    width: 100vw;
+    padding: 1vh 5vw;
+  }
+
+  .minALActionDraft{
+    padding: 1.5vh 0vw;
+    width: 40vw;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #554BDA;
+    font-size: small;
+    font-weight: 500;
+    color: #554BDA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .minALActionPost{
+    padding: 1.5vh 0vw;
+    width: 40vw;
+    background-color: #554BDA;
+    border: 2px solid #554BDA;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .minALDModal {
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+    overflow: scroll;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.minALDModalHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.minALDModalHeadT1{
+  margin-left: 2vw;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minALDModalBodyT1{
+  margin: 1vh 0vw;
+  font-size: small;
+}
+
+.minALDModalAction{
+  display: flex;
+  width: 40vw;
+  margin: 3vh 0vw 0vh 30vw;
+  justify-content: space-between;
+}
+
+.minALDModalActionN{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minALDModalActionY{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.minALLoader1{
+  position: absolute;
+  top: 45vh;
+  left: 45vw;
+  margin: 2vh auto;
+  display: flex;
+  align-self: center;
+  border: 3px solid #cecece; /* Light grey */
+  border-top: 3px solid #554BDA; /* Blue */
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

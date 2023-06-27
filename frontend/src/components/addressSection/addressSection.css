@@ -1,0 +1,49 @@
+.asBigBox {
+    display: flex;
+    /* height: 18vh; */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    width: 40vw;
+    margin: 10px 0px;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.asHead {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selectAdrTitle {
+    align-self: center;
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: #554BDA;
+    align-self: center;
+}
+
+.anaButton{
+    padding: 1vh 2vh;
+    background-color: #554BDA;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+}
+
+/* .bigAddButton{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1vh 2vh;
+    background-color: #554BDA;
+    border: 2px solid #554BDA;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+} */

@@ -1,0 +1,55 @@
+.mnb{
+    position: relative;
+    background-color: #554BDA;
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    height: 8vh;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 0vh 2vw;
+    box-sizing: border-box;
+}
+
+.mnbinputfield {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.mnbiiconBox {
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1vw;
+    height: 4vh;
+    width: 4vh;
+    background-color: white;
+    font-size: small;
+    color: lightgrey;
+}
+.mnbinputfield-input {
+    padding-left: 9vw;
+    height: 4vh;
+    width: 55vw;
+    border-radius: 2px;
+    border: none;
+}
+
+.mnb-icons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+#mnb-icons-cart{
+    margin-left: 3vw;
+}

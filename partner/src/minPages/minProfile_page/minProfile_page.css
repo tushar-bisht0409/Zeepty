@@ -1,0 +1,348 @@
+.minPP{
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.minPP-topbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 2vh 4vw;
+}
+
+.minPP-topbar-uname{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+
+.minPP-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0vh 4vw;
+}
+
+.minPP-info-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 26vw;
+}
+
+.minPP-info-left-img{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+}
+
+.minPP-info-left-name{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+}
+
+.minPP-info-right{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 66vw;
+}
+
+.minPP-info-right-item{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.minPP-info-right-item-value{
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    align-self: center;
+}
+
+.minPP-info-right-item-key{
+    font-size: x-small;
+    font-weight: bold;
+    color: black;
+    margin-top: 1vh;
+}
+
+.minPP-store{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 2vh 4vw;
+}
+
+.minPP-store-head{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 2vh;
+}
+
+.minPP-store-head-name{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+    align-self: center;
+    margin-left: 2vw;
+}
+
+.minPP-store-action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.minPP-store-action-edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 0vw;
+    width: 45vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.minPP-store-action-share{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 0vw;
+    width: 45vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.minPP-accounts{
+    display: flex;
+    justify-content: flex-start;
+    
+    flex-direction: column;
+    margin: 0vh 4vw;
+}
+
+.minPP-accounts-head{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1vh;
+}
+
+.minPP-accounts-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    width: 92vw;
+}
+
+.minPP-accounts-box-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40vw;
+    margin: 0vh 3vw;
+    /* padding: 1vh 2vw; */
+    border-radius: 20px;
+    /* box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1); */
+    margin-bottom: 2vh;
+}
+
+.minPP-accounts-box-item-icon{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.miPP-accounts-box-item-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 3vw;
+}
+
+.minPP-accounts-box-item-div-text{
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    margin-right: 1vw;
+}
+
+.minPP-accounts-add{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0vw;
+    width: 80vw;
+    background-color: #ecebff;
+    color: #554BDA;
+    font-size: small;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+
+.minPP-options{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 6vh 8vw;
+}
+
+.minPP-policy{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 84vw;
+    margin: 4vh 8vw;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+.minPP-policy-name{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    margin-left: 4vw;
+}
+
+.minPP-collection{
+    position: relative;
+    height: 12vh;
+    width: 94vw;
+    margin: 2vh 3vw 1vh 3vw;
+    border-radius: 15px;
+    background-color: orange;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.minPP-collection-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 2vh;
+    right: 4vw;
+    font-size: 12px;
+    /* color: white; */
+    background-color: white;
+    color: orange;
+    font-weight: 500;
+    padding: 1.5vh 4vw;
+    border-radius: 40px;
+    box-shadow: 1px 1px 1px 1px rgb(255,255,255,0.3);
+}
+
+.minPP-collection-button:hover{
+    /* background-color: white;
+    color: orange; */
+    cursor: pointer;
+    /* box-shadow: 1px 1px 1px 1px rgb(255,255,255,0.3); */
+}
+
+.minPP-collection-button-T1{
+    font-weight: bold;
+    margin-right: 2vw;
+}
+
+.minPP-features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    margin: 2vh 0vw;
+}
+.minPP-features-Item {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 4rem;
+    margin: 0.6rem;
+    border-radius: 10px;
+    color: #554BDA;
+    font-weight: 600;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.minPP-features-ItemText{
+    margin-left: 4vw;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+}
+
+.minPP-logout{
+    align-self: center;
+    width: min-content;
+    border: none;
+    padding: 1.5vh 10vw;
+    color: white;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 900;
+    margin-top: 4vh;
+    background-color: #554BDA;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.minPP-Modal {
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+    overflow: scroll;
+}
+
+.minPP-loader1{
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    display: flex;
+    align-self: center;
+    border: 3px solid #cecece;
+    border-top: 3px solid #554BDA;
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

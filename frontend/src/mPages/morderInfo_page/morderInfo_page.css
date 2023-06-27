@@ -1,0 +1,209 @@
+.oipBox{
+    font-family: sans-serif;
+}
+
+.oipTopBar{
+    display: flex;
+    flex-direction: row;
+    padding: 1.5vh 4vw;
+    align-items: center;
+    box-shadow: 0px 2px 0px 0px rgb(0,0,0,0.1);
+}
+
+.oipTopBarText{
+    font-size: large;
+    font-weight: 600;
+    margin-left: 2vh;    
+}
+
+.oipProductBox{
+    font-family: sans-serif;
+    margin-top: 2vh;
+    padding-left: 4vw;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.5vh solid lightGrey;
+    align-items: center;
+}
+
+.oipProductImage{
+    height: 15vw;
+    width: 15vw;
+}
+
+.oipProductMid{
+    width: 60vw;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8vw;
+}
+
+.oipProductMidA{
+    align-self: flex-start;
+    font-size: small;
+    font-weight: 300;
+    color: rgb(33, 165, 33);
+    margin-top: 0.5vh;
+}
+
+.oipProductMidName{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    flex-direction: row;
+    margin-top: 1vh;
+}
+
+.oipProductMidNameB{
+    font-size: small;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.oipProductMidNameT{
+    font-size: small;
+    font-weight: 300;
+    white-space: wrap; 
+    line-height: 20px;
+}
+
+.oipProductCancel{
+    margin-right: 3vw;
+    font-size: small;
+    font-weight: bold;
+    padding: 1vh 2vh;
+    border: 2px solid lightgrey;
+}
+
+.oipShipBox{
+    padding: 2vh 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+    border-bottom: 0.5vh solid lightgrey;
+}
+
+.oipShipHead{
+    align-self: flex-start;
+    font-size: medium;
+    font-weight: 500;
+    margin-bottom: 1vh;
+}
+
+.oipShipText{
+    align-self: flex-start;
+    font-size: small;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+.oipOrderDBox{
+    padding: 2vh 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+    border-bottom: 0.5vh solid lightgrey;
+}
+
+.oipOrderDHead{
+    align-self: flex-start;
+    font-size: medium;
+    font-weight: 500;
+    margin-bottom: 1vh;
+}
+
+.oipOrderDTextBold{
+    font-size: small;
+    font-weight: 600; 
+}
+
+.oipOrderDText{
+    font-size: small;
+    font-weight: 400; 
+    line-height: 20px;
+}
+
+.oipBottom {
+    border-left: none;
+    border-right: none;
+    font-family: sans-serif;
+}
+.oipBottomItem {
+    display: flex;
+    padding-left: 1.4rem;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.oipBottomItemText{
+    font-size: small;
+    font-weight: 500;
+}
+
+
+.oipModal {
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.oipModalHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.oipModalHeadIconBox{
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.oipModalHeadT1{
+  margin-left: 2vw;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.oipModalBodyT1{
+  margin: 1vh 0vw;
+  font-size: small;
+}
+
+.oipModalAction{
+  display: flex;
+  width: 40vw;
+  margin: 3vh 0vw 0vh 30vw;
+  justify-content: space-between;
+}
+
+.oipModalActionN{
+  color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.oipModalActionY{
+  color: red;
+  font-size: medium;
+  font-weight: 900;
+}
+

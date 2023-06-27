@@ -1,0 +1,38 @@
+.meac{
+    display: flex;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    margin: 1vh 4vw;
+    font-family: sans-serif;
+}
+
+.meac-img{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    margin: 0vh 4vw;
+}
+
+.meac-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meac-info-username{
+    align-self: start;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.meac-info-name{
+    align-self: start;
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+}

@@ -1,0 +1,11 @@
+.lp3mBox{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.lp3mAll{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}

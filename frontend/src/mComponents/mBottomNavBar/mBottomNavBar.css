@@ -1,0 +1,37 @@
+.mbnBox {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1vh 2vh;
+    box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.3);
+    box-sizing: border-box;
+    z-index: 9999999999;
+    font-family: sans-serif;
+}
+
+.mbnItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mbnItemText {
+    font-size: 10px;
+    font-weight: bolder;
+    color: grey;
+    margin-top: 0.5vh;
+}
+
+.mbnItemTextActive {
+    font-size: 10px;
+    font-weight: bolder;
+    color: #554BDA;
+    margin-top: 0.5vh;
+
+}

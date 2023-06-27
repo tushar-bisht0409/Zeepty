@@ -1,0 +1,243 @@
+.masAddressBox{
+    align-self: center;
+    width: 100vw;
+    /* border: 1px solid lightgrey; */
+    /* border-radius: 2px; */
+    margin: 1vh 0px;
+    /* box-shadow: 1px 1px 2px 1px lightgrey; */
+    border-bottom: 1vh solid lightgrey;
+    padding-bottom: 2vh;
+}
+
+.masAddressBoxTop{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0vh 4vw;
+}
+
+.masAddressBoxTopLeft{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.mac-checkBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 15px;
+    width: 15px;
+    border-radius: 5px;
+    border: 2px solid #554BDA;
+}
+
+.masAddressTextName{
+    margin-left: 4vw;
+    align-self: center;
+    font-weight: bold;
+    font-size: small;
+    line-height: 22px;
+    color: #554BDA; 
+}
+
+.masAddressTextMode{
+    margin-left: 1vw;
+    align-self: center;
+    font-weight: bold;
+    font-size: small;
+    line-height: 22px;
+    color: #554BDA; 
+}
+
+.masAddressBoxTopRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.masAddressText{
+    align-self: start;
+    font-weight: 500;
+    font-size: small;
+    line-height: 22px; 
+    margin: 0vh 6vw;
+}
+
+.masPCRow{
+    margin: 0vh 6vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0.5vh; 
+}
+
+.masAddressTextPC{
+    font-weight: 600;
+    font-size: small; 
+    margin-right: 0.7vw;
+}
+
+.masAddressTextPC2{
+    align-self: start;
+    font-weight: 500;
+    font-size: small;
+    line-height: 22px; 
+}
+
+.masActionBox{
+    margin: 0vh 6vw;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vh;
+}
+
+.masActionButton{
+    width: 20vw;
+    padding: 1vh 0;
+    margin-right: 4vw;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    font-size: small;
+    justify-content: center;
+    color: grey;
+    border-radius: 2px;
+    font-weight: 500;
+    border: 2px solid lightgrey;
+    box-shadow: 1px 1px 2px 1px lightgrey;
+    border-radius: 5px;
+}
+
+.mnewAddress-modal{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5vw 3vh 2.5vw;
+}
+
+.mnewAddress-modal-head{
+    padding: 3vh 2.5vw 3vh 2.5vw;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
+
+.mnewAddress-modal-headText{
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.fa-xmark:hover{
+    cursor: pointer;
+}
+
+.mnewAddress-modal-contactText{
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.mnewAddress-modal-input{
+    padding: 2vh;
+    margin-bottom: 2vh;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.mnewAddress-modal-addressText{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.mnewAddress-modal-modeHeadText{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.mnewAddress-modal-modeBox{
+    display: flex;
+    flex-direction: 'row';
+}
+
+.mnewAddress-modal-modeHeadButton-active{
+    padding: 2vh 4vh;
+    font-size: small;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: #554BDA;
+}
+
+.mnewAddress-modal-modeHeadButton-inActive{
+    padding: 2vh 4vh;
+    font-size: small;
+    color: #554BDA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 1px solid #554BDA;
+    background-color: white;
+}
+
+.mnewAddress-modal-modeHeadButton-active:hover{
+    cursor: pointer;
+}
+
+.mnewAddress-modal-modeHeadButton-inActive:hover{
+    cursor: pointer;
+}
+
+
+.mnewAddress-modal-bottomBox{
+    align-self: start;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0px;
+    left: 0px;
+    padding: 2vh 3vw;
+    background-color: white;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+}
+
+.mnewAddress-modal-addButton{
+    padding: 1.5vh 2vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #554BDA;
+    border: 2px solid #554BDA;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.mnewAddress-modal-addButton:hover{
+    cursor: pointer;
+}

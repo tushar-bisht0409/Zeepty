@@ -1,0 +1,216 @@
+.mesc{
+    display: flex;
+    width: 100vw;
+    align-self: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 1vh 5vw 0vh 5vw;
+    font-family: sans-serif;
+    padding: 2vh 0vw;
+    border-radius: 5px;
+}
+
+.mesc-topbox{
+    width: 100vw;
+    padding: 0vh 5vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.mesc-topbox-img{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.mesc-topbox-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 45vw;
+    margin: 0vh 5vw;
+    box-sizing: border-box;
+}
+
+.mesc-topbox-info-displayname{
+    align-self: start;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.mesc-topbox-info-name{
+    align-self: start;
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+}
+
+.mesc-topbox-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    border: 1.5px solid #554BDA;
+    border-radius: 5px;
+    padding: 1vh 0vw;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    box-sizing: border-box;
+}
+
+.mesc-bottombox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 20vw;
+    align-self: flex-start;
+    margin-top: 1vh;
+}
+
+.mesc-bottombox-rating{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 8vw;
+}
+
+.mesc-bottombox-rating-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.mesc-bottombox-rating-box-count{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mesc-bottombox-rating-total {
+    font-size: 10px;
+    font-weight: 500;
+    color: grey;
+    margin-top: 0.5vh;
+}
+
+.mesc-bottombox-followers{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 8vw;
+}
+
+.mesc-bottombox-followers-count{
+    font-size: 12px;
+    font-weight: 500;
+    align-self: start;
+}
+
+.mesc-bottombox-followers-title{
+    font-size: 10px;
+    font-weight: 500;
+    color: grey;
+    margin-top: 0.5vh;
+}
+
+.mesc-bottombox-products{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.mesc-bottombox-products-count{
+    font-size: 12px;
+    font-weight: 500;
+    align-self: start;
+}
+
+.mesc-bottombox-products-title{
+    font-size: 10px;
+    font-weight: 500;
+    color: grey;
+    margin-top: 0.5vh;
+}
+
+/* .mesc{
+    display: flex;
+    width: 40vw;
+    align-self: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 1vh 5vw 0vh 5vw;
+    font-family: sans-serif;
+    padding: 2vh 0vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+}
+
+.mesc-img{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    margin-bottom: 2vh;
+}
+
+.mesc-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.mesc-info-displayname{
+    align-self: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.mesc-info-name{
+    align-self: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+}
+
+.mesc-info-products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1vh;
+}
+
+.mesc-info-products-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vw;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.mesc-info-products-products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+    font-size: small;
+    font-weight: 400;
+} */

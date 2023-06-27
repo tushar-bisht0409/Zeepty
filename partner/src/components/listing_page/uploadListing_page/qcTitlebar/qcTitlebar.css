@@ -1,0 +1,78 @@
+.qctb-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ecebff;
+    list-style: none;
+    width: 100%;
+    padding: 1.5vh 0px;
+  }
+  .qctb-_bar li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+.qctb-Info{
+    min-width: 26%;
+    max-width: 26%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.qctb-Category{
+    min-width: 12%;
+    max-width: 12%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qctb-SKU{
+    min-width: 22%;
+    max-width: 22%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qctb-Created{
+    min-width: 15%;
+    max-width: 15%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qctb-Type{
+    min-width: 10%;
+    max-width: 10%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qctb-Status{
+    min-width: 15%;
+    max-width: 15%;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

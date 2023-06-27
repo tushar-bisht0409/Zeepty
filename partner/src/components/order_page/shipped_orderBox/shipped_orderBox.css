@@ -1,0 +1,317 @@
+.sOB{
+    display: flex;
+    flex-direction: row;
+     box-sizing: border-box;
+     width: 80vw;
+     border-bottom: 2px solid #554BDA;
+ }
+ .sOB1{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 16vw; 
+     border-right: 2px solid #554BDA;
+     box-sizing: border-box;
+     padding: 1vh 2vw;
+ }
+ 
+ .sOB1-key{
+     font-size: small;
+     font-weight: 300;
+     color: black;
+     align-self: center;
+     margin-bottom: 1vh;
+ }
+ 
+ .sOB1-value{
+     font-size: 12px;
+     font-weight: 900;
+     color: black;
+     align-self: center;
+ }
+ 
+ .sOB2{
+     display: flex;
+     flex-direction: row;
+     width: 20vw;
+     border-right: 2px solid #554BDA; 
+     justify-content: flex-start;
+     align-items: center;
+     box-sizing: border-box;
+ }
+ 
+ .sOB2-image{
+     width: 4vw;
+     height: 4.5vw;
+     margin: 1vh;
+ }
+ 
+ .sOB2-rightbox{
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     margin: 1vh 1vw;
+ }
+ 
+ .sOB2-rightbox-key{
+     font-size: x-small;
+     font-weight: 300;
+     color: black;
+ }
+ 
+ .sOB2-rightbox-value{
+     font-size: x-small;
+     font-weight: 900;
+     color: black;
+     align-self: center;
+ }
+ 
+ .sOB2-rightbox-brand{
+     width: 13vw;
+     font-size: small;
+     font-weight: 500;
+     color: grey;
+     margin-top: 1vh;
+     white-space: nowrap; 
+     overflow: hidden;
+     text-overflow: ellipsis;
+ }
+ .sOB2-rightbox-name{
+     font-size: small;
+     font-weight: 300;
+     color: black;
+     align-self: center;
+     white-space: nowrap; 
+     overflow: hidden;
+     text-overflow: ellipsis;
+ }
+ 
+ .sOB3{
+     width: 8vw; 
+     /* height: 80px; */
+     border-right: 2px solid #554BDA;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-sizing: border-box;
+ }
+ 
+ .sOB3-quantity{
+     font-size: medium;
+     font-weight: bolder; 
+     color: #000000;
+ }
+ 
+ .sOB4{
+     width: 8vw; 
+     /* height: 80px; */
+     border-right: 2px solid #554BDA;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-sizing: border-box;
+ }
+ 
+ .sOB4-price{
+     font-size: medium;
+     font-weight: bolder; 
+     color: #000000;
+ }
+ 
+ .sOB5{
+     width: 28vw; 
+     padding: 1vh 0vw;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     box-sizing: border-box;
+ }
+ 
+ .sOB5-row{
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+ }
+
+ .sOB5-key{
+    font-size: 12px;
+     font-weight: 900;
+     color: black;
+     align-self: center;
+ }
+ 
+ .orderID1{
+     font-size: 12px;
+   font-weight: bolder;
+   margin-bottom: 15px;
+ }
+ .orderno1{
+     font-size: 12px;
+    
+   
+ }
+ .bpic{
+    height: 70px;
+    width: 70px;
+    margin-right: 15px;
+ 
+ }
+ .skuID{
+     font-size: 12px;
+     font-weight: bolder; 
+     margin-bottom: 10px;
+ 
+ }
+ 
+ 
+ .brand1{
+     
+     font-size: 14px;
+     font-weight: bolder; 
+ }
+ .dno{
+ font-size: 12px;
+ margin-bottom: 10px;
+ }
+ .ddetail{
+     font-size: 12px;
+ }
+ 
+ .sOB-detime{
+     font-family: 'Montserrat';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 13px;
+     line-height: 24px;
+     color: #000000;
+     margin-right: 0.5vw;
+     margin-left: 4px;
+     
+ }
+ 
+ .sOB-dedays{
+    
+ font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 15px;
+ line-height: 22px;
+ color: #2FB84D;
+ margin-right: 1vw;
+ 
+ }
+ 
+ .sOB-action{
+     display: flex;
+     justify-content: space-between;
+     flex-direction: row;
+     align-items: center;
+     margin-top: 1vh;
+ }
+ 
+ .sOB-action-cancel{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 1.5vh 1vw;
+     border-radius: 5px;
+     background-color: lightgrey;
+     color: black;
+     font-size: small;
+     font-weight: bold;
+     margin-right: 1vw;
+     box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
+ }
+ 
+ .sOB-action-accept{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 1.5vh 2vw;
+     border-radius: 5px;
+     background-color: #554BDA;
+     color: white;
+     font-size: small;
+     font-weight: bold;
+     box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
+ }
+ 
+ .sOB-action-label{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 1.5vh 1vw;
+     border-radius: 5px;
+     background-color: white;
+     border: 2px solid #554BDA;
+     color: #554BDA;
+     font-size: small;
+     font-weight: bold;
+     margin-right: 1vw;
+     box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
+ }
+ 
+ .sOB-action-rts {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 1.5vh 1vw;
+     border-radius: 5px;
+     background-color: #554BDA;
+     border: 2px solid #554BDA;
+     color: white;
+     font-size: small;
+     font-weight: bold;
+     box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
+ }
+ 
+ .sOB-modalHeadingL1 {
+     display: flex;
+ 
+ }
+ 
+ .sOB-modaliconL1 {
+     width: 2vw;
+     height: 2vw;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: red;
+     color: white;
+     margin-right: 13px;
+ }
+ 
+ .sOB-deleteL1{
+    font-size: large;
+    font-weight: bold;
+    color: #000;
+    align-self: center;
+}
+
+ .sOB-modalDesL1 {
+     margin-top: 10px;
+     width: 40vw;
+     padding: 5px;
+ }
+ 
+ .sOB-modalOptionL1 {
+     display: flex;
+     margin-top: 20px;
+     justify-content: space-between;
+     align-items: center;
+     margin-left: 69%;
+ }
+ 
+ .sOB-modalYesL1 {
+     margin-left: 30px;
+     cursor: pointer;
+ }
+ 
+ .sOB-modalNoL1 {
+     cursor: pointer;
+     margin-right: 50px;
+ }

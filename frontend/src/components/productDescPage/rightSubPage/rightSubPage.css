@@ -1,0 +1,334 @@
+.rightSubPage {
+    /* border: 1px solid red; */
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.productName{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4vh;
+    color: #929292;
+    padding-top: 1vh;
+    padding-left: 4vw;
+}
+
+
+.productTitle{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 2.5vh;
+color: #000000;
+padding-top: 1vh;
+padding-left: 4vw;
+}
+
+.typeOfProduct{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.35vw;
+    color: #000000;
+    padding-top: 1vh;
+    padding-left: 4vw;
+}
+
+
+.starBox{
+    padding-top: 1.5vh;
+    padding-left: 4vw;
+}
+
+.ratings{
+    padding-top: 1.5vh;
+    padding-left: 1vw;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 2vw;
+    color: #929292;
+}
+
+.ratingsReviews{
+   display: flex;
+   align-items: center;
+}
+
+.priceAfterDiscount{
+    padding-left: 4vw;
+    padding-top: 1.5vh;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.6vw;
+    line-height: 2vw;
+    color: #3F2B96;
+}
+
+.mrp{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.25vw;
+    line-height: 2vw;
+    color: #000000;
+    padding-left: 2vw;
+    padding-top: 1.5vh;
+}
+
+.discountPercent{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1vw;
+    line-height: 2vw;
+    color: #2FB84D;
+    padding-top: 1.5vh;
+    padding-left: 2.1vw;
+}
+
+.price{
+    display: flex;
+}
+
+
+.inclusiveOfAllTaxes{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1vw;
+    color: #000000;
+    padding-top: 0vh;
+    padding-left: 4vw;
+}
+
+
+.goToCart p{
+    font-size: medium;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.goToCart{
+    background-color: #6b00c3;
+    width: 16vw;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    border: 3px solid #6b00c3;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.addToWishlist{
+    background-color: white;
+    width: 18vw;
+    height: 6vh;
+    border-radius: 5px;
+    color: #3F2B96;
+    border: 3px solid #3F2B96;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.addToWishlist p{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.addedToWishlist{
+    background-color: white;
+    width: 18vw;
+    height: 6vh;
+    border-radius: 5px;
+    color: #6b00c3;
+    border: 3px solid #6b00c3;
+    display: flex;
+    justify-content: center;
+    font-size: medilum;
+    font-weight: 600;
+}
+
+.addedToWishlist p{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.btn{
+    padding-left: 4vw;
+    padding-top: 2vh;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+/*.size{
+    padding-left: 4vw;
+    padding-top: 8vh;
+    display: flex;
+}
+
+.sizeHeading{
+    line-height: 4vh;
+}
+
+.button{
+    padding-left: 4.3vw;
+}
+
+.button1{
+    margin-right: 2vw;
+    height: 2.15vw;
+    width: 2.15vw;
+    border-radius: 5px;
+   
+}
+
+.color{
+    padding-left: 4vw;
+    padding-top: 6vh;
+    display: flex;
+}*/
+
+.headingWindow{
+    height: 17vh;
+    width: 15vw;
+   background-color: white;
+   padding-top: 8vh;
+   padding-left: 4vw;
+}
+.button1:hover{
+    border: 3.1px solid #3F2B96;
+}
+
+.sizeColorButtons{
+    background-color:white;
+    height: 17vh;
+    width: 85vw;
+    padding-top: 8vh;
+}
+
+.colorHeading{
+    padding-top: 8vh;
+}
+
+.sizeColor{
+    display: flex;
+}
+
+.button1{
+    margin-right: 2.7vw;
+    height: 2.15vw;
+    width: 2.15vw;
+    border-radius: 7px;
+    /* border: 2.4px solid #3F2B96; */
+}
+
+.colorButton{
+    padding-top: 5.7vh;
+}
+
+
+
+
+
+.productDetailBox{
+    width: 17.5vw;
+}
+
+.productDetailsHeading{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.35vw;
+    line-height: 1vw;
+    color: #000000;
+    padding-top: 5vh;
+    padding-left: 4vw;
+}
+
+
+.productDescription{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1.07vw;
+    line-height: 1.5vw;
+    color: #000000;
+    padding-left: 4vw;
+    padding-top: 1.8vh;
+}
+.productDetailsHeading{
+    font-size: 3vh;
+    padding-bottom: 2vh;
+    font-weight: 700;
+}
+.Productdetailtitle{
+    font-size: 2.5vh;
+    font-weight: 600;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+}
+
+.Productdetailvalue {
+    font-size: 2.5vh;
+    font-weight: 500;
+}
+.ProductDetailMain{
+display: flex;
+flex-direction:row;
+align-items: center;
+}
+.productDetailicons{
+    height:2.5vh ;
+    width: 2.5vw ;
+  
+}
+
+
+#setContent{
+    padding-top: 1.8vh;
+}
+
+#colour{
+    padding-top: 1.8vh;
+}
+
+#shape{
+    padding-top: 1.8vh;
+}
+
+#type{
+    padding-top: 1.8vh;
+}
+
+.variantTitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vh;
+    color: black;
+    padding-top: 1vh;
+    padding-left: 4vw;
+    padding-bottom: 0.5vh;
+}
+
+.variantColorBox{
+    width: 35vw;
+    max-width: 35vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: flex-start;
+    margin-left: 4vw;
+}
+
+

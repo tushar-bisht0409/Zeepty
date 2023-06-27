@@ -1,0 +1,327 @@
+.lltable{
+    display: flex;
+    width: 80vw;
+}
+
+.lltable-all{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 20vw;
+    height: 80vh;
+    border-right: 2px solid #ecebff;
+    border-top: 2px solid #ecebff;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888888 #f0f0f0;
+}
+
+.lltable-all::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .lltable-all::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+  }
+  
+  .lltable-all::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    border-radius: 10px;
+  }
+
+.lltable-all-item-active{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid #ecebff;
+    background-color: #ecebff;
+    padding: 2vh 1vw;
+    cursor: pointer;
+}
+
+.lltable-all-item-inactive{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid #ecebff;
+    padding: 2vh 1vw;
+    cursor: pointer;
+}
+
+.lltable-all-item-img{
+    width: 5vw;
+    height: 5vw;
+}
+
+.lltable-all-item-right{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+.lltable-all-item-right-brand{
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.lltable-all-item-right-name{
+    font-size: 12px;
+    font-weight: 400;
+    color: black;
+}
+
+.lltable-all-item-right-key{
+    font-size: 10px;
+    font-weight: 400;
+    color: black;
+}
+
+.lltable-all-item-right-value{
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.lltable-body{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60vw;
+}
+.lltable-body-titlebar{
+    width: 60vw;
+    padding: 1vh 0vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ecebff;    
+}
+
+.lltable-body-titlebar-info {
+    width: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.lltable-body-titlebar-size {
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.lltable-body-titlebar-stock {
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.lltable-body-titlebar-actions {
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.lltable-body-all{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.lltable-body-all-item{
+    display: flex;
+    width: 60vw;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid #ecebff;
+}
+
+.lltable-body-all-item-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 22vw;
+    align-items: center;
+    border-right: 2px solid #ecebff;
+    padding: 1vh 1vw 0vh 1vw;
+}
+
+.lltable-body-all-item-info-img{
+    height: 3vw;
+    width: 3vw;
+    margin-right: 1vw;
+}
+
+.lltable-body-all-item-info-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.lltable-body-all-item-info-div-key{
+    font-size: 10px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 1vh;
+}
+
+.lltable-body-all-item-info-div-value{
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.lltable-body-all-item-size{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 8vw;
+    align-items: center;
+    border-right: 2px solid #ecebff;
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.lltable-body-all-item-stock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15vw;
+    align-items: center;
+    border-right: 2px solid #ecebff;
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.lltable-body-all-item-stock-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10vw;
+    align-items: center;
+    
+}
+
+.lltable-body-all-item-stock-div-input{
+    width: 10vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+    font-size: 12px;
+    color: black;
+}
+
+.lltable-body-all-item-stock-div-icon{
+    position: absolute;
+    right: 1vw;
+    font-size: 12px;
+    color: #554BDA;
+}
+
+.lltable-body-all-item-action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15vw;
+    align-items: center;
+    padding: 1vh 0vw;
+    border-right: 2px solid #ecebff;
+}
+
+.lltable-body-all-item-action-edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding: 0.8vh 0vw;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #554BDA;
+    margin-bottom: 1vh;
+}
+
+.lltable-body-all-item-action-edit:hover{
+    background-color: #554BDA;
+    color: white;
+    cursor: pointer;
+}
+
+.lltable-body-all-item-action-inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding: 0.8vh 0vw;
+    border-radius: 5px;
+    font-size: 12px;
+    color: red;
+}
+
+.lltable-body-all-item-action-inactive:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.lltable-body-bottombar{
+    display: flex;
+    width: 60vw;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    padding: 1vh 2vw;
+    /* border-top: 2px solid lightgrey; */
+}
+
+.lltable-body-bottombar-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.lltable-body-bottombar-cancel {
+    display: flex;
+    width: 8vw;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5vh 2vw;
+    background-color: lightgrey;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+    cursor: pointer;
+}
+
+.lltable-body-bottombar-apply {
+    display: flex;
+    width: 6vw;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 2vw;
+    margin-left: 4vw;
+    background-color: #554BDA;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}

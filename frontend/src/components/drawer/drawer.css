@@ -1,0 +1,90 @@
+#drawer {
+    /* background: linear-gradient(180deg, #A8C0FF 0%, #3F2B96 100%); */
+    background-color: #3F2B96;
+  }
+
+#companyAbout {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    color: white;
+  }
+
+  #content-wrap {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+  }
+  
+  #companySupport {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin: 1rem;
+    position: relative;
+    top: 2rem;
+  }
+  #supportItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #drawerOptions {
+    position: relative;
+    top: 40px;
+  }
+  #drawerItem {
+    margin: 5px 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+
+  #drawerIcon {
+    padding: 15px 25px 15px 10px;
+  }
+
+  #drawerItemText {
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .isActive {
+    background-color: white;
+    color: rgba(63, 43, 150, 0.8);
+  }
+  .inActive {
+    color: white;
+  }
+  
+  .logoutBox{
+    width: 25%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 20px;
+    /* background-color: #FFFFFF; */
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoutBtn {
+    display: flex;
+    cursor: pointer;
+    padding: 15px 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20, 11, 63, 0.8);
+    border-radius: 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+

@@ -1,0 +1,58 @@
+
+.mopBox {
+    display: flex;
+    flex-direction: column;
+    padding: 8vw 4vw 8vw 8vw;
+    font-family: sans-serif;
+    border-bottom: 0.5vh solid lightgrey;
+}
+
+.mopItem {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.mopItemL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mopItemLCircleActive {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    background-color: #008000;
+}
+
+.mopItemLCircleInActive {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+
+.mopItemLLineActive{
+    border-left: 2px solid #008000;
+    height: 6vh;
+}
+
+.mopItemLLineInActive{
+    border-left: 2px solid #C6C5CE;
+    height: 6vh;
+}
+
+.mopItemR{
+    align-self: flex-start;
+    margin-left: 4vw;
+}
+
+.mopItemRT1{
+    font-size: small;
+}
+
+.mopItemRT2{
+    font-size: small;
+    font-weight: 300;
+}

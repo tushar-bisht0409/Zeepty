@@ -1,0 +1,21 @@
+.box-container{
+   min-height: 300vh;
+   display: flex;
+   margin-top: 2vh;
+}
+
+
+.box-1{
+    max-height: 100vh;
+    width: 50vw;
+    background-color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px; 
+}
+
+.box-2{
+    max-height: 300vh;
+    width: 50vw;
+    background-color:white;
+}

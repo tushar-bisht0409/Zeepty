@@ -1,0 +1,89 @@
+.accInfo {
+    padding: 0 4vw;
+    margin: 4vh;
+    font-family: sans-serif;
+}
+
+.accInfoHeadText{
+    font-size: medium;
+    font-weight: bold;
+    color: #554BDA;
+    margin-bottom: 3vh;
+}
+
+.mInfoBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.mInfoBoxHead{
+    width: 20vw;
+    font-size: small;
+    font-weight: 500;
+}
+
+.mInfoBoxText{
+    width: 55vw;
+    font-size: small;
+    font-weight: 300;
+}
+
+.mmodalBox{
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+} 
+
+.mmodalHead{
+    margin: 2.5vh 6vw 2vh 6vw;
+    display: flex;
+    width: 68vw;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mmodalHeadText {
+    font-size: medium;
+    font-weight: 500;
+    margin-right: 3vw;
+}
+
+.mmodalInput {
+    margin: 0vh 0vw 2vh 0vw;
+    width: 60vw;
+    align-self: center;
+    padding: 1.5vh 1vh;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.mmodalInput:focus {
+    outline: none;
+    border: 2px solid #554BDA;
+}
+
+.mmodalActionBox{
+    margin: 0.5vh 0px 2vh 10vw ;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.mmodalActionC{
+    font-size: small;
+    color: red;
+    margin-right: 10vw;
+}
+
+.mmodalActionS{
+    font-size: small;
+    color: #554BDA;
+}

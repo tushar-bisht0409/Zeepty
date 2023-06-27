@@ -1,0 +1,154 @@
+.daddydiv{
+    display: flex;
+    padding-left: 6.5vw;
+    padding-top: 1.5vw;
+}
+
+.imagery{
+    width: 12vw;
+}
+
+.info{
+    width: 20vw;
+}
+
+.activen{
+    width: 15vw;
+}
+
+.edit{
+    width: 15vw;
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgg{
+    width: 10vw;
+    height: 8vw;
+}
+
+.productTitle{
+    font-weight: 500;
+    padding-top: 1vw;
+    padding-left: 2vw;
+}
+
+.priceStock{
+    display: flex;
+    padding-top: 1vw;
+    padding-left: 2vw;
+}
+
+#price{
+    color: #3F2B96;
+    font-weight: 600;
+}
+
+#stock{
+    font-size: 1vw;
+    font-weight: 600;
+    padding-left: 5vw;
+}
+
+#noStock{
+    font-size: 1vw;
+    font-weight: 600;
+    padding-left: 1vw;
+    color: red;
+}
+
+
+.EDITI{
+    height: 3vw;
+    width: 7vw;
+    border: solid;
+    border-color: #554BDA;
+    color: #554BDA;
+    font-size: 1vw;
+}
+
+.EDITIT{
+    height: 3vw;
+    width: 7vw;
+    border: solid;
+    border-color: red;
+    margin-top: 0.5vw;
+    color: red;
+    font-size: 1vw;
+}
+
+
+.starsX{
+    padding-left: 2vw;
+    padding-top: 1.5vw;
+}
+
+
+.starRatings{
+    display: flex;
+}
+
+
+.Ratings{
+    font-weight: 600;
+    padding-top: 1.5vw;
+    padding-left: 1vw;
+    color: grey;
+}
+
+.inactive-titlebar{
+    width: 80vw;
+    padding: 2vh 0vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ecebff;
+    
+}
+
+.inactive-titlebar-listingInfo {
+    width: 28vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+}
+
+.inactive-titlebar-price {
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+}
+
+.inactive-titlebar-stock {
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+}
+
+.inactive-titlebar-category {
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+}
+
+.inactive-titlebar-more {
+    width: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+}

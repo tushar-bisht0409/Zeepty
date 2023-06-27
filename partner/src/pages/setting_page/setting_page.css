@@ -1,0 +1,462 @@
+.settingPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.settingPage-drawer{
+    margin-left: 20vw;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    padding: 2vh 0vw;
+}
+
+.settingPage-head{
+    margin-left: 20vw;
+    font-size: 18px;
+    font-weight: 900;
+    width: 80vw;
+    color: #554BDA;
+    margin-bottom: 2vh;
+    padding-left: 4vw;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+    border-bottom: 2px solid #ecebff;
+}
+
+.settingPage-drawer-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25vw;
+}
+
+.settingPage-drawer-item-active{
+    padding: 2vh 2vw;
+    background-color: #ecebff;
+    color: #554BDA;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    width: fit-content;
+}
+
+.settingPage-drawer-item-active-text{
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 1vw;
+}
+
+.settingPage-drawer-item-inactive{
+    padding: 2vh 2vw;
+    background-color: white;
+    color: grey;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    width: fit-content;
+}
+
+.settingPage-drawer-item-inactive:hover{
+    cursor: pointer;
+    color: #554BDA;
+}
+
+
+.settingPage-drawer-item-inactive-text{
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 1vw;
+}
+
+.settingPage-drawer-gstin {
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2vh;
+}
+
+.settingPage-drawer-gstin-head{
+    font-size: 18px;
+    color: black;
+    font-weight: 900;
+}
+
+.settingPage-drawer-gstin-item{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 4vh;    
+}
+
+.settingPage-drawer-gstin-key{
+    font-size: 12px;
+    font-weight: 300;
+    color: black;
+}
+
+.settingPage-drawer-gstin-value{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+}
+
+.settingPage-drawer-bank {
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2vh;
+}
+
+.settingPage-drawer-bank-head{
+    font-size: 18px;
+    color: black;
+    font-weight: 900;
+}
+
+.settingPage-drawer-bank-item{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 4vh;    
+}
+
+.settingPage-drawer-bank-key{
+    font-size: 12px;
+    font-weight: 300;
+    color: black;
+}
+
+.settingPage-drawer-bank-value{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+}
+
+.settingPage-drawer-bank-support{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 4vh;
+}
+
+.settingPage-drawer-bank-support-text{
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    width: 20vw;
+}
+
+.settingPage-drawer-bank-support-button{
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+    margin-left: 2vw;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+
+.settingPage-drawer-sign {
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2vh;
+}
+
+.settingPage-drawer-sign-head{
+    font-size: 18px;
+    color: black;
+    font-weight: 900;
+}
+
+.settingPage-drawer-sign-item{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 4vh;    
+}
+
+.settingPage-drawer-sign-key{
+    font-size: 12px;
+    font-weight: 300;
+    color: black;
+}
+
+.settingPage-drawer-sign-value{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+}
+
+.settingPage-drawer-sign-notice{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 4vh;
+}
+
+.settingPage-drawer-sign-notice-text{
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    width: 25vw;
+}
+
+.settingPage-drawer-sign-esign{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin-top: 1vh;
+    margin-top: 4vh;
+}
+
+.settingPage-drawer-sign-imgBox{
+    position: relative;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.settingPage-drawer-sign-imgBox-img{
+    width: 15vw;
+    height: 7vw;
+    margin-top: 1vh;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    object-fit: fill;
+    cursor: pointer;
+}
+
+.settingPage-drawer-sign-imgBox-text{
+    position: absolute;
+    bottom: 0;
+    width: 15vw;
+    padding: 1vh 2vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(0,0,0,0.7);
+}
+
+.settingPage-drawer-sign-imgBox-input{
+    position: absolute;
+    width: 15vw;
+    height: 7vw;
+    margin-top: 1vh;
+    border-radius: 5px;
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.settingPage-drawer-sign-imgBox-input::-webkit-file-upload-button { 
+    visibility: hidden;
+    -webkit-appearance:none;
+   -webkit-box-sizing:border-box;
+   content: none;
+  }
+
+.settingPage-drawer-sign-button{
+    margin-top: 4vh;
+    font-size: 14px;
+    width: 15vw;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+
+.settingPage-drawer-sign-button-inactive{
+    margin-top: 4vh;
+    font-size: 14px;
+    width: 15vw;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    cursor: pointer;
+    cursor: not-allowed;
+}
+
+.settingPage-drawer-pass {
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2vh;
+}
+
+.settingPage-drawer-pass-head{
+    font-size: 18px;
+    color: black;
+    font-weight: 900;
+}
+
+.settingPage-drawer-pass-item{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 4vh;    
+}
+
+.settingPage-drawer-pass-key{
+    font-size: 12px;
+    font-weight: 300;
+    color: black;
+}
+
+.settingPage-drawer-pass-input{
+    margin-top: 0.5vh;
+    width: 20vw;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+}
+
+.settingPage-drawer-pass-input-error{
+    margin-top: 0.5vh;
+    width: 20vw;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+}
+
+.settingPage-drawer-pass-input-error:focus{
+    border: 2px solid red;
+}
+
+.settingPage-drawer-pass-errorText{
+    font-size: 10px;
+    font-weight: bold;
+    color: red;
+    margin-top: 0.5vh;
+}
+
+.settingPage-drawer-pass-text{
+    display: none;
+}
+
+.settingPage-drawer-pass-button{
+    margin-top: 8vh;
+    font-size: 14px;
+    width: 20vw;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+}
+
+
+.settingPage-drawer-pass-button-inactive{
+    margin-top: 8vh;
+    font-size: 14px;
+    width: 20vw;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    cursor: not-allowed;
+}
+
+.settingPage-drawer-logout{
+    padding: 1vh 0vw;
+    background-color: #554BDA;
+    width: 10vw;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    cursor: pointer;
+    box-shadow: 2px 1px 1px rgb(0,0,0,0.2);
+  }
+
+  .settingPage-loader1{
+    margin-top: 20vh;
+    margin-left: 15vw;
+    border: 5px solid #cecece; /* Light grey */
+    border-top: 5px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 3.5vw;
+    height: 3.5vw;
+    animation: spin 1.5s linear infinite;
+
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.settingPage-error{
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .settingPage-error-img {
+    width: 20vw;
+    height: 13vw;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .settingPage-error-refresh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-radius: 20px;
+    border: 2px solid #554BDA;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+  }

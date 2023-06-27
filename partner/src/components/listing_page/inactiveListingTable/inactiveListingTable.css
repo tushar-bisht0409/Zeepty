@@ -1,0 +1,327 @@
+.inatable{
+    display: flex;
+    width: 80vw;
+}
+
+.inatable-all{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 20vw;
+    height: 80vh;
+    border-right: 2px solid #ecebff;
+    border-top: 2px solid #ecebff;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888888 #f0f0f0;
+}
+
+.inatable-all::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .inatable-all::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+  }
+  
+  .inatable-all::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    border-radius: 10px;
+  }
+
+.inatable-all-item-active{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid #ecebff;
+    background-color: #ecebff;
+    padding: 2vh 1vw;
+    cursor: pointer;
+}
+
+.inatable-all-item-inactive{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid #ecebff;
+    padding: 2vh 1vw;
+    cursor: pointer;
+}
+
+.inatable-all-item-img{
+    width: 5vw;
+    height: 5vw;
+}
+
+.inatable-all-item-right{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+.inatable-all-item-right-brand{
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.inatable-all-item-right-name{
+    font-size: 12px;
+    font-weight: 400;
+    color: black;
+}
+
+.inatable-all-item-right-key{
+    font-size: 10px;
+    font-weight: 400;
+    color: black;
+}
+
+.inatable-all-item-right-value{
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.inatable-body{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60vw;
+}
+.inatable-body-titlebar{
+    width: 60vw;
+    padding: 1vh 0vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ecebff;    
+}
+
+.inatable-body-titlebar-info {
+    width: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.inatable-body-titlebar-size {
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.inatable-body-titlebar-stock {
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.inatable-body-titlebar-actions {
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.inatable-body-all{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.inatable-body-all-item{
+    display: flex;
+    width: 60vw;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 2px solid #ecebff;
+}
+
+.inatable-body-all-item-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 22vw;
+    align-items: center;
+    border-right: 2px solid #ecebff;
+    padding: 1vh 1vw 0vh 1vw;
+}
+
+.inatable-body-all-item-info-img{
+    height: 3vw;
+    width: 3vw;
+    margin-right: 1vw;
+}
+
+.inatable-body-all-item-info-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.inatable-body-all-item-info-div-key{
+    font-size: 10px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 1vh;
+}
+
+.inatable-body-all-item-info-div-value{
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.inatable-body-all-item-size{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 8vw;
+    align-items: center;
+    border-right: 2px solid #ecebff;
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.inatable-body-all-item-stock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15vw;
+    align-items: center;
+    border-right: 2px solid #ecebff;
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+}
+
+.inatable-body-all-item-stock-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10vw;
+    align-items: center;
+    
+}
+
+.inatable-body-all-item-stock-div-input{
+    width: 10vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1vh 2vw;
+    font-size: 12px;
+    color: black;
+}
+
+.inatable-body-all-item-stock-div-icon{
+    position: absolute;
+    right: 1vw;
+    font-size: 12px;
+    color: #554BDA;
+}
+
+.inatable-body-all-item-action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15vw;
+    align-items: center;
+    padding: 1vh 0vw;
+    border-right: 2px solid #ecebff;
+}
+
+.inatable-body-all-item-action-edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding: 0.8vh 0vw;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #554BDA;
+    margin-bottom: 1vh;
+}
+
+.inatable-body-all-item-action-edit:hover{
+    background-color: #554BDA;
+    color: white;
+    cursor: pointer;
+}
+
+.inatable-body-all-item-action-inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    padding: 0.8vh 0vw;
+    border-radius: 5px;
+    font-size: 12px;
+    color: red;
+}
+
+.inatable-body-all-item-action-inactive:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.inatable-body-bottombar{
+    display: flex;
+    width: 60vw;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    padding: 1vh 2vw;
+    /* border-top: 2px solid lightgrey; */
+}
+
+.inatable-body-bottombar-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.inatable-body-bottombar-cancel {
+    display: flex;
+    width: 8vw;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5vh 2vw;
+    background-color: lightgrey;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    color: black;
+    cursor: pointer;
+}
+
+.inatable-body-bottombar-apply {
+    display: flex;
+    width: 6vw;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 2vw;
+    margin-left: 4vw;
+    background-color: #554BDA;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}

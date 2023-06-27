@@ -1,0 +1,80 @@
+.umlb{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 6vh 4vw;
+    border-left: 6px solid #ecebff;
+    border-right: 6px solid #ecebff;
+    border-bottom: 6px solid #ecebff;
+    width: 55vw;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.umlb-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.umlb-head-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30vw;
+}
+
+.umlb-head-left-text{
+    margin-left: 2vw;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.umlb-head-right{
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.umlb-head-right-upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0vw;
+    width: 15vw;
+    background-color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 2px 2px 1px 1px rgb(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.umlb-body{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2vh;
+    margin-left: calc(2vw + 13px);
+}
+
+.umlb-body-text{
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+    margin: 0vh 1vw;
+}
+
+.umlb-body-iconBox{
+    font-size: 12px;
+    padding: 0.5vw;
+    border-radius: 50%;
+    background-color: #ecebff;
+    color: #554BDA;
+}

@@ -1,0 +1,114 @@
+.leftSubPage {
+    /* border: 1px solid red; */
+}
+.bigImage{
+   height: 50vh;
+   width: 50vh;
+   display: block;
+   margin-bottom: 2vh;
+   margin-top: 1vh;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 12px;
+}
+
+.parentOfImages{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.imgSmall{
+    margin-left: 1vw;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 5px;
+    /* border: 2px solid  #3F2B96; */
+    
+}
+.imgSmallActive{
+    margin-left: 1vw;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 5px;
+    border: 3px solid #3F2B96;
+}
+.imgSmall:hover {
+    /* transform: scale(1.12);  */
+    border: 3px solid #3F2B96;
+
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4vh;
+}
+
+.addToCart{
+    background-color: #6b00c3;
+    width: 16vw;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    border: 3px solid  #6b00c3;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: center;    
+}
+
+.addToCart p{
+    font-size: medium;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.goToCart p{
+    font-size: medium;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.goToCart{
+    background-color: #6b00c3;
+    width: 16vw;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    border: 3px solid #6b00c3;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.buyNow{
+    display: flex;
+    background-color: #3F2B96;
+    height: 6vh;
+    border-radius: 5px;
+    color: whitesmoke;
+    width: 16vw;
+    border: 3px solid #3F2B96;
+    margin-left: 1vw;
+    font-size: medium;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+p{
+    align-self: center;
+    font-size: 0.9vw;
+}

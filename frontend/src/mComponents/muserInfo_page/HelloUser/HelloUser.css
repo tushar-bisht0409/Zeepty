@@ -1,0 +1,22 @@
+.hu {
+    /* border: 1px solid red; */
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 4vw;
+    font-family: sans-serif;
+
+}
+
+.hu-text{
+    font-size: large;
+    font-weight: 900;
+    color: #000;
+}
+.hu-img {
+    background-color: black;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}

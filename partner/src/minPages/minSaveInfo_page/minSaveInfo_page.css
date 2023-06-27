@@ -1,0 +1,247 @@
+.siPerBox{
+    font-family: sans-serif;
+}
+
+.siPerTop {
+    background-color: #554BDA;
+    height: 30vh;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 80px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.siPerHead {
+    font-size: medium;
+    font-weight: 600;
+    color: #554BDA;
+    margin-left: 17.5vw;
+    margin-top: 5vh;
+ }
+
+ .siPerInputHead{
+    font-weight: 500;
+    font-size: medium;
+ }
+
+ .siPerInputBox{
+    margin-left: 17.5vw;
+    margin-top: 2vh;
+ }
+
+ .siPerInput{
+    margin-top: 1vh;
+    width: 65vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 4vw;
+ }
+
+ .siPerGenderHead{
+    margin-left: 17.5vw;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.siPerGenderBox{
+    margin-left: 17.5vw;
+    width: 65vw;
+    display: flex;
+    flex-direction: 'row';
+    justify-content: space-between;
+}
+
+.siPerGender-active{
+    padding: 1vh 2vh;
+    font-size: small;
+    color: #554BDA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 2px solid #554BDA;
+    background-color: white;
+}
+
+.siPerGender-inActive{
+    padding: 1vh 2vh;
+    font-size: small;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+.siPerGender-active:hover{
+    cursor: pointer;
+}
+
+.siPerGender-inActive:hover{
+    cursor: pointer;
+}
+
+.siPerNextButtonBox{
+    margin-left: 17.5vw;
+    margin-top: 4vh;
+    width: 65vw;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+.siPerNextButton{
+    padding: 1.5vh 12vw;
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    background-color: #554BDA;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.siSocBox{
+    font-family: sans-serif;
+}
+
+.siSocHead {
+    width: 100vw;
+    font-size: large;
+    font-weight: bold;
+    color: #000;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    color: #554BDA;
+}
+
+.siSocSelBox{
+    margin: 2vh 4vw 0px 4vw;
+}
+
+.siSocSelHead{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.siSocSelIconsBox{
+    margin: 2vh 6vw 3vh 6vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.siSocSelFoot{
+    display: flex;
+    color: grey;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+}
+
+.siSocUNBox{
+    margin: 2vh 17.5vw;
+    width: 65vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.siSocUNHead {
+    margin-bottom: 1vh;
+    align-self: start;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.siSocUNInput {
+    width: 65vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 4vw;
+}
+
+.siSocDBox{
+    margin: 4vh 4vw 0px 4vw;
+}
+
+.siSocDHead{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.siSocDAll{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2vh;
+}
+
+.siSocD {
+    display: flex;
+    align-items: center;
+    width: 45vw;
+    height: 18vw;
+    padding: 4vw 4vw;
+    margin-bottom: 2vw;
+    background-color: white;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.siSocDL {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.siSocDR{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    margin-left: 2vw;  
+}
+
+.siSocDRText{
+    display: flex;
+    align-self: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.siSocDIcon{
+    position: absolute;
+    margin-left: 35vw;
+    margin-top: 9vw;
+    color: red;
+}
+
+.siSocButtonBox{
+    margin-top: 4vh;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10vh;
+}
+
+.siSocButton{
+    padding: 1.5vh 12vw;
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    background-color: #554BDA;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}

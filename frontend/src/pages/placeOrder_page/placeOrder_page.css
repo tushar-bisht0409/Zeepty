@@ -1,0 +1,93 @@
+.product-Container{
+    /* 
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 10px;
+    padding: 10px 3px;
+    border: 2px solid #929292; */
+    display: flex;
+    /* max-width: 980px; */
+    margin-left: 10vw;
+    padding: 0 10px 16px;
+    min-height: 320px;
+    color: #282c3f;
+    font-family: sans-serif;
+}
+.container-Left{
+    display: inline-block;
+    /* width: 64%; */
+    padding-right: 20px;
+    /* border-right: 1px solid #eaeaec; */
+    padding-top: 32px;
+}
+
+.container-Right{
+    margin-right: 10vw;
+    vertical-align: top;
+    display: inline-block;
+    /* width: 35%; */
+    padding: 24px 0 0 16px;
+
+}
+
+.items-Selected{
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    padding: 0 1vw;
+    font-weight: 600;
+    font-size: 16px;
+    color: #282c3f;
+}
+
+.number{
+    font-size: larger;
+    font-weight: 500;
+    color: #3F2B96
+}
+
+
+
+.availability-Component{
+    /* border-radius: 4px; */
+    width: 555px;
+    /* border: 1px solid #eaeaec; */
+}
+
+.productcard-Component{
+    margin: 20px 0px;
+} 
+
+.addressSection{
+    margin-top: 5vh;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.poBottomButton{
+    align-self: center;
+    width: 50vw;
+    left: 25vw;
+    position: sticky;
+    bottom: 2vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 2vh 2vh;
+    background-color: #554BDA;
+    border: 2px solid #554BDA;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+    color: white;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: large;
+    font-family: sans-serif;
+}
+
+
+
+ 

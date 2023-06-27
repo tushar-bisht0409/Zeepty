@@ -1,0 +1,30 @@
+.bankDetails {
+    border: 8px solid rgb(204, 204, 204);
+    padding: 2.5rem;
+}
+.bank {
+    margin-top: 1rem;
+}
+.bankDetails p {
+    margin-top: 1.2rem;
+}
+#a {
+    margin-left: 8rem;
+}
+.subPayment {
+    border: 8px solid rgb(204, 204, 204);
+    border-top: none;
+    width: 50%;
+    padding: 1rem;
+}
+#check {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sub-parent {
+    display: flex;
+}
+.right-parent {
+    border-left: none;
+}

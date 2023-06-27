@@ -1,0 +1,212 @@
+.vpBox{
+    display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.vpTB {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2vh 2vw;
+    background-color: #554BDA;
+}
+
+.vpTBT1{
+    font-size: medium;
+    font-weight: 900;
+    color: white;
+    margin-left: 2vw;
+}
+
+.vpVBT1{
+    font-size: medium;
+    font-weight: 900;
+    color: black;
+    margin: 4vh 4vw 0vh 4vw;
+    color: grey;
+}
+
+.vpVBSearch{
+    padding: 1.5vh 2vw;
+    border: 2px solid lightgrey ;
+    width: 30vw;
+    margin: 2vh 4vw;
+    border-radius: 5px;
+}
+
+.vpVBRow{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 2vw;
+}
+
+.vpVB1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 4vh 0vw 4vh 2vw;
+    height: 70vh;
+    overflow: scroll;
+}
+
+.vpVB2{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 4vh 0vw 4vh 2vw;
+  height: 70vh;
+  overflow: scroll;
+}
+
+.vpVB3{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 4vh 0vw 4vh 2vw;
+  height: 70vh;
+  overflow: scroll;
+}
+
+.vpVB4{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 4vh 0vw 4vh 2vw;
+  height: 70vh;
+  overflow: scroll;
+}
+
+.vpVBItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 2vw;
+    border-left: 2px solid #554BDA;
+    border-right: 2px solid #554BDA;
+    border-top: 1px solid #554BDA;
+    border-bottom: 1px solid #554BDA;
+    color: white;
+    background-color: #554BDA;
+    font-weight: 500;
+    font-size: large;
+}
+
+.vpVBItemInactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 2vw;
+    font-size: large;
+    font-weight: 500;
+    color: grey;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+}
+
+.vpIB {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10vw;
+  margin-top: 2vh;
+}
+  
+.vpIBD1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 4vw;
+  border-radius: 5px;
+  background-color: #ebebff;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.vpIBButtonInactive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 8vw;
+  width: max-content;
+  border-radius: 5px;
+  background-color: lightgrey;
+  font-size: medium;
+  font-weight: 900;
+  color: black;
+  margin-top: 4vh;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.vpIBButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 8vw;
+  width: max-content;
+  border-radius: 5px;
+  background-color: #554BDA;
+  font-size: medium;
+  font-weight: 900;
+  color: white;
+  margin-top: 4vh;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.vpIBUploadInput{
+  margin-top: 1.5vw;
+  background-color: transparent;
+  height: 8vh;
+  border-radius: 5px;
+  color: whitesmoke;
+  width: 32vw;
+  border: 0px solid transparent;
+  font-size: 1vw;
+  /* margin-left: 9vw; */
+}
+
+.vpIBUploadInput::-webkit-file-upload-button { 
+  visibility: hidden;
+  -webkit-appearance:none;
+ -webkit-box-sizing:border-box;
+ content: none;
+}
+
+.vpIBUploadInput::before {
+  text-align: center;
+  content: 'Upload Photos And Videos';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #554BDA;
+  padding: 2vh 2vw;
+  margin: auto;
+  max-width: fit-content;
+  color: #554BDA;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.vpIBUploadInput:hover::before {
+  background-color: #ebe6ff;
+}
+
+.vpIBUploadImages{
+  max-width: 35vw;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 2vh 0vw;
+}

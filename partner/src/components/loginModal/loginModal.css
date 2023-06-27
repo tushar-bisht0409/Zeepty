@@ -1,0 +1,149 @@
+.logmBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logmHeadT1{
+    font-size: 24px;
+    font-weight: 900;
+    color: black;
+    margin-bottom: 4vh;
+    align-self: start;
+}
+
+.logmInput{
+    width: 29vw;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    padding: 1.5vh 2vw;
+    font-size: medium;
+    align-self: start;
+}
+
+.logmGet1{
+    font-size: medium;
+    color: #554BDA;
+    font-weight: bold;
+    align-self: start;
+    padding: 1.5vh 1vw;
+    cursor: pointer;
+} 
+
+.logmGet2{
+    font-size: small;
+    color: grey;
+    font-weight: bold;
+} 
+
+.logmOTP{
+    width: 29vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: medium;
+    color: #554BDA;
+    font-weight: bold;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+
+.logmOTPInactive{
+    width: 29vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: medium;
+    color: grey;
+    font-weight: bold;
+    margin-top: 1vh;
+}
+
+.logmInputOtp{
+    width: 29vw;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    padding: 1.5vh 2vw;
+    font-size: medium;
+    align-self: start;
+    margin: 3vh 0vw;
+}
+
+.logmPB{
+    position: relative;
+    width: 29vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 5vh;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    align-self: start;
+    margin-top: 3vh;   
+}
+
+.logmPBInput{
+    width: 29vw;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    font-size: medium;
+    border: none;
+}
+
+.logmPBShow{
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    cursor: pointer;
+}
+
+.logmPBShowT1{
+    font-size: small;
+    font-weight: 900;
+    margin-left: 0.5vw;
+    color: #554BDA;
+}
+
+.logmLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 2vh 0vw;
+    margin: 2vh;   
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.logmLoader1{
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    margin-top: 2vh;
+    animation: spin 1.5s linear infinite;
+}
+
+.logmLoader2{
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

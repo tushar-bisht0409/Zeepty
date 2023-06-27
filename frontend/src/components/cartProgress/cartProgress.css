@@ -1,0 +1,122 @@
+.apMainBox{
+    flex-direction: column;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #554BDA;
+}
+
+.apBox1{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    padding: 4vh 0 2vh 0;
+    width: 70vw;
+}
+
+.apBox2{
+    flex-direction: row;
+    display: flex;
+    align-self: center;
+    width: 70vw;
+    justify-content: space-between;
+    padding-bottom: 2vh;
+}
+
+.apTitle1{
+    position: absolute;
+    left: 25.45vw;
+    display: flex;
+    align-self: center;
+    font-weight: 700;
+    font-size: small;
+}
+
+.apTitle2{
+    position: absolute;
+    left: 49.1vw;
+    display: flex;
+    align-self: center;
+    font-weight: 700;
+    font-size: small;
+}
+.apTitle3{
+    position: absolute;
+    left: 70.8vw;
+    display: flex;
+    align-self: center;
+    font-weight: 700;
+    font-size: small;
+}
+
+.apSubBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apCompleted{
+    height: 2.5vw;
+    width: 2.5vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    border-radius: 2.5vw;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    background-color: #554BDA;
+}
+
+.apActive{
+    height: 2.5vw;
+    width: 2.5vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    border-radius: 2.5vw;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    background-color: #554BDA;
+}
+
+.apInActive{
+    height: 2.5vw;
+    width: 2.5vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    border-radius: 2.5vw;
+    font-size: 18px;
+    color: #554BDA;
+    font-weight: 700;
+    border:2px solid #554BDA;
+    background-color: white;
+}
+
+.hrActive{
+    border: none;
+    align-self: center;
+    border-top: 2px dashed #554BDA;
+    color: #fff;
+    background-color: transparent;
+    height: 0.5px;
+    width: 20vw;
+}
+
+.hrCompleted{
+    border: none;
+    align-self: center;
+    border-top: 2px solid #554BDA;
+    color: #fff;
+    background-color: transparent;
+    height: 0.5px;
+    width: 20vw;
+}

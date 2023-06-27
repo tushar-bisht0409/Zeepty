@@ -1,0 +1,391 @@
+.mrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: sans-serif;
+    padding: 0vh 4vw;
+}
+
+.mobilefeedback{
+    display: flex;
+}
+
+.mobileratingReviews{
+    
+    padding-top: 3vh;
+    font-weight: 200;
+    font-weight: 700;
+    line-height: 1.2vw;
+    font-size: 2.35vh;
+    color: #000000;
+}
+
+
+
+#mobileratingNumbers{
+    padding-top: 13vh;
+    padding-left: 0.5vw;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 3vh;
+    color: grey;
+}
+
+
+#mobilerateProduct{
+    margin-left: 5.5vw;
+    margin-top: 11.8vh;
+    background: #3F2B96;
+    border: 2px solid #3F2B96;
+    border-radius: 2px;
+    width: 7vw;
+    height: 5vh;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.mobilemark{
+    background-color:  #2FB84D;
+    border-radius: 15px;
+    color: white;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-bottom: 0.2vh;
+    padding-top: 0.2vh;
+}
+
+
+
+.mobileimagesByCustomers{
+    margin-left: 7vw;
+}
+
+
+
+.mobileinsideRatingsReviews{
+    display: flex;
+    padding-top: 4vh;
+    
+}
+
+.mobilecustomersFelt{
+    width: 50vw;
+    height: 30vh;
+    background-color:white;
+    /* border: 1px solid red; */
+}
+.mobileimagesReview {
+    border: 1px solid black;
+    margin: auto;
+    position: relative;
+    top: 2rem;
+    display: flex;
+}
+.mobileimg1 {
+    position: relative;
+    top: 1rem;
+    /* border: 1px solid red; */
+    width: 30%;
+    height: 30%;
+}
+.mobileimagesByCustomers{
+    width: 50vw;
+    height: 30vh;
+    background-color: white;
+    /* border: 1px solid red; */
+    /* display: flex;
+    justify-content: center;
+    align-items:flex-start; */
+    /* flex-wrap: wrap; */
+}
+
+#mobilecustomerReviews{
+    
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1vw;
+    color: #000000;
+    /* border: 1px solid red; */
+    width: fit-content;
+    margin: auto;
+}
+
+#mobilecustomerImages{
+    
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1vw;
+    color: #000000;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    /* margin-top: 1rem; */
+}
+#mobilecostumerImages p {
+    /* text-align: center; */
+    
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1vw;
+    color: #000000;
+}
+
+
+.mobileemojiSection{
+    display: flex;
+    padding-top: 2.3vh;
+}
+
+.mobilebttn1{
+    margin-left: 0.8vw;
+    margin-top: 1.2vh;
+    margin-bottom: 2vh;
+    background-color: white;
+    box-shadow: 0 0.3vw 0.3vw 0 rgba(0,0,0,0.2), 0 0.3vw 0.3vw 0 rgba(0,0,0,0.19);
+    border: 0px;
+}
+
+.mobilebttn2{
+    margin-left: 0.8vw;
+    margin-top: 1.2vh;
+    margin-bottom: 2vh;
+    background-color: white;
+    box-shadow: 0 0.3vw 0.3vw 0 rgba(0,0,0,0.2), 0 0.3vw 0.3vw 0 rgba(0,0,0,0.19);
+    border: 0px;
+}
+
+.mobilebutton2{
+    display: flex;
+    padding-left: 1.5vw;
+}
+
+.mobilesedEmoji{
+    display: flex;
+}
+
+
+
+
+.mobileimagesReview{
+    padding-top: 3vh;
+    display: flex;
+    height: 10vh;
+    width: 10vw;
+    
+}
+
+.mobileimg1{
+    margin: 0.2vw;
+}
+
+
+.mobileuserReview{
+    display: flex;
+    
+    padding-top: 3vh;
+}
+
+
+
+#mobilemark1{
+    background-color:  #2FB84D;
+    border-radius: 15px;
+    color: white;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+    padding-bottom: 0vh;
+    padding-top: 0vh;
+}
+
+#mobilereview1{
+    font-size: 1vw;
+    margin-left: 1vw;
+}
+
+
+.mobilereviewImages{
+    display: flex;
+    padding-top: 3vh;
+    
+}
+
+.mobilerimages{
+    height: 10vh;
+    width: 5vw;
+    margin: 0.15vw;
+}
+
+
+
+.mobilenameDate{
+    display: flex;
+    padding-top: 1.3vh;
+    
+}
+
+#mobilename{
+    font-size: 0.95vw;
+    font-weight: 500;
+    
+    color: grey;
+    margin-right: 1.2vw;
+}
+
+
+#mobiledate{
+    font-size: 0.95vw;
+    font-weight: 500;
+    
+    color: grey;
+}
+
+
+.mobileuserReview1{
+    display: flex;
+    
+    padding-top: 4vh;
+}
+
+
+.mobileuserReview2{
+    display: flex;
+    
+    padding-top: 4vh;
+}
+
+
+.mobileallReviews{
+    
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 2vw;
+    color: #3F2B96;
+}
+
+.mobilereviewPlus{
+    display: flex;
+    
+    padding-top: 4.5vh;
+}
+
+
+.mobileplus{
+   margin-left: 33vw;
+   color: #3F2B96;
+   font-size: 1.2vw;
+}
+
+
+
+
+.mobilequestionAnswers{
+    padding-top: 11vh;
+    
+}
+
+.mobileqaHeading{
+    
+    font-weight: 700;
+    font-size: 1.35vw;
+    line-height: 1.2vw;
+    color: #000000;
+}
+
+.mobilequestion1{
+    padding-top: 2vh;
+    
+    font-weight: 500;
+}
+
+.mobileanswer1{
+    padding-top: 1.5vh;
+    
+    font-weight: 400;
+}
+
+.mobilequestionAnswers2{
+    padding-top: 3vh;
+    
+}
+
+#mobileratingBoxO{
+
+padding-top: 2vh;
+box-sizing: border-box;
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+.mobileratingReviews-Circle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobilerateCountBig{
+    position: absolute;
+    color: #000;
+    font-size: 4vh;
+}
+.mobileratingAllBox{
+display: flex;
+flex-direction: column;
+width: 60vw;
+align-self: center;
+margin-left: 3vw;
+}
+
+.mobileratingSingle{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-bottom: 1vh;
+    }    
+
+.mobileratingLine{
+    display: flex;
+    width: 55vw;
+    height: 1vh;
+    background-color: lightgray;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.mobileratingSingle p{
+    margin-left: 2vw;
+    margin-right: 0.5vw;
+    align-self: center;
+    font-size: small;
+}
+
+.mobileratIconBig{
+    font-size: 5vh;
+}
+
+.mobilereviewBoxBig{
+    padding-top: 3vh;
+}
+
+.MobileCart-Mobile-place-order{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7465B6;
+    /* position: fixed;
+    bottom: 0; */
+    width: 100%;
+
+}
+
+.MobileCart-ordertext{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}

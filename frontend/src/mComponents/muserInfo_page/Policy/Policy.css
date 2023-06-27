@@ -1,0 +1,36 @@
+.policy {
+    border: 0.5vh solid #DADADA;
+    border-left: none;
+    border-right: none;
+    font-family: sans-serif;
+    padding: 2vh 0;
+}
+.policyItem {
+    display: flex;
+    padding-left: 1.4rem;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.policyItemText{
+    font-size: small;
+    font-weight: 500;
+}
+
+#btn {
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    top: 2rem;
+}
+button {
+    border: none;
+    padding: 1.5vh 10vw;
+    color: white;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 900;
+    background-color: #554BDA;
+}

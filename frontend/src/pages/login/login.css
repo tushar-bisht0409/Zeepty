@@ -1,0 +1,192 @@
+.newtocommerce{
+    position: absolute;
+width: 246px;
+height: 17px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 15px;
+
+color: #3F2B96;
+margin-top: 582px;
+    margin-left: 656px;
+
+}
+.loginuptop {
+    position: absolute;
+    width: 148px;
+    height: 34px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #7465B6;
+    margin-top: 180px;
+    margin-left: 695px;
+}
+
+.loginmobileno {
+    position: absolute;
+    width: 143px;
+    height: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-top: 240px;
+    margin-left: 600px;
+}
+.enterpassword {
+    position: absolute;
+    width: 143px;
+    height: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-top: 327px;
+    margin-left: 600px;
+}
+.loginenterNo{
+    position: absolute;
+width: 308px;
+height: 45px;
+
+background: #FFFFFF;
+border: 1px solid #DADADA;
+border-radius: 5px;
+margin-top: 259px;
+    margin-left: 599px;
+}
+.loginpassword{
+    position: absolute;
+width: 308px;
+height: 45px;
+
+background: #FFFFFF;
+border: 1px solid #DADADA;
+border-radius: 5px;
+margin-top: 345px;
+margin-left: 599px;
+}
+.inputno{
+    position: absolute;
+    width: 210px;
+    height: 20px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    
+    color: #929292;
+    margin-left: 14px;
+    margin-top: 11px;
+}
+.loginbtn{
+    position: absolute;
+width: 250px;
+height: 50px;
+
+background: #7465B6;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+margin-top: 440px;
+    margin-left: 625px;
+}
+.requestotpbtn{
+    position: absolute;
+width: 250px;
+height: 50px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(231, 226, 226, 0.25);
+border-radius: 5px;
+margin-top: 520px;
+    margin-left: 625px;
+}
+.orinbtw{
+    position: absolute;
+width: 31px;
+height: 18px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+
+color: #7465B6;
+margin-top: 499px;
+margin-left: 739px;
+}
+.loginterms{
+    position: absolute;
+width: 257px;
+height: 29px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+
+color: #000000;
+margin-top: 402px;
+    margin-left: 610px;
+}
+.requestotpname{
+    position: absolute;
+    width: 121px;
+    height: 22px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    
+    color: #7465B6;
+    margin: -11px 60px;
+}
+.loginbtnname{
+    position: absolute;
+width: 108px;
+height: 31px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+
+color: #FFFFFF;
+margin: -10px 67px;
+    font-family: ui-sans-serif;
+
+}
+
+.alreadyUser{
+
+position: absolute;
+width: 246px;
+height: 17px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 15px;
+
+color: #3F2B96;
+margin-top: 550px;
+margin-left: 665px;
+}

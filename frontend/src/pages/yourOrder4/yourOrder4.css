@@ -1,0 +1,43 @@
+.order3{
+    display: flex;
+    border:0.15vw solid lightgray;
+    padding-bottom: 3vh;
+}
+
+
+.headphonePic2{
+    margin-top: 7vh;
+    margin-left: 2vw;
+}
+
+
+.orderPic2{
+    height: 15vh;
+    width: 8vw;
+}
+
+
+.orderStatus2{
+    margin-top: 11vh;
+    margin-left: 5vw;
+}
+
+#orderStatus2{
+    display: flex;
+}
+
+
+.descrip02{
+    margin-top: 1.5vh;
+}
+
+
+#deliver2{
+    margin-left: 0.5vw;
+}
+
+
+.iconSelect2{
+    margin-left: 36.15vw;
+    margin-top: 11.25vh;
+}

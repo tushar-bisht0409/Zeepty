@@ -1,0 +1,135 @@
+.ddrawerBox {
+    /* background: linear-gradient(180deg, #A8C0FF 0%, #3F2B96 100%); */
+    background-color: #554BDA;
+    position: fixed;
+    width: 20vw;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+
+.dcompanyAbout {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    color: white;
+  }
+
+  .dcompanyAbout-img {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .dcompanyAbout-text{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2vh;
+    font-family: sans-serif;
+  }
+
+  .dcontent-wrap {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+  }
+  
+  .dcompanySupport {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin: 1rem;
+    position: relative;
+    top: 2rem;
+  }
+  .dsupportItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dsupportItem p{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .ddrawerOptions {
+    position: relative;
+    top: 40px;
+  }
+
+  .ddrawerItemInActive:hover{
+    cursor: pointer;
+  }
+  
+  .ddrawerItemActive:hover{
+    cursor: pointer;
+  }
+
+  .ddrawerItemInActive {
+    margin: 15px 30px;
+    padding: 10px 25px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .ddrawerItemActive {
+    margin: 15px 30px;
+    padding: 10px 25px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: white;
+    color: #554BDA;
+  }
+
+  .ddrawerIcon {
+    padding: 15px 25px 15px 10px;
+  }
+
+  .ddrawerItemText {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  
+  .dlogoutBoxP{
+    width: 20vw;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 20px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dlogoutBtnP {
+    display: flex;
+    cursor: pointer;
+    padding: 1vh 2vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecebff;
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+    border: none;
+    border-radius: 40px;
+    color: #554BDA;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+#ddrawerIcon{
+  width: 40px;
+  margin-right: 20px;
+}
+
+#ddrawerIcon2{
+  margin-bottom: 10px;
+}

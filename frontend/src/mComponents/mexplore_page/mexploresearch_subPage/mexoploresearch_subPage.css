@@ -1,0 +1,127 @@
+.messp{
+    display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+.messp-topbar{
+    background-color: #554BDA;
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 1vh 4vw;
+    box-sizing: border-box;
+}
+
+
+.messp-topbar-body {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 82vw;
+}
+
+.messp-topbar-body-input {
+    padding-left: 4vw;
+    height: 4.5vh;
+    width: 82vw;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.messp-topbar-body-input:focus{
+    outline: none;
+}
+
+.messp-topbar-body-icon {
+    border-radius: 5px;
+    position: absolute;
+    right: 0.3vh;
+    top: 0.3vh;
+    height: 3.9vh;
+    width: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    font-size: small;
+    color: lightgrey;
+}
+
+.messp-tabbar{
+    margin-top: 5vh;
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 0vw 0vh 0vw;
+    box-sizing: border-box;
+}
+
+.messp-tabbar-itemActive{
+    align-self: center;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #554BDA;
+    padding: 1vh 4vw;
+    font-size: small;
+    font-weight: 500;
+    border-bottom: 3px solid #554BDA;
+}
+
+.messp-tabbar-itemInactive{
+    align-self: center;
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    color: #cfccff;
+    background-color: white;
+    padding: 1vh 4vw;
+    font-size: small;
+    font-weight: 500;
+    border-bottom: 3px solid white;
+}
+
+.messp-accounts{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.messp-stores{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.messp-loader1{
+    margin-top: 30vh;
+    align-self: center;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

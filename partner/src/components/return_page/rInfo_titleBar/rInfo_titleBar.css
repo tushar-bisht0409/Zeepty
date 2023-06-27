@@ -1,0 +1,59 @@
+.ritbbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80vw;
+    padding: 1vh 0vw;
+    background-color: #ecebff;
+}
+
+.ritbbox-orderid{
+    width: 16vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.ritbbox-info{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.ritbbox-quantity{
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.ritbbox-price{
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
+
+.ritbbox-dispatch{
+    width: 28vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}

@@ -1,0 +1,23 @@
+.apBox{
+    font-family: sans-serif;
+}
+
+.apTop {
+    background-color: #554BDA;
+    height: 60vh;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.apTopText {
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    width: fit-content;
+    position: relative;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}

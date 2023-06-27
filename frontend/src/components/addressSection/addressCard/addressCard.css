@@ -1,0 +1,241 @@
+.asAddressBox{
+    width: 40vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 2vh 0;
+    padding: 2vh 1vw;
+    box-shadow: 1px 1px 2px 1px lightgrey;
+}
+
+.asAddressBoxTop{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.asAddressBoxTopLeft{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.ac-checkBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    border: 2px solid #554BDA;
+}
+
+.asAddressTextName{
+    margin-left: 1vw;
+    align-self: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #554BDA; 
+}
+
+.asAddressTextMode{
+    margin-left: 1vw;
+    align-self: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #554BDA; 
+}
+
+.asAddressBoxTopRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.asAddressText{
+    margin-left: 2vw;
+    align-self: start;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px; 
+
+}
+
+.asPCRow{
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0.5vh; 
+}
+
+.asAddressTextPC{
+    font-weight: 600;
+    font-size: 15px; 
+    margin-right: 0.7vw;
+}
+
+.asAddressTextPC2{
+    align-self: start;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px; 
+}
+
+.asActionBox{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+
+.asActionButton{
+    width: 8vw;
+    padding: 1vh 0;
+    margin-right: 2vw;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    font-size: medium;
+    justify-content: center;
+    color: grey;
+    border-radius: 2px;
+    font-weight: 500;
+    border: 2px solid lightgrey;
+    box-shadow: 1px 1px 2px 1px lightgrey;
+    border-radius: 5px;
+}
+
+.newAddress-modal{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5vw 3vh 2.5vw;
+}
+
+.newAddress-modal-head{
+    padding: 3vh 2.5vw 3vh 2.5vw;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
+
+.newAddress-modal-headText{
+    font-size: large;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.fa-xmark:hover{
+    cursor: pointer;
+}
+
+.newAddress-modal-contactText{
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.newAddress-modal-input{
+    padding: 2vh;
+    margin-bottom: 2vh;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.newAddress-modal-addressText{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.newAddress-modal-modeHeadText{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    align-self: start;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.newAddress-modal-modeBox{
+    display: flex;
+    flex-direction: 'row';
+}
+
+.newAddress-modal-modeHeadButton-active{
+    padding: 2vh 4vh;
+    font-size: medium;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: #554BDA;
+}
+
+.newAddress-modal-modeHeadButton-inActive{
+    padding: 2vh 4vh;
+    font-size: medium;
+    color: #554BDA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 1px solid #554BDA;
+    background-color: white;
+}
+
+.newAddress-modal-modeHeadButton-active:hover{
+    cursor: pointer;
+}
+
+.newAddress-modal-modeHeadButton-inActive:hover{
+    cursor: pointer;
+}
+
+
+.newAddress-modal-bottomBox{
+    align-self: start;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0px;
+    left: 0px;
+    padding: 2vh 3vw;
+    background-color: white;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+}
+
+.newAddress-modal-addButton{
+    padding: 1.5vh 2vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #554BDA;
+    border: 2px solid #554BDA;
+    box-shadow: 1px 1px 2px 1px #554BDA;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.newAddress-modal-addButton:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,132 @@
+.main1{
+    border: 0.5vw solid #C6C5CE;
+    padding-bottom: 7vh;
+    border-bottom: 25px solid #C6C5CE;
+}
+
+.userImg{
+    border-radius: 50%;
+    border: 0.5vw solid #C6C5CE;
+    height: 15vh;
+    width: 7vw;
+}
+
+
+.top1{
+    display: flex;
+    margin-left: 5vw;
+    margin-top: 7vh;
+}
+
+
+.helloUser{
+    margin-left: 5vw;
+    margin-top: 7vh;
+    font-size: 1.4vw;
+}
+
+
+.accountInfo{
+    font-weight: 700;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    font-size: 1.4vw;
+}
+
+
+.mobileInfo{
+    display: flex;
+    margin-left: 5vw;
+    margin-top: 4vh;
+}
+#accountInfo {
+    border: 0.3vw solid #C6C5CE;
+    border-left: none;
+    border-right: none;
+    padding-bottom: 4rem;
+    margin-top: 2rem;
+}
+
+
+.subHead{
+    font-size: 1.15vw;
+    font-weight: 600;
+}
+
+#mobNum{
+    margin-left: 7vw;
+    font-size: 1.15vw;
+}
+
+
+.name1{
+    display: flex;
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+
+#Namee{
+    margin-left: 7.5vw;
+    font-size: 1.15vw;
+}
+
+
+.emailDetails{
+    display: flex;
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+
+#email{
+    margin-left: 7.6vw;
+    font-size: 1.15vw;
+}
+
+
+.pen12{
+    margin-left: 15vw;
+}
+
+.pen13{
+    margin-left: 4vw;
+}
+
+#changePassword{
+    margin-left: 5vw;
+    margin-top: 5vh;
+    color: purple;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+
+.changeLanguage{
+    margin-left: 5vw;
+    margin-top: 4vh;
+    color: purple;
+    font-weight: 600;
+}
+
+
+.tc{
+    margin-left: 5vw;
+    margin-top: 4vh;
+    color: purple;
+    font-weight: 600;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 0.8rem;
+}
+#navbar input {
+    border: 3px solid #C6C5CE;
+    border-radius: 1rem;
+    width: 20rem;
+    height: 3rem;
+    padding-left: 1rem;
+}

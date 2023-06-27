@@ -1,0 +1,167 @@
+.minPRC{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2vh;
+    padding: 1vh 2vw 3vh 2vw;
+    border-bottom: 1px solid lightgrey;
+    font-family: sans-serif;
+}
+
+.minPRCImage{
+    width: 12vw;
+    height: 12vw;
+    background-color: black;
+}
+
+.minPRCI{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40vw;
+    margin: 0vh 2vw;
+}
+
+.minPRCIB{
+    width: 40vw;
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+    align-self: flex-start;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    max-lines: 1;
+}
+
+.minPRCIT{
+    width: 40vw;
+    font-size: x-small;
+    font-weight: 300;
+    color: black;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.minPRCIS{
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 4vh;
+}
+
+.minPRCISB1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 5vw;
+}
+
+.minPRCISB1T1{
+    font-size: x-small;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 0.5vh;
+}
+
+.minPRCISB1T2{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+
+.minPRCISB2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 5vw;
+
+}
+
+.minPRCISB2T1{
+    display: flex;
+    font-size: x-small;
+    font-weight: 300;
+    color: black;
+    align-items: center;
+    margin-bottom: 0.5vh;
+}
+
+.minPRCISB2T2{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+
+.minPRCE{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5vw;
+}
+
+.minPRCEHead{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 1vh;
+}
+
+.minPRCELBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.minPRCELBoxI{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6vw;
+    height: 6vw;
+    font-size: 4vw;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    background-color: #4ECB71;
+    margin-right: 1vw;
+}
+
+
+.minPRCELBoxT{
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.minPRCTime{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 2vw;
+    font-size: x-small;
+    color: grey;
+}
+
+.minPRCSup{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 2vw;
+    margin-bottom: 1vh;
+    background-color: lightgrey;
+    padding: 0.5vh 2vw; 
+    font-size: x-small;
+    border-radius: 20px;
+    color: black;
+}

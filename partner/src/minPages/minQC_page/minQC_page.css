@@ -1,0 +1,226 @@
+.minQCP{
+    display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+.minQCP-topbar{
+    display: flex;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #554BDA;
+    padding: 2vh 4vw;   
+}
+
+.minQCP-topbar-T1{
+  font-size: medium;
+  color: white;
+  font-weight: bold;
+  margin-left: 8vw;
+}
+
+.minQCP-tabbar{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+}
+
+.minQCP-tabbar-active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #554BDA;
+    font-size: small;
+    font-weight: bold;
+    width: 33.33vw;
+    padding: 1vh 0vw;
+    border-bottom: 2px solid #554BDA;
+}
+
+.minQCP-tabbar-inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+    font-size: small;
+    font-weight: 500;
+    width: 33.33vw;
+    padding: 1vh 0vw;
+    border-bottom: 2px solid #ecebff;
+}
+
+.minQCP-titlebar{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100vw;
+    background-color: #ecebff;
+    padding: 0.5vh;
+}
+
+.minQCP-titlebar-product{
+    display: flex;
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+}
+
+.minQCP-titlebar-time{
+    display: flex;
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+}
+
+.minQCP-body-item {
+    display: flex;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-bottom: 2px solid #ecebff;
+}
+
+.minQCP-body-item-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40vw;
+}
+
+.minQCP-body-item-product-img{
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 2px;
+}
+
+.minQCP-body-item-product-key{
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+
+.minQCP-body-item-product-value{
+    font-size: 12;
+    font-weight: 300;
+    color: #000;
+}
+
+.minQCP-body-item-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.minQCP-body-item-status-key{
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+
+.minQCP-body-item-status-value{
+    font-size: 12;
+    font-weight: 300;
+    color: #000;
+}
+
+.minQCP-body-item-status-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+.minQCP-body-item-status-div-pending{
+    font-size: 12px;
+    font-weight: 300;
+    color: orange;
+}
+
+.minQCP-body-item-status-div-see{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #554BDA;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1vh 2vw;
+    cursor: pointer;
+    margin-left: 4vw;
+}
+
+.minQCP-loader1{
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    margin: 2vh auto;
+    display: flex;
+    align-self: center;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .minQCP-error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+  }
+  
+  .minQCP-error-img {
+    width: 50vw;
+    height: 40vw;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .minQCP-error-refresh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 4vw;
+    border-radius: 20px;
+    border: 2px solid #554BDA;
+    font-size: 12px;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+  }
+
+  .minQCP-nothing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+  }
+  
+  .minQCP-nothing-img {
+    width: 50vw;
+    height: 40vw;
+    cursor: pointer;
+    object-fit: cover;
+  }

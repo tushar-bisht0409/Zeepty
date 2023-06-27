@@ -1,0 +1,78 @@
+.minLSSBox{
+    font-family: sans-serif;
+    width: 100vw;
+    min-height: 60vh;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0fr;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: white;
+}
+
+.minLSS{
+    width: 33.2vw;
+    height: fit-content;
+    margin-bottom: 0.2vw;
+    background-color: black;
+}
+
+.minLSSAdd1Box{
+    width: 100vw;
+    justify-content: center;
+    align-self: center;
+    display: flex;
+}
+
+.minLSSUpload1{
+    position: absolute;
+    background-color: transparent;
+    color: transparent;
+    width: 100vw;
+    height: 5vh;
+    border: 0px solid transparent;
+    /* margin-left: 9vw; */
+}
+
+.minLSSUpload1::-webkit-file-upload-button { 
+    visibility: hidden;
+    -webkit-appearance:none;
+   -webkit-box-sizing:border-box;
+   content: none;
+  }
+
+.minLSSAdd1{
+    border: 1.5px solid #554BDA;
+    padding: 1vh 4vw;
+    height: min-content;
+    border-radius: 20px;
+    margin-bottom: 10vh;
+}
+
+.minLSSAdd1T1{
+    font-size: small;
+    font-weight: 500;
+    color: #554BDA;
+}
+
+.minLSSVideo{
+    height: 60vw;
+    width: 33.2vw;
+    background-color: black;
+}
+
+.minLSSAdd2{
+    position: fixed;
+    bottom: 10vh;
+    left: 44vw;
+}
+
+.minLSSCreateModal {
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+    overflow: scroll;
+}

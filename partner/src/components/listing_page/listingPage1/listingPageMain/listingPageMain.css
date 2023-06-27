@@ -1,0 +1,196 @@
+.listpagenavBar{
+    background-color: #554BDA;
+    width: 74vw;
+    margin: 0.5vw;
+}
+
+
+.listpagenavBar ul{
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.listpagebtn{
+    float:left;
+    list-style: none; 
+    cursor: pointer;
+    margin: 13px 20px;
+}
+
+
+.listpagebtn a{
+    padding-left: 13vw;
+    text-decoration: none;
+    color: white;
+    font-size: 1vw;
+}
+
+.listpagebtn a:hover{
+    color: black
+}
+
+  
+input.noosubmit{
+    width: 45vw;
+    border: 0.15vw solid lightgrey;
+    border-radius: 0.4vw;
+    display: block;
+    padding: 0.8vw 0.2vw 0.6vw 2.5vw;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  }
+
+
+  .searchButt {
+    display: flex;
+    margin: 3vh 2vw 0vh 2vw;
+  }
+
+
+  .addnewbutonn{
+    height: 3vw;
+    width: 20vw;
+    color: white;
+    background-color: #554BDA;
+    border-radius: 5px;
+    border: solid;
+    margin-left: 2vw;
+  }
+  
+  .listpagenavlistitem{
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    flex-direction: column;
+    background-color: #554BDA;
+    padding: 1vw;
+  }
+
+  .listingMode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: 900;
+    width: fit-content;
+    color: #554BDA;
+    background-color: white;
+    padding: 2vh 2vw;
+    border-radius: 20px;
+  }
+
+  .listingModeInactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: 900;
+    width: fit-content;
+    color: white;
+    padding: 2vh 2vw;
+  }
+
+ .listpagebtn{
+  background-color: #554BDA;
+  border: none;
+  color: white;
+ }
+  .listpagebtn-underline{
+    background-color: white;
+    height: 1.5vh;
+  }
+
+  .lpmain-titlebar{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .lpmain-titlebar-active{
+    width: 26.66vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4vh 0vw;
+    border-bottom: 4px solid #554BDA;
+    font-size: 14px;
+    color: #554BDA;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .lpmain-titlebar-inactive{
+    width: 26.66vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4vh;
+    padding-bottom: calc(4vh + 3px);
+    border-bottom: 1px solid #ecebff;
+    font-size: 14px;
+    color: grey;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .lpmain-addbox{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4vh 4vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ecebff;
+    cursor: pointer;
+  }
+
+  .lpmain-addbox-left{
+    width: 45vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .lpmain-addbox-left-icon{
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background-color: #ecebff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #554BDA;
+    font-size: 20px;
+  }
+
+  .lpmain-addbox-left-text{
+    margin-left: 1vw;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .lpmain-addbox-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+  }
+
+  .lpmain-addbox-right-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc8019;
+    width: 80%;
+    padding: 2vh 0vw;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
+  }

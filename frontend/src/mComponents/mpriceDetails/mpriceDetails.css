@@ -1,0 +1,121 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+.mbigBox{
+    display: flex;  
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 2vh;
+    justify-content: center;
+    align-self: center;
+    font-family: sans-serif;
+}
+.mprice-detail{
+    margin-bottom: 2vh;
+    width: 100vw;
+    padding-left: 15vw;
+    text-align: flex-start;
+    color: #554BDA;
+    font-weight: bold;
+    font-size: small;
+}
+
+.mbody{
+    width: 90vw;
+    margin-left: 5vw;
+}
+
+.mbody div{
+    /* width: 300px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.mtotal{
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mprice{
+    padding-bottom:2vh;
+
+}
+.mdiscount{
+    padding-bottom:2vh;
+}
+.mdiscount p:last-child{
+    color: rgb(44, 243, 44);
+}
+.mdelivery-charges{
+    padding-bottom:2vh;
+}
+
+.mpr1{
+    font-size: small;
+    font-weight: 300;
+}
+.mpr2{
+    width: 35vw;
+    
+    font-size: small;
+    font-weight: bold;
+}
+.mdis1{
+    font-size: small;
+    font-weight: 400;
+}
+.mdis2{
+    width: 35vw;
+    
+    font-size: small;
+    font-weight: 600;
+}
+
+.mdc1{
+    font-size: small;
+    font-weight: 400;
+}
+.mdc2{
+    width: 35vw;
+    font-size: small;
+    font-weight: bold;
+}
+.ta1{
+    color: #554BDA;
+    font-weight: 400;
+    font-size: small;
+}
+
+.ta2{
+    width: 35vw;
+    color: #554BDA;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.mtotalAmount{
+    margin: 1vh 0px;
+}
+
+.mplace-order{
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:300px;
+    border:1px solid #554BDA;
+    border-radius:5px;
+    padding:15px 50px;
+    background-color: #554BDA;
+
+}

@@ -1,0 +1,411 @@
+    .MobileCart{
+        box-sizing: border-box;
+        overflow-x: hidden; 
+        font-family: sans-serif;
+        padding-bottom: 30vh;
+    }
+    
+    .MobileCart-menu{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        background-color: #554BDA;
+        padding: 2vh 4vw;
+    }
+
+    .MobileCart-menutext{
+        font-size: large;
+        margin-left: 2vw;
+        color: white;
+    }
+
+    .MobileProductContainer{
+        background-color:rgba(217, 217, 217, 0.5);;
+        height: 100%;
+    }
+    
+    .MobileCart-place-Order-Mobile-cart-steps{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content:center;
+    }
+
+    .MobileCart-place-Order-Mobile-steps{
+        display: flex;  
+        width: 70%;
+        align-items: center;
+        justify-content: space-between;
+      } 
+
+      .MobileCart-place-Order-Mobile-step-description{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .MobileCart-place-Order-Mobile-step1{
+        margin: 1vh;
+        padding: 1vh;
+        display: flex;
+        height: 2vh;
+        justify-content: center;
+        background-color: #7465B6;
+        color: white;
+        font-size: 2.5vh;
+        align-self: center;
+        width: 2vh;
+        border: 3px solid #7465B6;
+        border-radius: 50%;
+      }
+
+      .MobileCart-place-Order-Mobile-step-p{
+        flex: 1;
+        font-size: 4vw;
+        color: #7465B6;
+      }
+
+      .unvisited{
+        background-color: white;
+        color:#7465B6 ;
+      }
+
+      .MobileCartUserInfo{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 4vw;
+        height: auto;
+        border-top: 8px solid #dadada;
+        border-bottom: 1vh solid #dadada;
+        margin-top: 1rem;
+    }
+    .Mobileitems-Selected{
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        margin-top: 26px;
+        margin-bottom: 26px;
+        padding: 0 12px 0 10px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #282c3f;
+        justify-content: space-around;
+        border-bottom: 1vh solid #dadada;
+    }
+    #selectedChild {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        bottom: 0.8rem;
+        gap: 1rem;
+    }
+
+    .Mobileitems-Selected label {
+        font-size: 1rem;
+        color: #7465B6;
+        font-weight: 600;
+    }
+
+    
+    .Mobile-number{
+        font-size: 1rem;
+        font-weight: 500;
+        color: rgba(63, 43, 150, 0.85);
+    }
+
+    .MobileCart-text{
+        display: flex;
+        font-size: 4vw;
+    }
+    .MobileCart-texthead{
+        font-size: 4vw;
+    }
+    .MobileCart-textval{
+        font-size: 4vw;
+    }
+    .MobileCartbtn{
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        font-size: 4vw;
+        width: 21vw;
+        height: 6vw;
+    }
+
+    .mitems-Selected{
+        display: flex;
+        align-items: center;
+        margin-top: 1vh;
+        padding: 0vh 1vw 1vh 1vw;
+        font-weight: 600;
+        font-size: 16px;
+        color: #554BDA;
+        border-bottom: 1vh solid lightgrey;
+    }
+    
+    .mnumber{
+        font-size: small;
+        font-weight: bold;
+        color: #554BDA
+    }
+
+    .mcheckBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        height: 15px;
+        width: 15px;
+        border-radius: 2px;
+        border: 2px solid #554BDA;
+        margin: 0 3vw;
+    }
+
+    .mpoBottomButton{
+        align-self: center;
+        width: 90vw;
+        margin: 1vh 5vw;
+        box-sizing: border-box;
+        position: fixed;
+        bottom: 0;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 1vh 2vw;
+        background-color: orange;
+        box-shadow: 1px 1px 2px 1px rgb(0,0,0,0.1);
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: large;
+        font-family: sans-serif;
+    }
+
+    .mpoBottomBox{
+        position: fixed;
+        bottom: 6vh;
+        width: 100vw;
+        padding: 1vh 6vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        box-shadow: 1px 1px 2px 2px rgb(0,0,0,0.3);
+        background-color: white;
+        z-index: 99999999;
+    }
+
+    .mpoBottomBoxDetail{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .mpoBottomBoxDetailPrice{
+        font-size: 17px;
+        align-self: flex-start;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    .mpoBottomBoxDetailView{
+        font-size: 12px;
+        align-self: flex-start;
+        color: #554BDA;
+        font-weight: bold;
+    }
+
+    .mpoBottomBoxButton{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 1.5vh 10vw;
+        background-color: orange;
+        box-shadow: 4px 4px 2px 2px rgb(0,0,0,0.1);
+        color: white;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: medium;
+        font-family: sans-serif;
+    }
+
+    .mpo-login-modal{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-family: sans-serif;
+    }
+
+    .mpo-login-modal-headText{
+        align-self: flex-start;
+        font-size: large;
+        color: #554BDA;
+        font-weight: bold;
+        margin-bottom: 2vh;
+    }
+
+    .mpo-login-modal-mobileHead{
+        align-self: center;
+        width: 60vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        font-size: small;
+        font-weight: bold;
+        margin-bottom: 1vh;
+    }
+
+    .mpo-login-modal-mobileInput{
+        align-self: center;
+        width: 60vw;
+        padding: 1vh 2vw;
+        border-radius: 5px;
+        border: 2px solid lightgrey;
+        box-sizing: border-box;
+        margin-bottom: 2vh;
+    }
+    
+    .mpo-login-modal-mobileInput::-webkit-inner-spin-button{
+        display: none;
+    }
+
+    .mpo-login-modal-sendOtp{
+        align-self: center;
+        padding: 1vh 4vw;
+        background-color: #ecebff;
+        border-radius: 5px;
+        color: #554BDA;
+        font-size: small;
+        font-weight: bold;
+        margin-bottom: 2vh;
+    }
+
+    .mpo-login-modal-otpHead{
+        align-self: center;
+        width: 60vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        font-size: small;
+        font-weight: bold;
+        margin-bottom: 1vh;
+    }
+
+    .mpo-login-modal-otpInput{
+        align-self: center;
+        width: 60vw;
+        padding: 1vh 2vw;
+        border-radius: 5px;
+        border: 2px solid lightgrey;
+        box-sizing: border-box;
+        margin-bottom: 0.5vh;
+    }
+
+    .mpo-login-modal-otpInput::-webkit-inner-spin-button{
+        display: none;
+    }
+
+    .mpo-login-modal-resendActive{
+        width: 60vw;
+        align-self: center;
+        font-size: x-small;
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        color: #554BDA;
+        margin-bottom: 4vh;
+    }
+
+    .mpo-login-modal-resendInactive{
+        width: 60vw;
+        align-self: center;
+        font-size: x-small;
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        color: grey;
+        margin-bottom: 4vh;
+    }
+
+    .mpo-login-modal-verifyActive{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding: 1vh 0vw;
+        width: 100%;
+        background-color: orange;
+        font-size: medium;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .mpo-login-modal-verifyInactive{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding: 1vh 0vw;
+        width: 100%;
+        background-color: lightgrey;
+        font-size: medium;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    .mpo-loader1{
+        align-self: center;
+        border: 3px solid #cecece; /* Light grey */
+        border-top: 3px solid #554BDA; /* Blue */
+        border-radius: 50%;
+        width: 5vw;
+        height: 5vw;
+        margin-bottom: 2vh;
+        animation: spin 1.5s linear infinite;
+    }
+    
+    .mpo-loader2{
+        align-self: center;
+        border: 3px solid #cecece; /* Light grey */
+        border-top: 3px solid #554BDA; /* Blue */
+        border-radius: 50%;
+        width: 5vw;
+        height: 5vw;
+        animation: spin 1.5s linear infinite;
+    }
+
+    .mpo-loader3{
+        align-self: center;
+        border: 3px solid #cecece; /* Light grey */
+        border-top: 3px solid #554BDA; /* Blue */
+        border-radius: 50%;
+        width: 5vw;
+        height: 5vw;
+        animation: spin 1.5s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .mpo-emptyimg{
+        position: absolute;
+        top: 30vh;
+        left: 25vw;
+        width: 50vw;
+        height: 30vh;
+    }

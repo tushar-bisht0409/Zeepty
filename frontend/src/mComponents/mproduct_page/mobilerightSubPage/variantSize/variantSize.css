@@ -1,0 +1,40 @@
+.mobileoutterBox{
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4vw;
+    margin-bottom: 1vh;
+    margin-top: 0.5vh;
+
+}
+
+.mobilevariantAnyActive{
+    padding: 1vh 4vw;
+    border: 1.5px solid #554BDA;
+    border-radius: 5px;
+    background-color: #ecebff;
+    color: #554BDA;
+}
+
+.mobilevariantAny{
+    padding: 1vh 4vw;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+
+.mobilevariantAny p{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.mobilevariantAnyActive p{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+/* .mobilevariantAny:hover{
+    border: 3px solid #554BDA;
+} */

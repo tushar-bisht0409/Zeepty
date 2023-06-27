@@ -1,0 +1,182 @@
+.minOP{
+    display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+.minOP-topbar{
+    display: flex;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #554BDA;
+    padding: 2vh 4vw;   
+}
+
+.minOP-topbar-T1{
+  font-size: medium;
+  color: white;
+  font-weight: bold;
+  margin-left: 8vw;
+}
+
+.minOP-tabbar{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 1vh;
+}
+
+.minOP-tabbar-active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #554BDA;
+    font-size: small;
+    font-weight: bold;
+    width: 25vw;
+    padding: 1vh 0vw;
+    border-bottom: 2px solid #554BDA;
+    cursor: pointer;
+}
+
+.minOP-tabbar-inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+    font-size: small;
+    font-weight: 500;
+    width: 25vw;
+    padding: 1vh 0vw;
+    border-bottom: 2px solid #ecebff;
+    cursor: pointer;
+}
+
+.minWP_mobile_cart{
+    margin: 3vh 2vw;
+    display: grid;
+  }
+
+.minWPCountBox{
+    position: fixed;
+    top: 8.5vh;
+    right: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99999;
+  }
+  
+  .minWPCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    background-color: #554BDA;
+    font-size: 5vw;
+    color: white;
+    font-weight: bold;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .minWPCountBoxT1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0.5vh 2vw;
+    margin-top: 0.5vh;
+    font-size: x-small;
+    font-weight: bold;
+    color: white;
+    background-color: yellowgreen;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .minWPLaunch{
+    position: fixed;
+    bottom: 0px;
+    width: 60vw;
+    margin: 8vh 20vw;
+    padding: 2vh 4vw;
+    background-color: greenyellow;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .minOP-loader1{
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    margin: 2vh auto;
+    display: flex;
+    align-self: center;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .minOP-error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+  }
+  
+  .minOP-error-img {
+    width: 50vw;
+    height: 40vw;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .minOP-error-refresh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 4vw;
+    border-radius: 20px;
+    border: 2px solid #554BDA;
+    font-size: 12px;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+  }
+
+  .minOP-nothing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+  }
+  
+  .minOP-nothing-img {
+    width: 50vw;
+    height: 40vw;
+    cursor: pointer;
+    object-fit: cover;
+  }

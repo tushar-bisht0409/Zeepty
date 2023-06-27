@@ -1,0 +1,28 @@
+@media screen and (max-width: 600px)  {
+    .mobileproductDes{
+        display:flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: 100%;
+        box-sizing: border-box;
+        margin-top: 8vh;
+    }
+    .mobileproductnav{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mobiletext{
+        font-size: medium;
+    }
+    
+    .mobilenavright{
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+}

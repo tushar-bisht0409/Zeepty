@@ -1,0 +1,99 @@
+.mobile_card_cardContainer {
+    border: 2px solid #fffdfd;
+    width: 157px;
+    padding: 0.4rem 0.4rem;
+    margin: 0.7rem 0.7rem;
+    z-index: 1; 
+    background-color: #fff;
+  }
+  
+  
+  
+  .mobile_card_ImageContainer {
+    display: flex;
+    position: relative;
+    height: 150px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  
+  .mobile_card_cardWishlist{
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    justify-content: flex-end;
+    z-index: 1;
+  }
+  .mobile_card_cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .mobile_card_categoryContainer {
+    /* display: flex; */
+    /* flex-direction: column; */
+    padding: 4px 5px;
+  }
+  
+  .mobile_card_cardTitle {
+    align-items: center;
+    color:#929292;
+    font-size: 18px;
+    width: fit-content;
+    
+  }
+  
+  /* .carddesc{
+    margin: 0px 5px;
+  } */
+  
+  
+  .mobile_card_card-Price{
+    display: flex;
+    margin: 2px 0px;
+    justify-content: space-between;
+    width: 70%;
+  }
+  .mobile_card_discountPrice{
+    font-weight: 600;
+  
+  }
+  
+  .mobile_card_actualPrice{
+    font-weight: 500;
+    color: rgb(150, 142, 142);
+  }
+  
+  .mobile_card_discount-Percent{
+    color: #2FB84D;
+  }
+
+  .mobile_card_carddesc{
+    font-size: 15px;
+  }
+  
+  
+  .mobile_card_cardInfo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile_card_cardInfo span {
+    display: inline-block;
+  }
+  
+  .mobile_card_cardLogo {
+    margin: 2px 0px;
+    margin-right: 2px;
+    padding: 4px 4px;
+    border-radius: 40px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  
+  

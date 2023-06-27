@@ -1,0 +1,51 @@
+.mep{
+    display: flex;
+    font-family: sans-serif;
+}
+.mep-topbar{
+    background-color: #554BDA;
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 1vh 4vw;
+    box-sizing: border-box;
+}
+
+
+.mep-topbar-body {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 92vw;
+}
+
+.mep-topbar-body-input {
+    padding-left: 4vw;
+    height: 4.5vh;
+    width: 96vw;
+    border-radius: 5px;
+    border: none;
+}
+
+.mep-topbar-body-icon {
+    border-radius: 5px;
+    position: absolute;
+    right: 0.3vh;
+    top: 0.3vh;
+    height: 3.9vh;
+    width: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #554BDA;
+    font-size: small;
+    color: lightgrey;
+}

@@ -1,0 +1,55 @@
+.mocBox{
+    font-family: sans-serif;
+    margin-top: 2vh;
+    padding-left: 4vw;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.5vh solid lightGrey;
+    align-items: center;
+}
+
+.mocImage{
+    height: 15vw;
+    width: 15vw;
+}
+
+.mocMid{
+    width: 64vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8vw;
+}
+
+.mocMidS{
+    font-size: small;
+    font-weight: 500;
+}
+
+.mocMidA{
+    font-size: small;
+    font-weight: 300;
+    color: rgb(33, 165, 33);
+    margin-top: 0.5vh;
+}
+
+.mocMidName{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+.mocMidNameB{
+    font-size: small;
+    font-weight: bold;
+    margin-right: 2vw;
+}
+
+.mocMidNameT{
+    font-size: small;
+    font-weight: 300;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
