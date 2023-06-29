@@ -8,18 +8,22 @@ import ShippedOrderBox from "./shipped_orderBox/shipped_orderBox";
 import PendingOrderBox from "./pending_orderBox/pending_orderBox";
 import CancelledOrderBox from "./cancelled_orderBox/cancelled_orderBox";
 import DeliveredOrderBox from "./delivered_orderBox/delivered_orderBox";
+import nothingHere from '../../assets/supplier/images/nothingHere.png';
+import './OrderBox.css'
 
 
-const OrderBox=( data )=> {
+const OrderBox=( {data,mode} )=> {
 
     return (
         <>
         {
-            (data.data == undefined)?
-            <div>Loading</div>:
-            data.data.map((d)=>{
+            data.length === 0?
+            <div className="ordBox-nothing">
+            <img onClick={()=>{window.location.reload()}} className="ordBox-nothing-img" src={nothingHere}></img>
+            </div> :
+            data.map((d)=>{
                 return(
-                    <div>{data.mode === "pending" ? <PendingOrderBox item={d}/> : data.mode === "RTS" ? <RtsOrderBox item={d}/> : data.mode === "shipped" ? <ShippedOrderBox item={d}/> : data.mode === "cancelled" ? <CancelledOrderBox item={d}/> : data.mode === "delivered" ? <DeliveredOrderBox item={d}/> : null}
+                    <div>{mode === "pending" ? <PendingOrderBox item={d}/> : mode === "RTS" ? <RtsOrderBox item={d}/> : mode === "shipped" ? <ShippedOrderBox item={d}/> : mode === "cancelled" ? <CancelledOrderBox item={d}/> : mode === "delivered" ? <DeliveredOrderBox item={d}/> : null}
                     </div>
                 )
             })

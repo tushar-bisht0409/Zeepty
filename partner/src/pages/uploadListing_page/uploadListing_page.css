@@ -91,3 +91,91 @@
     color: white;
     box-shadow: 2px 2px 0px 0px rgb(0,0,0,0.1);
   }
+
+  .ulPage-error{
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ulPage-error-img {
+    width: 30vw;
+    height: 20vw;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .ulPage-error-refresh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-radius: 20px;
+    border: 2px solid #554BDA;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+  }
+
+  .ulPage-nodata{
+    display: flex;
+    width: 80vw;
+    margin-top: 10vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ulPage-nodata-img {
+    width: 30vw;
+    height: 20vw;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .ulPage-nodata-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    font-size: small;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+    margin: 1vh 0vw 2vh;
+  }
+
+  .ulPage-nodata-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 2vw;
+    border-radius: 20px;
+    background-color: #554BDA;
+    font-size: small;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
+  }
+
+  .ulPage-loader1 {
+    position: absolute;
+    border: 5px solid #cecece; /* Light grey */
+    border-top: 5px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    margin-left: 57.5vw;
+    margin-top: 40vh;
+    align-self: center;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

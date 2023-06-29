@@ -288,9 +288,56 @@ var functions = {
     createShipment: async function (req, res) {
         var obj = req.body;
 
+        var orderObj = {
+            "shipments": [
+              {
+                "name": obj.name,
+                "add": obj.add,
+                "pin": obj.postalcode,
+                "city": "",
+                "state": "",
+                "country": "",
+                "phone": obj.phone,
+                "order": obj.order_id,
+                "payment_mode": obj.payment_mode,
+                "return_pin": obj.return_pin,
+                "return_city": obj.return_city,
+                "return_phone": obj.return_phone,
+                "return_add": obj.return_address,
+                "return_state": "",
+                "return_country": "",
+                "products_desc": "",
+                "hsn_code": "",
+                "cod_amount": obj.cod_amount,
+                "order_date": null,
+                "total_amount": "",
+                "seller_add": "",
+                "seller_name": "",
+                "seller_inv": "",
+                "quantity": obj.qunatity,
+                "waybill": "",
+                "shipment_width": "",
+                "shipment_height": "",
+                "weight": "",
+                "seller_gst_tin": "",
+                "shipping_mode": obj.shipping_mode,
+                "address_type": ""
+              }
+            ],
+            "pickup_location": obj.pickup_location
+            // {
+            //   "name": "Apple",
+            //   "add": "Apple Store",
+            //   "city": "Delhi",
+            //   "pin_code": 110078,
+            //   "country": "India",
+            //   "phone": "1234567890"
+            // }
+          }
+
         const formData = new URLSearchParams();
         formData.append('format', 'json');
-        formData.append('data', JSON.stringify(obj.orders));
+        formData.append('data', JSON.stringify(orderObj));
 
         const url = 'https://track.delhivery.com/api/cmu/create.json';
         const headers = {
@@ -301,27 +348,30 @@ var functions = {
 
         await axios.post(url, formData, { headers }).then(response => {
             if (response.data.success) {
-
-                    var orderinfo = new Order({
-                        order_id: obj.order_id,
-                        waybill: response.data.packages[0].waybill,
-                        customer_id: obj.customer_id,
-                        manufacturer_id: obj.manufacturer_id,
-                        seller_id: obj.seller_id,
-                        product: obj.product,
-                        pickup_address: obj.pickup_address,
-                        shipping_address: obj.shipping_address,
-                        return_address: obj.return_address,
-                        payment_method: obj.payment_method,
-                        shipping_amount: obj.shipping_amount,
-                        tax_info: obj.tax_info,
-                        total_amount: obj.total_amount,
-                        is_paid: obj.is_paid,
-                        paid_at: obj.paid_at,
-                        upload_wbn: response.data.upload_wbn
-                    });
+                    // var orderinfo = new Order({
+                    //     order_id: obj.order_id,
+                    //     waybill: response.data.packages[0].waybill,
+                    //     customer_id: obj.customer_id,
+                    //     manufacturer_id: obj.manufacturer_id,
+                    //     seller_id: obj.seller_id,
+                    //     product: obj.product,
+                    //     pickup_address: obj.pickup_address,
+                    //     shipping_address: obj.shipping_address,
+                    //     return_address: obj.return_address,
+                    //     payment_method: obj.payment_method,
+                    //     shipping_amount: obj.shipping_amount,
+                    //     tax_info: obj.tax_info,
+                    //     total_amount: obj.total_amount,
+                    //     is_paid: obj.is_paid,
+                    //     paid_at: obj.paid_at,
+                    //     upload_wbn: response.data.upload_wbn
+                    // });
                 
-                    orderinfo.save(async function (err, pinfo) {
+                    // orderinfo.save(async
+                    Order.findOneAndUpdate(
+                        {order_id: obj.order_id},
+                        {waybill: response.data.packages[0].waybill},
+                         function (err, pinfo) {
                     if (err) {
                         return res.json({
                             success: false,
@@ -338,7 +388,7 @@ var functions = {
                         });
                     }
                 });
-            } else{
+            } else {
                 return res.json({
                     success: false,
                     msz: "Something Went Wrong (Delhivery)",

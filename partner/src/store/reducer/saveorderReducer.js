@@ -1,4 +1,4 @@
-import { SAVE_ORDER_INFO ,SELECT_ALL,UPDATE_MODE,UPDATE_SELECTED_ARRAY} from "../action/type";
+import { SAVE_ORDER_INFO ,SELECT_ALL,UPDATE_MODE,UPDATE_SELECTED_ARRAY,CANCEL_PENDING_ORDER,CANCEL_RTS_ORDER} from "../action/type";
 const intialState = {selectedArray:[], mode:"",pending:[],RTS:[],shipped:[],cancelled:[],delivered: []};
 
 // const initialState = {cartProduct : []};
@@ -50,6 +50,34 @@ const intialState = {selectedArray:[], mode:"",pending:[],RTS:[],shipped:[],canc
       };
       }
       }
+
+      case CANCEL_PENDING_ORDER:
+          {
+            let pendingArray = [...state.pending];
+            let cancelledArray = [...state.cancelled];
+            let ind = pendingArray.findIndex(obj => obj.order_id === payload.order.order_id);
+            pendingArray.splice(ind,1);
+            cancelledArray.push(payload.order);
+            return {
+                ...state,
+                pending: pendingArray,
+                cancelled: cancelledArray,
+            };
+        };
+
+      case CANCEL_RTS_ORDER:
+          {
+            let rtsArray = [...state.RTS];
+            let cancelledArray = [...state.cancelled];
+            let ind = rtsArray.findIndex(obj => obj.order_id === payload.order.order_id);
+            rtsArray.splice(ind,1);
+            cancelledArray.push(payload.order);
+            return {
+                ...state,
+                RTS: rtsArray,
+                cancelled: cancelledArray,
+            };
+        };
 
       // case SELECT_ALL:
       //   return {

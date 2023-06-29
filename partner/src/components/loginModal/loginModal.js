@@ -36,7 +36,8 @@ const LoginModal =({phn, alreadyExist, snackbarObject, showSnackbarMessage})=> {
       setLoading1(false);
           if(json.success ===true && json.userExist === true){
             setOtpStage("Sent");
-            setOtpTimer(60)
+            setOtpTimer(60);
+            setLoginMode("OTP");
           } else if(json.success ===true && json.userExist === false) {
             snackbarObject['message'] = "User Doesn't Exist";
             showSnackbarMessage(snackbarObject);
@@ -135,7 +136,7 @@ const LoginModal =({phn, alreadyExist, snackbarObject, showSnackbarMessage})=> {
                     <p className="logmHeadT1">Login</p>
                     <input value={phone} onChange={handelEmailPhone} className="logmInput" placeholder="Enter Email ID or Mobile Number"/>
 
-                    {loading1 ? <div className="logmLoader1"></div> : otpStage === ""?null:otpStage==="Start" ?<span onClick={()=>{setLoginMode("OTP");sendMobileOtp();}} className="logmGet1">Get OTP to Log In <span className="logmGet2">(or Enter Password Below)</span></span>
+                    {loading1 ? <div className="logmLoader1"></div> : otpStage === ""?null:otpStage==="Start" ?<span onClick={()=>{sendMobileOtp();}} className="logmGet1">Get OTP to Log In <span className="logmGet2">(or Enter Password Below)</span></span>
                     : <div onClick={()=>{
                         if(otpStage === "Resend"){
                             sendMobileOtp();

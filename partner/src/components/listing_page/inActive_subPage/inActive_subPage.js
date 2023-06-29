@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 import { ListingTable } from "../listingTable/listingTable";
 import InactiveListingTable from "../inactiveListingTable/inactiveListingTable";
 
+import nothingHere from '../../../assets/supplier/images/nothingHere.png'
+
+
  function InActiveSubPage({data}) {
 
   const params = useParams();
@@ -42,10 +45,12 @@ import InactiveListingTable from "../inactiveListingTable/inactiveListingTable";
               
               
                {
-            listing == undefined? <div>Loading</div> :(
+            listing == undefined? null :(
                 <>
                  
-                 <InactiveListingTable data={listing}/>
+                 {listing.length === 0 ? <div className="inactive-nodata">
+                <img className="inactive-nodata-img" src={nothingHere}></img>
+                </div> : <InactiveListingTable data={listing}/>}
                 </>
             )
             

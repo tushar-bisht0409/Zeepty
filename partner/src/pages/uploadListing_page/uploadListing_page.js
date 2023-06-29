@@ -8,7 +8,8 @@ import DraftTitleBar from "../../components/listing_page/uploadListing_page/draf
 import QCTitlebar from "../../components/listing_page/uploadListing_page/qcTitlebar/qcTitlebar";
 import QCTable from "../../components/listing_page/uploadListing_page/qcTable/qcTable";
 import { useParams } from "react-router-dom";
-
+import errorOccurred from '../../assets/supplier/images/errorOccurred.png'
+import nothingHere from '../../assets/supplier/images/nothingHere.png'
 
  function UploadListingPage({data}) {
 
@@ -17,6 +18,10 @@ import { useParams } from "react-router-dom";
   const [state,setState] = useState("draft")
 
   const params = useParams();
+
+  const[isError, setIsError] = useState(false);
+  const[isNoData, setIsNoData] = useState(false);
+  const [loader1, setLoader1] = useState(true);
   
   const getRequest = async ()=> {
     let obj = {
@@ -25,10 +30,12 @@ import { useParams } from "react-router-dom";
     }
     const json = await dispatch(saveRequestInRedux(obj));
     if(json.success){
-    } else if(json.success === false){
-     } else{
-        window.alert("Something Went Wrong")
-      }
+    } else if(json.success === false && json.err === null || json.err === undefined) {
+      setIsNoData(true);
+  } else {
+      setIsError(true);
+  }
+  setLoader1(false);
   }
 
   useEffect(()=>{
@@ -61,7 +68,8 @@ const handleMode = (mMode)=>{
 
   
 
-        <div style={{width: '80vw',marginLeft: '20vw'}}>
+            {loader1 ? <div className="ulPage-loader1"></div> :
+<div style={{width: '80vw',marginLeft: '20vw'}}>
 
           <div className="ulPage-titlebar">
             <div onClick={()=>{handleMode("draft")}} className={state==="draft" ? "ulPage-titlebar-active":"ulPage-titlebar-inactive" }>Drafts ( {data.draft.length} )</div>
@@ -84,9 +92,14 @@ const handleMode = (mMode)=>{
           </div>
         </div>
 
-        {state === "draft" ? <DraftTitleBar/> : <QCTitlebar/>}
+        {isError || isNoData || loader1 ? null : state === "draft" ? <DraftTitleBar/> : <QCTitlebar/>}
 
-        {<div>
+        { isError ? <div className="ulPage-error">
+        <img onClick={()=>{window.location.reload()}} className="ulPage-error-img" src={errorOccurred}></img>
+        <div onClick={()=>{window.location.reload()}} className="ulPage-error-refresh">Refresh</div>
+      </div> : isNoData ? <div className="ulPage-nodata">
+        <img className="ulPage-nodata-img" src={nothingHere}></img>
+        </div> : <div>
             {data[`${state}`].map((item) => (
                 state === "draft" ? <DraftTable item={item} arrAll={data[`${state}`]}/> : <QCTable item={item}/> 
 
@@ -98,7 +111,7 @@ const handleMode = (mMode)=>{
               <ListingPageSecondC />
             ):(state == "inActive" ? <InActive_subPage/>:(<Blacklisted_subPage/> ))         
         }  */}
-        </div>
+        </div>}
 
         </div>
     )

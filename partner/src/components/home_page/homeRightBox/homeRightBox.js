@@ -81,7 +81,7 @@ export default function HomeRightBox({stage, pendingorder , outofstock,lowstock,
             {mode === "orders" ? <FirstOrderBox item={orderinfo}/> : null}
             {stage === 4 ? <TodoBox  pendingorder={pendingorder} outofstock={outofstock} lowstock={lowstock} draftRequest={draftRequest} pendingRequest={pendingRequest} approvedRequest={approvedRequest} rejectedRequest={rejectedRequest}/> : null}
             {stage === 4 ? <UploadMoreListingBox /> : null}
-            {stage === 4 ? <StatsGraph/> : null}
+            {/* {stage === 4 ? <StatsGraph/> : null} */}
             {/* <GstinBox/> */}
             <div style={{paddingBottom: '10vh'}}></div>
         </div>

@@ -152,3 +152,19 @@
     font-size: small;
     font-weight: bold;
 }
+
+.inactive-nodata{
+    display: flex;
+    width: 80vw;
+    margin-top: 20vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .inactive-nodata-img {
+    width: 30vw;
+    height: 20vw;
+    cursor: pointer;
+    object-fit: cover;
+  }

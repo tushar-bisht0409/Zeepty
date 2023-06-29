@@ -68,6 +68,10 @@ const orderSchema = new Schema({
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },
+    shipping_mode: {
+        type: String,
+        required: true,
+    },
     payment_method: {
         type: String,
         required: true,
@@ -165,6 +169,10 @@ const orderSchema = new Schema({
         type: Number,
         required: false,
         default: 0
+    },
+    loss_claimed: {
+        type: Boolean,
+        required: false
     }
 },
 {

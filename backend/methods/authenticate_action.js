@@ -5,9 +5,9 @@ const Manufacturer = require("../schemas/manufacturerInfo")
 const jwt = require("jwt-simple");
 const config = require("../config/dbconfig");
 
-const accountSid = "AC5d8dc58f88c7f8a08b31fec1058f1f41";
-const authToken = "82c6b97f26789b8b152ec16a91a2551e";
-const verifySid = "VAbe75f85f5073500c31a2d21b1c5e4e3a";
+const accountSid = "AC736fa3b356e47d62b7cd47b8ed2fc704";
+const authToken = "5d1fb072e96fb77ceb27e4ca8a78febe";
+const verifySid = "VAf2747c231bc667894a2ec024fa666357";
 const client = require('twilio')(accountSid, authToken);
 
 var functions = {

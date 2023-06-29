@@ -314,3 +314,45 @@
      cursor: pointer;
      margin-right: 50px;
  }
+
+ .rlostOB5-claim{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 1px 1px rgb(0,0,0,0.2);
+    cursor: pointer;
+ }
+
+ .rlostOB5-lossclaimed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-radius: 5px;
+    color: #554BDA;
+    background-color: white;
+    border: 2px solid #554BDA;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: not-allowed;
+ }
+
+ .rlostOB5-raise{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 1px 1px rgb(0,0,0,0.2);
+    cursor: pointer;
+ }

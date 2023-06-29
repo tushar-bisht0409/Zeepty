@@ -134,9 +134,60 @@ export const generateShippingLabel = async (obj) => {
     }
 };
 
+export const createShipment = async (obj) => {
+    try {
+        const response = await fetch(`${API_URI}/createshipmentdelhivery`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        });
+        const json = await response.json();
+        return json;
+    } catch (error) {
+        return { "msz": "Something went wrong", "success": false, "userID": "" }
+    }
+};
+
 export const createPickupRequest = async (obj) => {
     try {
         const response = await fetch(`${API_URI}/createpickuprequestdelhivery`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        });
+        const json = await response.json();
+        return json;
+    } catch (error) {
+        return { "msz": "Something went wrong", "success": false, "userID": "" }
+    }
+};
+
+export const changeOrderStatus = async (obj) => {
+    try {
+        const response = await fetch(`${API_URI}/changeorderstatus`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        });
+        const json = await response.json();
+        return json;
+    } catch (error) {
+        return { "msz": "Something went wrong", "success": false, "userID": "" }
+    }
+};
+
+export const claimOrderLost = async (obj) => {
+    try {
+        const response = await fetch(`${API_URI}/claimorderlost`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

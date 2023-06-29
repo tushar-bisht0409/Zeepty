@@ -67,10 +67,6 @@ const handlegetManufacturerSummary = async()=>{
   }
 
   const json = await getManufacturerSummary(obj);
-  
-  console.log("sds: ",json)
-
-  console.log(json)
  
   if(json.success == true){
       setManufacturerInfo(json.msz.manufacturer_info)

@@ -2,7 +2,7 @@ import { useEffect,useState } from "react";
 import "./rLost.css";
 import { getlisting_info } from "../../../store/action/listingaction";
 import Modal from 'react-modal';
-import { cancelShipmentDelhivery, getMyOrders } from "../../../store/action/order_action";
+import { cancelShipmentDelhivery, claimOrderLost, getMyOrders } from "../../../store/action/order_action";
 import FullScreenLoader from '../../fullScreen_loader/fullScreen_loader'
 import { useDispatch } from "react-redux";
 
@@ -18,6 +18,8 @@ const RLost = ({item}) => {
   const [modalIsOpen,setModalIsOpen] = useState(false);
 
   const [loader1, setLoader1] = useState(false);
+
+  const [lossClaimed, setLossClaimed] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -38,7 +40,32 @@ const RLost = ({item}) => {
   useEffect(()=>{
     formatDate(item.returnreceived_at,item.returned_at)
     handleGetListing();
+    if(item.loss_claimed){
+      setLossClaimed(true);
+    } else{
+      setLossClaimed(false);
+    }
   },[])
+
+  async function handleClaimOrderLost () {
+    if(lossClaimed){
+    }
+    else{
+    setLoader1(true);
+    const obj = {
+      order_id: item.order_id,
+      loss_claimed: true
+    }
+    const json = await claimOrderLost(obj);
+
+    if(json.success){
+      setLossClaimed(true);
+    } else{
+      window.alert("Something Went Wrong")
+    }
+    setLoader1(false);
+  }
+  }
 
   function formatDate(givenTimestamp,givenTimestamp1){
     const targetDate = new Date(givenTimestamp);
@@ -92,6 +119,9 @@ const RLost = ({item}) => {
       <div className="rlostOB5-row" >
         <span className="rlostOB5-key">Returned on: <span className="rlostOB-detime">{returnedAt} </span></span>
         <span className="rlostOB5-key">Return Picked on: <span className="rlostOB-detime">{dispatchByDate} </span></span>
+        <div className="rlostOB5-raise">Raise Ticket</div>
+
+        {/* <div onClick={handleClaimOrderLost} className={lossClaimed ? "rlostOB5-lossclaimed" :"rlostOB5-claim"}>{lossClaimed ? "Claimed" : "Claim Loss"}</div> */}
         </div>
       </div>
      </div>

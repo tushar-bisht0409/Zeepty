@@ -5,16 +5,19 @@ import { getlisting_info,saveListingInRedux } from "../../../../store/action/lis
 import InActive_subPage from "../../inActive_subPage/inActive_subPage";
 import Blacklisted_subPage from "../../blacklisted_subPage/blacklisted_subPage";
 import InStock_subPage from "../../inStock_subPage/inStock_subPage";
-
-
-
+import errorOccurred from '../../../../assets/supplier/images/errorOccurred.png';
+import nothingHere from '../../../../assets/supplier/images/nothingHere.png';
 
 const  ListingPageMain = ({mMode}) =>{
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [state,setState] = useState(mMode);
 
   const data = useSelector((state)=>{return state.savelistingInRedux});
+
+  const[isError, setIsError] = useState(false);
+  const[isNoData, setIsNoData] = useState(false);
+  const [loader1, setLoader1] = useState(true);
   
   const getListing = async ()=> {
     let obj = {
@@ -27,10 +30,12 @@ const  ListingPageMain = ({mMode}) =>{
     } else if(json.success === false){
       if(json["err"] === null || json["err"] === undefined){
         await dispatch(saveListingInRedux([],localStorage.getItem('manufacturer_id')));
+        setIsNoData(true)
       }else{
-        window.alert("Something Went Wrong")
+        setIsError(true)
       }
     }
+    setLoader1(false)
   }
   useEffect(()=>{
     getListing();
@@ -82,10 +87,16 @@ const handleMode = (mMode)=>{
         </div> */}
       
 
-        {   
-            state == "listing"?(
+        {isError ? <div className="lpmain-error">
+        <img onClick={()=>{window.location.reload()}} className="lpmain-error-img" src={errorOccurred}></img>
+        <div onClick={()=>{window.location.reload()}} className="lpmain-error-refresh">Refresh</div>
+      </div> : isNoData ? <div className="lpmain-nodata">
+        <img onClick={()=>{window.open('/supplier/vertical','_self')}}  className="lpmain-nodata-img" src={nothingHere}></img>
+        <div onClick={()=>{window.open('/supplier/vertical','_self')}} className="lpmain-nodata-text">+ Adding Listing</div>
+        </div> : loader1 ? <div className="lpmain-loader1"></div> :   
+            state == "listing"?
               <InStock_subPage />
-            ):(state == "inActive" ? <InActive_subPage/>:(<Blacklisted_subPage/> ))         
+            : state == "inActive" ? <InActive_subPage/>:(<Blacklisted_subPage/> )        
         } 
         </div>
         

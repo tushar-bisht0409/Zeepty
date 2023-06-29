@@ -7,7 +7,7 @@ import Modal from "react-modal";
 
 import SImage from "../../components/sImage/sImage";
 import { useParams } from "react-router-dom";
-import { deleteListingRequest, editListingRequest, editMultipleListingRequest, getListingRequest, saveListingRequest } from "../../store/action/listingaction";
+import { deleteListingRequest, editListingRequest, editMultipleListingRequest, getListingRequest, getVeticalInfo, saveListingRequest } from "../../store/action/listingaction";
 import AddProgress from "../../components/addProgress/addProgress";
 import { saveListing } from "../../store/action/productaction";
 import { deleteMultipleFilesS3, uploadMultipleFilesToS3 } from "../../store/action/upload_file_action";
@@ -192,6 +192,23 @@ export default function NewListingPage() {
     getLRData(0);
     getAllFields();
   }, [])
+
+  async function handleGetVeticalInfo() {
+    const obj = {
+      type: "Name",
+      vertical: "",
+      category: "",
+      sub_category: "",
+      sub_category2: ""
+    }
+
+    const json = getVeticalInfo(obj);
+    if(json.success){
+
+    } else{
+      
+    }
+  }
 
 
   async function deleteLinfo() {
@@ -482,7 +499,7 @@ export default function NewListingPage() {
       setToDelete([]);
     }
     if (json.success) {
-      window.open('/supplier/listing/request','_self')
+      window.open('/supplier/uploadlisting/drafts','_self')
     } else {
       window.alert("Something Went Wrong, Failed To Save Changes")
     }
@@ -496,7 +513,7 @@ export default function NewListingPage() {
       setToDelete([]);
     }
     if (json.success) {
-      window.open('/supplier/listing/draft','_self')
+      window.open('/supplier/uploadlisting/drafts','_self')
     } else {
       window.alert("Something Went Wrong, Failed To Save Changes")
     }
@@ -564,7 +581,7 @@ export default function NewListingPage() {
     lInfoArray === undefined ? <div></div> :
       <div>
         <div className="titleBar">
-          <i className="fa-solid fa-arrow-left" style={{ color: 'white', fontSize: '26px', paddingLeft: '2vw' }}></i>
+          <i onClick={()=>{window.history.back()}} className="fa-solid fa-arrow-left" style={{ color: 'white', fontSize: '26px', paddingLeft: '2vw' }}></i>
           <p>Go Back To Listing</p>
         </div>
         <AddProgress mode1={'completed'} mode2={'active'} mode3={'inActive'}></AddProgress>

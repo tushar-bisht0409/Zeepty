@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { editListingES } from "../../../../store/action/listingaction";
 import { UPDATE_INACTIVE_INFO, UPDATE_OUTOFSTOCK_INFO, UPDATE_STOCK_INFO } from "../../../../store/action/type";
 import Modal from 'react-modal';
+import Snackbar from "../../../snackbar/snackbar";
 
 function LiveListingTableItem({ item }) {
 
@@ -19,6 +20,19 @@ function LiveListingTableItem({ item }) {
     const [loader1, setLoader1] = useState(false);
 
     const [modalIsOpen, setIsOpen] = useState(false);
+
+    const [showSnackbar, setShowSnackbar] = useState(false);
+    const [snackbarObject, setSnackbarObject] = useState({message: "", backgroundColor: "#181818", color: "white", okColor: "white"})
+
+    // Function to show the snackbar
+    const showSnackbarMessage = (sObject) => {
+        setSnackbarObject(sObject)
+        setShowSnackbar(true);
+        setTimeout(() => {
+        setShowSnackbar(false);
+        setSnackbarObject({message: "", backgroundColor: "#181818", color: "white", okColor: "white"});
+        }, 5000);
+    }
 
     const customStyles = {
         content: {
@@ -79,7 +93,8 @@ function LiveListingTableItem({ item }) {
                 }
             });
         } else {
-          window.alert("Something Went Wrong");
+            let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+            showSnackbarMessage(sbObject)
         }
       }
 
@@ -114,7 +129,8 @@ function LiveListingTableItem({ item }) {
                 }
             });
         } else {
-            window.alert("Something Went Wrong");
+            let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+                showSnackbarMessage(sbObject)
         }
         setLoader1(false);
     }
@@ -175,6 +191,7 @@ function LiveListingTableItem({ item }) {
       </div>
       
     </Modal>
+    {showSnackbar ? <Snackbar msz={snackbarObject.message} backgroundColor={snackbarObject.backgroundColor} setShowSnackbar={setShowSnackbar}/> : null}
 
         </div>
 

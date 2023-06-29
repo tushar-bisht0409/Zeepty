@@ -141,3 +141,17 @@ export const addNew = async (obj) => {
       return {"msz": "Something went wrong", "success": false}
     }
   }
+
+  export const validateManufacturerLocalData = async () => {
+    const m_id = localStorage.getItem('manufacturer_id');
+    if(m_id === "" || m_id === null || m_id === undefined){
+        window.open('/supplier/auth','_self')
+    } else {
+      const gstin_verified = localStorage.getItem('gstin_verified');
+      if(gstin_verified === 'true') {
+        //User Valid and GST Verified So should remain in same screen
+      } else {
+        window.open('/supplier/fillinfo','_self');
+      }
+    }
+  }

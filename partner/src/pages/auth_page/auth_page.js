@@ -91,6 +91,7 @@ const AuthPage =()=> {
         mode: 'Manufacturer'
       }
       const json = await sendOTP(obj);
+      console.log("SDS: ",json)
       setLoading1(false);
       if(json.success === true && json.userExist === false){
         setOtpStage("Sent");

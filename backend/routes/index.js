@@ -28,6 +28,8 @@ const cashfree_action = require("../methods/cashfree_action")
 
 const phonepe_action = require("../methods/payment/phonepe_action")
 
+const vertical_action = require("../methods/vertical_action");
+
 
 // POST / Adding New User(SIGN UP)
 router.post('/adduser', authenticate_action.addNew);
@@ -199,6 +201,9 @@ router.get('/getorder', order_action.getOrder);
 //POST / Change Orders Status
 router.post('/changeorderstatus', order_action.changeOrderStatus);
 
+//POST / Claim Orders Lost
+router.post('/claimorderlost', order_action.claimOrderLost);
+
 // POST / Saving Review Information
 router.post('/savereview', review_action.postReview);
 
@@ -316,6 +321,15 @@ router.post('/ndractiondelhivery', delhivery_action.NDRAction)
 
 //GET / Delhivery NDR Status
 router.get('/ndrstatusdelhivery', delhivery_action.NDRStatus);
+
+//POST / Save Vertical Information
+router.post('/savevertical', vertical_action.postVertical);
+
+//POST / Save Multiple Vertical Information
+router.post('/savemultiplevertical', vertical_action.postMultipleVerticals);
+
+//GET / Get Vertical Information
+router.get('/getvertical', vertical_action.getVertical);
 
 
 //                         #### CASHFREE ####                      //

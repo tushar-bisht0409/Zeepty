@@ -5,7 +5,8 @@ import RInfoTitleBar from "../rInfo_titleBar/rInfo_titleBar";
 import RTransit from "../rTransit/rTransit";
 import RDelivered from "../rDelivered/rDelivered";
 import RLost from "../rLost/rLost";
-
+import nothingHere from '../../../assets/supplier/images/nothingHere.png'
+import './rInfo_box.css'
 
 const RInfoBox = ({ data, mode }) => {
 
@@ -13,7 +14,10 @@ const RInfoBox = ({ data, mode }) => {
         <>
             {
                 (data === undefined) ?
-                    <div>Loading</div> :
+                    null : data.length === 0 ? 
+                    <div className="riBox-nothing">
+        <img className="riBox-nothing-img" src={nothingHere}></img>
+      </div> :
                     <>
                         <RInfoTitleBar />
                         {data.map((d) => {

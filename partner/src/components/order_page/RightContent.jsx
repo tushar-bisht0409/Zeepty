@@ -211,8 +211,8 @@ const  RightContent= (d) => {
         <img onClick={()=>{window.location.reload()}} className="oprc-error-img" src={errorOccurred}></img>
         <div onClick={()=>{window.location.reload()}} className="oprc-error-refresh">Refresh</div>
       </div> : isNoData ? <div className="oprc-nodata">
-        <img onClick={()=>{window.location.reload()}} className="oprc-nodata-img" src={nothingHere}></img>
-        <div onClick={()=>{window.location.reload()}} className="oprc-nodata-text">Adding more listings increases the chance of getting orders</div>
+        <img onClick={()=>{window.open('/supplier/vertical','_self')}} className="oprc-nodata-img" src={nothingHere}></img>
+        <div onClick={()=>{window.open('/supplier/vertical','_self')}} className="oprc-nodata-text">Adding more listings increases the chance of getting orders</div>
         <div className="oprc-nodata-add">+ Add More Listing</div>
         </div> : <OrderHead mode={modevalue}></OrderHead>}
 

@@ -16,6 +16,7 @@ var functions = {
             pickup_address: obj.pickup_address,
             shipping_address: obj.shipping_address,
             return_address: obj.return_address,
+            shipping_mode: obj.shipping_mode,
             payment_method: obj.payment_method,
             shipping_amount: obj.shipping_amount,
             tax_info: obj.tax_info,
@@ -24,7 +25,8 @@ var functions = {
             paid_at: obj.paid_at,
             payout: obj.payout,
             return_duration: obj.return_duration,
-            replacement_duration: obj.replacement_duration
+            replacement_duration: obj.replacement_duration,
+            order_status: obj.order_status
         });
         orderinfo.save(function (err, uinfo) {
             if (err) {
@@ -202,7 +204,8 @@ var functions = {
                 order_id: obj.order_ids,
             },
             {
-                order_status: obj.order_status
+                order_status: obj.order_status,
+                cancelled_at: Date.now()
             },
             function (err, oInfo) {
                 if (err) {
@@ -220,6 +223,34 @@ var functions = {
                 }
             });
     },
+    claimOrderLost: function (req, res) {
+        var obj = req.body;
+        Order.findOneAndUpdate(
+            {
+                order_id: obj.order_id,
+            },
+            {
+                loss_claimed: obj.loss_claimed
+            },
+            function (err, oInfo) {
+                if (err) {
+                    return res.json({
+                        success: false,
+                        msz: "An Error Occured",
+                        err: err
+                    });
+                }
+                else {
+
+                    // Raise a ticket here
+
+                    return res.json({
+                        success: true,
+                        msz: "Successfully Done"
+                    });
+                }
+            });
+    },  
 }
 
 module.exports = functions;

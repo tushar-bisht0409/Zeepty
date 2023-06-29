@@ -7,6 +7,8 @@ import './inStock_subPage.css'
 import { useParams } from "react-router-dom";
 import LiveListingTable from "../liveListingTable/liveListingTable.js";
 
+import nothingHere from '../../../assets/supplier/images/nothingHere.png'
+
  function InStockSubPage({data}) {
 
   const params = useParams();
@@ -66,7 +68,9 @@ import LiveListingTable from "../liveListingTable/liveListingTable.js";
       listing === undefined ? null :
        <>
               <Myproduct  mode = {mode} setlisting={setListing} data={data} setmode={setMode} groupListing={groupListing}/>
-              <LiveListingTable data={listing}/>
+              { listing.length === 0 ? <div className="issp-nodata">
+                <img className="issp-nodata-img" src={nothingHere}></img>
+                </div> : <LiveListingTable data={listing}/>}
                {/* {
             listing == undefined? <div>Loading</div> :(
                 <>

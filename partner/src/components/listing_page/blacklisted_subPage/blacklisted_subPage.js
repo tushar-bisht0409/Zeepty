@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { ListingTable } from "../listingTable/listingTable";
 import BlacklistedListingTable from "../blacklistedListingTable/blacklistedListingTable";
 import BlacklistedTitlebar from "./blacklistedTitlebar/blacklistedTitlebar";
+import nothingHere from '../../../assets/supplier/images/nothingHere.png'
+
 
  function BlacklistedSubPage({data}) {
 
@@ -56,7 +58,9 @@ import BlacklistedTitlebar from "./blacklistedTitlebar/blacklistedTitlebar";
             listing == undefined? <div>Loading</div> :(
                 <>
                 <BlacklistedTitlebar data={group_data} mode={mode} setMode={setMode} groupListing={groupListing}/>
-                 <BlacklistedListingTable data={listing}/>
+                 {listing.length === 0 ? <div className="blacklisted-nodata">
+                <img className="blacklisted-nodata-img" src={nothingHere}></img>
+                </div> : <BlacklistedListingTable data={listing}/>}
                  
                 </>
             )

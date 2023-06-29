@@ -307,3 +307,15 @@ function checkinStock(data) {
                 return {"msz": "Something went wrong", "success": false, "error": error}
               }
             }
+
+            export const getVeticalInfo = async (obj) => {
+              try {
+                  const response = await fetch(`${API_URI}/getvertical?type=${encodeURIComponent(obj.type)}&vertical_id=${encodeURIComponent(obj.vertical_id)}&vertical=${encodeURIComponent(obj.vertical)}&category=${encodeURIComponent(obj.category)}&sub_category=${encodeURIComponent(obj.sub_category)}&sub_category=${encodeURIComponent(obj.sub_category)}&sub_category2=${encodeURIComponent(obj.sub_category2)}`, {
+                      method: 'GET'});
+          
+                  const json = await response.json();
+                  return json;
+                } catch (error) {
+                  return {"msz": "Something went wrong", "success": false}
+                }
+          };

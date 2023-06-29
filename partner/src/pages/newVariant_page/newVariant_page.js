@@ -525,7 +525,7 @@ export default function NewVariantPage() {
     lInfoArray === undefined ? <div></div> :
       <div>
         <div className="titleBar">
-          <i className="fa-solid fa-arrow-left" style={{ color: 'white', fontSize: '26px', paddingLeft: '2vw' }}></i>
+          <i onClick={()=>{window.history.back()}} className="fa-solid fa-arrow-left" style={{ color: 'white', fontSize: '26px', paddingLeft: '2vw' }}></i>
           <p>Go Back To Listing</p>
         </div>
         <AddProgress mode1={'completed'} mode2={'active'} mode3={'inActive'}></AddProgress>

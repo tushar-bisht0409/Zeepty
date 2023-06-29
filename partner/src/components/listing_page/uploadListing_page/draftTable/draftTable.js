@@ -5,11 +5,26 @@ import './draftTable.css'
 import FullScreenLoader from '../../../fullScreen_loader/fullScreen_loader';
 import { UPDATE_DRAFT_INFO } from '../../../../store/action/type';
 import { deleteMultipleListingRequest } from '../../../../store/action/listingaction';
+import Snackbar from '../../../snackbar/snackbar';
 const DraftTable = ({item,arrAll}) => {
 
   const dispatch = useDispatch();
 
   const [loader1, setLoader1] = useState(false);
+
+  const [showSnackbar, setShowSnackbar] = useState(false);
+    const [snackbarObject, setSnackbarObject] = useState({message: "", backgroundColor: "#181818", color: "white", okColor: "white"})
+
+  // Function to show the snackbar
+  const showSnackbarMessage = (sObject) => {
+    setSnackbarObject(sObject)
+    setShowSnackbar(true);
+    setTimeout(() => {
+      setShowSnackbar(false);
+      setSnackbarObject({message: "", backgroundColor: "#181818", color: "white", okColor: "white"});
+    }, 5000);
+  }
+
   const customStyles = {
     content: {
       top: '50%',
@@ -98,9 +113,9 @@ const DraftTable = ({item,arrAll}) => {
         action: "REMOVE"
       }
   });
-  window.open('/supplier/listing/draft','_self')
    } else{
-    window.alert("Something Went Wrong")
+    let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+    showSnackbarMessage(sbObject)
    }
    setLoader1(false)
   }
@@ -152,7 +167,8 @@ const DraftTable = ({item,arrAll}) => {
         </div>
         
    
-   
+               {showSnackbar ? <Snackbar msz={snackbarObject.message} backgroundColor={snackbarObject.backgroundColor} setShowSnackbar={setShowSnackbar}/> : null}
+
         </>
   )
 }

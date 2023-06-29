@@ -1,12 +1,14 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import "./pending_orderBox.css";
 import { getlisting_info } from "../../../store/action/listingaction";
 import Modal from 'react-modal';
-import { cancelShipmentDelhivery, createPickupRequest, generateShippingLabel, getMyOrders } from "../../../store/action/order_action";
+import { cancelShipmentDelhivery, changeOrderStatus, createPickupRequest, createShipment, generateShippingLabel, getMyOrders } from "../../../store/action/order_action";
 import FullScreenLoader from '../../fullScreen_loader/fullScreen_loader'
 import { useDispatch } from "react-redux";
+import { CANCEL_PENDING_ORDER } from "../../../store/action/type";
+import Snackbar from "../../snackbar/snackbar";
 
-const PendingOrderBox = ({item}) => {
+const PendingOrderBox = ({ item }) => {
 
   const [listing, setListing] = useState(undefined)
 
@@ -14,9 +16,27 @@ const PendingOrderBox = ({item}) => {
 
   const [timeLeft, setTimeLeft] = useState('');
 
-  const [modalIsOpen,setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [loader1, setLoader1] = useState(false);
+
+  const [loader2, setLoader2] = useState(false);
+
+  const [isAccepted, setIsAccepted] = useState(true);
+
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [snackbarObject, setSnackbarObject] = useState({message: "", backgroundColor: "#181818", color: "white", okColor: "white"})
+
+  // Function to show the snackbar
+  const showSnackbarMessage = (sObject) => {
+    setSnackbarObject(sObject)
+    setShowSnackbar(true);
+    setTimeout(() => {
+      setShowSnackbar(false);
+      setSnackbarObject({message: "", backgroundColor: "#181818", color: "white", okColor: "white"});
+    }, 5000);
+  }
+
 
   const dispatch = useDispatch();
 
@@ -32,7 +52,7 @@ const PendingOrderBox = ({item}) => {
     },
   };
 
-  async function handleGetListing(){
+  async function handleGetListing() {
     const obj = {
       listing_id: item.product.listing_id,
       sku_id: item.product.sku_id,
@@ -41,16 +61,19 @@ const PendingOrderBox = ({item}) => {
     }
     const json = await getlisting_info(obj);
 
-    if(json.success){
+    if (json.success) {
       setListing(json.msz);
     }
   }
-  useEffect(()=>{
+  useEffect(() => {
     formatDate(item.createdAt)
     handleGetListing();
-  },[])
+    if(item.waybill === undefined || item.waybill === ""){
+      setIsAccepted(false);
+    }
+  }, [])
 
-  function formatDate(ts){
+  function formatDate(ts) {
     const givenTimestamp = ts;
     const targetDate = new Date(givenTimestamp);
     targetDate.setDate(targetDate.getDate() + 2);
@@ -65,16 +88,16 @@ const PendingOrderBox = ({item}) => {
 
     const formattedDate = `${hour}, ${month} ${day}, ${year}`;
 
-    
+
     const currentDate = new Date();
     const timeDifference = targetDate - currentDate;
 
     const daysLeft = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hoursLeft = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    if(daysLeft < 0 || hoursLeft < 0) {
+    if (daysLeft < 0 || hoursLeft < 0) {
       setTimeLeft("Breached!");
     } else {
-    setTimeLeft(`${daysLeft} day, ${hoursLeft} Hr`);
+      setTimeLeft(`${daysLeft} day, ${hoursLeft} Hr`);
     }
     setDispatchByDate(formattedDate)
   }
@@ -84,54 +107,64 @@ const PendingOrderBox = ({item}) => {
     setLoader1(true);
     const obj = { waybill: item.waybill };
     const json = await cancelShipmentDelhivery(obj);
-    if(json.success) {
+    if (json.success) {
       const obj2 = {
         type: 'manufacturer_id',
         manufacturer_id: localStorage.getItem('manufacturer_id')
       }
-      const json2 = await dispatch(getMyOrders(obj2,"pending"));
-      if(json2.success){
+      const json2 = await dispatch(getMyOrders(obj2, "pending"));
+      if (json2.success) {
+        dispatch({
+          type: CANCEL_PENDING_ORDER,
+          payload: {
+              order: item,
+          }
+      });
         setLoader1(false);
       } else {
         setLoader1(false);
-        window.alert("Something Went Wrong");
+        let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
       }
-    } else{
+    } else {
       setLoader1(false);
-      window.alert("Something Went Wrong");
+      let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
     }
-    
+
   }
 
-  async function handleGenerateShippingLabel (){
+  async function handleGenerateShippingLabel() {
     setLoader1(true);
     const obj = {
       waybills: [item.waybill],
       pdf: true
     }
     const json = await generateShippingLabel(obj);
-    if(json.success) {
+    if (json.success) {
       const obj2 = {
         type: 'manufacturer_id',
         manufacturer_id: localStorage.getItem('manufacturer_id')
       }
-      const json2 = await dispatch(getMyOrders(obj,"pending"));
-      if(json2.success){
+      const json2 = await dispatch(getMyOrders(obj, "pending"));
+      if (json2.success) {
         setLoader1(false);
-        for(let i = 0; i<json2.labelArray.length;i++){
+        for (let i = 0; i < json2.labelArray.length; i++) {
           window.open(`${json2.labelArray[i].label_pdf_link}`)
         }
-      } else{
+      } else {
         setLoader1(false);
-        window.alert("Something Went Wrong");
+        let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+        showSnackbarMessage(sbObject)
       }
     } else {
       setLoader1(false);
-      window.alert("Something Went Wrong");
+      let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
     }
   }
 
-  async function handleCreatePickupRequest (){
+  async function handleCreatePickupRequest() {
     setLoader1(true);
 
     const currentDate = new Date();
@@ -151,96 +184,160 @@ const PendingOrderBox = ({item}) => {
       order_ids: [item.order_id]
     }
     const json = await createPickupRequest(obj);
-    if(json.success) {
+    if (json.success) {
       const obj2 = {
         type: 'manufacturer_id',
         manufacturer_id: localStorage.getItem('manufacturer_id')
       }
-      const json2 = await dispatch(getMyOrders(obj,"pending"));
-      if(json2.success){
+      const json2 = await dispatch(getMyOrders(obj, "pending"));
+      if (json2.success) {
         setLoader1(false);
-        for(let i = 0; i<json2.labelArray.length;i++){
+        for (let i = 0; i < json2.labelArray.length; i++) {
           window.open(`${json2.labelArray[i].label_pdf_link}`)
         }
-      } else{
+      } else {
         setLoader1(false);
-        window.alert("Something Went Wrong");
+        let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
       }
     } else {
       setLoader1(false);
-      window.alert("Something Went Wrong");
+      let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
     }
   }
- 
-  return ( listing===undefined ? null :
+
+  async function handleCreateShipment() {
+    setLoader2(true);
+    const obj = {
+      order_id: item.order_id,
+      "name": item.shipping_address.full_name,
+      "add": `${item.shipping_address.address_line}, ${item.shipping_address.landmark}, ${item.shipping_address.city}`,
+      "pin": item.shipping_address.postalcode,
+      "phone": item.shipping_address.phone_number,
+      "payment_mode": item.payment_method,
+      "return_pin": item.return_address.postalcode,
+      "return_city": item.return_address.city,
+      "return_phone": item.return_address.phone_number,
+      "return_add": `${item.return_address.address_line}, ${item.return_address.landmark}, ${item.return_address.city}`,
+      "cod_amount": item.is_paid ? "0" : `${item.total_amount}`,
+      "quantity": item.qunatity,
+      "weight": listing.weight,
+      "shipping_mode": item.shipping_mode,
+      "pickup_location": {
+          "name": `${item.pickup_address.full_name}`,
+          "add": `${item.pickup_address.address_line}, ${item.pickup_address.landmark}, ${item.pickup_address.city}`,
+          "city": `${item.pickup_address.city}`,
+          "pin_code": `${item.pickup_address.postalcode}`,
+          "country": `${item.pickup_address.country}`,
+          "phone": `${item.pickup_address.phone_number}`
+        }
+    }
+
+    const json = await createShipment(obj);
+
+    if(json.success) {
+      setIsAccepted(true);
+      setLoader2(false);
+    } else{
+      let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
+    }
+
+
+  }
+
+  async function handleCancelOrder() {
+    const obj = {
+      order_ids: [item.order_id],
+      order_status: "Cancelled"
+    }
+
+    const json = await changeOrderStatus(obj);
+
+    if(json.success) {
+      dispatch({
+        type: CANCEL_PENDING_ORDER,
+        payload: {
+            order: item,
+        }
+    });
+    } else{
+      let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
+    }
+  }
+
+  return (listing === undefined ? null :
     <>
-    <div>
-      {loader1? <FullScreenLoader/> : null }
-     <div className="oBox">
-    <div className="ol1">
-      {/* <span className="ol1-key">Order ID: <span className="ol1-value">{item.order_id}</span></span> */}
-      <span className="ol1-key">Order ID </span>
-      <span className="ol1-value">{item.order_id}</span>
-       </div>
-    <div className="ol2">
-       <img className="ol2-image" src={listing.media_urls[0]}/>
-     <div className="ol2-rightbox">
-     <span className="ol2-rightbox-key">SKU ID: <span className="ol2-rightbox-value">{listing.sku_id}</span></span>
-     <span className="ol2-rightbox-key">Style Code: <span className="ol2-rightbox-value">{listing.style_code}</span></span>
-     <span className="ol2-rightbox-brand">{listing.brand}<span className="ol2-rightbox-name">{listing.product_name}</span></span>
-     </div>
-    </div>
-   
-    <div className="ol3">
-    <div className="ol3-quantity">{item.product.quantity}</div> 
-      
-       </div>
-    <div className='ol4'>
-    <div className="ol4-price">₹{item.product.price}</div>
-    </div>
-    <div className='ol5'>
-      <div className="ol5-row" >
-      <div className={timeLeft === "Breached!" ? "obc-breached" :"dedays"}>{timeLeft}</div> 
-        <div className="detime">{dispatchByDate} </div>
-        </div> 
-        <div className="obc-action">
-          <div onClick={()=>{setModalIsOpen(true)}} className="obc-action-cancel">Cancel</div>
-          { item.label_pdf_link === undefined ? <div onClick={handleGenerateShippingLabel} className="obc-action-accept">Accept & Print Label</div> : null}
-          { item.label_pdf_link === undefined ? null : <div onClick={()=>{window.open(`${item.label_pdf_link}`)}} className="obc-action-label">Print Label</div>}
-          { item.label_pdf_link === undefined ? null : <div onClick={()=>{handleCreatePickupRequest()}} className="obc-action-rts">Ready To Ship</div>}
+      <div>
+        {loader1 ? <FullScreenLoader /> : null}
+        <div className="oBox">
+          <div className="ol1">
+            {/* <span className="ol1-key">Order ID: <span className="ol1-value">{item.order_id}</span></span> */}
+            <span className="ol1-key">Order ID </span>
+            <span className="ol1-value">{item.order_id}</span>
+          </div>
+          <div className="ol2">
+            <img className="ol2-image" src={listing.media_urls[0]} />
+            <div className="ol2-rightbox">
+              <span className="ol2-rightbox-key">SKU ID: <span className="ol2-rightbox-value">{listing.sku_id}</span></span>
+              <span className="ol2-rightbox-key">Style Code: <span className="ol2-rightbox-value">{listing.style_code}</span></span>
+              <span className="ol2-rightbox-brand">{listing.brand}<span className="ol2-rightbox-name">{listing.product_name}</span></span>
+            </div>
+          </div>
+
+          <div className="ol3">
+            <div className="ol3-quantity">{item.product.quantity}</div>
+
+          </div>
+          <div className='ol4'>
+            <div className="ol4-price">₹{item.product.price}</div>
+          </div>
+          <div className='ol5'>
+            <div className="ol5-row" >
+              <div className={timeLeft === "Breached!" ? "obc-breached" : "dedays"}>{timeLeft}</div>
+              <div className="detime">{dispatchByDate} </div>
+            </div>
+            <div className="obc-action">
+              {loader2 ? <div className="obc-loader2"></div> : <><div onClick={() => { setModalIsOpen(true) }} className="obc-action-cancel">Cancel</div>
+              { !isAccepted ? <div onClick={handleCreateShipment} className="obc-action-accept">Accept Order</div> : item.label_pdf_link === undefined ? <div onClick={handleGenerateShippingLabel} className="obc-action-accept">Print Label</div> : null}
+              {item.label_pdf_link === undefined ? null : <div onClick={() => { window.open(`${item.label_pdf_link}`) }} className="obc-action-label">Print Label</div>}
+              {item.label_pdf_link === undefined ? null : <div onClick={() => { handleCreatePickupRequest() }} className="obc-action-rts">Ready To Ship</div>}
+              </>}
+            </div>
+          </div>
         </div>
+
+        <Modal
+          isOpen={modalIsOpen}
+          ariaHideApp={false}
+          onRequestClose={() => { setModalIsOpen(false) }}
+          style={customStyles}
+        >
+          <div className="obc-modalHeadingL1">
+
+            <div className='obc-modaliconL1'><i class="fa-solid fa-xmark"></i></div>
+            <h2 className='obc-deleteL1'>{`Cancel Order (Order ID: ${item.order_id})`}</h2>
+          </div>
+          {/* <i class="fa-solid fa-trash"></i> */}
+
+          <div className='obc-modalDesL1'>Are you sure that you want to cancel this order?</div>
+          <div className="obc-modalOptionL1">
+            <p onClick={() => {
+              setModalIsOpen(false);
+            }} className='obc-modalNoL1'>No</p>
+            <p onClick={() => { if(isAccepted){handleCancelShipmentDelhivery()} else{handleCancelOrder()} }} className='obc-modalYesL1'>Yes</p>
+
+          </div>
+
+        </Modal>
+
       </div>
-     </div>
+      {showSnackbar ? <Snackbar msz={snackbarObject.message} backgroundColor={snackbarObject.backgroundColor} setShowSnackbar={setShowSnackbar}/> : null}
 
-     <Modal
-        isOpen={modalIsOpen}
-        ariaHideApp={false}
-        onRequestClose={()=>{setModalIsOpen(false)}}
-        style={customStyles}
-      >        
-      <div className="obc-modalHeadingL1">
-
-      <div className='obc-modaliconL1'><i class="fa-solid fa-xmark"></i></div>
-      <h2 className='obc-deleteL1'>{`Cancel Order (Order ID: ${item.order_id})`}</h2>
-      </div>
-      {/* <i class="fa-solid fa-trash"></i> */}
-
-      <div className='obc-modalDesL1'>Are you sure that you want to cancel this order?</div>
-      <div className="obc-modalOptionL1">
-        <p onClick={()=>{
-          setModalIsOpen(false);
-        }} className='obc-modalNoL1'>No</p>
-        <p onClick={()=>{handleCancelShipmentDelhivery()}} className='obc-modalYesL1'>Yes</p>
-          
-      </div>
-      
-    </Modal>
-
-
-
-    </div>
     </>
   );
 };
 
-export default  PendingOrderBox;
+export default PendingOrderBox;

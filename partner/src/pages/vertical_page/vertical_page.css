@@ -33,7 +33,6 @@
     padding: 1.5vh 2vw;
     border: 2px solid lightgrey ;
     width: 30vw;
-    margin: 2vh 4vw;
     border-radius: 5px;
 }
 
@@ -85,29 +84,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3vh 2vw;
+    padding: 3vh 1vw;
     border-left: 2px solid #554BDA;
     border-right: 2px solid #554BDA;
     border-top: 1px solid #554BDA;
     border-bottom: 1px solid #554BDA;
     color: white;
     background-color: #554BDA;
-    font-weight: 500;
-    font-size: large;
+    font-weight: 900;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .vpVBItemInactive{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3vh 2vw;
-    font-size: large;
-    font-weight: 500;
+    padding: 3vh 1vw;
+    font-size: 13px;
+    font-weight: 900;
     color: grey;
     border-left: 2px solid lightgrey;
     border-right: 2px solid lightgrey;
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
+    text-align: center;
+    cursor: pointer;
 }
 
 .vpIB {
@@ -123,10 +126,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vh 4vw;
+  padding: 2vh 2vw;
   border-radius: 5px;
   background-color: #ebebff;
-  font-size: medium;
+  font-size: 12px;
   font-weight: 900;
 }
 
@@ -138,11 +141,12 @@
   width: max-content;
   border-radius: 5px;
   background-color: lightgrey;
-  font-size: medium;
+  font-size: 12px;
   font-weight: 900;
   color: black;
   margin-top: 4vh;
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
 }
 
 .vpIBButton{
@@ -153,11 +157,12 @@
   width: max-content;
   border-radius: 5px;
   background-color: #554BDA;
-  font-size: medium;
+  font-size: 12px;
   font-weight: 900;
   color: white;
   margin-top: 4vh;
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .vpIBUploadInput{
@@ -195,8 +200,8 @@
   outline: none;
   white-space: nowrap;
   cursor: pointer;
-  font-weight: 500;
-  font-size: medium;
+  font-weight: 900;
+  font-size: 12px;
 }
 
 .vpIBUploadInput:hover::before {
@@ -209,4 +214,55 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 2vh 0vw;
+}
+
+.vpVBSearchBox{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 2vh 4vw;
+  box-sizing: border-box;
+}
+
+.vpVBSearchBox-Results{
+  position: absolute;
+  top: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ebebff;
+  box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.2);
+  min-width: 20vw;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.vpVBSearchBox-ResultsInactive{
+  display: none;
+}
+
+.vpVBSearchBox-Results-text{
+  font-size: 12px;
+  font-weight: 900;
+  color: #554BDA;
+  padding: 2vh 2vw;
+}
+
+.vpVBSearchBox-Results-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: #554BDA;
+  background-color: #ebebff;
+  padding: 2vh 2vw;
+  cursor: pointer;
+}
+
+.vpVBSearchBox-Results-item:hover{
+  color: #ebe6ff;
+  background-color: #554BDA;
 }

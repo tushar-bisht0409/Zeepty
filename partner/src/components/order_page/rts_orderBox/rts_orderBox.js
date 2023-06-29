@@ -5,6 +5,8 @@ import Modal from 'react-modal';
 import { cancelShipmentDelhivery, getMyOrders } from "../../../store/action/order_action";
 import FullScreenLoader from '../../fullScreen_loader/fullScreen_loader'
 import { useDispatch } from "react-redux";
+import { CANCEL_RTS_ORDER } from "../../../store/action/type";
+import Snackbar from "../../snackbar/snackbar";
 
 const RtsOrderBox = ({item}) => {
 
@@ -17,6 +19,19 @@ const RtsOrderBox = ({item}) => {
   const [modalIsOpen,setModalIsOpen] = useState(false);
 
   const [loader1, setLoader1] = useState(false);
+
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [snackbarObject, setSnackbarObject] = useState({message: "", backgroundColor: "#181818", color: "white", okColor: "white"})
+
+  // Function to show the snackbar
+  const showSnackbarMessage = (sObject) => {
+    setSnackbarObject(sObject)
+    setShowSnackbar(true);
+    setTimeout(() => {
+      setShowSnackbar(false);
+      setSnackbarObject({message: "", backgroundColor: "#181818", color: "white", okColor: "white"});
+    }, 5000);
+  }
 
   const dispatch = useDispatch();
 
@@ -92,14 +107,22 @@ const RtsOrderBox = ({item}) => {
       }
       const json2 = await dispatch(getMyOrders(obj2,"pending"));
       if(json2.success){
+        dispatch({
+          type: CANCEL_RTS_ORDER,
+          payload: {
+              order: item,
+          }
+      });
         setLoader1(false);
       } else {
         setLoader1(false);
-        window.alert("Something Went Wrong");
+        let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
       }
     } else{
       setLoader1(false);
-      window.alert("Something Went Wrong");
+      let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
+      showSnackbarMessage(sbObject)
     }
     
   }
@@ -138,7 +161,7 @@ const RtsOrderBox = ({item}) => {
         </div> 
         <div className="rtsOB-action">
           <div onClick={()=>{setModalIsOpen(true)}} className="rtsOB-action-cancel">Cancel</div>
-          <div onClick={()=>{window.open(`${item.label_pdf_link}`)}} className="rtsOB-action-label">Print Label</div>
+          <div onClick={()=>{window.open(`${item.label_pdf_link}`, '_blank')}} className="rtsOB-action-label">Print Label</div>
         </div>
       </div>
      </div>
@@ -170,6 +193,8 @@ const RtsOrderBox = ({item}) => {
 
 
     </div>
+    {showSnackbar ? <Snackbar msz={snackbarObject.message} backgroundColor={snackbarObject.backgroundColor} setShowSnackbar={setShowSnackbar}/> : null}
+
     </>
   );
 };
