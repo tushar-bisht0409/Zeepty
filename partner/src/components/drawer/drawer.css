@@ -42,15 +42,29 @@
     position: relative;
     top: 2rem;
   }
+  .dsupportItem-active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: white;
+    color: #554BDA;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   .dsupportItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .dsupportItem p{
     font-weight: bold;
     font-size: 14px;
+    background-color: #554BDA;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
   }
   .ddrawerOptions {
     position: relative;

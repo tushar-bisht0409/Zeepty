@@ -1,5 +1,6 @@
 
 const Product = require("../schemas/product");
+const ProductRequest = requrie("../schemas/ProductRequest")
 const Listing = require("../schemas/listing");
 const { elasticClient } = require("../config/elastic");
 const { editProductElastic } = require("./Elastic_Cloud/ES_product_action");
@@ -24,7 +25,9 @@ function flatTheProduct (obj) {
         price: obj.price,
         mrp: obj.mrp,
         size: obj.product_size.size,
-        inventory: obj.product_size.inventory
+        inventory: obj.product_size.inventory,
+        new_title: obj.new_title,
+        new_description: obj.new_description,
     };
 
     const pDetails = obj.product_details.reduce((acc, object) => {
@@ -69,6 +72,8 @@ var functions = {
             product_details: obj.product_details,
             other_details: obj.other_details,
             pickup_address: obj.pickup_address,
+            new_title: obj.new_title,
+            new_description: obj.new_description,
         });
         productinfo.save(function (err, uinfo) {
             if (err) {
@@ -112,6 +117,8 @@ var functions = {
             gst_percent: obj.gst_percent,
             product_details: obj.product_details,
             other_details: obj.other_details,
+            new_title: obj.new_title,
+            new_description: obj.new_description,
         });
         productinfo.save(async function (err, uinfo) {
             if (err) {
@@ -197,7 +204,9 @@ var functions = {
                             gst_percent: lrinfo[i].gst_percent,
                             product_details: lrinfo[i].product_details,
                             other_details: lrinfo[i].other_details,
-                            pickup_address: lrinfo[i].pickup_address
+                            pickup_address: lrinfo[i].pickup_address,
+                            new_title: lrinfo[i].new_title,
+                            new_description: lrinfo[i].new_description,
                         };
                         allProducts.push(newProduct);
                         const eProductInfo = flatTheProduct(allProducts[i]);
@@ -645,6 +654,127 @@ var functions = {
                 return res.send({ success: false, msz: "No Subtype Selected" });
             }
         }
+    },
+
+    acceptProductRequest: function (req,res) {
+        const obj = req.body;
+        ProductRequest.find({
+            product_id: obj.product_id
+        }, function (err, lrinfo) {
+            if (err) {
+                return res.send({ success: false, msz: 'An Error Occured', err: err });
+            }
+            else if (!lrinfo) {
+                return res.send({ success: false, msz: 'Not Product Request Found', err: null });
+            }
+            else {
+                if (lrinfo.length === 0) {
+                    return res.send({ success: false, msz: 'No Product Request Found', err: null });
+                }
+                else {
+                    let allListings = [];
+                    let esAllListings = [];
+                    for(let x = 0; x<lrinfo.length; x++){
+
+                    for(let i = 0; i<lrinfo[x]['product_size'].length; i++){
+                        let lsku = lrinfo[x].product_size[i].sku_id;
+                        if(lsku === "" || lsku === undefined || lsku === null){
+                            lsku = uuidv4();
+                        }
+                        let newListing = {
+                            listing_id: lrinfo[x].listing_id,
+                            sku_id: lsku,
+                            style_code: lrinfo[x].style_code,
+                            manufacturer_id: lrinfo[x].manufacturer_id,
+                            active: lrinfo[x].active,
+                            weight: lrinfo[x].weight,
+                            media_urls: lrinfo[x].media_urls,
+                            brand: lrinfo[x].brand,
+                            product_name: lrinfo[x].product_name,
+                            vertical: lrinfo[x].vertical,
+                            category: lrinfo[x].category,
+                            sub_category: lrinfo[x].sub_category,
+                            sub_category2: lrinfo[x].sub_category2,
+                            price: lrinfo[x].price,
+                            mrp: lrinfo[x].mrp,
+                            product_size: lrinfo[x].product_size[i],
+                            inventory: lrinfo[x].product_size[i].inventory,
+                            hsn_code: lrinfo[x].hsn_code,
+                            gst_percent: lrinfo[x].gst_percent,
+                            product_details: lrinfo[x].product_details,
+                            other_details: lrinfo[x].other_details,
+                            pickup_address: lrinfo[x].pickup_address
+                        };
+                        allListings.push(newListing);
+                        const esListingInfo = flatTheListing(allListings[i]);
+                        esAllListings.push(esListingInfo);
+                    }
+                }
+
+                    Listing.insertMany(allListings, async function (err, pinfo) {
+                        if (err) {
+                            return res.json({
+                                success: false,
+                                msz: "Failed to Save"
+                            });
+                        }
+                        else {
+                            try{
+
+                                const operations = esAllListings.flatMap(doc => [{ index: { _index: 'listing' } }, doc])
+                    
+                                const bulkResponse = await elasticClient.bulk({ refresh: true, operations })
+                    
+                                const erroredDocuments = []
+                    
+                                if (bulkResponse.errors) {
+                                    bulkResponse.items.forEach((action, i) => {
+                                    const operation = Object.keys(action)[0]
+                                    if (action[operation].error) {
+                                        erroredDocuments.push({
+                                        status: action[operation].status,
+                                        error: action[operation].error,
+                                        operation: operations[i * 2],
+                                        document: operations[i * 2 + 1]
+                                        })
+                                    }
+                                    })
+                                }              
+                                
+                                ListingRequest.updateMany(
+                                    {listing_id: obj.listing_id}, 
+                                    {listing_status: "Approved"},
+                                    function (err, lrrinfo) {
+                                        if(err){
+                                            return res.json({
+                                                success: false,
+                                                msz: "Failed to Save",
+                                                err: err
+                                            });
+                                        } else {
+                                            return res.send({
+                                                success: true,
+                                                msz: 'Successfully Created Index',
+                                                err: null,
+                                                errDocuments: erroredDocuments
+                                            });
+                                        }
+                                    });
+                    
+                            } catch(e){
+                                return res.send({
+                                    success: false,
+                                    msz: 'An Error Occurred',
+                                    err: e
+                                })
+                            }
+                        }
+                    })
+
+
+                }
+            }
+        });
     },
 
     editProductES: function (req, res) {

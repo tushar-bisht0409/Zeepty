@@ -211,12 +211,6 @@
     font-size: 1vw;
 }
 
-.option{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .dropbtn1{
     background-color: white;
     height: 6vh;
@@ -578,6 +572,7 @@
     background-color: white;
     box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
     padding: 1vh 1vw;
+    z-index: 99999;
 }
 
 .apibipInputSizeDDInactive{
@@ -1006,4 +1001,62 @@
 
 .apibErrorT1Inactive{
     display: none;
+}
+
+.newLP-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3ddff;
+    border: 1px solid #e3ddff;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+
+  .newLP-error{
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .newLP-error-img {
+    width: 30vw;
+    height: 20vw;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .newLP-error-refresh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+    border-radius: 20px;
+    border: 2px solid #554BDA;
+    font-size: small;
+    font-weight: bold;
+    color: #554BDA;
+    cursor: pointer;
+  }
+
+  .newLP-loader1 {
+    position: absolute;
+    border: 5px solid #cecece; /* Light grey */
+    border-top: 5px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    margin-left: 57.5vw;
+    margin-top: 40vh;
+    align-self: center;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

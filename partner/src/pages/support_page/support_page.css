@@ -1,0 +1,152 @@
+.supportPage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+  
+  .drawer {
+    /* Add necessary styles for the drawer component */
+    margin-right: 20px;
+  }
+  
+  .contentContainer {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .searchBar {
+    margin-top: 80px;
+    width: 300px;
+  }
+  
+  .searchBar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    outline: none;
+  }
+  
+  .searchBar input[type="text"]:focus {
+    border-color: #888;
+    background-color: #fff;
+  }
+  
+  .boxesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-template-rows: repeat(3, 1fr); /* Three rows */
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+ 
+  
+  .box {
+    height: 5.5vh;
+    width: 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #554BDA;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .boxContent {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  
+  }
+  
+  .boxLogo {
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: auto;
+    color: white;
+  }
+  
+  .boxTitle {
+    font-size: 6px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    color: white;
+    font-weight: 900;
+    height: 11px;
+    width: 100px;
+    font-size: 10.5px;
+  }
+  
+  .boxLogoSecondary {
+    font-size: 14px;
+    color: white;
+    margin-right: 20px;
+  }
+  
+  .contentd {
+    margin-left: 300px;
+    margin-top: 20px;
+    margin-right: 80px;
+  }
+  .raiseticket {
+    height: 39px;
+    width: 112px;
+    background-color: #554BDA;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+
+  }
+  
+  .raiseticket:hover {
+    background-color:#736bec;
+    color: white ;
+  }
+  
+.selectedBox{
+    position: absolute;
+    height: 40vh;
+    width: 65vw;
+   
+    bottom: 15px;
+}
+.selectedBoxTitle{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
+}
+.orderRelatedQuestions{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 30px;
+}
+.questionleft{
+    margin: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.questionright{
+    margin: 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 500;
+}

@@ -3,11 +3,11 @@
 
 
 export const womensObject = { 
-    "WOMENS FASHION":{
+    "WOMENS WEAR":{
     "Western Wear":{
     "Tops, Tshirts & Shirts":{
     "Shirts":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -55,7 +55,7 @@ export const womensObject = {
         "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", 
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
-        "Comoros", "Congo", "Democratic Republic of the Congo", "Republic of the Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Comoros", "Congo", "Democratic Republic of the Congo", "Republic of the Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -223,7 +223,7 @@ export const womensObject = {
     },
     
     "Tshirts":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -282,7 +282,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -465,7 +465,7 @@ export const womensObject = {
     },
     
     "Top & Bottom Wear":{
-    alloptions:[
+    allOptions:[
     {
     name:"Bottom Color",
     type:"Dropdown",
@@ -538,7 +538,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -682,7 +682,7 @@ export const womensObject = {
     },
     
     "Tops & Tunics":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -746,7 +746,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -895,7 +895,7 @@ export const womensObject = {
     },
     
     "Women Formal Shirt & Bottom Fabric":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -939,7 +939,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -1020,7 +1020,7 @@ export const womensObject = {
     
     "Dresses, Gowns & Jumpsuits":{
     "Dresses":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -1065,7 +1065,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -1223,7 +1223,7 @@ export const womensObject = {
     },
     
     "Gowns":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -1282,7 +1282,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -1529,7 +1529,7 @@ export const womensObject = {
     
     
     "Jumpsuits":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -1569,7 +1569,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -1744,7 +1744,7 @@ export const womensObject = {
     
     "Jeans & Jeggings":{
     "Jeans":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -1800,7 +1800,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -1914,7 +1914,7 @@ export const womensObject = {
     ]
     },
     "Jeggings":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -1967,7 +1967,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -2101,7 +2101,7 @@ export const womensObject = {
     },
     "Capes, Shrugs & Ponchos":{
     "Capes, Shrugs & Ponchos":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -2148,7 +2148,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -2325,7 +2325,7 @@ export const womensObject = {
     
     "Capris & Trousers & Pants":{
     "Capris":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -2378,7 +2378,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -2506,7 +2506,7 @@ export const womensObject = {
     ]
     },
     "Trousers & Pants":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -2553,7 +2553,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -2702,7 +2702,7 @@ export const womensObject = {
     
     "Sweaters & Cardigans":{
     "Cardigans":{
-    alloptions:[
+    allOptions:[
     {
     name:"Country of Origin",
     type:"Dropdown",
@@ -2714,7 +2714,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -2784,7 +2784,7 @@ export const womensObject = {
     },
     
     "Sweaters":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -2831,7 +2831,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -2985,7 +2985,7 @@ export const womensObject = {
     
     "Jackets":{
     "Coats & Jackets":{
-    alloptions:[
+    allOptions:[
     {
     name:"Country of Origin",
     type:"Dropdown",
@@ -2997,7 +2997,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -3069,7 +3069,7 @@ export const womensObject = {
     
     
     Jackets:{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -3108,7 +3108,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -3268,7 +3268,7 @@ export const womensObject = {
     },
     
     "Blazers & Coats":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -3320,7 +3320,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -3465,7 +3465,7 @@ export const womensObject = {
     
     "Maternity Wear":{
     "Dresses":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -3504,7 +3504,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -3602,7 +3602,7 @@ export const womensObject = {
     },
     "Palazzos, Leggings & Tights":{
     "Leggings":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -3643,7 +3643,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -3732,7 +3732,7 @@ export const womensObject = {
     },
     
     "Palazzos":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -3772,7 +3772,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -3910,7 +3910,7 @@ export const womensObject = {
     
     "Skirts & Shorts":{
     "Shorts":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -3950,7 +3950,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -4085,7 +4085,7 @@ export const womensObject = {
     
     
     "Skirts":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -4134,7 +4134,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -4279,7 +4279,7 @@ export const womensObject = {
     
     "Hoodies & Sweatshirts":{
     "Sweatshirts":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -4325,7 +4325,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -4500,7 +4500,7 @@ export const womensObject = {
     
     "Tops Tshirts & Shirts":{
     "Top & Bottom Sets":{
-    alloptions:[
+    allOptions:[
     {
     name:"Top Fabric",
     type:"Dropdown",
@@ -4527,7 +4527,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -4604,7 +4604,7 @@ export const womensObject = {
     "Footwear":{
     "Flats":{
     "Flats":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -4672,7 +4672,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -4783,7 +4783,7 @@ export const womensObject = {
     
     "Boots":{
     "Boots":{
-    alloptions:[
+    allOptions:[
     {
     name:"Boot Type",
     type:"Dropdown",
@@ -4845,7 +4845,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -5015,7 +5015,7 @@ export const womensObject = {
     
     "Heels":{
     "Heels":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -5083,7 +5083,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -5204,7 +5204,7 @@ export const womensObject = {
     
     "Flipflops & Slippers":{
     "Flipflops & Slippers":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -5264,7 +5264,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -5383,7 +5383,7 @@ export const womensObject = {
     
     
     "Sliders":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -5443,7 +5443,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -5542,7 +5542,7 @@ export const womensObject = {
     
     
     "Clogs":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -5595,7 +5595,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -5715,7 +5715,7 @@ export const womensObject = {
     
     "Shoes":{
     "Formal Shoes":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -5796,7 +5796,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -5960,7 +5960,7 @@ export const womensObject = {
     
     
     "Casual Shoes":{
-    alloptions:[
+    allOptions:[
     {
     name:"Ankle Height",
     type:"Dropdown",
@@ -6030,7 +6030,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -6163,7 +6163,7 @@ export const womensObject = {
     
     
     "Sports Shoes":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -6215,7 +6215,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -6341,7 +6341,7 @@ export const womensObject = {
     
     
     "Sneakers":{
-    alloptions:[
+    allOptions:[
     {
     name:"Ankle Height",
     type:"Dropdown",
@@ -6429,7 +6429,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -6510,7 +6510,7 @@ export const womensObject = {
     
     
     "Loafers & Moccassins":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -6594,7 +6594,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -6738,7 +6738,7 @@ export const womensObject = {
     
     "Sandals":{
     "Sandals":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -6804,7 +6804,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -6916,7 +6916,7 @@ export const womensObject = {
     
     
     "Floaters":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -6976,7 +6976,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -7104,7 +7104,7 @@ export const womensObject = {
     
     "Bellies & Juttis":{
     "Bellies":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -7163,7 +7163,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -7319,7 +7319,7 @@ export const womensObject = {
     
     
     "Juttis & Mojaris":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -7396,7 +7396,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -7550,7 +7550,7 @@ export const womensObject = {
     "Ethnic Wear":{
     "Kurtis, Sets & Fabrics":{
     "Kurta Sets":{
-    alloptions:[
+    allOptions:[
     {
     name:"Bottom Type",
     type:"Dropdown",
@@ -7679,7 +7679,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -7803,7 +7803,7 @@ export const womensObject = {
     
     
     "Kurtis":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -7914,7 +7914,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -8001,7 +8001,7 @@ export const womensObject = {
     
     
     "Kurti Fabrics":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -8085,7 +8085,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -8157,7 +8157,7 @@ export const womensObject = {
     
     
     "Dupatta Sets":{
-    alloptions:[
+    allOptions:[
     {
     name:"Bottom Type",
     type:"Dropdown",
@@ -8242,7 +8242,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -8413,7 +8413,7 @@ export const womensObject = {
     
     "Sarees, Blouses & Petticoats":{
     "Sarees":{
-    alloptions:[
+    allOptions:[
     {
     name:"Blouse",
     type:"Dropdown",
@@ -8504,7 +8504,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -8672,7 +8672,7 @@ export const womensObject = {
     
     
     "Saree Shapewear & Petticoats":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -8718,7 +8718,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -8840,7 +8840,7 @@ export const womensObject = {
     
     
     Blouses:{
-    alloptions:[
+    allOptions:[
     {
     name:"Back Type",
     type:"Dropdown",
@@ -8969,7 +8969,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -9093,7 +9093,7 @@ export const womensObject = {
     
     
     "Blouse Piece":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -9133,7 +9133,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -9262,7 +9262,7 @@ export const womensObject = {
     
     "Suits & Dress Material":{
     "Suits":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -9311,7 +9311,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -9439,7 +9439,7 @@ export const womensObject = {
     
     
     "Semi-Stitched Suits":{
-    alloptions:[
+    allOptions:[
     {
     name:"Bottom Color",
     type:"Dropdown",
@@ -9591,7 +9591,7 @@ export const womensObject = {
         "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
         "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic",
         "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the",
-        "Congo, Republic of the", "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus",
+        "Congo, Republic of the", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
         "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
         "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
@@ -9739,7 +9739,7 @@ export const womensObject = {
     
     "Leggings, Salwars, Churidars":{
     "Churidars":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -9783,7 +9783,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -9866,7 +9866,7 @@ export const womensObject = {
     
     
     "Patialas":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -9916,7 +9916,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -10070,7 +10070,7 @@ export const womensObject = {
     
     
     "Salwars":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -10120,7 +10120,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -10205,7 +10205,7 @@ export const womensObject = {
     
     "Dupattas & Shawls":{
     Dupattas:{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -10255,7 +10255,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -10340,7 +10340,7 @@ export const womensObject = {
     
     
     Shawls:{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -10390,7 +10390,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -10520,7 +10520,7 @@ export const womensObject = {
     
     "Ethnic Jackets":{
     "Ethnic Jackets":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -10575,7 +10575,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -10710,7 +10710,7 @@ export const womensObject = {
     
     "Lehenga Choli":{
     Lehenga:{
-    alloptions:[
+    allOptions:[
     {
     name:"Bottom Length",
     type:"Dropdown",
@@ -10859,7 +10859,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -10983,7 +10983,7 @@ export const womensObject = {
     
     "Ethnic Skirts":{
     "Skirts":{
-    alloptions:[
+    allOptions:[
     {
     name:"Color",
     type:"Dropdown",
@@ -11048,7 +11048,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -11221,7 +11221,7 @@ export const womensObject = {
     
     "Islamic wear":{
     "Abayas & Coats":{
-    alloptions:[
+    allOptions:[
     {
     name:"Net Quantity(N)",
     type:"Dropdown",
@@ -11240,7 +11240,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 
@@ -11423,7 +11423,7 @@ export const womensObject = {
     
     "Sharara":{
     "Sharara":{
-    alloptions:[
+    allOptions:[
     {
     name:"Fabric",
     type:"Dropdown",
@@ -11467,7 +11467,7 @@ export const womensObject = {
         "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
         "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", 
         "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", 
-        "Costa Rica", "Côte d’Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
+        "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
         "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
         "East Timor (Timor-Leste)", "Ecuador", "Egypt", "El Salvador", 
         "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", 

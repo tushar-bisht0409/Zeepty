@@ -34,6 +34,9 @@ import SettingPage from "./pages/setting_page/setting_page";
 import MINQCPage from "./minPages/minQC_page/minQC_page";
 import MINCollectionsPage from "./minPages/minCollections_page/minCollections_page";
 import MINNotificationsPage from "./minPages/minNotifications_page/minNotifications_page";
+import SupportPage from "./pages/support_page/support_page";
+import NoticesPage from "./pages/notices_page/notices_page";
+import TestPage from "./pages/test_page/payment_page";
 
 
 function App() {
@@ -109,6 +112,15 @@ function App() {
               </Route>
 
               <Route exact path="/supplier/settings" element={<SettingPage />}>
+              </Route>
+
+              <Route exact path="/supplier/support" element={<SupportPage />}>
+              </Route>
+
+              <Route exact path="/supplier/notices" element={<NoticesPage />}>
+              </Route>
+
+              <Route exact path="/supplier/datatest" element={<TestPage />}>
               </Route>
 
               {/* MOBILE INFLUENCER ROUTES STARTS*/}

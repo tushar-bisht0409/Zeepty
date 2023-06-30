@@ -14,6 +14,8 @@ export default function Drawer({mode}) {
     const[ret,setRet] = useState('inActive');
     const[uploads,setUploads] = useState('inActive');
     const[settings,setSettings] = useState('inActive');
+    const[notices,setNotices] = useState('inActive');
+    const[support,setSupport] = useState('inActive');
 
     useEffect(()=>{
         if(mode =="home" ){
@@ -37,6 +39,12 @@ export default function Drawer({mode}) {
         else if(mode == "settings") {
             setSettings("isActive");
         }
+        else if(mode == "notices") {
+            setNotices("isActive");
+        }
+        else if(mode == "support") {
+            setSupport("isActive");
+        }
     },[]);
 
     async function logout() {
@@ -55,11 +63,11 @@ export default function Drawer({mode}) {
                 <p className='dcompanyAbout-text'>Seller Company</p>
             </div>
             <div className="dcompanySupport">
-                <div className="dsupportItem">
+                <div onClick={()=>{routeToPage("notices")}} className={notices=== "isActive" ? "dsupportItem-active" : "dsupportItem"}>
                 <i style={{fontSize: '16px',alignSelf: 'center'}} id='ddrawerIcon2' class="fa-solid fa-bell"></i>
                     <p>Notices</p>
                 </div>
-                <div className="dsupportItem">
+                <div onClick={()=>{routeToPage("support")}} className={support=== "isActive" ? "dsupportItem-active" : "dsupportItem"}>
                 <i style={{fontSize: '16px',alignSelf: 'center'}} id='ddrawerIcon2' class="fa-solid fa-phone"></i>
                     <p>Support</p>
                 </div>

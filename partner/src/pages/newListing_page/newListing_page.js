@@ -40,7 +40,7 @@ import { S3_URI } from "../../store/action/type";
 //   }
 // }
 
-const allSize = {
+const allSizeOld = {
   options: ['S', 'M', 'L', 'XL', 'XXl', 'Free Size'],
   fields: [
     { name: 'Chest Length', unit: 'Inch', options: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] },
@@ -74,26 +74,34 @@ export default function NewListingPage() {
 
   const [errorArray, setErrorArray] = useState([]);
 
+  const [mainFields, setMainFields] = useState(["product_name", "weight", "price", "mrp", "hsn_code", "gst_percent"]);
   const [allFields, setAllFields] = useState([]);
-  const [productFields, setProductFields] = useState([]);
+  const [otherFields, setOtherFields] = useState([]);
 
   const [selectCustomBrand, setSelectCustomBrand] = useState(false)
 
+  const [hsnArray, setHsnArray] = useState([]);
+  const [gstArray, setGstArray] = useState([]);
+  const [sizeArray, setSizeArray] = useState({ options: [], fields: [] });
+  const [brandArray,setBrandArray] = useState([]);
 
-  function getAllFields() {
-    const nallFields = ["product_name", "weight", "price", "mrp", "hsn_code", "gst_percent"];
-    let pFields = [];
-    for (let i = 0; i < mensWear["MENS WEAR"]["Western Wear"]["Top Wear"]["T-shirts"].allOptions.length; i++) {
-      if (mensWear["MENS WEAR"]["Western Wear"]["Top Wear"]["T-shirts"].allOptions[i].required) {
-        const outputString = mensWear["MENS WEAR"]["Western Wear"]["Top Wear"]["T-shirts"].allOptions[i].name.replace(/\s+/g, "_").toLowerCase();
-        pFields.push(outputString);
-      }
-    }
+  const [loader1, setLoader1] = useState(true);
 
-    setAllFields(nallFields);
-    setProductFields(pFields);
 
-  }
+  // function getAllFields() {
+  //   const nallFields = ["product_name", "weight", "price", "mrp", "hsn_code", "gst_percent"];
+  //   let pFields = [];
+  //   for (let i = 0; i < allFields.length; i++) {
+  //     if (allFields[i].required) {
+  //       const outputString = allFields[i].name.replace(/\s+/g, "_").toLowerCase();
+  //       pFields.push(outputString);
+  //     }
+  //   }
+
+  //   setMainFields(nallFields);
+  //   setOtherFields(pFields);
+
+  // }
 
   function handleChangeLInfo(index, kName, vName) {
     kName = kName.replace(/\s+/g, "_").toLowerCase();
@@ -170,6 +178,9 @@ export default function NewListingPage() {
     }
     const json = await getListingRequest(obj);
     if (json.success) {
+      if(hsnArray.length === 0) {
+        handleGetVeticalInfo(json.msz[0])
+      }
       for (let i = 0; i < json.msz.length; i++) {
         errorArray.push([]);
       }
@@ -186,28 +197,45 @@ export default function NewListingPage() {
     } else {
       window.alert("Something Went Wrong")
     }
+    return json.msz;
   }
 
   useEffect(() => {
     getLRData(0);
-    getAllFields();
+    // getAllFields();
   }, [])
 
-  async function handleGetVeticalInfo() {
+  async function handleGetVeticalInfo(listTemp) {
     const obj = {
       type: "Name",
-      vertical: "",
-      category: "",
-      sub_category: "",
-      sub_category2: ""
+      vertical: listTemp['vertical'],
+          category: listTemp['category'],
+          sub_category: listTemp['sub_category'],
+          sub_category2: listTemp['sub_category2'],
     }
 
-    const json = getVeticalInfo(obj);
+    const json = await getVeticalInfo(obj);
     if(json.success){
+      console.log(json);
+      let pFields = [];
+      for (let i = 0; i < json.msz[0].all_options.length; i++) {
+        const outputString = json.msz[0].all_options[i].name.replace(/\s+/g, "_").toLowerCase();          
+        if (json.msz[0].all_options[i].required) {
+          pFields.push(outputString);
+        }
+        if(outputString === "brand") {
+          setBrandArray([""].concat(json.msz[0].all_options[i].options))
+        }
+      }
 
+    setOtherFields(pFields);
+    setAllFields(json.msz[0].all_options);
+    setGstArray([""].concat(json.msz[0].gst_percent));
+    setHsnArray([""].concat(json.msz[0].hsn_code));
+    setSizeArray({ options: json.msz[0].size, fields: json.msz[0].size_fields })
     } else{
-      
     }
+    setLoader1(false);
   }
 
 
@@ -341,8 +369,8 @@ export default function NewListingPage() {
       sku_id: ''
     };
 
-    for (let i = 0; i < allSize.fields.length; i++) {
-      obj[`${allSize.fields['name']}`] = "";
+    for (let i = 0; i < sizeArray.fields.length; i++) {
+      obj[`${sizeArray.fields['name']}`] = "";
     }
     lInfoArray[selectedNow]['product_size'].push(obj);
     setLInfoArray([...lInfoArray]);
@@ -394,11 +422,11 @@ export default function NewListingPage() {
         }
       }
 
-      for (let j = 0; j < allFields.length; j++) {
-        if (lInfoArray[i][allFields[j]] === "" || lInfoArray[i][allFields[j]] === null || lInfoArray[i][allFields[j]] === undefined) {
+      for (let j = 0; j < mainFields.length; j++) {
+        if (lInfoArray[i][mainFields[j]] === "" || lInfoArray[i][mainFields[j]] === null || lInfoArray[i][mainFields[j]] === undefined) {
           isErr = true;
-          if (errorArray[i].includes(allFields[j]) === false) {
-            errorArray[i].push(allFields[j]);
+          if (errorArray[i].includes(mainFields[j]) === false) {
+            errorArray[i].push(mainFields[j]);
           }
         }
       }
@@ -412,18 +440,18 @@ export default function NewListingPage() {
         }
       }
 
-      for (let l = 0; l < productFields.length; l++) {
-        let ind = lInfoArray[i]['product_details'].findIndex(obj => Object.keys(obj)[0] === productFields[l]);
+      for (let l = 0; l < otherFields.length; l++) {
+        let ind = lInfoArray[i]['product_details'].findIndex(obj => Object.keys(obj)[0] === otherFields[l]);
         if (ind === -1) {
           isErr = true;
-          if (errorArray[i].includes(productFields[l]) === false) {
-            errorArray[i].push(productFields[l]);
+          if (errorArray[i].includes(otherFields[l]) === false) {
+            errorArray[i].push(otherFields[l]);
           }
         } else {
-          if (lInfoArray[i]['product_details'][ind][`${productFields[l]}`] === "" || lInfoArray[i]['product_details'][ind][`${productFields[l]}`] === null || lInfoArray[i]['product_details'][ind][`${productFields[l]}`] === undefined) {
+          if (lInfoArray[i]['product_details'][ind][`${otherFields[l]}`] === "" || lInfoArray[i]['product_details'][ind][`${otherFields[l]}`] === null || lInfoArray[i]['product_details'][ind][`${otherFields[l]}`] === undefined) {
             isErr = true;
-            if (errorArray[i].includes(productFields[l]) === false) {
-              errorArray[i].push(productFields[l]);
+            if (errorArray[i].includes(otherFields[l]) === false) {
+              errorArray[i].push(otherFields[l]);
             }
           }
         }
@@ -499,7 +527,7 @@ export default function NewListingPage() {
       setToDelete([]);
     }
     if (json.success) {
-      window.open('/supplier/uploadlisting/drafts','_self')
+      window.open('/supplier/uploadlisting/pending','_self')
     } else {
       window.alert("Something Went Wrong, Failed To Save Changes")
     }
@@ -578,7 +606,7 @@ export default function NewListingPage() {
   };
 
   return (
-    lInfoArray === undefined ? <div></div> :
+    loader1 ? <div className="newLP-loader1" ></div> : lInfoArray === undefined ? <div></div> :
       <div>
         <div className="titleBar">
           <i onClick={()=>{window.history.back()}} className="fa-solid fa-arrow-left" style={{ color: 'white', fontSize: '26px', paddingLeft: '2vw' }}></i>
@@ -665,8 +693,8 @@ export default function NewListingPage() {
                 <div className="apibip">
                   <span className="apibipT1">HSN Code<span className="apibipT2"> *</span></span>
                   <select className={errorArray[selectedNow].includes("hsn_code") ? "apibipDDError" : "apibipDD"} defaultValue={lInfoArray[selectedNow]['hsn_code']} value={lInfoArray[selectedNow]['hsn_code']} onChange={(e) => { checkTextError(e.target.value, 'hsn_code'); handleChangeLInfo(selectedNow, 'hsn_code', e.target.value) }}>
-                    {["", "A", "B", "C"].map((oo) => (
-                      <option className="option" value={oo}>{oo}</option>
+                    {hsnArray.map((oo) => (
+                      <option className="newLP-option" value={oo}>{oo}</option>
                     ))}
                   </select>
                   <p className={errorArray[selectedNow].includes("hsn_code") ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide HSN Code</p>
@@ -674,8 +702,8 @@ export default function NewListingPage() {
                 <div className="apibip">
                   <span className="apibipT1">GST %<span className="apibipT2"> *</span></span>
                   <select className={errorArray[selectedNow].includes("gst_percent") ? "apibipDDError" : "apibipDD"} defaultValue={lInfoArray[selectedNow]['gst_percent']} value={lInfoArray[selectedNow]['gst_percent']} onChange={(e) => { checkTextError(e.target.value, 'gst_percent'); handleChangeLInfo(selectedNow, 'gst_percent', e.target.value) }}>
-                    {["", "A", "B", "C"].map((oo) => (
-                      <option className="option" value={oo}>{oo}</option>
+                    {gstArray.map((oo) => (
+                      <option className="newLP-option" value={oo}>{oo}</option>
                     ))}
                   </select>
                   <p className={errorArray[selectedNow].includes("gst_percent") ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide HSN Code</p>
@@ -699,7 +727,7 @@ export default function NewListingPage() {
                   </div>
                   <p className={errorArray[selectedNow].includes("product_size") ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide Size</p>
                   <div ref={sizeRef} className={sizeModal ? "apibipInputSizeDD" : "apibipInputSizeDDInactive"}>
-                    {allSize.options.map((s) => (
+                    {sizeArray.options.map((s) => (
                       <div onClick={() => { if (checkSizeSelected(s)) { unselectSize(s) } else { selectSize(s) } }} className="apibipInputSizeDDI">
                         <div className={checkSizeSelected(s) ? "apibipInputSizeDDIC" : "apibipInputSizeDDICInactive"}><i style={{ fontSize: '12px', color: 'white' }} class="fa-solid fa-check"></i></div>
                         <p className="apibipInputSizeDDIT1">{s}</p>
@@ -720,7 +748,7 @@ export default function NewListingPage() {
                   <div className="apibipSTableTBD1">Size</div>
                   <div className="apibipSTableTBD2">Inventory*</div>
                   <div className="apibipSTableTBD3">SKU ID(optional)</div>
-                  {allSize.fields.map((f) => (
+                  {sizeArray.fields.map((f) => (
                     <div className="apibipSTableTBD4">{f.name} ({f.unit})</div>
                   ))}
                   <div className="apibipSTableTBD5">Action</div>
@@ -736,11 +764,11 @@ export default function NewListingPage() {
                       <input onChange={(e) => { skuidValid(ff.size,e.target.value) }} value={ff.sku_id} type="text" className={errorArray[selectedNow].includes(`${ff.size.replace(/\s+/g, "_").toLowerCase()}_skuid`) ? "apibipSTableBodyD3IError" : "apibipSTableBodyD3I"}></input>
                       <p className={errorArray[selectedNow].includes(`${ff.size.replace(/\s+/g, "_").toLowerCase()}_skuid`) ? "apibErrorT1" : "apibErrorT1Inactive"}>SKU ID of one or more product is same</p>
                     </div>
-                    {allSize.fields.map((ld) => (
+                    {sizeArray.fields.map((ld) => (
                       <div className="apibipSTableBodyD4">
                         <select defaultValue={ff[`${ld.name.replace(/\s+/g, "_").toLowerCase()}`]} onChange={(e) => { editSizeValue(ff.size, ld.name, e.target.value) }} className="apibipSTableBodyD4DD">
                           {["", "A", "B", "C"].map((oo) => (
-                            <option className="option" value={oo}>{oo}</option>
+                            <option className="newLP-option" value={oo}>{oo}</option>
                           ))}
                         </select>
                       </div>
@@ -758,8 +786,8 @@ export default function NewListingPage() {
               <div className="apibiBox-Brand-Select">
               <span className="apibipT1">Select Brand</span>
                   <select className={errorArray[selectedNow].includes("brand") ? "apibipDDError" : "apibipDD"} defaultValue={lInfoArray[selectedNow]['brand']} value={lInfoArray[selectedNow]['brand']} onChange={(e) => { setSelectCustomBrand(false); handleChangeLInfo(selectedNow, 'brand', e.target.value) }}>
-                    {["", "A", "B", "C"].map((oo) => (
-                      <option className="option" value={oo}>{oo}</option>
+                    {brandArray.map((oo) => (
+                      <option className="newLP-option" value={oo}>{oo}</option>
                     ))}
                   </select>
                 </div>
@@ -772,15 +800,15 @@ export default function NewListingPage() {
 
               <p style={{ marginTop: '4vh' }} className="apibipHead">Product Details</p>
               <div className="apibipBox">
-                {mensWear["MENS WEAR"]["Western Wear"]["Top Wear"]["T-shirts"].allOptions.map((opt) => (
+                {allFields.map((opt) => (
                   opt.required ? <div>
                     <div className="apibip">
                       <span className="apibipT1">{opt.name}<span className="apibipT2">{opt.required ? " *" : ""}</span></span>
                       {opt.type === "Text" ? <input type="text" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
                         : opt.type === "Integer" ? <input type="number" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
                           : opt.type === "Dropdown" ? <select className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipDDError" : "apibipDD"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }} name={opt.name} defaultValue={lInfoArray[selectedNow]['product_details'][`${opt.name}`]}>
-                            {opt.options.map((oo) => (
-                              <option className="option" value={oo}>{oo}</option>
+                            {[""].concat(opt.options).map((oo) => (
+                              <option className="newLP-option" value={oo}>{oo}</option>
                             ))}
                           </select> : null}
                       <p className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide {opt.name}</p>
@@ -791,15 +819,15 @@ export default function NewListingPage() {
 
               <p style={{ marginTop: '4vh' }} className="apibipHead">Other Details</p>
               <div className="apibipBox">
-                {mensWear["MENS WEAR"]["Western Wear"]["Top Wear"]["T-shirts"].allOptions.map((opt) => (
+                {allFields.map((opt) => (
                   opt.name === "Brand" ? null : opt.required === false ? <div>
                     <div className="apibip">
                       <span className="apibipT1">{opt.name}<span className="apibipT2">{opt.required ? " *" : ""}</span></span>
                       {opt.type === "Text" ? <input type="text" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
                         : opt.type === "Integer" ? <input type="number" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
                           : opt.type === "Dropdown" ? <select className="apibipDD" value={findDetails('other_details', opt.name)} onChange={(e) => { handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value) }} name={opt.name} defaultValue={lInfoArray[selectedNow]['other_details'][`${opt.name}`]}>
-                            {opt.options.map((oo) => (
-                              <option className="option" value={oo}>{oo}</option>
+                            {[""].concat(opt.options).map((oo) => (
+                              <option className="newLP-option" value={oo}>{oo}</option>
                             ))}
                           </select> : null}
                     </div>

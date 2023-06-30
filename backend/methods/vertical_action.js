@@ -1,11 +1,12 @@
 
 const Vertical = require("../schemas/vertical");
+const { v4: uuidv4 } = require('uuid');
 
 var functions = {
     postVertical: function (req, res) {
         var obj = req.body;
-        var pay_info = new Payment({
-            vertical_id: obj.vertical_id,
+        var v_info = new Vertical({
+            vertical_id: uuidv4(),
             vertical: obj.vertical,
             category: obj.category,
             sub_category: obj.sub_category,
@@ -16,7 +17,7 @@ var functions = {
             size: obj.size,
             size_fields: obj.size_fields,
         });
-        pay_info.save(function (err, pinfo) {
+        v_info.save(function (err, pinfo) {
             if (err) {
                 return res.json({
                     success: false,

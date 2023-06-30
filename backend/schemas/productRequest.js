@@ -21,6 +21,14 @@ const productRequestSchema = new Schema({
         type: Boolean,
         default: true
     },
+    new_title: {
+        type: String,
+        require: false
+    },
+    new_description: {
+        type: String,
+        require: false
+    },
     seller_id: {
         type: String,
         require: false

@@ -5,27 +5,32 @@ var functions = {
     postProductRequest: function (req, res) {
         var obj = req.body;
         var productinfo = new ProductRequest({
-            productRequestID: obj.productRequestID,
-            productStatus: obj.productStatus,
-            requestType: obj.requestType,
-            productID: obj.productID,
-            SKUID: obj.SKUID,
-            sellerID: obj.sellerID,
-            listingID: obj.listingID,
+            product_request_id: obj.product_request_id,
+            product_status: obj.product_status,
+            product_id: obj.product_id,
+            request_type: obj.request_type,
+            listing_id: obj.listing_id,
+            new_title: obj.new_title,
+            new_description: obj.new_description,
+            manufacturer_id: obj.manufacturer_id,
+            sku_id: obj.sku_id,
+            style_code: obj.style_code,
+            weight: obj.weight,
+            media_urls: obj.media_urls,
             brand: obj.brand,
-            title: obj.title,
-            description: obj.description,
-            sImageUrls: obj.sImageUrls,
-            lableImageUrls: obj.lableImageUrls,
-            sellingPrice: obj.sellingPrice,
-            mrp: obj.mrp,
-            imageUrls: obj.imageUrls,
-            specification: obj.specification,
-            gender: obj.gender,
+            product_name: obj.product_name,
             vertical: obj.vertical,
             category: obj.category,
-            subCategory: obj.subCategory,
-            variants: obj.variants,
+            sub_category: obj.sub_category,
+            sub_category2: obj.sub_category2,
+            price: obj.price,
+            mrp: obj.mrp,
+            product_size: obj.product_size,
+            pickup_address: obj.pickup_address,
+            hsn_code: obj.hsn_code,
+            gst_percent: obj.gst_percent,
+            product_details: obj.product_details,
+            other_details: obj.other_details,
         });
         productinfo.save(function (err, uinfo) {
             if (err) {
@@ -43,27 +48,7 @@ var functions = {
             }
         });
     },
-    searchProductRequest: function(req, res) {
-        var obj = req.query;
-        ProductRequest.find({
-            title: { $regex: obj.keyword }
-        }, function (err, pinfo) {
-            if (err) {
-                return res.send({ success: false, msz: 'An Error Occured', err: err});
-            }
-            else if (!pinfo) {
-                return res.send({ success: false, msz: 'Not ProductRequest Found', err: null});
-            }
-            else {
-                if (pinfo.length === 0) {
-                    return res.send({ success: false, msz: 'No ProductRequest Found', err: null});
-                }
-                else {
-                    return res.send({ success: true, msz: pinfo, err: null});
-                }
-            }
-        });
-    },
+
     getProductRequest: async function (req, res) {
         var obj = req.query;
         if(obj.type === "seller_id"){
@@ -104,7 +89,7 @@ var functions = {
                 }
             }
         });
-    } else if(obj.type === "manufacturer_id_unique_listing_id"){
+    } else if(obj.type === "seller_id_unique_product_id"){
        await ProductRequest.aggregate([
             { $match: { seller_id: obj.seller_id } },
             { $group: { _id: "$product_id", doc: { $first: "$$ROOT" } } },
@@ -166,273 +151,82 @@ var functions = {
         });
     }
 },
-    editProductRequest: function (req, res) {
-        var obj = req.body;
-        var err;
-        if(obj.type === "brand"){
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    brand: obj.brand
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "title") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    title: obj.title
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "description") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    description: obj.description
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "category") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    category: obj.category
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "subCategory") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    subCategory: obj.subCategory
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "mrp") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    mrp: obj.mrp
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "price") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    price: obj.price
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "stockCount") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    stockCount: obj.stockCount
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "pickupAddress") {
-            ProductRequest.findOneAndUpdate(
-                {
-                    productRequestID: obj.productRequestID
-                },
-                {
-                    pickupAddress: obj.pickupAddress
-                },
-                function(err,pInfo){
-                    if(err) {
-                        return res.send({ success: false, msz: "Something Went Wrong" });
-                    } else {
-                        return res.send({ success: true, msz: pInfo});
-                    }
-                });
-        } else if(obj.type === "add"){
-            if(obj.subType === "variants"){
-                ProductRequest.findOneAndUpdate(
-                    {
-                        productRequestID: obj.productRequestID
-                    },
-                    {
-                        $push: {
-                            "variants": obj.variants,
-                        }
-                    },
-                    function(err,pInfo){
-                        if(err) {
-                            return res.send({ success: false, msz: "Something Went Wrong" });
-                        } else {
-                            return res.send({ success: true, msz: pInfo});
-                        }
-                    });
-            } else{
-                return res.send({ success: false, msz: "No Subtype Selected" });
+editProductRequest: function (req, res) {
+    var obj = req.body;
+        ProductRequest.findOneAndUpdate(
+            {
+                product_request_id: obj.product_request_id
+            },
+            {
+                product_status: obj.product_status,
+                request_type: obj.request_type,
+                sku_id: obj.sku_id,
+                style_code: obj.style_code,
+                new_title: obj.new_title,
+                new_description: obj.new_description,
+                weight: obj.weight,
+                media_urls: obj.media_urls,
+                brand: obj.brand,
+                product_name: obj.product_name,
+                price: obj.price,
+                mrp: obj.mrp,
+                product_size: obj.product_size,
+                pickup_address: obj.pickup_address,
+                hsn_code: obj.hsn_code,
+                gst_percent: obj.gst_percent,
+                product_details: obj.product_details,
+                other_details: obj.other_details,
+            },
+            function(err,pInfo){
+                if(err) {
+                    return res.send({ success: false, msz: "Something Went Wrong" });
+                } else {
+                    return res.send({ success: true, msz: pInfo});
+                }
+            });
+},
+editMultipleProductRequest: function (req, res) {
+    var obj = req.body;
+    let successArray = []
+    let errArray = [];
+    for(let i = 0; i<obj.product_request_Array.length;i++){
+        var lObj = obj.product_request_Array[i];
+    ProductRequest.findOneAndUpdate(
+        {
+            product_request_id: lObj.product_request_id
+        },
+        {
+            product_status: lObj.product_status,
+            request_type: lObj.request_type,
+            sku_id: lObj.sku_id,
+            style_code: lObj.style_code,
+            new_title: lObj.new_title,
+            new_description: lObj.new_description,
+            weight: lObj.weight,
+            media_urls: lObj.media_urls,
+            brand: lObj.brand,
+            product_name: lObj.product_name,
+            price: lObj.price,
+            mrp: lObj.mrp,
+            product_size: lObj.product_size,
+            pickup_address: lObj.pickup_address,
+            hsn_code: lObj.hsn_code,
+            gst_percent: lObj.gst_percent,
+            product_details: lObj.product_details,
+            other_details: lObj.other_details,
+        },
+        function(err,pInfo){
+            if(err) {
+                successArray.push(false);
+                errArray.push(err);
+            } else {
+                successArray.push(true);
+                errArray.push(null);
             }
-        } else if(obj.type === "delete"){
-            if(obj.subType === "variants"){
-                ProductRequest.findOneAndUpdate(
-                    {
-                        productRequestID: obj.productRequestID
-                    },
-                    {
-                        $pull: {
-                            "variants": obj.variants,
-                        }
-                    },
-                    function(err,pInfo){
-                        if(err) {
-                            return res.send({ success: false, msz: "Something Went Wrong" });
-                        } else {
-                            return res.send({ success: true, msz: pInfo});
-                        }
-                    });
-            } else{
-                return res.send({ success: false, msz: "No Subtype Selected" });
-            }
-        }
-    },
-    countManagement: async function(type,subType,productRequestID,rating) {
-        var obj = req.body;
-        var cou = 1;
-        var rat = obj.rating;
-        if(type === "delete") {
-            cou = -1;
-            if(rat !== 0) {
-                rat = - obj.rating;
-            }
-        }
-            if(subType === "soldCount") {
-                await ProductRequest.findOneAndUpdate(
-                    {
-                        productRequestID: obj.productRequestID
-                    },
-                    {
-                        $inc: { soldCount: cou}
-                    },
-                    function(err,rInfo){
-                        if(err) {
-                            return { success: false, msz: "Something Went Wrong" };
-                        } else {
-                            return { success: true, msz: rInfo };
-                        }
-                    });
-            } else if(subType === "reviewCount") {
-                await ProductRequest.findOneAndUpdate(
-                    {
-                        productRequestID: obj.productRequestID
-                    },
-                    {
-                        $inc: { reviewCount: cou}
-                    },
-                    function(err,rInfo){
-                        if(err) {
-                            return { success: false, msz: "Something Went Wrong" };
-                        } else {
-                            return { success: true, msz: rInfo };
-                        }
-                    });
-            } else if(subType === "rateCount") {
-                await ProductRequest.findOneAndUpdate(
-                    {
-                        productRequestID: obj.productRequestID
-                    },
-                    {
-                        $inc: { rateCount: cou}
-                    },
-                    async function(err,uInfo){
-                        if(err) {
-                            return { success: false, msz: "Something Went Wrong", err: err };
-                        } else {
-                            await ProductRequest.findOneAndUpdate(
-                                {
-                                    productRequestID: obj.productRequestID
-                                },
-                                {
-                                    $inc: { ratingTotal: rat}
-                                },
-                                function(err,rInfo){    
-                                    if(err) {
-                                        return { success: false, msz: "Something Went Wrong" };
-                                    } else {
-                                        return { success: true, msz: rInfo };
-                                    }
-                                });
-                        }
-                    });
-            } else if(subType === "returnCount") {
-                await ProductRequest.findOneAndUpdate(
-                    {
-                        productRequestID: obj.productRequestID
-                    },
-                    {
-                        $inc: { returnCount: cou}
-                    },
-                    function(err,rInfo){
-                        if(err) {
-                            return { success: false, msz: "Something Went Wrong" };
-                        } else {
-                            return { success: true, msz: rInfo };
-                        }
-                    });
-            } 
-    },
+        });
+    }
+        return res.send({ success: successArray, err: errArray});
+},
     postManyProductRequests: function(req,res){
         var obj = req.body;
         ProductRequest.insertMany(obj.products, function(err,pinfo){

@@ -682,3 +682,54 @@ var functions = {
 }
 
 module.exports = functions;
+
+
+// {
+//     "flag": true,
+//     "message": "GSTIN  found.",
+//     "data": {
+//         "ntcrbs": "MFT",
+//         "adhrVFlag": "Yes",
+//         "lgnm": "TUSHAR BISHT",
+//         "stj": "Commissionerate - Uttarakhand,Zone - Haridwar,Sector - Rudraprayag (Jurisdictional Office)",
+//         "dty": "Regular",
+//         "cxdt": "",
+//         "gstin": "05FICPB2597C1ZM",
+//         "nba": [
+//             "Retail Business",
+//             "Wholesale Business",
+//             "Factory / Manufacturing"
+//         ],
+//         "ekycVFlag": "Not Applicable",
+//         "cmpRt": "NA",
+//         "rgdt": "19/02/2022",
+//         "ctb": "Proprietorship",
+//         "pradr": {
+//             "adr": "00, HEET DANG,  GGIC, RUDRAPRAYAG, Rudraprayag, Uttarakhand, 246171",
+//             "addr": {
+//                 "flno": "",
+//                 "lg": "",
+//                 "loc": " RUDRAPRAYAG",
+//                 "pncd": " 246171",
+//                 "bnm": " HEET DANG",
+//                 "city": "",
+//                 "lt": "",
+//                 "stcd": " Uttarakhand",
+//                 "bno": "0",
+//                 "dst": " Rudraprayag",
+//                 "st": "  GGIC"
+//             }
+//         },
+//         "sts": "Active",
+//         "tradeNam": "NATURES HERBALK",
+//         "isFieldVisitConducted": "No",
+//         "adhrVdt": "21/02/2022",
+//         "ctj": "Commissionerate - DEHRADUN,Division - DIVISION RISHIKESH,Range - RANGE III RUDRAPRAYAG",
+//         "einvoiceStatus": "No",
+//         "lstupdt": "",
+//         "adadr": [],
+//         "ctjCd": "",
+//         "errorMsg": null,
+//         "stjCd": ""
+//     }
+// }

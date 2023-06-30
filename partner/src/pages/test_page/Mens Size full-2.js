@@ -1,4 +1,4 @@
-const mensSizeObject = {
+export const mensSizeObject = {
     "MENS WEAR": {
       "Western Wear": {
         "Top Wear": {
@@ -114,7 +114,7 @@ const mensSizeObject = {
             ]
           },
 
-          "Sweat - shirts": {
+          "Sweatshirt": {
             HSN: ["61051020", "6105", "6205", "61052010", "61059010", "620920", "610510", "610520", "610590", "620520", "620590", "61061000", "610610", "610910", "611420", "611020", "610990", "611030", "611011", "620332"],
             GST: [5, 12],
             Size: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL', '6XL', '7XL', '8XL', '9XL', '10XL', 'Free Size'],
@@ -168,7 +168,7 @@ const mensSizeObject = {
             ]
           },
 
-          "Personalized T - shirts": {
+          "Personalised T - shirts": {
             HSN: ["6109"],
             GST: [5, 12],
             Size: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL', '6XL', '7XL', '8XL', '9XL', '10XL', 'Free Size'],
@@ -269,7 +269,7 @@ const mensSizeObject = {
                 ]
               },
 
-              "Three Fourths": {
+              "Three - Fourths": {
                 HSN: ["6103", "610342", "610349", "610343", "61061000", "610610", "610419", "620461"],
                 GST: [5, 12],
                 Size: ['24','26','28','30','32','34','36','38','40','42','44','46','48','50','52','Free Size','XS', 'S', 'M', 'L', 'XL', 'XXL'],
@@ -529,8 +529,8 @@ const mensSizeObject = {
                 },
               },
 
-              "Brother & Sister T - shirt": {
-                "Brother & Sister T - shirt": {
+              "Brother & Sister T - Shirts": {
+                "Brother & Sister T - Shirts": {
                   HSN: ["610910","441113"],
                   GST: [5, 12],
                   Size: ['MEN - XS/ WOMEN - XS', 'MEN - S/ WOMEN - XS', 'MEN - M/ WOMEN - XS', 'MEN - L/ WOMEN - XS', 'MEN - XL/ WOMEN - XS', 'MEN - XXL/ WOMEN - XS', 'MEN - XS/ WOMEN - S', 'MEN - S/ WOMEN - S', 'MEN - M/ WOMEN - S', 'MEN - L/ WOMEN - S', 'MEN - XL/ WOMEN - S', 'MEN - XXL/ WOMEN - S', 'MEN - XS/ WOMEN - M', 'MEN - S/ WOMEN - M', 'MEN - M/ WOMEN - M', 'MEN - L/ WOMEN - M', 'MEN - XL/ WOMEN - M', 'MEN - XXL/ WOMEN - M', 'MEN - XS/ WOMEN - L', 'MEN - S/ WOMEN - L', 'MEN - M/ WOMEN - L', 'MEN - L/ WOMEN - L', 'MEN - XL/ WOMEN - L', 'MEN - XXL/ WOMEN - L', 'MEN - XS/ WOMEN - XL', 'MEN - S/ WOMEN - XL', 'MEN - M/ WOMEN - XL', 'MEN - L/ WOMEN - XL', 'MEN - XL/ WOMEN - XL', 'MEN - XXL/ WOMEN - XL', 'MEN - XS/ WOMEN - XXL', 'MEN - S/ WOMEN - XXL', 'MEN - M/ WOMEN - XXL', 'MEN - L/ WOMEN - XXL', 'MEN - XL/ WOMEN - XXL', 'MEN - XXL/ WOMEN - XXL'],
@@ -693,8 +693,8 @@ const mensSizeObject = {
                 },
               },
 
-              "FLipflops & Slippers" : {
-                "FLip Flops": {
+              "Flipflops and Slippers" : {
+                "Flip Flops": {
                   HSN: ["64022010", "6402", "6403", "6404", "640320", "640419", "640590", "640220", "64059000", "64029990", "64041110", "64041120", "64041190", "640299", "640411", "6404399", "640520", "950699", "64021910", "640219"],
                   GST: [12, 18],
                   Size: ['IND-5', 'IND-6', 'IND-7', 'IND-8', 'IND-9', 'IND-10', 'IND-11', 'IND-12', 'IND-13'],
@@ -738,7 +738,7 @@ const mensSizeObject = {
                 },
               },
 
-              "Sandals & Floaters" : {
+              "Sandals and Floaters" : {
                 "Sandals" : {
                   HSN:["64022010", "6402", "6403", "6404", "64011010", "6401", "640299", "640419", "640399", "640590", "640320", "64059000", "64029990", "64041110", "64041120", "64041190", "640411", "640220", "640219", "64021910", "64022090"],
                   GST: [12, 18],
@@ -847,8 +847,8 @@ const mensSizeObject = {
 
 
             "Ethnic Wear" : {
-              "Dhotis, Mundus & Lungis" : {
-                "Dhotis, Mundus & Lungis" : {
+              "Dhoti,Mundus & Lungis" : {
+                "Dhoti,Mundus & Lungis" : {
                   HSN: ["62113900", "6211", "621139", "621132", "621133", "611420", "520811", "520822"],
                   GST: [5, 12],
                   Size: ['Free Size'],
@@ -901,7 +901,7 @@ const mensSizeObject = {
                 },
               },
 
-              "Kurtas & Kurtas Sets" : {
+              "Kurtas & Kurta Sets" : {
                 "Kurta Sets" : {
                   HSN: ["62113900", "6211", "621111", "621139","621120"],
                   GST: [5, 12],
@@ -975,8 +975,6 @@ const mensSizeObject = {
                           ]
                   },
                 },
-              },
-
               "Sherwanis" : {
                 "Sherwanis" : {
                   HSN: ["6211", "610310", "621111", "621139"],
@@ -985,6 +983,7 @@ const mensSizeObject = {
                   fields: []
                 },
               }
+            }
             }
 
 

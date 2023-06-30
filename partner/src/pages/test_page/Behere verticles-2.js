@@ -1,7 +1,8 @@
-export const mensObject = {"MENS WEAR": {
+export const mensObject = {
+  "MENS WEAR": {
     "Western Wear": {
       "Top Wear": {
-       " T - shirts": { 
+       "T - shirts": { 
           allOptions: [{
               name: "Color",
               type: "Dropdown",
@@ -1210,7 +1211,7 @@ export const mensObject = {"MENS WEAR": {
                                             ]
                                           },
 
-                                          "Trouser": {
+                                          "Trousers": {
                                             allOptions: [{
                                                 name: "Color",
                                                 type: "Dropdown",
@@ -1437,7 +1438,7 @@ export const mensObject = {"MENS WEAR": {
                                               },
 
 
-                                              "Swimming shorts": {
+                                              "Swimming Shorts": {
                                                 allOptions: [{
                                                     name: "Color",
                                                     type: "Dropdown",

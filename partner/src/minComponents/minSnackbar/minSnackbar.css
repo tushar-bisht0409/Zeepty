@@ -1,4 +1,4 @@
-.snackbar{
+.minSnackbar{
     position: fixed;
     bottom: 2vh;
     align-self: center;
@@ -15,13 +15,13 @@
     z-index: 9999999999999999999;
 }
 
-.snackbar-msz{
+.minSnackbar-msz{
     font-size: 10px;
     font-weight: 500;
     margin-right: 8vw;
 }
 
-.snackbar-ok{
+.minSnackbar-ok{
     font-size: 10px;
     font-weight: bold; 
     cursor: pointer;  

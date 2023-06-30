@@ -1,0 +1,39 @@
+.noticeS{
+   display: flex;
+   flex-direction: column;
+ background-color:rgb(219, 211, 211);
+height: 100vh;
+ 
+}
+#dip{
+    height: 50vh;
+    width: 60vw;
+    margin-left: 32vw;
+    margin-top: 3vh;
+}
+.ninfobox{
+    height: 50vh;
+    width: 60vw;  
+    margin-left: 32vw;
+    margin-top: 3vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+#boldnotice{
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 3px;
+
+}
+#lightnotice{
+    font-weight:600;
+    font-size: 12px;
+    margin: 5px;
+}
+#lnotice{
+    font-weight:300;
+    font-size: 12px;
+    margin: 5px;
+    
+}

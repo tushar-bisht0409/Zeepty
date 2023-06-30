@@ -30,6 +30,14 @@ const productSchema = new Schema({
         type: Boolean,
         default: false
     },
+    new_title: {
+        type: String,
+        default: false
+    },
+    new_description: {
+        type: String,
+        default: false
+    },
     weight: {
         type: Number,
         require: false,
