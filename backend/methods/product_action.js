@@ -1,6 +1,6 @@
 
 const Product = require("../schemas/product");
-const ProductRequest = requrie("../schemas/ProductRequest")
+const ProductRequest = require("../schemas/productRequest")
 const Listing = require("../schemas/listing");
 const { elasticClient } = require("../config/elastic");
 const { editProductElastic } = require("./Elastic_Cloud/ES_product_action");
@@ -13,6 +13,7 @@ function flatTheProduct (obj) {
         listing_id: obj.listing_id,
         manufacturer_id: obj.manufacturer_id,
         active: obj.active,
+        p_active: obj.p_active,
         sku_id: obj.sku_id,
         style_code: obj.style_code,
         weight: obj.weight,
@@ -672,21 +673,20 @@ var functions = {
                     return res.send({ success: false, msz: 'No Product Request Found', err: null });
                 }
                 else {
-                    let allListings = [];
-                    let esAllListings = [];
+                    let allProducts = [];
+                    let esAllProducts = [];
                     for(let x = 0; x<lrinfo.length; x++){
-
                     for(let i = 0; i<lrinfo[x]['product_size'].length; i++){
                         let lsku = lrinfo[x].product_size[i].sku_id;
-                        if(lsku === "" || lsku === undefined || lsku === null){
-                            lsku = uuidv4();
-                        }
-                        let newListing = {
+                        let newProduct = {
+                            product_id: lrinfo[x].product_id,
+                            seller_id: lrinfo[x].seller_id,
                             listing_id: lrinfo[x].listing_id,
                             sku_id: lsku,
                             style_code: lrinfo[x].style_code,
                             manufacturer_id: lrinfo[x].manufacturer_id,
                             active: lrinfo[x].active,
+                            p_active: true,
                             weight: lrinfo[x].weight,
                             media_urls: lrinfo[x].media_urls,
                             brand: lrinfo[x].brand,
@@ -695,23 +695,24 @@ var functions = {
                             category: lrinfo[x].category,
                             sub_category: lrinfo[x].sub_category,
                             sub_category2: lrinfo[x].sub_category2,
-                            price: lrinfo[x].price,
                             mrp: lrinfo[x].mrp,
                             product_size: lrinfo[x].product_size[i],
-                            inventory: lrinfo[x].product_size[i].inventory,
                             hsn_code: lrinfo[x].hsn_code,
                             gst_percent: lrinfo[x].gst_percent,
                             product_details: lrinfo[x].product_details,
                             other_details: lrinfo[x].other_details,
-                            pickup_address: lrinfo[x].pickup_address
+                            pickup_address: lrinfo[x].pickup_address,
+                            price: lrinfo[x].new_price,
+                            new_title: lrinfo[x].new_title,
+                            new_description: lrinfo[x].new_description,
                         };
-                        allListings.push(newListing);
-                        const esListingInfo = flatTheListing(allListings[i]);
-                        esAllListings.push(esListingInfo);
+                        allProducts.push(newProduct);
+                        const esListingInfo = flatTheProduct(newProduct);
+                        esAllProducts.push(esListingInfo);
                     }
                 }
 
-                    Listing.insertMany(allListings, async function (err, pinfo) {
+                    Product.insertMany(allProducts, async function (err, pinfo) {
                         if (err) {
                             return res.json({
                                 success: false,
@@ -721,7 +722,7 @@ var functions = {
                         else {
                             try{
 
-                                const operations = esAllListings.flatMap(doc => [{ index: { _index: 'listing' } }, doc])
+                                const operations = esAllProducts.flatMap(doc => [{ index: { _index: 'product' } }, doc])
                     
                                 const bulkResponse = await elasticClient.bulk({ refresh: true, operations })
                     
@@ -741,9 +742,9 @@ var functions = {
                                     })
                                 }              
                                 
-                                ListingRequest.updateMany(
-                                    {listing_id: obj.listing_id}, 
-                                    {listing_status: "Approved"},
+                                ProductRequest.updateMany(
+                                    {product_id: obj.product_id}, 
+                                    {product_status: "Approved"},
                                     function (err, lrrinfo) {
                                         if(err){
                                             return res.json({
@@ -760,7 +761,6 @@ var functions = {
                                             });
                                         }
                                     });
-                    
                             } catch(e){
                                 return res.send({
                                     success: false,
@@ -783,7 +783,8 @@ var functions = {
         if(obj.type === "price"){
             Product.findOneAndUpdate(
                 {
-                    product_id: obj.product_id
+                    product_id: obj.product_id,
+                    style_code: obj.style_code
                 },
                 {
                     price: obj.price
@@ -799,10 +800,12 @@ var functions = {
         } else if(obj.type === "active") {
             Product.findOneAndUpdate(
                 {
-                    product_id: obj.product_id
+                    product_id: obj.product_id,
+                    style_code: obj.style_code
                 },
                 {
-                    active: obj.active
+                    active: obj.active,
+                    p_active: obj.p_active
                 },
                 function(err,pInfo){
                     if(err) {
@@ -811,6 +814,24 @@ var functions = {
                         editProductElastic(req,res);
                     }
                 });
+        } else if(obj.type === "p_active") {
+            Product.findOneAndUpdate(
+                {
+                    product_id: obj.product_id,
+                    style_code: obj.style_code
+                },
+                {
+                    p_active: obj.p_active
+                },
+                function(err,pInfo){
+                    if(err) {
+                        return res.send({ success: false, msz: "Something Went Wrong" });
+                    } else {
+                        editProductElastic(req,res);
+                    }
+                });
+        } else {
+            return res.send({ success: false, msz: "Edit Type Not Selected", err: null });
         }
     },
     countManagement: async function(type,subType,product_id,rating) {

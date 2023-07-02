@@ -11,7 +11,10 @@ const listingRequestSchema = new Schema({
         default: 'Draft'
     },
     request_type: {
-        type: String,           //Edit, Create
+        type: String,           //Edit, Create , Variant
+    },
+    edit_id: {
+        type: String            // To Differentiate multiple edit or variant request of a listing (Because these all have same listing_id)
     },
     listing_id: {
         type: String,

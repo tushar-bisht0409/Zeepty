@@ -163,9 +163,10 @@ const intialState = {
               if(ind1 !== -1) {
               ofsArray.splice(ind1,1);
             }
-            if(ind2 !== -1) {
-              insArray.splice(ind2,1);
-              insArray.splice(ind2, 0, payload.listing);
+            if(insArray.length === 0){
+              insArray.push(payload.listing);
+            } else {
+              insArray.splice(insArray.length-1, 0, payload.listing);
             }
             if(payload.listing.product_size.inventory <= 5){
               if(ind3 === -1){

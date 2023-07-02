@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { API_URI } from '../../store/action/type';
 import {v4 as uuidv4} from 'uuid';
 import { getlisting_info } from '../../store/action/listingaction';
-import { getproduct_info, postMultipleProductInMongoAndElastic, saveProduct } from '../../store/action/productaction';
+import { getproduct_info, postmultipleproductrequest, postMultipleProductInMongoAndElastic, saveProduct } from '../../store/action/productaction';
 
 
 const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount}) => {
@@ -14,7 +14,12 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
 
   const [isWishlisted, setIsWishlisted] = useState(undefined);
 
-  const [loader1, setLoader1] = useState(false)
+  const [loader1, setLoader1] = useState(false);
+  const [loader2, setLoader2] = useState(false)
+  const [isSame, setIsSame] = useState(true);
+  const [selectedVariant, setSelectedVariant] = useState(undefined);
+  const [productRequestData, setProductRequestData] = useState([]);
+
 
   function isInWishlist (prod,wList){
     console.log(wList);
@@ -106,6 +111,7 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
   }
 
     const [listing,setListing] = useState(undefined);
+    const [allListing,setAllListing] = useState([]);
 
     const [modalIsOpen,setModalIsOpen] = useState(false);
 
@@ -125,45 +131,56 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
         overlay: {zIndex: 1000}
       };
 
-      async function addProduct () {
-        if(storeStage === 1){
-          setCModalIsOpen(true);
-        }else if(storeStage === 2){
-          let sProduct = JSON.parse(localStorage.getItem("product_selected"));
+      async function addProductRequest () {
+        // if(storeStage === 1){
+        //   setCModalIsOpen(true);
+        // }else if(storeStage === 2){
+          
+        //   let sProduct = JSON.parse(localStorage.getItem("product_selected"));
+        // if(sProduct === null || sProduct === undefined){
+        //     sProduct = [];
+        // }
 
-        if(sProduct === null || sProduct === undefined){
-            sProduct = [];
-        }
+        // let obj = {
+        //     listing_id: listing.listing_id,
+        //     new_info: [],
+        // };
 
-        const obj = {
-            listing_id: listing.listing_id,
-            sku_id: listing.sku_id,
-            price: newPrice,
-        };
-
-        sProduct.push(obj);
-        localStorage.setItem("product_selected",JSON.stringify(sProduct));
-        increasePCount();
-        productAdded(listing);
-        } else{
-          let obj2 = {
-            listing_ids: [listing.listing_id],
-            seller_id: localStorage.getItem("influencer_id"),
-            prices: [{
-              listing_id: listing.listing_id,
-              price: newPrice
-            }],
+        // for(let i = 0; i<productRequestData.length; i++){
+        //   obj.new_info.push({
+        //     style_code: productRequestData[i].style_code,
+        //     new_title: productRequestData[i].new_title,
+        //     new_description: productRequestData[i].new_description,
+        //     new_price: productRequestData[i].new_price
+        //   })
+        // }
+        // sProduct.push(obj);
+        // localStorage.setItem("product_selected",JSON.stringify(sProduct));
+        // increasePCount();
+        // productAdded(listing);
+        // } else {
+          if(isSame) {
+            for(let i = 1; i<productRequestData.length; i++){
+              productRequestData[i].new_title = productRequestData[0].new_title;
+              productRequestData[i].new_description = productRequestData[0].new_description;
+              productRequestData[i].new_price = productRequestData[0].new_price;
+            }
+          }
+          setProductRequestData([...productRequestData]);
+          let obj = {
+            products: productRequestData,
           };
-  
-          const json = await postMultipleProductInMongoAndElastic(obj2);
+          console.log("KKKL ",obj)
+          const json = await postmultipleproductrequest(obj);
+          console.log(json)
           if(json.success){
-          await productAdded(listing);
+          // await productAdded(listing);
           setLoader1(false);
+          setModalIsOpen(false);
           } else {
             window.alert('Something Went Wrong')
           }
-        }
-        // localStorage.removeItem("product_selected");
+        // }
     }
 
     async function productAdded(prod) {
@@ -173,9 +190,8 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
         if(sProduct === null || sProduct === undefined){
             sProduct = [];
         }
-        console.log(sProduct);
         for(let i = 0; i<sProduct.length;i++) {
-            if(sProduct[i].listing_id === prod.listing_id && sProduct[i].sku_id === prod.sku_id){
+            if(sProduct[i].listing_id === prod.listing_id){
                 isP = true;
                 break;
             }
@@ -198,11 +214,12 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
 
     
   function handleModalData() {
-    setNewName(listing.product_name);
-          let ind = listing.other_details.findIndex((obj)=> Object.keys(obj)[0] === "description");
-          if(ind !== -1) {
-            setNewDesc(listing.other_details[ind]['description']);
-          }
+    setIsSame(true);
+    // setNewName(listing.product_name);
+    //       let ind = listing.other_details.findIndex((obj)=> Object.keys(obj)[0] === "description");
+    //       if(ind !== -1) {
+    //         setNewDesc(listing.other_details[ind]['description']);
+    //       }
   }
 
     useEffect(()=>{
@@ -222,7 +239,69 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
               }
           }
           getListing();
-    },[])
+    },[]);
+
+    async function handleGetAllListing () {
+      const obj = {
+        listing_id: item.listing_id,
+        type: `listing_id`
+      }
+      const json = await getlisting_info(obj);
+      if(json.success)
+      {
+        productRequestData.length = 0;
+        let p_id = uuidv4();
+        let i_id = localStorage.getItem('influencer_id')
+        let newRData = listing;
+        delete newRData._id;
+        let p_size = {size: listing.product_size.size, sku_id: listing.sku_id};
+        newRData.listing_request_id = uuidv4();
+        newRData.product_id = p_id;
+        newRData.seller_id = i_id;
+        newRData.new_price = 0;
+        newRData.new_title = "";
+        newRData.new_description = "";
+        newRData.product_size = [p_size];
+        productRequestData.push(newRData);
+
+        
+        for(let i =0; i<json.msz.length; i++){        
+          let ind = productRequestData.findIndex((item)=>(item.style_code === json.msz[i].style_code))
+          if(ind === -1){
+
+            //Defining Product Request Data
+            let newRData2 = json.msz[i];
+            delete newRData._id;
+            let p_size = {size: json.msz[i].product_size.size, sku_id: json.msz[i].sku_id};
+            newRData2.listing_request_id = uuidv4();
+            newRData2.product_id = p_id;
+            newRData2.seller_id = i_id;
+            newRData2.new_price = 0;
+            newRData2.new_title = "";
+            newRData2.new_description = "";
+            newRData2.product_size = [p_size];
+            productRequestData.push(newRData2);
+
+            } else {
+              let p_size = {size: json.msz[i].product_size.size, sku_id: json.msz[i].sku_id};
+              if(json.msz[i].sku_id !== listing.sku_id){
+                delete productRequestData[ind]._id;
+                productRequestData[ind].product_size.push(p_size);
+              }
+            }
+        }
+        setAllListing(json.msz);
+        setProductRequestData([...productRequestData]);
+      } else{
+        window.alert("Something Went Wrong");
+      }
+    }
+
+    function handleProductRequestData (kName,index,value) {
+        kName = kName.replace(/\s+/g, "_").toLowerCase();
+        productRequestData[index][`${kName}`] = value;
+        setProductRequestData([...productRequestData]);
+    }
 
 
   return (
@@ -259,12 +338,12 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
         isOpen={modalIsOpen}
         shouldCloseOnOverlayClick={true}
         onRequestClose={()=>{setModalIsOpen(false)}}
-        onAfterOpen={()=>{handleModalData()}}
+        onAfterOpen={()=>{handleGetAllListing(); handleModalData()}}
         className="minPCModal"
         overlayClassName="minPCModalOverLay"
         style={customStyles}>
          <>
-         <div className='minPCModal-box'>
+         {productRequestData.length === 0 ? null : <div className='minPCModal-box'>
             <div onClick={()=>{setModalIsOpen(false)}} className='minPCModalClose'>
             </div>
             <div className='minPCModalPB'>
@@ -287,24 +366,81 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
             <p className='minPCModalPBHint'>Changing product name and description may help in getting more orders</p>
                 <div className='minPCModalPBEditBox'>
                     <p className='minPCModalPBEditBoxT'>Product Name</p>
-                    <input value={newName} onChange={(val)=>{setNewName(val.target.value)}} type="text" className='minPCModalPBEditBoxI'></input>
+                    <input value={productRequestData[0].new_title} onChange={(val)=>{handleProductRequestData('new_title',0,val.target.value)}} type="text" className='minPCModalPBEditBoxI'></input>
                 </div> 
 
                 <div className='minPCModalPBEditBox'>
-                    <p className='minPCModalPBEditBoxT'>Description</p>
-                    <textarea value={newDesc} onChange={(val)=>{setNewDesc(val.target.value)}} type="text" rows="2" cols="50" className='minPCModalPBEditBoxI'></textarea>
+                    <p className='minPCModalPBEditBoxT'>Description (Optional)</p>
+                    <textarea value={productRequestData[0].new_description} onChange={(val)=>{handleProductRequestData('new_description',0,val.target.value)}} type="text" rows="2" cols="50" className='minPCModalPBEditBoxI'></textarea>
                 </div>   
 
                 <div className='minPCModalPBEditBox2'>
                     <p className='minPCModalPBEditBox2T'>Price</p>
                     <div className='minPCModalPBEditBox2D'>
-                      <input value={newPrice} onChange={(val)=>{setNewPrice(val.target.value)}} type="number" className='minPCModalPBEditBox2DI'></input>
+                      <input value={productRequestData[0].new_price} onChange={(val)=>{handleProductRequestData('new_price',0,val.target.value);}} type="number" className='minPCModalPBEditBox2DI'></input>
                       <p className='minPCModalPBEditBox2DT'>Your price should be lower than this Rs. Xyz</p>
                     </div>
-                </div>                
+                </div>        
 
-                <div onClick={()=>{ addProduct(); ;setModalIsOpen(false)}} className='minPCModalAddButton'>Submit Product</div>
+                {productRequestData.length === 0 ? null : <div onClick={()=>{setSelectedVariant(productRequestData[1]);setIsSame(!isSame);}} className='minPCModal-same'>
+                  <div className={isSame ? 'minPCModal-same-checkbox' : 'minPCModal-same-checkbox-inactive'}>
+                  <i class="fa-solid fa-check"></i>
+                  </div>
+                  <p className='minPCModal-same-text'>Keep the details same for other variants</p>
+                  </div>}
+
+                  {productRequestData.length === 0 ? null : <p className='minPCModal-othervariants'>All Products</p> }
+
+                  <div className='minPCModal-variants'>
+                    {productRequestData.map((item,index)=>(
+                      item.style_code === listing.style_code ? null : <div className='minPCModal-variants-box'>
+                      <div onClick={()=>{setSelectedVariant(item)}} className={selectedVariant === undefined || isSame ? "minPCModal-variants-item-inactive" : selectedVariant.style_code === item.style_code ? 'minPCModal-variants-item' : 'minPCModal-variants-item-inactive'}>
+                        <img className={selectedVariant === undefined || isSame ? "minPCModal-variants-item-img-inactive" : selectedVariant.style_code === item.style_code ? 'minPCModal-variants-item-img' : 'minPCModal-variants-item-img-inactive'} src={item.media_urls[0]}/>
+                      </div>
+                      {isSame ? null : <>  <div className='minPCModalPB'>
+                <img className='minPCModalPBImage' src={selectedVariant===undefined? "":selectedVariant.media_urls[0]}/>
+                <div className='minPCModalPBInfoBox'>
+                    <p className='minPCModalPBInfoBoxB'>{selectedVariant===undefined? "":selectedVariant.brand}</p>
+                    <p className='minPCModalPBInfoBoxT'>{selectedVariant===undefined? "":selectedVariant.product_name}</p>
+                    <div className="minPCModalPBInfoBoxP">
+                    <div className="minPCModalPBInfoBoxPP">Rs.{selectedVariant===undefined? "":selectedVariant.price}</div>
+                    <s className="minPCModalPBInfoBoxPM">Rs.{selectedVariant===undefined? "":selectedVariant.mrp}</s>
+                    <div className="minPCModalPBInfoBoxPD">{selectedVariant===undefined? "":Math.round((selectedVariant.mrp - selectedVariant.price)*100/selectedVariant.mrp)}% Off</div>
+                    </div>
+                    <div className="minPCModalPBInfoBoxRB">
+                    <MINRatingBox stars={selectedVariant===undefined? 0:selectedVariant.rating_count}></MINRatingBox>
+                    <div className="minPCModalPBInfoBoxRBText">({selectedVariant===undefined? "":selectedVariant.rating_total})</div>
+                    </div>
+                </div>
+            </div>  
+            <div className='minPCModalPBEditBox'>
+                    <p className='minPCModalPBEditBoxT'>Product Name</p>
+                    <input value={productRequestData[index].new_title} onChange={(val)=>{ handleProductRequestData('new_title',index,val.target.value)}} type="text" className='minPCModalPBEditBoxI'></input>
+                </div> 
+
+                <div className='minPCModalPBEditBox'>
+                    <p className='minPCModalPBEditBoxT'>Description (Optional)</p>
+                    <textarea value={productRequestData[index].new_description} onChange={(val)=>{handleProductRequestData('new_description',index,val.target.value)}} type="text" rows="2" cols="50" className='minPCModalPBEditBoxI'></textarea>
+                </div>   
+
+                <div className='minPCModalPBEditBox2'>
+                    <p className='minPCModalPBEditBox2T'>Price</p>
+                    <div className='minPCModalPBEditBox2D'>
+                      <input value={productRequestData[index].new_price} onChange={(val)=>{handleProductRequestData('new_price',index,val.target.value)}} type="number" className='minPCModalPBEditBox2DI'></input>
+                      <p className='minPCModalPBEditBox2DT'>Your price should be lower than this Rs. Xyz</p>
+                    </div>
+                </div>
+
+                </> }
+                      </div> 
+                    ))}
+                    </div>   
+
+                 
+
+                <div onClick={()=>{ addProductRequest() }} className='minPCModalAddButton'>Submit Product</div>
          </div>
+}
          </>
         </Modal>
     </div>

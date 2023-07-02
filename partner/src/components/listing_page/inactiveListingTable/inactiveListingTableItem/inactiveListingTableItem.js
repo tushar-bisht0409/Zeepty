@@ -73,15 +73,16 @@ function InactiveListingTableItem({ item }) {
     async function handlActiveStatus () {
 
         let newInfo = listing;
-        newInfo.product_size.inventory = 0;
+        newInfo.product_size.inventory = newStock;
 
         let obj = {
           listing_id: listing.listing_id,
           sku_id: listing.sku_id,
           style_code: listing.style_code,
           type: "active",
-          active: false,
-          product_size: newInfo.product_size
+          active: true,
+          product_size: newInfo.product_size,
+          getBy: "listing_id"
         }
     
         const json = await editListingES(obj);
@@ -96,6 +97,7 @@ function InactiveListingTableItem({ item }) {
             let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
             showSnackbarMessage(sbObject)
         }
+        setIsOpen(false)
       }
 
     async function editStock() {

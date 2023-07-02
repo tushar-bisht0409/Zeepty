@@ -5,7 +5,7 @@ import { editManufacturerInfo, getManufacturerInfo } from "../../store/action/ma
 import { S3_URI } from "../../store/action/type";
 import { deleteMultipleFilesS3, uploadMultipleFilesToS3 } from "../../store/action/upload_file_action";
 import FullScreenLoader from "../../components/fullScreen_loader/fullScreen_loader";
-import { changePassword } from "../../store/action/auth_action";
+import { changePassword, validateManufacturerLocalData } from "../../store/action/auth_action";
 import Snackbar from "../../components/snackbar/snackbar";
 import errorOccurred from '../../assets/supplier/images/errorOccurred.png'
 
@@ -53,6 +53,7 @@ import errorOccurred from '../../assets/supplier/images/errorOccurred.png'
     }
 
     useEffect(()=>{
+        validateManufacturerLocalData();
         handleGetManufacturerInfo();
     },[])
 

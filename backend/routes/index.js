@@ -134,6 +134,9 @@ router.post('/editproduct', product_action.editProduct);
 //POST / Edit Product Info In Mongo DB and Elastic Search
 router.post('/editproductes', product_action.editProductES);
 
+//POST / Accept Product Request
+router.post('/acceptproductrequest', product_action.acceptProductRequest);
+
 //POST / Saving New Listing Information
 router.post('/savelisting', listing_action.postListing);
 
@@ -183,6 +186,9 @@ router.post('/deletelistingrequest', listingrequest_action.deleteListingRquest);
 //POST / Delete Multiple Listing Request Info
 router.post('/deletemultiplelistingrequest', listingrequest_action.deleteMultipleListingRquest);
 
+//POST / Post Multiple Listing Request Info
+router.post('/postmultiplelistingrequest', listingrequest_action.postManyListingRequests);
+
 //POST / Saving New Product Request Information
 router.post('/saveproductrequest', productrequest_action.postProductRequest);
 
@@ -191,6 +197,12 @@ router.get('/getproductrequest', productrequest_action.getProductRequest);
 
 //POST / Edit Product Request Info
 router.post('/editproductrequest', productrequest_action.editProductRequest);
+
+//POST / Post Multiple Product Request Info
+router.post('/postmultipleproductrequest', productrequest_action.postManyProductRequests);
+
+
+
 
 // POST / Saving New Order Information
 router.post('/saveorder', order_action.postOrder);

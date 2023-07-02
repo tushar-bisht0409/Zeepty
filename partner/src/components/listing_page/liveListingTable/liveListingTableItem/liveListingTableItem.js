@@ -80,8 +80,8 @@ function LiveListingTableItem({ item }) {
           sku_id: listing.sku_id,
           style_code: listing.style_code,
           type: "active",
-          active: true,
-          product_size: newInfo.product_size
+          active: false,
+          product_size: newInfo.product_size,
         }
     
         const json = await editListingES(obj);
@@ -96,6 +96,7 @@ function LiveListingTableItem({ item }) {
             let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
             showSnackbarMessage(sbObject)
         }
+        setIsOpen(false);
       }
 
     async function editStock() {

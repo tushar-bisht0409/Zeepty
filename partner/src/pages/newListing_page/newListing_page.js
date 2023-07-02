@@ -13,6 +13,7 @@ import { saveListing } from "../../store/action/productaction";
 import { deleteMultipleFilesS3, uploadMultipleFilesToS3 } from "../../store/action/upload_file_action";
 import { mensWear } from "./cat";
 import { S3_URI } from "../../store/action/type";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
 // const verticalObject = {
 //   "Clothing": {
@@ -173,7 +174,9 @@ export default function NewListingPage() {
 
   async function getLRData(ind) {
     let obj = {
-      type: "listing_id",
+      type: "listing_id_status_type",
+      listing_status: "Draft",
+      request_type: "Create",
       listing_id: params.listing_id
     }
     const json = await getListingRequest(obj);
@@ -201,6 +204,7 @@ export default function NewListingPage() {
   }
 
   useEffect(() => {
+    validateManufacturerLocalData();
     getLRData(0);
     // getAllFields();
   }, [])
@@ -298,11 +302,13 @@ export default function NewListingPage() {
         }
         let lr_id = uuidv4();
         let l_id = lInfoArray[0]['listing_id'];
+        let e_id = lInfoArray[0]['edit_id'];
         let obj = {
           listing_request_id: lr_id,
           listing_status: "Draft",
           request_type: "Create",
           listing_id: l_id,
+          edit_id: e_id,
           manufacturer_id: localStorage.getItem('manufacturer_id'),
           media_urls: mUrls,
           weight: lInfoArray[0]['weight'],
@@ -480,6 +486,37 @@ export default function NewListingPage() {
       setErrorArray([...errorArray])
     }
   }
+
+  function checkMRPPriceError(val, kName){
+    kName = kName.replace(/\s+/g, "_").toLowerCase();
+    if(kName === "mrp"){
+      if (parseInt(val) < lInfoArray[selectedNow]['price']) {
+        if (errorArray[selectedNow].includes('mrp_price') === false) {
+          errorArray[selectedNow].push('mrp_price');
+          setErrorArray([...errorArray])
+        }
+    } else {
+      let ind = errorArray[selectedNow].findIndex((obj => obj === 'mrp_price'))
+      if (ind >= 0) {
+        errorArray[selectedNow].splice(ind, 1)
+      }
+      setErrorArray([...errorArray])
+    }
+  } else if(kName === "price") {
+    if (parseInt(val) > lInfoArray[selectedNow]['mrp']) {
+      if (errorArray[selectedNow].includes('mrp_price') === false) {
+        errorArray[selectedNow].push('mrp_price');
+        setErrorArray([...errorArray])
+      }
+  } else {
+    let ind = errorArray[selectedNow].findIndex((obj => obj === 'mrp_price'))
+    if (ind >= 0) {
+      errorArray[selectedNow].splice(ind, 1)
+    }
+    setErrorArray([...errorArray])
+  }
+  }
+}
 
   function checkTextError(val, kName) {
     kName = kName.replace(/\s+/g, "_").toLowerCase();
@@ -682,13 +719,14 @@ export default function NewListingPage() {
                 </div>
                 <div className="apibip">
                   <span className="apibipT1">Price<span className="apibipT2"> *</span></span>
-                  <input value={lInfoArray[selectedNow]['price']} type="number" className={errorArray[selectedNow].includes("price") ? "apibipInputError" : "apibipInput"} onChange={(e) => { checkNumberError(e.target.value, "price", 0); handleChangeLInfo(selectedNow, 'price', e.target.value) }}></input>
+                  <input value={lInfoArray[selectedNow]['price']} type="number" className={errorArray[selectedNow].includes("price") ? "apibipInputError" : "apibipInput"} onChange={(e) => { checkMRPPriceError(e.target.value, "price"); checkNumberError(e.target.value, "price", 0); handleChangeLInfo(selectedNow, 'price', e.target.value) }}></input>
                   <p className={errorArray[selectedNow].includes("price") ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide Price</p>
                 </div>
                 <div className="apibip">
                   <span className="apibipT1">MRP<span className="apibipT2"> *</span></span>
-                  <input value={lInfoArray[selectedNow]['mrp']} type="number" className={errorArray[selectedNow].includes("mrp") ? "apibipInputError" : "apibipInput"} onChange={(e) => { checkNumberError(e.target.value, "mrp", 0); handleChangeLInfo(selectedNow, 'mrp', e.target.value) }}></input>
-                  <p className={errorArray[selectedNow].includes("mrp") ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide Mrp</p>
+                  <input value={lInfoArray[selectedNow]['mrp']} type="number" className={errorArray[selectedNow].includes("mrp") ? "apibipInputError" : "apibipInput"} onChange={(e) => { checkMRPPriceError(e.target.value, "mrp"); checkNumberError(e.target.value, "mrp", 0); handleChangeLInfo(selectedNow, 'mrp', e.target.value) }}></input>
+                  <p className={errorArray[selectedNow].includes("mrp") ? "apibErrorT1" : "apibErrorT1Inactive"}>Mandatory field, Please provide MRP</p>
+                  <p className={errorArray[selectedNow].includes("mrp_price") ? "apibErrorT1" : "apibErrorT1Inactive"}>Please provide MRP greater than price</p>
                 </div>
                 <div className="apibip">
                   <span className="apibipT1">HSN Code<span className="apibipT2"> *</span></span>
@@ -804,7 +842,7 @@ export default function NewListingPage() {
                   opt.required ? <div>
                     <div className="apibip">
                       <span className="apibipT1">{opt.name}<span className="apibipT2">{opt.required ? " *" : ""}</span></span>
-                      {opt.type === "Text" ? <input type="text" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
+                      {opt.type === "text" ? <input type="text" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
                         : opt.type === "Integer" ? <input type="number" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
                           : opt.type === "Dropdown" ? <select className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipDDError" : "apibipDD"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }} name={opt.name} defaultValue={lInfoArray[selectedNow]['product_details'][`${opt.name}`]}>
                             {[""].concat(opt.options).map((oo) => (
@@ -823,7 +861,7 @@ export default function NewListingPage() {
                   opt.name === "Brand" ? null : opt.required === false ? <div>
                     <div className="apibip">
                       <span className="apibipT1">{opt.name}<span className="apibipT2">{opt.required ? " *" : ""}</span></span>
-                      {opt.type === "Text" ? <input type="text" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
+                      {opt.type === "text" ? <input type="text" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
                         : opt.type === "Integer" ? <input type="number" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
                           : opt.type === "Dropdown" ? <select className="apibipDD" value={findDetails('other_details', opt.name)} onChange={(e) => { handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value) }} name={opt.name} defaultValue={lInfoArray[selectedNow]['other_details'][`${opt.name}`]}>
                             {[""].concat(opt.options).map((oo) => (

@@ -6,10 +6,12 @@ var functions = {
         var obj = req.body;
         var listinginfo = new ListingRequest({
             listing_request_id: obj.listing_request_id,
+            edit_id: obj.edit_id,
             listing_status: obj.listing_status,
             request_type: obj.request_type,
             listing_id: obj.listing_id,
             manufacturer_id: obj.manufacturer_id,
+            edit_id: obj.edit_id,
             sku_id: obj.sku_id,
             style_code: obj.style_code,
             weight: obj.weight,
@@ -70,7 +72,68 @@ var functions = {
         });
     } else if(obj.type === "listing_id"){
         ListingRequest.find({
-            listing_id: obj.listing_id
+            listing_id: obj.listing_id,
+        }, function (err, pinfo) {
+            if (err) {
+                return res.send({ success: false, msz: 'An Error Occured', err: err});
+            }
+            else if (!pinfo) {
+                return res.send({ success: false, msz: 'Not ListingRequest Found', err: null});
+            }
+            else {
+                if (pinfo.length === 0) {
+                    return res.send({ success: false, msz: 'No ListingRequest Found', err: null});
+                }
+                else {
+                    return res.send({ success: true, msz: pinfo, err: null});
+                }
+            }
+        });
+    } else if(obj.type === "listing_id_status_type"){
+        ListingRequest.find({
+            listing_id: obj.listing_id,
+            listing_status: obj.listing_status,
+            request_type: obj.request_type
+        }, function (err, pinfo) {
+            if (err) {
+                return res.send({ success: false, msz: 'An Error Occured', err: err});
+            }
+            else if (!pinfo) {
+                return res.send({ success: false, msz: 'Not ListingRequest Found', err: null});
+            }
+            else {
+                if (pinfo.length === 0) {
+                    return res.send({ success: false, msz: 'No ListingRequest Found', err: null});
+                }
+                else {
+                    return res.send({ success: true, msz: pinfo, err: null});
+                }
+            }
+        });
+    } else if(obj.type === "listing_id_type"){
+        ListingRequest.find({
+            listing_id: obj.listing_id,
+            request_type: obj.request_type
+        }, function (err, pinfo) {
+            if (err) {
+                return res.send({ success: false, msz: 'An Error Occured', err: err});
+            }
+            else if (!pinfo) {
+                return res.send({ success: false, msz: 'Not ListingRequest Found', err: null});
+            }
+            else {
+                if (pinfo.length === 0) {
+                    return res.send({ success: false, msz: 'No ListingRequest Found', err: null});
+                }
+                else {
+                    return res.send({ success: true, msz: pinfo, err: null});
+                }
+            }
+        });
+    } else if(obj.type === "listing_id_edit_id"){
+        ListingRequest.find({
+            listing_id: obj.listing_id,
+            edit_id: obj.edit_id
         }, function (err, pinfo) {
             if (err) {
                 return res.send({ success: false, msz: 'An Error Occured', err: err});
@@ -271,7 +334,8 @@ var functions = {
             if(err) {
                 return res.json({
                     success: false,
-                    msz: "Failed to Save"
+                    msz: "Failed to Save",
+                    err: err
                 });
             }
             else {

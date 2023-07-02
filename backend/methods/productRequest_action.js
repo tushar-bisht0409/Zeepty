@@ -6,12 +6,15 @@ var functions = {
         var obj = req.body;
         var productinfo = new ProductRequest({
             product_request_id: obj.product_request_id,
+            edit_id: obj.edit_id,
             product_status: obj.product_status,
             product_id: obj.product_id,
             request_type: obj.request_type,
             listing_id: obj.listing_id,
+            new_price: obj.new_price,
             new_title: obj.new_title,
             new_description: obj.new_description,
+            seller_id: obj.seller_id,
             manufacturer_id: obj.manufacturer_id,
             sku_id: obj.sku_id,
             style_code: obj.style_code,
@@ -158,6 +161,7 @@ editProductRequest: function (req, res) {
                 product_request_id: obj.product_request_id
             },
             {
+                edit_id: obj.edit_id,
                 product_status: obj.product_status,
                 request_type: obj.request_type,
                 sku_id: obj.sku_id,
@@ -196,6 +200,7 @@ editMultipleProductRequest: function (req, res) {
             product_request_id: lObj.product_request_id
         },
         {
+            edit_id: obj.edit_id,
             product_status: lObj.product_status,
             request_type: lObj.request_type,
             sku_id: lObj.sku_id,
@@ -233,7 +238,8 @@ editMultipleProductRequest: function (req, res) {
             if(err) {
                 return res.json({
                     success: false,
-                    msz: "Failed to Save"
+                    msz: "Failed to Save",
+                    err: err
                 });
             }
             else {

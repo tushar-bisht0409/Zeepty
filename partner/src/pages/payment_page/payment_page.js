@@ -1,9 +1,13 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Drawer from "../../components/drawer/drawer";
 import LeftNav from "../../components/leftnav/lefnav";
 import "./payment_page.css";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
 const PaymentPage = () => {
+  useEffect(()=>{
+    validateManufacturerLocalData();
+  },[])
   return (
     <div id='content-wrap'>
         <Drawer mode={"payments"} />

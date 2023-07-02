@@ -12,9 +12,7 @@ export const getproduct_info = async function (obj) {
     }
 };  
 
-export const saveListing = (obj) => async (dispatch) => { 
-  // console.log("obje",obj)
-   
+export const saveListing = (obj) => async (dispatch) => {    
   try { 
     const response = await fetch(`${API_URI}/savelisting`, { 
       method: 'POST', 
@@ -125,3 +123,25 @@ export const saveProduct = async (obj) => {
           return {"msz": "Something went wrong", "success": false, "userID": ""} 
         } 
       };
+
+      export const postmultipleproductrequest = async (obj) => {    
+        try { 
+          const response = await fetch(`${API_URI}/postmultipleproductrequest`, { 
+            method: 'POST', 
+            headers: { 
+              Accept: 'application/json', 
+                    'Content-Type': 'application/json' 
+                  }, 
+                  body: JSON.stringify(
+                   obj
+                   ) 
+                }); 
+                const json = await response.json(); 
+                if(json.success === true){  
+                 console.log('Product Saved'); 
+            } 
+            return json; 
+          } catch (error) { 
+            return {"msz": "Something went wrong", "success": false, "userID": ""} 
+          } 
+        };

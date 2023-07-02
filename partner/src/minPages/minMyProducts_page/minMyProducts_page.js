@@ -44,24 +44,11 @@ const MINMyProductsPage = () => {
 
     let obj = {
       seller_id: localStorage.getItem('influencer_id'),
-      type: 'seller_id'
+      type: 'unique_productStyle'
   }
 
   const json = await getproduct_info(obj);
 
-
-    // let obj = {
-    //     seller_id: localStorage.getItem('influencer_id'),
-    //     sortBy: sbMode,
-    //     keyword: params.keyword,
-    //     filterArray: filterParams.filterArray,
-    //     ratingThreshold: filterParams['ratingThreshold'],
-    //     minPrice: filterParams['minPrice'],
-    //     maxPrice: filterParams['maxPrice'],
-    //     discountThreshold: filterParams['discountThreshold']
-    // }
-
-    // const json = await getAllSellerProduct(obj);
     if (json.success) {
       groupProduct(json.msz)
     } else {
@@ -72,12 +59,14 @@ const MINMyProductsPage = () => {
 
   function groupProduct(list) {
     for(let i = 0; i<list.length; i++){
-      if(list[i].blacklisted === false && list[i].active === true){
-        products.live.push(list[i]);
-      } else if(list[i].blacklisted === false && list[i].active === false){
-        products.inactive.push(list[i]);
-      } else if(list[i].blacklisted === true){
-        products.blocked.push(list[i]);
+      if(list[i].documents[0].blacklisted === false && list[i].documents[0].active === true && list[i].documents[0].p_active === true){
+        products.live.push(list[i].documents[0]);
+      } else if(list[i].documents[0].blacklisted === false){
+        if(list[i].documents[0].active === false || list[i].documents[0].p_active === false){
+          products.inactive.push(list[i].documents[0]);
+        }
+      } else if(list[i].documents[0].blacklisted === true){
+        products.blocked.push(list[i].documents[0]);
       } 
     }
     setProducts(products);
@@ -113,9 +102,9 @@ const MINMyProductsPage = () => {
         </div>
 
         <div className='minMP-tabbar'>
-            <div onClick={()=>{handleMode("Live")}} className={mode === "Live" ? 'minMP-tabbar-active' : 'minMP-tabbar-inactive'}>Live</div>
-            <div onClick={()=>{handleMode("Inactive")}} className={mode === "Inactive" ? 'minMP-tabbar-active' : 'minMP-tabbar-inactive'}>Inactive</div>
-            <div onClick={()=>{handleMode("Blocked")}} className={mode === "Blocked" ? 'minMP-tabbar-active' : 'minMP-tabbar-inactive'}>Blocked</div>
+            <div onClick={()=>{handleMode("Live")}} className={mode === "Live" ? 'minMP-tabbar-active' : 'minMP-tabbar-inactive'}>Live ( {products.live.length} )</div>
+            <div onClick={()=>{handleMode("Inactive")}} className={mode === "Inactive" ? 'minMP-tabbar-active' : 'minMP-tabbar-inactive'}>Inactive ( {products.inactive.length} )</div>
+            <div onClick={()=>{handleMode("Blocked")}} className={mode === "Blocked" ? 'minMP-tabbar-active' : 'minMP-tabbar-inactive'}>Blocked ( {products.blocked.length} )</div>
         </div>
 
         {isError ? <div className="minMP-error">
@@ -134,13 +123,13 @@ const MINMyProductsPage = () => {
          {keyword.trim() === "" ? null : searchResults.length === 0 ? 
          <p className='minMP-noResults'>No search results for '{keyword}'</p> : 
          <div className="minMP-productBox">{searchResults.map((p) => (
-            <MINStoreProductCard item={p}/>
+            <MINStoreProductCard item={p} products={products} setProducts={setProducts} setMode={setMode}/>
           ))}</div>
           }
 
-          {searchResults.length === 0 || keyword.trim() === "" ? <div className="minMP-productBox">
+          {searchResults.length === 0 || keyword.trim() === "" ? <div key={`${mode}${products.live.length}${products.inactive.length}`} className="minMP-productBox">
           {products[`${mode.toLowerCase()}`].map((p) => (
-            <MINStoreProductCard item={p}/>
+            <MINStoreProductCard item={p} products={products} setProducts={setProducts} setMode={setMode}/>
           ))}
         </div>: null}
         </>}

@@ -6,9 +6,12 @@ const productRequestSchema = new Schema({
         type: String,
         require: false,
     },
+    edit_id: {
+        type: String            // To Differentiate multiple edit or variant request of a listing (Because these all have same listing_id)
+    },
     product_status: {
         type: String,           // Approved, Pending, Denied, Draft
-        default: 'Draft'
+        default: 'Pending'
     },
     request_type: {
         type: String,           //Edit, Create
@@ -17,9 +20,9 @@ const productRequestSchema = new Schema({
         type: String,
         require: false
     },
-    active: {
-        type: Boolean,
-        default: true
+    new_price: {
+        type: Number,
+        require: false
     },
     new_title: {
         type: String,
@@ -107,7 +110,15 @@ const productRequestSchema = new Schema({
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },
-    error_array: [Schema.Types.Mixed]
+    error_array: [Schema.Types.Mixed],
+    blacklisted: {
+        type: Boolean,
+        default: false
+    },
+    blacklisted_for: {
+        type: String,
+        require: false,
+    },
 },{timestamps: true,strict: false});
 
 module.exports = mongoose.model("Product_Requests", productRequestSchema);

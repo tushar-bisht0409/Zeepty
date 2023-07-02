@@ -24,7 +24,6 @@ const listingSchema = new Schema({
     },
     blacklisted: {
         type: Boolean,
-        require: false,
         default: false
     },
     blacklisted_for: {

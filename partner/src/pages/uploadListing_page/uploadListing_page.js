@@ -10,6 +10,7 @@ import QCTable from "../../components/listing_page/uploadListing_page/qcTable/qc
 import { useParams } from "react-router-dom";
 import errorOccurred from '../../assets/supplier/images/errorOccurred.png'
 import nothingHere from '../../assets/supplier/images/nothingHere.png'
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
  function UploadListingPage({data}) {
 
@@ -43,6 +44,8 @@ import nothingHere from '../../assets/supplier/images/nothingHere.png'
 },[])
 
 useEffect(()=>{
+  validateManufacturerLocalData();
+
    if(params.mode === "rejected"){
      setState("rejected")
    } else if(params.mode === "pending"){

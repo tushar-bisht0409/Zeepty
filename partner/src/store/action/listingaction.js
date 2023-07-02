@@ -16,7 +16,7 @@ export const getlisting_info = async (obj) => {
 export const getListingRequest = async (obj) => {
 
   try {
-    const response = await fetch(`${API_URI}/getlistingrequest?type=${encodeURIComponent(obj.type)}&sku_id=${encodeURIComponent(obj.sku_id)}&manufacturer_id=${encodeURIComponent(obj.manufacturer_id)}&listing_id=${encodeURIComponent(obj.listing_id)}&listing_request_id=${encodeURIComponent(obj.listing_request_id)}`, {
+    const response = await fetch(`${API_URI}/getlistingrequest?type=${encodeURIComponent(obj.type)}&sku_id=${encodeURIComponent(obj.sku_id)}&manufacturer_id=${encodeURIComponent(obj.manufacturer_id)}&listing_id=${encodeURIComponent(obj.listing_id)}&listing_request_id=${encodeURIComponent(obj.listing_request_id)}&listing_status=${encodeURIComponent(obj.listing_status)}&request_type=${encodeURIComponent(obj.request_type)}`, {
         method: 'GET'});
     const json = await response.json();
     return json;

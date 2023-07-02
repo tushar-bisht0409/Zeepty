@@ -11,7 +11,7 @@ function flatTheListing (obj) {
     let listingInfo = {
         listing_id: obj.listing_id,
         manufacturer_id: obj.manufacturer_id,
-        active: obj.active,
+        active: true,
         sku_id: obj.sku_id,
         style_code: obj.style_code,
         weight: obj.weight,
@@ -206,7 +206,7 @@ var functions = {
                             sku_id: lsku,
                             style_code: lrinfo[x].style_code,
                             manufacturer_id: lrinfo[x].manufacturer_id,
-                            active: lrinfo[x].active,
+                            active: true,
                             weight: lrinfo[x].weight,
                             media_urls: lrinfo[x].media_urls,
                             brand: lrinfo[x].brand,
@@ -226,7 +226,7 @@ var functions = {
                             pickup_address: lrinfo[x].pickup_address
                         };
                         allListings.push(newListing);
-                        const esListingInfo = flatTheListing(allListings[i]);
+                        const esListingInfo = flatTheListing(newListing);
                         esAllListings.push(esListingInfo);
                     }
                 }

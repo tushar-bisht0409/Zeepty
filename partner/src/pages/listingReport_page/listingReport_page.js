@@ -12,6 +12,7 @@ import { deleteMultipleFilesS3, uploadMultipleFilesToS3 } from "../../store/acti
 import { mensWear } from "./cat";
 import { S3_URI } from "../../store/action/type";
 import SImageReport from "../../components/sImageReport/sImageReport";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 const allSize = {
   options: ['S', 'M', 'L', 'XL', 'XXl', 'Free Size'],
   fields: [
@@ -114,6 +115,7 @@ export default function ListingReportPage() {
   }
 
   useEffect(() => {
+    validateManufacturerLocalData();
     getLRData(0);
     getAllFields();
   }, [])

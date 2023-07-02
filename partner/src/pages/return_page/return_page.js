@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import RInfoBox from "../../components/return_page/rInfo_box/rInfo_box";
 import errorOccurred from '../../assets/supplier/images/errorOccurred.png';
 import nothingHere from '../../assets/supplier/images/nothingHere.png';
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
 
 const ReturnPage =()=> {
@@ -35,6 +36,7 @@ const ReturnPage =()=> {
 
 useEffect(()=>{
     handleGetMyReturns();
+    validateManufacturerLocalData();
 },[]);
 
     return (

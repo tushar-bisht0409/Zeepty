@@ -26,9 +26,13 @@ const productSchema = new Schema({
         type: String,
         require: false
     },
-    active: {
+    active: {                   //Active Status of listing managed by supplier
         type: Boolean,
         default: false
+    },
+    p_active: {                 //Active Status of product managed by influencer
+        type: Boolean,
+        default: true
     },
     new_title: {
         type: String,
@@ -70,10 +74,6 @@ const productSchema = new Schema({
         require: false
     },
     price: {
-        type: Number,
-        require: false
-    },
-    upper_price: {
         type: Number,
         require: false
     },
@@ -131,7 +131,15 @@ const productSchema = new Schema({
     rating_score_at: {
         type: Date,
         default: Date.now()
-    }
+    },
+    blacklisted: {
+        type: Boolean,
+        default: false
+    },
+    blacklisted_for: {
+        type: String,
+        require: false,
+    },
 },{timestamps: true,strict: false});
 
 module.exports = mongoose.model("Products", productSchema);

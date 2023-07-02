@@ -5,18 +5,7 @@ var functions = {
   editListingElastic: async function (req,res) {
     var obj = req.body;
 
-    let getByObj = {};
     let updateObj = {};
-
-    if(obj.getBy === "listing_id") {
-      getByObj = { 
-        listing_id: obj.listing_id,
-        sku_id: obj.sku_id,
-        style_code: obj.style_code
-      };
-    } else if(obj.getBy === "manufacturer_id") {
-      getByObj = { manufacturer_id: obj.manufacturer_id };
-    }
 
     if(obj.type === "price") {
       updateObj = { price: obj.price };
@@ -31,7 +20,13 @@ var functions = {
         index: 'listing',
         body: {
           query: {
-            terms: getByObj
+            bool: {
+              must: [
+                { term: { listing_id: obj.listing_id } },
+                { term: { sku_id: obj.sku_id } },
+                { term: { style_code: obj.style_code } }
+              ]
+            }
           }
         }
       });

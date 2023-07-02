@@ -5,6 +5,7 @@ import Drawer from "../../components/drawer/drawer";
 // import AddProductInfoBox from "../../components/listing_page/addProductInfoBox/addProductInfoBox";
 // import AddProductPage from "../../components/listing_page/addProductPage/addProductPage";
 import ListingPageMain from "../../components/listing_page/listingPage1/listingPageMain/listingPageMain";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
 
 const ListingPage =()=> {
@@ -14,6 +15,8 @@ const ListingPage =()=> {
   const [mode,setMode] = useState(undefined)
 
   useEffect(()=>{
+    validateManufacturerLocalData();
+
     if(params["mode"]=== "listing") {
       setMode("listing");
     } else if(params["mode"]=== "request") {

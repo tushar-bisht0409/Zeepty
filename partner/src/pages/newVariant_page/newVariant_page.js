@@ -12,6 +12,7 @@ import { saveListing } from "../../store/action/productaction";
 import { deleteMultipleFilesS3, uploadMultipleFilesToS3 } from "../../store/action/upload_file_action";
 import { mensWear } from "./cat";
 import { S3_URI } from "../../store/action/type";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
 
 
@@ -162,6 +163,7 @@ export default function NewVariantPage() {
   }
 
   useEffect(() => {
+    validateManufacturerLocalData();
     getLRData(0);
     getAllFields();
   }, [])
@@ -703,7 +705,7 @@ export default function NewVariantPage() {
                   opt.required ? <div>
                     <div className="apibip">
                       <span className="apibipT1">{opt.name}<span className="apibipT2">{opt.required ? " *" : ""}</span></span>
-                      {opt.type === "Text" ? <input type="text" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
+                      {opt.type === "text" ? <input type="text" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
                         : opt.type === "Integer" ? <input type="number" className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipInputError" : "apibipInput"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }}></input>
                           : opt.type === "Dropdown" ? <select className={errorArray[selectedNow].includes(opt.name.replace(/\s+/g, "_").toLowerCase()) ? "apibipDDError" : "apibipDD"} value={findDetails('product_details', opt.name)} onChange={(e) => { checkTextError(e.target.value, opt.name); handleChangeLInfoDetails(selectedNow, 'product_details', opt.name, e.target.value) }} name={opt.name} defaultValue={lInfoArray[selectedNow]['product_details'][`${opt.name}`]}>
                             {opt.options.map((oo) => (
@@ -722,7 +724,7 @@ export default function NewVariantPage() {
                   opt.required === false ? <div>
                     <div className="apibip">
                       <span className="apibipT1">{opt.name}<span className="apibipT2">{opt.required ? " *" : ""}</span></span>
-                      {opt.type === "Text" ? <input type="text" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
+                      {opt.type === "text" ? <input type="text" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
                         : opt.type === "Integer" ? <input type="number" className="apibipInput" value={findDetails('other_details', opt.name)} onChange={(e) => handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value)}></input>
                           : opt.type === "Dropdown" ? <select className="apibipDD" value={findDetails('other_details', opt.name)} onChange={(e) => { handleChangeLInfoDetails(selectedNow, 'other_details', opt.name, e.target.value) }} name={opt.name} defaultValue={lInfoArray[selectedNow]['other_details'][`${opt.name}`]}>
                             {opt.options.map((oo) => (

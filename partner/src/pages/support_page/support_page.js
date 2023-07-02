@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./support_page.css";
 import Drawer from "../../components/drawer/drawer";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
 function SupportPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBox, setSelectedBox] = useState(null);
   useEffect(() => {
+    validateManufacturerLocalData();
     // Code for handling search functionality
   }, [searchQuery]);
   const handleBoxClick = (title) => {

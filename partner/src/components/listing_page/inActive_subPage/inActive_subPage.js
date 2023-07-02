@@ -11,7 +11,7 @@ import nothingHere from '../../../assets/supplier/images/nothingHere.png'
 
  function InActiveSubPage({data}) {
 
-  const params = useParams();
+    const params = useParams();
 
     // const [data,setData]= useState([]);
     const [loading,setLoading]=useState(false);

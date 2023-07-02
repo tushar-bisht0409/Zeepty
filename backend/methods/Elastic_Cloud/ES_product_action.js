@@ -17,15 +17,22 @@ var functions = {
     if(obj.type === "price") {
       updateObj = { price: obj.price};
     } else if(obj.type === "active") {
-      updateObj = { active: obj.active };
-    }
+      updateObj = { active: obj.active , p_active: obj.p_active };
+    } else if(obj.type === "p_active") {
+      updateObj = { p_active: obj.p_active };
+    } 
 
     try {
       const searchResults = await elasticClient.search({
         index: 'product',
         body: {
           query: {
-            terms: getByObj
+            bool: {
+              must: [
+                { term: { product_id: obj.product_id } },
+                { term: { style_code: obj.style_code } }
+              ]
+            }
           }
         }
       });

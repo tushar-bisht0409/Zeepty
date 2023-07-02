@@ -39,7 +39,7 @@ const MINQCPage = () => {
       function groupRequest(list){
         let inArray = [];
         for(let i=0;i<list.length;i++){  
-            if(list[i].listing_status === 'Approved'){
+            if(list[i].product_status === 'Approved'){
               if(inArray.includes(list[i].product_id) === false){
                 let nInfo = {...{local_count: 1},...list[i]};
                 inArray.push(list[i].product_id);
@@ -50,7 +50,7 @@ const MINQCPage = () => {
                   requests.approved[ind]['local_count']++;
                 }   
               }
-            } else if(list[i].listing_status === 'Rejected'){
+            } else if(list[i].product_status === 'Rejected'){
               if(inArray.includes(list[i].product_id) === false){
                 let nInfo = {...{local_count: 1},...list[i]};
                 inArray.push(list[i].product_id);
@@ -61,7 +61,7 @@ const MINQCPage = () => {
                   requests.rejected[ind]['local_count']++;
                 }   
               }
-            }else if(list[i].listing_status === 'Pending' || list[i].listing_status === 'OnHold'){
+            }else if(list[i].product_status === 'Pending' || list[i].product_status === 'OnHold'){
                 if(inArray.includes(list[i].product_id) === false){
                   let nInfo = {...{local_count: 1},...list[i]};
                   inArray.push(list[i].product_id);
@@ -78,6 +78,19 @@ const MINQCPage = () => {
           setLoader1(false);
       }
 
+
+      function convertDate(str) {
+        const timestamp = new Date(str);
+        const options = {
+          year: "2-digit",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        };
+        return timestamp.toLocaleString("en-US", options);
+      }
 
 
     return (
@@ -107,14 +120,14 @@ const MINQCPage = () => {
        </div> : requests[`${mode.toLowerCase()}`].map((item)=>(
                 <div className='minQCP-body-item'>
                     <div className='minQCP-body-item-product'>
-                        <img src={""} className='minQCP-body-item-product-img'/>
-                        <span className='minQCP-body-item-product-key'>Brand <span className='minQCP-body-item-product-value'>Product Name</span></span>
+                        <img src={item.media_urls[0]} className='minQCP-body-item-product-img'/>
+                        <span className='minQCP-body-item-product-key'>{item.brand} <span className='minQCP-body-item-product-value'>{item.product_name}</span></span>
                     </div>
                     <div className='minQCP-body-item-status'>
-                        <span className='minQCP-body-item-status-key'>Uploaded on: <span className='minQCP-body-item-status-value'>5P.M, 12 Jun, 2023</span></span>
+                        <span className='minQCP-body-item-status-key'>Uploaded on: <span className='minQCP-body-item-status-value'>{convertDate(item.createdAt)}</span></span>
                         <div className='minQCP-body-item-status-div'>
-                        <p className='minQCP-body-item-status-div-pending'>Pending</p>
-                        <div className='minQCP-body-item-status-div-see'>See Report</div>
+                        <p style={{color: item.product_status === "Rejected" ? "red" : item.product_status === "Approved" ? "green" : "orange"}} className='minQCP-body-item-status-div-pending'>{item.product_status}</p>
+                        {item.product_status === "Rejected" ? <div className='minQCP-body-item-status-div-see'>See Report</div> : null}
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./notices_page.css";
 import Drawer from '../../components/drawer/drawer';
+import { validateManufacturerLocalData } from '../../store/action/auth_action';
 
 const NoticesPage = () => {
+
+  useEffect(()=>{
+    validateManufacturerLocalData();
+  },[])
+
   return (
     <>
       <Drawer mode={"notices"} />

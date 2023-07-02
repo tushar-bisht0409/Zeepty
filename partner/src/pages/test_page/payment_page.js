@@ -26,8 +26,8 @@ const TestPage = () => {
         let sSubCategory2 = "";
         let searchArray = [];
         let mongoArray = [];
-        for(i = 0; i < Object.keys(mensObject).length; i++){
-            sVertical = Object.keys(mensObject)[i];
+        for(i = 0; i < Object.keys(womensObject).length; i++){
+            sVertical = Object.keys(womensObject)[i];
             newObj = {};
             newObj[`${sVertical}`] = [];
             verticals.push(newObj);
@@ -46,36 +46,35 @@ const TestPage = () => {
                 "size_fields": []
             } 
 
-            for(j = 0; j<Object.keys(mensObject[`${sVertical}`]).length; j++){
-                sCategory = Object.keys(mensObject[`${sVertical}`])[j];
+            for(j = 0; j<Object.keys(womensObject[`${sVertical}`]).length; j++){
+                sCategory = Object.keys(womensObject[`${sVertical}`])[j];
                 newObj = {};
                 newObj[`${sCategory}`] = [];
                 verticals[i][`${sVertical}`].push(newObj);
-                for(k = 0; k < Object.keys(mensObject[`${sVertical}`][`${sCategory}`]).length ; k++){
-                    sSubCategory = Object.keys(mensObject[`${sVertical}`][`${sCategory}`])[k]
+                for(k = 0; k < Object.keys(womensObject[`${sVertical}`][`${sCategory}`]).length ; k++){
+                    sSubCategory = Object.keys(womensObject[`${sVertical}`][`${sCategory}`])[k]
                     newObj = {};
                     newObj[`${sSubCategory}`] = [];
                     verticals[i][`${sVertical}`][j][`${sCategory}`].push(newObj);
 
-                    for(m = 0; m < Object.keys(mensObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`]).length; m++){
-                        sSubCategory2 = Object.keys(mensObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`])[m];
+                    for(m = 0; m < Object.keys(womensObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`]).length; m++){
+                        sSubCategory2 = Object.keys(womensObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`])[m];
                         verticals[i][`${sVertical}`][j][`${sCategory}`][k][`${sSubCategory}`].push(`${sSubCategory2}`);
                         
-                        console.log("SS: ",sVertical," : ", sCategory, " : ", sSubCategory, " : ", sSubCategory2 )
-                        mongoObj = {
-                            "vertical_id": uuidv4(),
-                            "vertical": sVertical,
-                            "category": sCategory,
-                            "sub_category": sSubCategory,
-                            "sub_category2": sSubCategory2,
-                            "all_options": mensObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].allOptions,
-                            "hsn_code": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].HSN,
-                            "gst_percent": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].GST,
-                            "size": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].Size,
-                            "size_fields": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].fields
-                        }
+                        // mongoObj = {
+                        //     "vertical_id": uuidv4(),
+                        //     "vertical": sVertical,
+                        //     "category": sCategory,
+                        //     "sub_category": sSubCategory,
+                        //     "sub_category2": sSubCategory2,
+                        //     "all_options": mensObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].allOptions,
+                        //     "hsn_code": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].HSN,
+                        //     "gst_percent": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].GST,
+                        //     "size": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].Size,
+                        //     "size_fields": mensSizeObject[`${sVertical}`][`${sCategory}`][`${sSubCategory}`][`${sSubCategory2}`].fields
+                        // }
 
-                        mongoArray.push(mongoObj);
+                        // mongoArray.push(mongoObj);
                         searchArray.push(`${sVertical} / ${sCategory} / ${sSubCategory} / ${sSubCategory2}`);
                     }
                 } 
@@ -83,7 +82,8 @@ const TestPage = () => {
 
             }
         }
-        console.log('vertic ',mongoArray)
+        console.log('vertic ',verticals)
+        console.log("Sea: ",searchArray)
     }
 
     // async function uload() {
@@ -107,7 +107,7 @@ const TestPage = () => {
     // }
 
     useEffect(()=>{
-        // aaa()
+        aaa()
     },[])
   return (
     <div id='content-wrap'>

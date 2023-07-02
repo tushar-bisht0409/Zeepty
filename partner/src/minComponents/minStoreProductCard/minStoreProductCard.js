@@ -5,10 +5,10 @@ import Modal from 'react-modal';
 import { API_URI } from '../../store/action/type';
 import {v4 as uuidv4} from 'uuid';
 import { getlisting_info } from '../../store/action/listingaction';
-import { editProductES, getproduct_info, postMultipleProductInMongoAndElastic, saveProduct } from '../../store/action/productaction';
+import { editProductES, getproduct_info } from '../../store/action/productaction';
 
 
-const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount}) => {
+const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount,setProducts, products, setMode}) => {
 
   const [list,setList] = useState(JSON.parse(localStorage.getItem('sellerInfo')).wishlist);   //wishlist data
 
@@ -62,7 +62,6 @@ const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCo
                 type: `productSKUStyle`
               }
               const json = await getproduct_info(obj);
-              console.log(json);
               if(json.success)
               {
                 setProduct(json.msz);
@@ -72,19 +71,37 @@ const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCo
     },[])
 
 
-   async function handleEditProductES(type,active) {
+   async function handleEditProductES(type) {
     setLoader1(true);
+    setDModalIsOpen(false)
     const obj = {
       type: type,
       product_id: product.product_id,
+      style_code: product.style_code,
       price: newPrice,
-      active: active
+      p_active: !product.p_active
     } 
 
     const json = await editProductES(obj);
     if(json.success){
-      if(type === "active"){
-        product.active = active;
+      if(type === "p_active"){
+        product.p_active = !product.p_active;
+        if(product.p_active){
+          let ind = products.live.findIndex((item) => (item.product_id === product.product_id && item.style_code === product.style_code));
+          if(ind !== -1) {
+            products.live.splice(ind,1);
+            products.inactive.push(product);
+            setMode('Live')
+          }
+        } else{
+          let ind = products.inactive.findIndex((item) => (item.product_id === product.product_id && item.style_code === product.style_code));
+          if(ind !== -1) {
+            products.inactive.splice(ind,1);
+            products.live.push(product);
+            setMode('Inactive')
+          }
+        }
+        setProducts(products)
       } else if(type === "price"){
         product.price = newPrice;
       }
@@ -100,7 +117,11 @@ const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCo
     <div className="minSPC-Box" >
       <div className="minSPC-ImageBox">
         <img onClick={()=>{}} className="minSPC-Image" src={product===undefined? "":product.media_urls[0]} alt="logos"/>
-
+        {product.p_active ? <div onClick={()=>{setDModalIsOpen(true)}} className='minSPC-cross'>
+          <i class="fa-solid fa-xmark"></i>
+          </div> : <div onClick={()=>{setDModalIsOpen(true)}} className='minSPC-add'>
+          <i class="fa-solid fa-add"></i>
+          </div>}
       </div>
       <div onClick={()=>{}} className="minSPC-InfoBox">
         <p className="minSPC-InfoB">{product===undefined? "":product.brand}</p>
@@ -123,8 +144,9 @@ const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCo
           }}  className='minSPC-Added'>Edit</div>  */}
 
           {loader1 ? <div className='minSPC-Loader1'></div> : null}
-            {loader1 ? <></> : product.active ? <div onClick={()=>{setDModalIsOpen(true)}} className='minSPC-InfoBox-rfs'>Remove From Store</div> : <div onClick={()=>{handleEditProductES('active', true)}} className='minSPC-InfoBox-ats'>Add To Store</div>}
-            {loader1 ? <></> : <div onClick={()=>{setModalIsOpen(true)}} className='minSPC-InfoBox-ep'>Edit Price</div>}
+          
+            {/* {loader1 ? <></> : product.active ? <div onClick={()=>{setDModalIsOpen(true)}} className='minSPC-InfoBox-rfs'>Remove From Store</div> : <div onClick={()=>{handleEditProductES('active', true)}} className='minSPC-InfoBox-ats'>Add To Store</div>} */}
+            {loader1 ? <></> : <div onClick={()=>{setModalIsOpen(true)}} className='minSPC-InfoBox-ep'>Edit</div>}
       </div>
       <Modal
         // className="minCreateModal"
@@ -174,15 +196,15 @@ const MINStoreProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCo
         style={customStyles2}>
           <>
           <div className='minSPC-removeModalHead'>
-          <i style={{color: '#554BDA', fontSize: '16px'}} class="fa-solid fa-cancel"></i>
-          <p className='minSPC-removeModalHeadT1'>Remove From store</p>
+          <i style={{color: '#554BDA', fontSize: '16px'}} class={product.p_active ? "fa-solid fa-cancel" : "fa-solid fa-add"}></i>
+          <p className='minSPC-removeModalHeadT1'>{product.p_active ? "Remove From store" : "Add To store "}</p>
           </div>
 
-          <p className='minSPC-removeModalBodyT1'>Do you want to remove this product ${product.product_name} from your store?</p>
+          <p className='minSPC-removeModalBodyT1'>{product.p_active ? `Do you want to remove this product ${product.product_name} from your store?` : `Do you want to add this product ${product.product_name} to your store?`}</p>
 
           <div className='minSPC-removeModalAction'>
             <p onClick={()=>{setDModalIsOpen(false)}} className='minSPC-removeModalActionN'>No</p>
-            <p onClick={()=>{handleEditProductES('active', false)}} className='minSPC-removeModalActionY'>Yes</p>
+            <p onClick={()=>{handleEditProductES('p_active')}} className='minSPC-removeModalActionY'>Yes</p>
           </div>
           </>
         </Modal>

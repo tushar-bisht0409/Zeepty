@@ -1,5 +1,5 @@
 module.exports = {
-    cloudID: "0d3fe7b85ab54880a177b01ca130c254:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyRhNzhlZDYxODlkNmU0NzllOWM4OTBlMTRjNGI5MzNjZCQ3ODYwM2JlMmIwNTA0NDUyYTIzNmQ2OTE0NTRmM2NjNA==", 
+    cloudID: "BE_HERE_1:YXAtc291dGgtMS5hd3MuZWxhc3RpYy1jbG91ZC5jb206NDQzJDI4ZDFiNzhmYjBlZDQ4NDJiNTVlMWQ4OGNmNTRhM2E4JDBkMzg1MmQ1ZTNiYTRlNjE5ZjdmODM0ODQ0MGE3NzVk", 
     username: "elastic",
-    password: "zKpgAlu4SAx9S05PUYjTZkfX"
+    password: "rknNxD9ZDnRMDn3kUr7v4FKZ"
   };

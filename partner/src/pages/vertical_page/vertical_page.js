@@ -6,16 +6,16 @@ import "./vertical_page.css";
 import { v4 as uuidv4 } from 'uuid';
 import { saveListingRequest } from "../../store/action/listingaction";
 import { S3_URI } from "../../store/action/type";
+import { validateManufacturerLocalData } from "../../store/action/auth_action";
 
-const searchArray = ['MENS WEAR / Western Wear / Top Wear /  T - shirts', 'MENS WEAR / Western Wear / Top Wear / Shirts', 'MENS WEAR / Western Wear / Top Wear / Blazers', 'MENS WEAR / Western Wear / Top Wear / Jackets', 'MENS WEAR / Western Wear / Top Wear / Sweaters', 'MENS WEAR / Western Wear / Top Wear / Sweatshirt', 'MENS WEAR / Western Wear / Top Wear / Shrugs', 'MENS WEAR / Western Wear / Top Wear / Personalised T - shirts', 'MENS WEAR / Western Wear / Top Wear / Active T - shirts', 'MENS WEAR / Western Wear / Bottom Wear / Jeans', 'MENS WEAR / Western Wear / Bottom Wear / Shorts', 'MENS WEAR / Western Wear / Bottom Wear / Track Pants', 'MENS WEAR / Western Wear / Bottom Wear / Trouser', 'MENS WEAR / Western Wear / Bottom Wear / Three - Fourths', 'MENS WEAR / Western Wear / Bottom Wear / Swimming shorts', 'MENS WEAR / Footwear / Shoes / Casual Shoes', 'MENS WEAR / Footwear / Shoes / Formal Shoes', 'MENS WEAR / Footwear / Shoes / Sports Shoes', 'MENS WEAR / Footwear / Shoes / Loafers', 'MENS WEAR / Footwear / Shoes / Floaters', 'MENS WEAR / Footwear / Shoes / Boots', 'MENS WEAR / Footwear / Shoes / Sneakers', 'MENS WEAR / Footwear / Shoes / Safety Shoes', 'MENS WEAR / Footwear / Flipflops and Slippers / Flip Flops', 'MENS WEAR / Footwear / Flipflops and Slippers / Sliders', 'MENS WEAR / Footwear / Flipflops and Slippers / Clogs', 'MENS WEAR / Footwear / Sandals and Floaters / Sandals', 'MENS WEAR / Footwear / Sandals and Floaters / Floaters', 'MENS WEAR / Footwear / Ethnic Footwear / Other Ethnic Flats', 'MENS WEAR / Footwear / Ethnic Footwear / Mojaris and Juttis', 'MENS WEAR / Footwear / Shoe Accessories / Shoe Accessories', 'MENS WEAR / Sports & Activewear / Bottoms / Active Shorts', 'MENS WEAR / Sports & Activewear / Innerwear / Gym Vests', 'MENS WEAR / Men Top Wear / Unstitched Material / Shirt Fabric', 'MENS WEAR / Men Top Wear / Unstitched Material / Top & Bottom Fabric', 'MENS WEAR / Men Top Wear / Brother & Sister T - Shirts / Brother & Sister T - Shirts', 'MENS WEAR / Men Top Wear / Jumpsuits / Jumpsuits', 'MENS WEAR / Men Top Wear / Plus Size T - shirt / Plus Size T - shirt', 'MENS WEAR / Men Top Wear / Raincoat / Raincoat', 'MENS WEAR / Men Bottom Wear / Unstitched Material / Pant Fabric', 'MENS WEAR / Men Bottom Wear / Dungarees / Dungarees', 'MENS WEAR / Ethnic Wear / Dhoti,Mundus & Lungis / Dhoti,Mundus & Lungis', 'MENS WEAR / Ethnic Wear / Ethnic Jackets / Ethnic Jackets', 'MENS WEAR / Ethnic Wear / Kurtas & Kurta Sets / Kurta Sets', 'MENS WEAR / Ethnic Wear / Kurtas & Kurta Sets / Kurtas', 'MENS WEAR / Ethnic Wear / Sherwanis / Sherwanis','WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Kurta Sets', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Kurtis', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Kurti Fabrics', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Dupatta Sets', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Sarees', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Saree Shapewear & Petticoats', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Blouses', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Blouse Piece', 'WOMENS WEAR / Ethnic Wear / Suits & Dress Material / Suits', 'WOMENS WEAR / Ethnic Wear / Suits & Dress Material / Semi-Stitched Suits', 'WOMENS WEAR / Ethnic Wear / Leggings, Salwars, Churidars / Churidars', 'WOMENS WEAR / Ethnic Wear / Leggings, Salwars, Churidars / Patialas', 'WOMENS WEAR / Ethnic Wear / Leggings, Salwars, Churidars / Salwars', 'WOMENS WEAR / Ethnic Wear / Dupattas & Shawls / Dupattas', 'WOMENS WEAR / Ethnic Wear / Dupattas & Shawls / Shawls', 'WOMENS WEAR / Ethnic Wear / Ethnic Jackets / Ethnic Jackets', 'WOMENS WEAR / Ethnic Wear / Lehenga Choli / Lehenga', 'WOMENS WEAR / Ethnic Wear / Ethnic Skirts / Skirts', 'WOMENS WEAR / Ethnic Wear / Islamic wear / Abayas & Coats', 'WOMENS WEAR / Ethnic Wear / Sharara / Sharara', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Shirts', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Tshirts', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Top & Bottom Sets', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Tops & Tunics', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Women Formal Shirt & Bottom Fabric', 'WOMENS WEAR / Western Wear / Dresses, Gowns & Jumpsuits / Dresses', 'WOMENS WEAR / Western Wear / Dresses, Gowns & Jumpsuits / Gowns', 'WOMENS WEAR / Western Wear / Dresses, Gowns & Jumpsuits / Jumpsuits', 'WOMENS WEAR / Western Wear / Jeans & Jeggings / Jeans', 'WOMENS WEAR / Western Wear / Jeans & Jeggings / Jeggings', 'WOMENS WEAR / Western Wear / Capes, Shrugs & Ponchos / Capes, Shrugs & Ponchos', 'WOMENS WEAR / Western Wear / Capris & Trousers & Pants / Capris', 'WOMENS WEAR / Western Wear / Capris & Trousers & Pants / Trousers & Pants', 'WOMENS WEAR / Western Wear / Sweaters & Cardigans / Cardigans', 'WOMENS WEAR / Western Wear / Sweaters & Cardigans / Sweaters', 'WOMENS WEAR / Western Wear / Jackets / Coats & Jackets', 'WOMENS WEAR / Western Wear / Jackets / Jackets', 'WOMENS WEAR / Western Wear / Jackets / Blazers & Coats', 'WOMENS WEAR / Western Wear / Maternity Wear / Dresses', 'WOMENS WEAR / Western Wear / Palazzos, Leggings & Tights / Leggings', 'WOMENS WEAR / Western Wear / Palazzos, Leggings & Tights / Palazzos', 'WOMENS WEAR / Western Wear / Skirts & Shorts / Skirts', 'WOMENS WEAR / Western Wear / Skirts & Shorts / Shorts', 'WOMENS WEAR / Western Wear / Hoodies & Sweatshirts / Sweatshirts', 'WOMENS WEAR / Western Wear / Tops Tshirts & Shirts / Top & Bottom Sets', 'WOMENS WEAR / Footwear / Flats / Flats', 'WOMENS WEAR / Footwear / Boots / Boots', 'WOMENS WEAR / Footwear / Heels / Heels', 'WOMENS WEAR / Footwear / Flipflops & Slippers / Flipflops & Slippers', 'WOMENS WEAR / Footwear / Flipflops & Slippers / Sliders', 'WOMENS WEAR / Footwear / Flipflops & Slippers / Clogs', 'WOMENS WEAR / Footwear / Shoes / Formal Shoes', 'WOMENS WEAR / Footwear / Shoes / Casual Shoes', 'WOMENS WEAR / Footwear / Shoes / Sports Shoes', 'WOMENS WEAR / Footwear / Shoes / Sneakers', 'WOMENS WEAR / Footwear / Shoes / Loafers & Moccassins', 'WOMENS WEAR / Footwear / Sandals / Sandals', 'WOMENS WEAR / Footwear / Sandals / Floaters', 'WOMENS WEAR / Footwear / Bellies & Juttis / Bellies', 'WOMENS WEAR / Footwear / Bellies & Juttis / Juttis & Mojaris', 'WOMENS WEAR / Maternity / Feeding Topwear / Feeding Kurtis & Kurta Sets', 'WOMENS WEAR / Maternity / Maternity Topwear / Maternity Kurtis & Kurta Sets', 'WOMENS WEAR / Inner & Sleepwear / Swimwear / Swimwear', 'WOMENS WEAR / Inner & Sleepwear / Nightsuits & Nightdresses / Babydolls', 'WOMENS WEAR / Inner & Sleepwear / Nightsuits & Nightdresses / Nightdress', 'WOMENS WEAR / Inner & Sleepwear / Nightsuits & Nightdresses / Nightsuits', 'WOMENS WEAR / Inner & Sleepwear / Nightsuits & Nightdresses / Pyjamas', 'WOMENS WEAR / Inner & Sleepwear / Bras & Lingerie Sets / Bra', 'WOMENS WEAR / Inner & Sleepwear / Bras & Lingerie Sets / Lingerie Sets', 'WOMENS WEAR / Inner & Sleepwear / Bras & Lingerie Sets / Lingerie Accessories', 'WOMENS WEAR / Inner & Sleepwear / Briefs / Briefs', 'WOMENS WEAR / Inner & Sleepwear / Shapewear / Shapewear', 'WOMENS WEAR / Inner & Sleepwear / Period Panty / Period Panty']
-
+const searchArray = ['MENS WEAR / Western Wear / Top Wear / T - shirts', 'MENS WEAR / Western Wear / Top Wear / Shirts', 'MENS WEAR / Western Wear / Top Wear / Blazers', 'MENS WEAR / Western Wear / Top Wear / Jackets', 'MENS WEAR / Western Wear / Top Wear / Sweaters', 'MENS WEAR / Western Wear / Top Wear / Sweatshirt', 'MENS WEAR / Western Wear / Top Wear / Shrugs', 'MENS WEAR / Western Wear / Top Wear / Personalised T - shirts', 'MENS WEAR / Western Wear / Top Wear / Active T - shirts', 'MENS WEAR / Western Wear / Bottom Wear / Jeans', 'MENS WEAR / Western Wear / Bottom Wear / Shorts', 'MENS WEAR / Western Wear / Bottom Wear / Track Pants', 'MENS WEAR / Western Wear / Bottom Wear / Trousers', 'MENS WEAR / Western Wear / Bottom Wear / Three - Fourths', 'MENS WEAR / Western Wear / Bottom Wear / Swimming Shorts', 'MENS WEAR / Western Wear / Top & Bottom Set / Top & Bottom Set', 'MENS WEAR / Western Wear / Top & Bottom Set / Tracksuits', 'MENS WEAR / Western Wear / Top & Bottom Set / Suit Sets', 'MENS WEAR / Western Wear / Top & Bottom Set / Suit Fabric', 'MENS WEAR / Western Wear / Top & Bottom Set / Swim Suits', 'MENS WEAR / Western Wear / T - shirts / Dad & Daughter T - shirts', 'MENS WEAR / Western Wear / T - shirts / Dad & Son T - shirts', 'MENS WEAR / Men Bottom Wear / Unstitched Material / Pant Fabric', 'MENS WEAR / Men Bottom Wear / Dungarees / Dungarees', 'MENS WEAR / Men Top Wear / Unstitched Material / Shirt Fabric', 'MENS WEAR / Men Top Wear / Unstitched Material / Top & Bottom Fabric', 'MENS WEAR / Men Top Wear / Brother & Sister T - Shirts / Brother & Sister T - Shirts', 'MENS WEAR / Men Top Wear / Jumpsuits / Jumpsuits', 'MENS WEAR / Men Top Wear / Plus Size T - shirt / Plus Size T - shirt', 'MENS WEAR / Men Top Wear / Raincoat / Raincoat', 'MENS WEAR / Footwear / Shoes / Casual Shoes', 'MENS WEAR / Footwear / Shoes / Formal Shoes', 'MENS WEAR / Footwear / Shoes / Sports Shoes', 'MENS WEAR / Footwear / Shoes / Loafers', 'MENS WEAR / Footwear / Shoes / Floaters', 'MENS WEAR / Footwear / Shoes / Boots', 'MENS WEAR / Footwear / Shoes / Sneakers', 'MENS WEAR / Footwear / Shoes / Safety Shoes', 'MENS WEAR / Footwear / Flipflops and Slippers / Flip Flops', 'MENS WEAR / Footwear / Flipflops and Slippers / Sliders', 'MENS WEAR / Footwear / Flipflops and Slippers / Clogs', 'MENS WEAR / Footwear / Sandals and Floaters / Sandals', 'MENS WEAR / Footwear / Sandals and Floaters / Floaters', 'MENS WEAR / Footwear / Ethnic Footwear / Other Ethnic Flats', 'MENS WEAR / Footwear / Ethnic Footwear / Mojaris and Juttis', 'MENS WEAR / Footwear / Shoe Accessories / Shoe Accessories', 'MENS WEAR / Sports & Activewear / Bottoms / Active Shorts', 'MENS WEAR / Sports & Activewear / Innerwear / Gym Vests', 'MENS WEAR / Ethnic Wear / Dhoti,Mundus & Lungis / Dhoti,Mundus & Lungis', 'MENS WEAR / Ethnic Wear / Ethnic Jackets / Ethnic Jackets', 'MENS WEAR / Ethnic Wear / Kurtas & Kurta Sets / Kurta Sets', 'MENS WEAR / Ethnic Wear / Kurtas & Kurta Sets / Kurtas', 'MENS WEAR / Ethnic Wear / Sherwanis / Sherwanis', 'MENS WEAR / Inner & Sleepwear / Boxers & Loungewear / Boxers', 'MENS WEAR / Inner & Sleepwear / Boxers & Loungewear / Lounge Pants', 'MENS WEAR / Inner & Sleepwear / Briefs & Trunks / Briefs', 'MENS WEAR / Inner & Sleepwear / Briefs & Trunks / Trunks', 'MENS WEAR / Inner & Sleepwear / Vests / Vests', 'MENS WEAR / Inner & Sleepwear / Thermals / Thermal Topwear', 'MENS WEAR / Inner & Sleepwear / Thermals / Thermal Bottomwear', 'MENS WEAR / Inner & Sleepwear / Thermals / Thermal Set', 'MENS WEAR / Inner & Sleepwear / Nightsuits / Nightsuits','WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Shirts', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Tshirts', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Top & Bottom Wear', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Tops & Tunics', 'WOMENS WEAR / Western Wear / Tops, Tshirts & Shirts / Women Formal Shirt & Bottom Fabric', 'WOMENS WEAR / Western Wear / Dresses, Gowns & Jumpsuits / Dresses', 'WOMENS WEAR / Western Wear / Dresses, Gowns & Jumpsuits / Gowns', 'WOMENS WEAR / Western Wear / Dresses, Gowns & Jumpsuits / Jumpsuits', 'WOMENS WEAR / Western Wear / Jeans & Jeggings / Jeans', 'WOMENS WEAR / Western Wear / Jeans & Jeggings / Jeggings', 'WOMENS WEAR / Western Wear / Capes, Shrugs & Ponchos / Capes, Shrugs & Ponchos', 'WOMENS WEAR / Western Wear / Capris & Trousers & Pants / Capris', 'WOMENS WEAR / Western Wear / Capris & Trousers & Pants / Trousers & Pants', 'WOMENS WEAR / Western Wear / Sweaters & Cardigans / Cardigans', 'WOMENS WEAR / Western Wear / Sweaters & Cardigans / Sweaters', 'WOMENS WEAR / Western Wear / Jackets / Coats & Jackets', 'WOMENS WEAR / Western Wear / Jackets / Jackets', 'WOMENS WEAR / Western Wear / Jackets / Blazers & Coats', 'WOMENS WEAR / Western Wear / Maternity Wear / Dresses', 'WOMENS WEAR / Western Wear / Palazzos, Leggings & Tights / Leggings', 'WOMENS WEAR / Western Wear / Palazzos, Leggings & Tights / Palazzos', 'WOMENS WEAR / Western Wear / Skirts & Shorts / Shorts', 'WOMENS WEAR / Western Wear / Skirts & Shorts / Skirts', 'WOMENS WEAR / Western Wear / Hoodies & Sweatshirts / Sweatshirts', 'WOMENS WEAR / Western Wear / Tops Tshirts & Shirts / Top & Bottom Sets', 'WOMENS WEAR / Footwear / Flats / Flats', 'WOMENS WEAR / Footwear / Boots / Boots', 'WOMENS WEAR / Footwear / Heels / Heels', 'WOMENS WEAR / Footwear / Flipflops & Slippers / Flipflops & Slippers', 'WOMENS WEAR / Footwear / Flipflops & Slippers / Sliders', 'WOMENS WEAR / Footwear / Flipflops & Slippers / Clogs', 'WOMENS WEAR / Footwear / Shoes / Formal Shoes', 'WOMENS WEAR / Footwear / Shoes / Casual Shoes', 'WOMENS WEAR / Footwear / Shoes / Sports Shoes', 'WOMENS WEAR / Footwear / Shoes / Sneakers', 'WOMENS WEAR / Footwear / Shoes / Loafers & Moccassins', 'WOMENS WEAR / Footwear / Sandals / Sandals', 'WOMENS WEAR / Footwear / Sandals / Floaters', 'WOMENS WEAR / Footwear / Bellies & Juttis / Bellies', 'WOMENS WEAR / Footwear / Bellies & Juttis / Juttis & Mojaris', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Kurta Sets', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Kurtis', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Kurti Fabrics', 'WOMENS WEAR / Ethnic Wear / Kurtis, Sets & Fabrics / Dupatta Sets', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Sarees', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Saree Shapewear & Petticoats', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Blouses', 'WOMENS WEAR / Ethnic Wear / Sarees, Blouses & Petticoats / Blouse Piece', 'WOMENS WEAR / Ethnic Wear / Suits & Dress Material / Suits', 'WOMENS WEAR / Ethnic Wear / Suits & Dress Material / Semi-Stitched Suits', 'WOMENS WEAR / Ethnic Wear / Leggings, Salwars, Churidars / Churidars', 'WOMENS WEAR / Ethnic Wear / Leggings, Salwars, Churidars / Patialas', 'WOMENS WEAR / Ethnic Wear / Leggings, Salwars, Churidars / Salwars', 'WOMENS WEAR / Ethnic Wear / Dupattas & Shawls / Dupattas', 'WOMENS WEAR / Ethnic Wear / Dupattas & Shawls / Shawls', 'WOMENS WEAR / Ethnic Wear / Ethnic Jackets / Ethnic Jackets', 'WOMENS WEAR / Ethnic Wear / Lehenga Choli / Lehenga', 'WOMENS WEAR / Ethnic Wear / Ethnic Skirts / Skirts', 'WOMENS WEAR / Ethnic Wear / Islamic wear / Abayas & Coats', 'WOMENS WEAR / Ethnic Wear / Sharara / Sharara', 'WOMENS WEAR / Sports & Activewear / Bottoms / Bottoms', 'WOMENS WEAR / Sports & Activewear / Innerwear / Sports Bra', 'WOMENS WEAR / Sports & Activewear / Innerwear / Active Jackets & Sweatshirts', 'WOMENS WEAR / Sports & Activewear / Tops / Tops', 'WOMENS WEAR / Sports & Activewear / Active Clothing Set / Active Clothing Set']
 const allVerticals = {
             "MENS WEAR": [
                 {
                     "Western Wear": [
                         {
                             "Top Wear": [
-                                " T - shirts",
+                                "T - shirts",
                                 "Shirts",
                                 "Blazers",
                                 "Jackets",
@@ -31,9 +31,68 @@ const allVerticals = {
                                 "Jeans",
                                 "Shorts",
                                 "Track Pants",
-                                "Trouser",
+                                "Trousers",
                                 "Three - Fourths",
-                                "Swimming shorts"
+                                "Swimming Shorts"
+                            ]
+                        },
+                        {
+                            "Top & Bottom Set": [
+                                "Top & Bottom Set",
+                                "Tracksuits",
+                                "Suit Sets",
+                                "Suit Fabric",
+                                "Swim Suits"
+                            ]
+                        },
+                        {
+                            "T - shirts": [
+                                "Dad & Daughter T - shirts",
+                                "Dad & Son T - shirts"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Men Bottom Wear": [
+                        {
+                            "Unstitched Material": [
+                                "Pant Fabric"
+                            ]
+                        },
+                        {
+                            "Dungarees": [
+                                "Dungarees"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Men Top Wear": [
+                        {
+                            "Unstitched Material": [
+                                "Shirt Fabric",
+                                "Top & Bottom Fabric"
+                            ]
+                        },
+                        {
+                            "Brother & Sister T - Shirts": [
+                                "Brother & Sister T - Shirts"
+                            ]
+                        },
+                        {
+                            "Jumpsuits": [
+                                "Jumpsuits"
+                            ]
+                        },
+                        {
+                            "Plus Size T - shirt": [
+                                "Plus Size T - shirt"
+                            ]
+                        },
+                        {
+                            "Raincoat": [
+                                "Raincoat"
                             ]
                         }
                     ]
@@ -93,50 +152,6 @@ const allVerticals = {
                     ]
                 },
                 {
-                    "Men Top Wear": [
-                        {
-                            "Unstitched Material": [
-                                "Shirt Fabric",
-                                "Top & Bottom Fabric"
-                            ]
-                        },
-                        {
-                            "Brother & Sister T - Shirts": [
-                                "Brother & Sister T - Shirts"
-                            ]
-                        },
-                        {
-                            "Jumpsuits": [
-                                "Jumpsuits"
-                            ]
-                        },
-                        {
-                            "Plus Size T - shirt": [
-                                "Plus Size T - shirt"
-                            ]
-                        },
-                        {
-                            "Raincoat": [
-                                "Raincoat"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Men Bottom Wear": [
-                        {
-                            "Unstitched Material": [
-                                "Pant Fabric"
-                            ]
-                        },
-                        {
-                            "Dungarees": [
-                                "Dungarees"
-                            ]
-                        }
-                    ]
-                },
-                {
                     "Ethnic Wear": [
                         {
                             "Dhoti,Mundus & Lungis": [
@@ -160,252 +175,257 @@ const allVerticals = {
                             ]
                         }
                     ]
+                },
+                {
+                    "Inner & Sleepwear": [
+                        {
+                            "Boxers & Loungewear": [
+                                "Boxers",
+                                "Lounge Pants"
+                            ]
+                        },
+                        {
+                            "Briefs & Trunks": [
+                                "Briefs",
+                                "Trunks"
+                            ]
+                        },
+                        {
+                            "Vests": [
+                                "Vests"
+                            ]
+                        },
+                        {
+                            "Thermals": [
+                                "Thermal Topwear",
+                                "Thermal Bottomwear",
+                                "Thermal Set"
+                            ]
+                        },
+                        {
+                            "Nightsuits": [
+                                "Nightsuits"
+                            ]
+                        }
+                    ]
                 }
             ],
 
-    "WOMENS WEAR": [
-        {
-            "Ethnic Wear": [
-                {
-                    "Kurtis, Sets & Fabrics": [
-                        "Kurta Sets",
-                        "Kurtis",
-                        "Kurti Fabrics",
-                        "Dupatta Sets"
+                    "WOMENS WEAR": [
+                        {
+                            "Western Wear": [
+                                {
+                                    "Tops, Tshirts & Shirts": [
+                                        "Shirts",
+                                        "Tshirts",
+                                        "Top & Bottom Wear",
+                                        "Tops & Tunics",
+                                        "Women Formal Shirt & Bottom Fabric"
+                                    ]
+                                },
+                                {
+                                    "Dresses, Gowns & Jumpsuits": [
+                                        "Dresses",
+                                        "Gowns",
+                                        "Jumpsuits"
+                                    ]
+                                },
+                                {
+                                    "Jeans & Jeggings": [
+                                        "Jeans",
+                                        "Jeggings"
+                                    ]
+                                },
+                                {
+                                    "Capes, Shrugs & Ponchos": [
+                                        "Capes, Shrugs & Ponchos"
+                                    ]
+                                },
+                                {
+                                    "Capris & Trousers & Pants": [
+                                        "Capris",
+                                        "Trousers & Pants"
+                                    ]
+                                },
+                                {
+                                    "Sweaters & Cardigans": [
+                                        "Cardigans",
+                                        "Sweaters"
+                                    ]
+                                },
+                                {
+                                    "Jackets": [
+                                        "Coats & Jackets",
+                                        "Jackets",
+                                        "Blazers & Coats"
+                                    ]
+                                },
+                                {
+                                    "Maternity Wear": [
+                                        "Dresses"
+                                    ]
+                                },
+                                {
+                                    "Palazzos, Leggings & Tights": [
+                                        "Leggings",
+                                        "Palazzos"
+                                    ]
+                                },
+                                {
+                                    "Skirts & Shorts": [
+                                        "Shorts",
+                                        "Skirts"
+                                    ]
+                                },
+                                {
+                                    "Hoodies & Sweatshirts": [
+                                        "Sweatshirts"
+                                    ]
+                                },
+                                {
+                                    "Tops Tshirts & Shirts": [
+                                        "Top & Bottom Sets"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Footwear": [
+                                {
+                                    "Flats": [
+                                        "Flats"
+                                    ]
+                                },
+                                {
+                                    "Boots": [
+                                        "Boots"
+                                    ]
+                                },
+                                {
+                                    "Heels": [
+                                        "Heels"
+                                    ]
+                                },
+                                {
+                                    "Flipflops & Slippers": [
+                                        "Flipflops & Slippers",
+                                        "Sliders",
+                                        "Clogs"
+                                    ]
+                                },
+                                {
+                                    "Shoes": [
+                                        "Formal Shoes",
+                                        "Casual Shoes",
+                                        "Sports Shoes",
+                                        "Sneakers",
+                                        "Loafers & Moccassins"
+                                    ]
+                                },
+                                {
+                                    "Sandals": [
+                                        "Sandals",
+                                        "Floaters"
+                                    ]
+                                },
+                                {
+                                    "Bellies & Juttis": [
+                                        "Bellies",
+                                        "Juttis & Mojaris"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Ethnic Wear": [
+                                {
+                                    "Kurtis, Sets & Fabrics": [
+                                        "Kurta Sets",
+                                        "Kurtis",
+                                        "Kurti Fabrics",
+                                        "Dupatta Sets"
+                                    ]
+                                },
+                                {
+                                    "Sarees, Blouses & Petticoats": [
+                                        "Sarees",
+                                        "Saree Shapewear & Petticoats",
+                                        "Blouses",
+                                        "Blouse Piece"
+                                    ]
+                                },
+                                {
+                                    "Suits & Dress Material": [
+                                        "Suits",
+                                        "Semi-Stitched Suits"
+                                    ]
+                                },
+                                {
+                                    "Leggings, Salwars, Churidars": [
+                                        "Churidars",
+                                        "Patialas",
+                                        "Salwars"
+                                    ]
+                                },
+                                {
+                                    "Dupattas & Shawls": [
+                                        "Dupattas",
+                                        "Shawls"
+                                    ]
+                                },
+                                {
+                                    "Ethnic Jackets": [
+                                        "Ethnic Jackets"
+                                    ]
+                                },
+                                {
+                                    "Lehenga Choli": [
+                                        "Lehenga"
+                                    ]
+                                },
+                                {
+                                    "Ethnic Skirts": [
+                                        "Skirts"
+                                    ]
+                                },
+                                {
+                                    "Islamic wear": [
+                                        "Abayas & Coats"
+                                    ]
+                                },
+                                {
+                                    "Sharara": [
+                                        "Sharara"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Sports & Activewear": [
+                                {
+                                    "Bottoms": [
+                                        "Bottoms"
+                                    ]
+                                },
+                                {
+                                    "Innerwear": [
+                                        "Sports Bra",
+                                        "Active Jackets & Sweatshirts"
+                                    ]
+                                },
+                                {
+                                    "Tops": [
+                                        "Tops"
+                                    ]
+                                },
+                                {
+                                    "Active Clothing Set": [
+                                        "Active Clothing Set"
+                                    ]
+                                }
+                            ]
+                        }
                     ]
-                },
-                {
-                    "Sarees, Blouses & Petticoats": [
-                        "Sarees",
-                        "Saree Shapewear & Petticoats",
-                        "Blouses",
-                        "Blouse Piece"
-                    ]
-                },
-                {
-                    "Suits & Dress Material": [
-                        "Suits",
-                        "Semi-Stitched Suits"
-                    ]
-                },
-                {
-                    "Leggings, Salwars, Churidars": [
-                        "Churidars",
-                        "Patialas",
-                        "Salwars"
-                    ]
-                },
-                {
-                    "Dupattas & Shawls": [
-                        "Dupattas",
-                        "Shawls"
-                    ]
-                },
-                {
-                    "Ethnic Jackets": [
-                        "Ethnic Jackets"
-                    ]
-                },
-                {
-                    "Lehenga Choli": [
-                        "Lehenga"
-                    ]
-                },
-                {
-                    "Ethnic Skirts": [
-                        "Skirts"
-                    ]
-                },
-                {
-                    "Islamic wear": [
-                        "Abayas & Coats"
-                    ]
-                },
-                {
-                    "Sharara": [
-                        "Sharara"
-                    ]
-                }
-            ]
-        },
-        {
-            "Western Wear": [
-                {
-                    "Tops, Tshirts & Shirts": [
-                        "Shirts",
-                        "Tshirts",
-                        "Top & Bottom Sets",
-                        "Tops & Tunics",
-                        "Women Formal Shirt & Bottom Fabric"
-                    ]
-                },
-                {
-                    "Dresses, Gowns & Jumpsuits": [
-                        "Dresses",
-                        "Gowns",
-                        "Jumpsuits"
-                    ]
-                },
-                {
-                    "Jeans & Jeggings": [
-                        "Jeans",
-                        "Jeggings"
-                    ]
-                },
-                {
-                    "Capes, Shrugs & Ponchos": [
-                        "Capes, Shrugs & Ponchos"
-                    ]
-                },
-                {
-                    "Capris & Trousers & Pants": [
-                        "Capris",
-                        "Trousers & Pants"
-                    ]
-                },
-                {
-                    "Sweaters & Cardigans": [
-                        "Cardigans",
-                        "Sweaters"
-                    ]
-                },
-                {
-                    "Jackets": [
-                        "Coats & Jackets",
-                        "Jackets",
-                        "Blazers & Coats"
-                    ]
-                },
-                {
-                    "Maternity Wear": [
-                        "Dresses"
-                    ]
-                },
-                {
-                    "Palazzos, Leggings & Tights": [
-                        "Leggings",
-                        "Palazzos"
-                    ]
-                },
-                {
-                    "Skirts & Shorts": [
-                        "Skirts",
-                        "Shorts"
-                    ]
-                },
-                {
-                    "Hoodies & Sweatshirts": [
-                        "Sweatshirts"
-                    ]
-                },
-                {
-                    "Tops Tshirts & Shirts": [
-                        "Top & Bottom Sets"
-                    ]
-                }
-            ]
-        },
-        {
-            "Footwear": [
-                {
-                    "Flats": [
-                        "Flats"
-                    ]
-                },
-                {
-                    "Boots": [
-                        "Boots"
-                    ]
-                },
-                {
-                    "Heels": [
-                        "Heels"
-                    ]
-                },
-                {
-                    "Flipflops & Slippers": [
-                        "Flipflops & Slippers",
-                        "Sliders",
-                        "Clogs"
-                    ]
-                },
-                {
-                    "Shoes": [
-                        "Formal Shoes",
-                        "Casual Shoes",
-                        "Sports Shoes",
-                        "Sneakers",
-                        "Loafers & Moccassins"
-                    ]
-                },
-                {
-                    "Sandals": [
-                        "Sandals",
-                        "Floaters"
-                    ]
-                },
-                {
-                    "Bellies & Juttis": [
-                        "Bellies",
-                        "Juttis & Mojaris"
-                    ]
-                }
-            ]
-        },
-        {
-            "Maternity": [
-                {
-                    "Feeding Topwear": [
-                        "Feeding Kurtis & Kurta Sets"
-                    ]
-                },
-                {
-                    "Maternity Topwear": [
-                        "Maternity Kurtis & Kurta Sets"
-                    ]
-                }
-            ]
-        },
-        {
-            "Inner & Sleepwear": [
-                {
-                    "Swimwear": [
-                        "Swimwear"
-                    ]
-                },
-                {
-                    "Nightsuits & Nightdresses": [
-                        "Babydolls",
-                        "Nightdress",
-                        "Nightsuits",
-                        "Pyjamas"
-                    ]
-                },
-                {
-                    "Bras & Lingerie Sets": [
-                        "Bra",
-                        "Lingerie Sets",
-                        "Lingerie Accessories"
-                    ]
-                },
-                {
-                    "Briefs": [
-                        "Briefs"
-                    ]
-                },
-                {
-                    "Shapewear": [
-                        "Shapewear"
-                    ]
-                },
-                {
-                    "Period Panty": [
-                        "Period Panty"
-                    ]
-                }
-            ]
-        }
-    ]
 };
 
 export default function VerticalPage() {
@@ -498,11 +518,13 @@ export default function VerticalPage() {
                     console.log("mUrls: ", mUrls);
                     let lr_id = uuidv4();
                     let l_id = uuidv4();
+                    let e_id = uuidv4();
                     let obj = {
                         listing_request_id: lr_id,
                         listing_status: "Draft",
                         request_type: "Create",
                         listing_id: l_id,
+                        edit_id: e_id,
                         manufacturer_id: localStorage.getItem('manufacturer_id'),
                         media_urls: mUrls,
                         vertical: selectVertical,
@@ -604,6 +626,10 @@ export default function VerticalPage() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [d1Ref]);
+
+    useEffect(()=>{
+        validateManufacturerLocalData();
+    },[])
 
     function handleVerticalSelection(str) {
         const vData = str.split(' / ');
