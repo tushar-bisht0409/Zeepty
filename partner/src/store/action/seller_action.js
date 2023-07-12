@@ -66,6 +66,22 @@ export const saveStoreInfo = async(obj) =>{
   }
 }
 
+export const launchStore = async(obj) =>{
+  try {
+    const response = await fetch(`${API_URI}/launchstore`, {
+      method: 'POST', headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(obj)});
+      const json = await response.json();
+      return json;
+  } catch (error) {
+    console.log(error);
+    return {"msz": "Something went wrong", "success": false}
+  }
+}
+
 export const getStoreInformation = async (obj) => {
   try {
       const response = await fetch(`${API_URI}/getstoreinformation?seller_id=${encodeURIComponent(obj.seller_id)}`, {
@@ -82,6 +98,32 @@ export const getStoreInformation = async (obj) => {
 export const checkIsSellerUserNameUnique = async (obj) => {
   try {
       const response = await fetch(`${API_URI}/checkissellerusernameunique?user_name=${encodeURIComponent(obj.user_name)}`, {
+          method: 'GET'});
+
+      const json = await response.json();
+      return json;
+    } catch (error) {
+      console.log(error);
+      return {"msz": "Something went wrong", "success": false}
+    }
+};
+
+export const checkIsSellerStoreNameUnique = async (obj) => {
+  try {
+      const response = await fetch(`${API_URI}/checkissellerstorenameunique?store_name=${encodeURIComponent(obj.store_name)}`, {
+          method: 'GET'});
+
+      const json = await response.json();
+      return json;
+    } catch (error) {
+      console.log(error);
+      return {"msz": "Something went wrong", "success": false}
+    }
+};
+
+export const isSellerEmailExist = async (obj) => {
+  try {
+      const response = await fetch(`${API_URI}/isselleremailexist?email=${encodeURIComponent(obj.email)}`, {
           method: 'GET'});
 
       const json = await response.json();

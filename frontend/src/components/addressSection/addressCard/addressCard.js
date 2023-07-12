@@ -12,7 +12,7 @@ export default function AddressCard({selectedAddress,setSelectedAddress,item,ref
     const [uName, setUName] = useState("");
     const [uPhone, setUPhone] = useState("");
     const [uAltPhone, setUAltPhone] = useState("");
-    const [postalcode, setPostalCode] = useState("");
+    const [pincode, setpincode] = useState("");
     const [aline, setAline] = useState("");
     const [landmark, setLandmark] = useState("");
     const [city, setCity] = useState("");
@@ -96,7 +96,7 @@ export default function AddressCard({selectedAddress,setSelectedAddress,item,ref
               addressLine: aline,
               landmark: landmark,
               city: city,
-              postalcode: postalcode,
+              pincode: pincode,
               country: "",
               mode: hMode,
             },
@@ -121,7 +121,7 @@ export default function AddressCard({selectedAddress,setSelectedAddress,item,ref
       setCity(item.city);
       setUPhone(item.phoneNumber);
       setUAltPhone(item.alternatePhoneNumber);
-      setPostalCode(item.postalcode);
+      setpincode(item.pincode);
       setHMode(item.mode);
     };
 
@@ -157,7 +157,7 @@ export default function AddressCard({selectedAddress,setSelectedAddress,item,ref
             {item.alternatePhoneNumber == ""?null : <p className='asAddressText'>{item.alternatePhoneNumber} (Alternate Contact No.)</p>}
             <div className='asPCRow'>
             <p className='asAddressTextPC'>Pin Code:</p>
-            <p className='asAddressTextPC2'>{item.postalcode}</p>
+            <p className='asAddressTextPC2'>{item.pincode}</p>
             </div>
             <div className='asActionBox'>
                 <div onClick={()=>{
@@ -195,7 +195,7 @@ export default function AddressCard({selectedAddress,setSelectedAddress,item,ref
         <input onChange={(val)=>{setUAltPhone(val.target.value);}} className='newAddress-modal-input' value={uAltPhone} placeholder='Alternate Mobile Number(Optional)' type='text'/>
 
         <p className='newAddress-modal-addressText'>Address</p>
-        <input onChange={(val)=>{setPostalCode(val.target.value);}} className='newAddress-modal-input' value={postalcode} placeholder='Pin Code*' type='text'/>
+        <input onChange={(val)=>{setpincode(val.target.value);}} className='newAddress-modal-input' value={pincode} placeholder='Pin Code*' type='text'/>
         <input onChange={(val)=>{setAline(val.target.value);}} className='newAddress-modal-input' value={aline} placeholder='Address*' type='text'/>
         <input onChange={(val)=>{setLandmark(val.target.value);}} className='newAddress-modal-input' value={landmark} placeholder='Landmark(Optional)' type='text'/>
         <input onChange={(val)=>{setCity(val.target.value);}} className='newAddress-modal-input' value={city} placeholder='City*' type='text'/>

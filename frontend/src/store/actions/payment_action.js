@@ -1,3 +1,5 @@
+import { API_URI } from "./auth_action";
+
 export const createPaymentPhonepe = async (obj) => {
     try {
         const response = await fetch(`${API_URI}/creatpaymentphonepe`, {
@@ -30,6 +32,21 @@ export const createPaymentPhonepe = async (obj) => {
     }
   }
 
+  export const createPaymentAndOrder = async (obj) => {
+    try {
+        const response = await fetch(`${API_URI}/createpaymentandorder`, {
+            method: 'POST', headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)});
+    
+        const json = await response.json();
+        return json;
+    } catch (error) {
+      return {"msz": "Something went wrong", "success": false}
+    }
+  }
 
         //   "request": {
         //     "merchantId": "ZEEPTYONLINE",

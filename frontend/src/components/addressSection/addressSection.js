@@ -40,7 +40,7 @@ export default function AddressSection({setUserInfo, selectedAddress, setSelecte
     const [uName, setUName] = useState("");
     const [uPhone, setUPhone] = useState("");
     const [uAltPhone, setUAltPhone] = useState("");
-    const [postalcode, setPostalCode] = useState("");
+    const [pincode, setpincode] = useState("");
     const [aline, setAline] = useState("");
     const [landmark, setLandmark] = useState("");
     const [city, setCity] = useState("");
@@ -67,7 +67,7 @@ export default function AddressSection({setUserInfo, selectedAddress, setSelecte
                 addressLine: aline,
                 landmark: landmark,
                 city: city,
-                postalcode: postalcode,
+                pincode: pincode,
                 country: "",
                 mode: hMode,
               },
@@ -90,7 +90,7 @@ export default function AddressSection({setUserInfo, selectedAddress, setSelecte
         setCity("");
         setUPhone("");
         setUAltPhone("");
-        setPostalCode("");
+        setpincode("");
         setHMode("home");
       };
 
@@ -126,7 +126,7 @@ export default function AddressSection({setUserInfo, selectedAddress, setSelecte
         <input onChange={(val)=>{setUAltPhone(val.target.value);}} className='newAddress-modal-input' value={uAltPhone} placeholder='Alternate Mobile Number(Optional)' type='text'/>
 
         <p className='newAddress-modal-addressText'>Address</p>
-        <input onChange={(val)=>{setPostalCode(val.target.value);}} className='newAddress-modal-input' value={postalcode} placeholder='Pin Code*' type='text'/>
+        <input onChange={(val)=>{setpincode(val.target.value);}} className='newAddress-modal-input' value={pincode} placeholder='Pin Code*' type='text'/>
         <input onChange={(val)=>{setAline(val.target.value);}} className='newAddress-modal-input' value={aline} placeholder='Address*' type='text'/>
         <input onChange={(val)=>{setLandmark(val.target.value);}} className='newAddress-modal-input' value={landmark} placeholder='Landmark(Optional)' type='text'/>
         <input onChange={(val)=>{setCity(val.target.value);}} className='newAddress-modal-input' value={city} placeholder='City*' type='text'/>

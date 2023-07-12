@@ -87,3 +87,32 @@ export const getManufacturerSummary = async (obj) => {
       return {"msz": "Something went wrong", "success": false, "userID": ""}
     }
 };
+
+export const verifyGSTIN = async (obj) => {
+  try {
+      const response = await fetch(`${API_URI}/verifygstin?gstin=${encodeURIComponent(obj.gstin)}`, {
+          method: 'GET'});
+
+      const json = await response.json();
+      return json;
+    } catch (error) {
+      console.log(error);
+      return {"msz": "Something went wrong", "success": false}
+    }
+};
+
+export const editManufacturerInfoAndDelhiveryWarehouse = async(obj)=> {
+  try {
+    const response = await fetch(`${API_URI}/editminfoanddelwarehouse`, {
+      method: 'POST', headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(obj)});
+      const json = await response.json();
+      return json;
+  } catch (error) {
+    console.log(error);
+    return {"msz": "Something went wrong", "success": false}
+  }
+}

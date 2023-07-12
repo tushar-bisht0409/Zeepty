@@ -6,7 +6,7 @@ import { getListing } from '../../store/actions/listing_action';
 import { getproduct_info } from '../../store/actions/product_action';
 import { updateLocalUserInfo } from "../../store/actions/notLoggedInUser_action";
 
-const MCartProductCard = ({item ,selected, quantity}) => {
+const MCartProductCard = ({noAction, item ,selected, quantity}) => {
     const dispatch = useDispatch();
   
     const [qnty,setQnty] = useState(quantity);
@@ -192,7 +192,6 @@ const MCartProductCard = ({item ,selected, quantity}) => {
   }
 
   function getSize() {
-    console.log("UUIO: ",product)
     return product.product_size['size'].split("_").map((word) => {
         if(product.product_size['size'].includes("_")){
             return word.charAt(0).toUpperCase() + word.slice(1)
@@ -203,7 +202,6 @@ const MCartProductCard = ({item ,selected, quantity}) => {
 }
 
   function getColor() {
-    console.log("PP: ",product.product_details)
         let ind = product.product_details.findIndex((obj)=>Object.keys(obj)[0] === "color");
         if(ind === -1){
             return ""; 
@@ -214,16 +212,16 @@ const MCartProductCard = ({item ,selected, quantity}) => {
   
     return (
       product===undefined ? <div></div> : <div className="Mobile-productcard-Container">
-        <div className="Mobile-closeB" onClick={removeFromCart}>
+        {noAction? null :<div className="Mobile-closeB" onClick={removeFromCart}>
         <i style={{color: 'lightgrey', fontSize: '20px'}} class="fa-solid fa-remove"></i>
-        </div>
+        </div>}
        
         <div className="Mobile-img-Container">
-          <div onClick={manageCart} className='Mobile-checkBox'>
+          {noAction? null : <div onClick={manageCart} className='Mobile-checkBox'>
           {isSelected?<i style={{fontSize: '10px', color: 'white',height:'15px',width: '15px',display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#554BDA'}}
            class="fa-solid fa-check"></i>
             :<div></div>}
-          </div>
+          </div>}
             <img className='Mobile-product-img' src={product.media_urls[0]} alt="logo" />
         </div>
         <div className="Mobile-details-Container">
@@ -234,9 +232,9 @@ const MCartProductCard = ({item ,selected, quantity}) => {
             </div>
             <div className="Mobile-quantityBox">
                 <div className="Mobile-quantityText">Quantity</div>
-                <i onClick={decreaseValue} style={{fontSize: '20px', color: '#cfccff'}} class="fa-solid fa-square-minus"></i>
+                {noAction? null :<i onClick={decreaseValue} style={{fontSize: '20px', color: '#cfccff'}} class="fa-solid fa-square-minus"></i>}
                 <p>{qnty}</p>
-                <i onClick={increaseValue} style={{fontSize: '20px', color: '#cfccff'}} class="fa-solid fa-square-plus"></i>
+                {noAction? null :<i onClick={increaseValue} style={{fontSize: '20px', color: '#cfccff'}} class="fa-solid fa-square-plus"></i>}
             </div>
             <div className='mvariantBox'>
               <div className="mvariantBoxSize">

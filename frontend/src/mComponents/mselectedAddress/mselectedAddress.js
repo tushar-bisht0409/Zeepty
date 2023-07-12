@@ -15,21 +15,12 @@ const MSelectedAddress = ({setCurrentPoint,item}) => {
             setCurrentPoint("Address");
         }} className='msaButton'>Change</div>
         <p className='msaHeadTitle'>Deliver to:</p>
-        {/* <div className='msaRow'>
-            <p className='msaTitle'>Name</p> */}
             <p className='msaText'>{item.fullName}</p>
-        {/* </div> */}
-        {/* <div className='msaRow'>
-            <p className='msaTitle'>Address</p> */}
-            <p className='msaText'>{item.addressLine},{item.landmark},{item.city}</p>
-        {/* </div> */}
-        {/* <div className='msaRow'>
-            <p className='msaTitle'>Phone Number</p> */}
-            <p className='msaText'>{item.phoneNumber}</p>
-        {/* </div> */}
+            <p className='msaText'>{item.address},{item.landmark},{item.city}</p>
+            <p className='msaText'>{item.phone_number}</p>
         <div className='msaRow'>
             <p className='msaTitle'>Pin Code:</p>
-            <p className='msaText'>{item.postalcode}</p>
+            <p className='msaText'>{item.pincode}</p>
         </div>
     </div>
   )

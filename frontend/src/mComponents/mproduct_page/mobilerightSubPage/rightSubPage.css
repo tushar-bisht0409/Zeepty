@@ -279,3 +279,81 @@ p{
     align-self: center;
     font-size: 14px;
 }
+
+.mobilerightSubPage-sizeModal{
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    margin: 0px;
+    width: 100vw;
+    height: fit-content;
+    max-height: 80vh;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: none;
+    z-index: 9999;
+    overflow: scroll;
+    font-family: sans-serif;
+  }
+
+  .mobilerightSubPage-sizeModal-overlay{
+    background-color: rgb(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .mobilerightSubPage-sizeModal-box-close{
+    position: fixed;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    padding: 1vh 0vw;
+    justify-content: center;
+    align-self: center;
+    background-color: white;
+    cursor: pointer;
+    z-index: 99999999;
+  }
+
+  .mobilerightSubPage-sizeModal-box-close-div{
+    width: 40px;
+    height: 5px;
+    display: flex;
+    align-self: center;
+    border-radius: 50px;
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+  .mobilerightSubPage-sizeModal-box{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .mobilerightSubPage-sizeModal-box-head{
+    font-size: 14px;
+    font-weight: 900;
+    color: black;
+    margin: 4vh 8vw 2vh 8vw;
+    align-self: start;
+  }
+
+  .mobilerightSubPage-sizeModal-box-body{
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0vh 10vw;
+  }

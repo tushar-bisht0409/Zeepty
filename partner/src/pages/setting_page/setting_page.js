@@ -239,7 +239,7 @@ import errorOccurred from '../../assets/supplier/images/errorOccurred.png'
                 <div className="settingPage-drawer-sign-imgBox">
                 <img src={signImg === undefined ? mInfo.signature_url : URL.createObjectURL(signImg)} className="settingPage-drawer-sign-imgBox-img"></img>
                 <p className="settingPage-drawer-sign-imgBox-text">Tap to edit</p>
-                <input onChange={handleMediaUpload} type="file" className="settingPage-drawer-sign-imgBox-input"/>
+                <input onChange={handleMediaUpload} type="file" accept="image/*" className="settingPage-drawer-sign-imgBox-input"/>
                 </div>
 
                 <div onClick={handleEditSignature} className={signImg === undefined ? "settingPage-drawer-sign-button-inactive" : "settingPage-drawer-sign-button"}>Save E-Signature</div>

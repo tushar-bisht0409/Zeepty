@@ -23,7 +23,6 @@
     width: 40vw;
     border-radius: 5px;
     margin: 2vh 4vw;
-    padding-bottom: 4vh;
 }
 
 .gipRH{
@@ -103,6 +102,38 @@
     flex-direction: row;
 }
 
+.gipRGError{
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    margin: 0.5vh 1vw;
+}
+
+.gipRBBodyT1Error{
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    margin: 0.5vh 1vw 4vh 1vw;
+    align-self: flex-start;
+}
+
+.gipRGBodyContinue{
+    margin-top: 4vh;
+    padding: 2vh 4vw;
+    border-radius: 5px;
+    background-color: #554BDA;
+    max-width: 15vw;
+    margin-left: 10vw;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    align-self: center;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: medium;
+    font-weight: 900;
+}
 .gipRGBodyInput{
     border: 2px solid lightgrey;
     border-radius: 5px;
@@ -250,6 +281,13 @@
     font-size: medium;
     margin-bottom: 4vh;
 }
+.gipRBBodyInputC{
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 1.5vh 2vw;
+    width: 32vw;
+    font-size: medium;
+}
 
 .gipRSBody{
     display: flex;
@@ -312,6 +350,7 @@
 
 .gipRContinue{
     padding: 2vh 4vw;
+    margin-bottom: 2vh;
     border-radius: 5px;
     background-color: #554BDA;
     color: white;
@@ -342,7 +381,87 @@
     animation: spin 1.5s linear infinite;
 }
 
+.gipLoader3{
+    margin-top: 2vh;
+    margin-left: 15vw;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 3.5vw;
+    height: 3.5vw;
+    animation: spin 1.5s linear infinite;
+}
+
+.gipLoader4{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 18.5vw;
+    border: 3px solid #cecece; /* Light grey */
+    border-top: 3px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 3.5vw;
+    height: 3.5vw;
+    animation: spin 1.5s linear infinite;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.gip-sign-esign{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.gip-sign-imgBox{
+    position: relative;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.gip-sign-imgBox-img{
+    width: 15vw;
+    height: 7vw;
+    margin-top: 1vh;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    object-fit: fill;
+    cursor: pointer;
+}
+
+.gip-sign-imgBox-text{
+    position: absolute;
+    bottom: 0;
+    width: 15vw;
+    padding: 1vh 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(0,0,0,0.7);
+}
+
+.gip-sign-imgBox-input{
+    position: absolute;
+    width: 15vw;
+    height: 7vw;
+    margin-top: 1vh;
+    border-radius: 5px;
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.gip-sign-imgBox-input::-webkit-file-upload-button { 
+    visibility: hidden;
+    -webkit-appearance:none;
+   -webkit-box-sizing:border-box;
+   content: none;
+  }

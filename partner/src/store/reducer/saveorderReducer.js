@@ -1,5 +1,5 @@
 import { SAVE_ORDER_INFO ,SELECT_ALL,UPDATE_MODE,UPDATE_SELECTED_ARRAY,CANCEL_PENDING_ORDER,CANCEL_RTS_ORDER} from "../action/type";
-const intialState = {selectedArray:[], mode:"",pending:[],RTS:[],shipped:[],cancelled:[],delivered: []};
+const intialState = {selectedArray:[], mode:"",pending:[],RTS:[],shipped:[],cancelled:[],delivered: [], waybills: [], orderStatusObject:{}};
 
 // const initialState = {cartProduct : []};
   
@@ -14,7 +14,9 @@ const intialState = {selectedArray:[], mode:"",pending:[],RTS:[],shipped:[],canc
           RTS :payload.RTS,
           shipped :payload.shipped,
           cancelled :payload.cancelled,
-          delivered: payload.delivered
+          delivered: payload.delivered,
+          waybills: payload.waybills,
+          orderStatusObject: payload.orderStatusObject
         };
         case UPDATE_MODE:
         return {

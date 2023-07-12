@@ -10,18 +10,19 @@ const paymentSchema = new Schema({
         type: String,
         required: false
     },
+    payment_status: {
+        type: String,
+        default: 'Pending'
+    },
     orders: [{
+        sub_payment_id: String,
         order_id: String, 
-        product_id: String,
-        listing_id: String,
-        seller_id: String,
-        manufacturer_id: String,
-        total_price: Number,
-        delivery_fee: Number,
-        tax_price: Number,
-        seller_commission_price: Number,
-        manufacturer_commission_price: Number,
-        zeepty_commission_price: Number,
+        total_price: Number,    // Seller Price (S) + Delivery fee (D) + Tax Price (T)
+        delivery_fee: Number,   // Delivery fee (D)
+        tax_price: Number,  // Tax Price (T) If applicable
+        seller_payout: Number,    // Seller Price (S) - Manufacturer Price (M) - Zeepty Commission (Z)  
+        manufacturer_payout: Number,  // Manufacturer Price (M)
+        zeepty_payout: Number,    // Zeepty Commission (Z) 
     }],
     customer_id: {
         type: String,

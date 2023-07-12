@@ -363,6 +363,27 @@ var functions = {
         )
     },
 
+    isEmailExist: function (req, res) {
+        var obj = req.query;
+        User.findOne(
+            { email: obj.email, mode: obj.mode },
+            function (err, doc) {
+                if (err) {
+                    return res.json({
+                        success: false,
+                        msz: "An Error Occurred",
+                    });
+                } else {
+                    return res.json({
+                        success: true,
+                        msz: "Email Already Exist",
+                        doc: doc
+                    });
+                }
+            }
+        )
+    },
+
     changePassword: function (req, res) {
         User.findOne({ phone: req.body.phone, mode: req.body.mode, }, function (err, user) {
             if (err) {

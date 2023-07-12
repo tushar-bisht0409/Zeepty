@@ -14,7 +14,7 @@ function checkRTS(data) {
     return false;
 }
 function checkshipped(data) {
-    if (data.order_status === "Shipped" || data.order_status === "InTransit" || data.order_status === "InDestination" || data.order_status === "OFD"|| data.order_status === "UDRA" || data.order_status === "PD" ) {
+    if (data.order_status === "Shipped") {
         return true;
     }
     return false;
@@ -68,6 +68,14 @@ export const getMyOrders = (obj,mode) => async (dispatch) => {
         });
         const json = await response.json();
         if(json.success){
+            let wBills = [];
+            let oStatus = {};
+            for(let i = 0; i<json.msz.length; i++) {
+                if(json.msz[i].order_status === "Pending" || json.msz[i].order_status === "RTS" || json.msz[i].order_status === "Shipped" || json.msz[i].order_status === "Shipped"){
+                    wBills.push(json.msz[i].waybill);
+                    oStatus[`${json.msz[i].waybill}`] = json.msz[i].order_status
+                }
+            }
             dispatch({
                 type:SAVE_ORDER_INFO,
                 payload:{
@@ -76,7 +84,9 @@ export const getMyOrders = (obj,mode) => async (dispatch) => {
                     RTS :[...json.msz].filter(checkRTS),
                     shipped :[...json.msz].filter(checkshipped),
                     cancelled :[...json.msz].filter(checkcancelled),
-                    delivered: [...json.msz].filter(checkdelivered)
+                    delivered: [...json.msz].filter(checkdelivered),
+                    waybills: wBills,
+                    orderStatusObject: oStatus
                 }
             })
         }
@@ -224,5 +234,22 @@ export const getMyReturns = (obj,mode) => async (dispatch) => {
     } catch (error) {
         console.log(error);
         return { "msz": "Something went wrong", "success": false, "manufacturerID": "" }
+    }
+};
+
+export const trackAndUpdateOrderStatus = async (obj) => {
+    try {
+        const response = await fetch(`${API_URI}/trackandupdateorderstatus`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        });
+        const json = await response.json();
+        return json;
+    } catch (error) {
+        return { "msz": "Something went wrong", "success": false, "userID": "" }
     }
 };

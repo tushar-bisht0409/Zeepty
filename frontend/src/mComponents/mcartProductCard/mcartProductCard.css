@@ -9,8 +9,7 @@
     background-color: white;
     align-items: center;
     font-family: sans-serif;
-    border-bottom: 1vh solid lightgrey;
-    
+    border-bottom: 4px solid #ecebff;    
   }
   .Mobile-checkBox{
       position: absolute;

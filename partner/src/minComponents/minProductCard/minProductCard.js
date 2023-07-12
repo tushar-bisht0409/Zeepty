@@ -5,10 +5,10 @@ import Modal from 'react-modal';
 import { API_URI } from '../../store/action/type';
 import {v4 as uuidv4} from 'uuid';
 import { getlisting_info } from '../../store/action/listingaction';
-import { getproduct_info, postmultipleproductrequest, postMultipleProductInMongoAndElastic, saveProduct } from '../../store/action/productaction';
+import { getproduct_info, postmultipleproductrequest, postMultipleProductInMongoAndElastic, saveProduct, checkSellerProductAdded } from '../../store/action/productaction';
 
 
-const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount}) => {
+const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount, wishlistPage}) => {
 
   const [list,setList] = useState(JSON.parse(localStorage.getItem('sellerInfo')).wishlist);   //wishlist data
 
@@ -115,10 +115,7 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
 
     const [modalIsOpen,setModalIsOpen] = useState(false);
 
-    const [newPrice,setNewPrice] = useState("");
-
-    const [newName,setNewName] = useState("");
-    const [newDesc,setNewDesc] = useState("");
+    const [p_status, setP_status] = useState(undefined);
 
 
     const [isAdded, setIsAdded] = useState(false);
@@ -132,33 +129,33 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
       };
 
       async function addProductRequest () {
-        // if(storeStage === 1){
-        //   setCModalIsOpen(true);
-        // }else if(storeStage === 2){
+        if(storeStage === 1){
+          setCModalIsOpen(true);
+        }else if(storeStage === 2){
           
-        //   let sProduct = JSON.parse(localStorage.getItem("product_selected"));
-        // if(sProduct === null || sProduct === undefined){
-        //     sProduct = [];
-        // }
+          let sProduct = JSON.parse(localStorage.getItem("product_selected"));
+        if(sProduct === null || sProduct === undefined){
+            sProduct = [];
+        }
 
-        // let obj = {
-        //     listing_id: listing.listing_id,
-        //     new_info: [],
-        // };
+        let obj = {
+            listing_id: listing.listing_id,
+            new_info: [],
+        };
 
-        // for(let i = 0; i<productRequestData.length; i++){
-        //   obj.new_info.push({
-        //     style_code: productRequestData[i].style_code,
-        //     new_title: productRequestData[i].new_title,
-        //     new_description: productRequestData[i].new_description,
-        //     new_price: productRequestData[i].new_price
-        //   })
-        // }
-        // sProduct.push(obj);
-        // localStorage.setItem("product_selected",JSON.stringify(sProduct));
-        // increasePCount();
-        // productAdded(listing);
-        // } else {
+        for(let i = 0; i<productRequestData.length; i++){
+          obj.new_info.push({
+            style_code: productRequestData[i].style_code,
+            new_title: productRequestData[i].new_title,
+            new_description: productRequestData[i].new_description,
+            new_price: productRequestData[i].new_price
+          })
+        }
+        sProduct.push(obj);
+        localStorage.setItem("product_selected",JSON.stringify(sProduct));
+        increasePCount();
+        productAdded(listing);
+        } else {
           if(isSame) {
             for(let i = 1; i<productRequestData.length; i++){
               productRequestData[i].new_title = productRequestData[0].new_title;
@@ -180,7 +177,7 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
           } else {
             window.alert('Something Went Wrong')
           }
-        // }
+        }
     }
 
     async function productAdded(prod) {
@@ -198,14 +195,13 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
         }
       } else if(storeStage == 3){
         const obj = {
-          type: "sellerListing",
           seller_id: localStorage.getItem("influencer_id"),
           listing_id: prod.listing_id
         };
-        console.log(obj)
-        const json = await getproduct_info(obj);
+        const json = await checkSellerProductAdded(obj);
         console.log(json)
         if(json.success){
+          setP_status(json.product_status)
           isP = true;
         }
       }
@@ -215,11 +211,6 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
     
   function handleModalData() {
     setIsSame(true);
-    // setNewName(listing.product_name);
-    //       let ind = listing.other_details.findIndex((obj)=> Object.keys(obj)[0] === "description");
-    //       if(ind !== -1) {
-    //         setNewDesc(listing.other_details[ind]['description']);
-    //       }
   }
 
     useEffect(()=>{
@@ -310,7 +301,7 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
       <div className="minPCImageBox">
         <img onClick={()=>{}} className="minPCImage" src={listing===undefined? "":listing.media_urls[0]} alt="logos"/>
         {isWishlisted?
-          <div onClick={removeWishlist} className="minMPcardWishlist"><i style={{color: 'red', fontSize: '20px'}} class="fa-solid fa-heart fa-2x"></i></div>
+          <div onClick={removeWishlist} className="minMPcardWishlist"><i style={{color: wishlistPage ? 'lightgrey' : 'red', fontSize: '20px'}} class={wishlistPage ? "fa-solid fa-circle-xmark" : "fa-solid fa-heart fa-2x"}></i></div>
         : <div onClick={addWishlist} className="minMPcardWishlist"><i style={{fontSize: '20px'}} class="fa-regular fa-heart fa-2x"></i></div>}
       </div>
       <div onClick={()=>{}} className="minPCInfoBox">
@@ -325,7 +316,7 @@ const MINProductCard = ({setCModalIsOpen,storeStage, item,lMode,increasePCount})
           <MINRatingBox stars={listing===undefined? 0:listing.rating_count}></MINRatingBox>
           <div className="minPCInfoRBText">({listing===undefined? "":listing.rating_total})</div>
         </div>
-        { loader1? <div className='minPCLoader1'></div> : isAdded? <div className='minPCAdded'>Added</div> :
+        { loader1? <div className='minPCLoader1'></div> : isAdded? <div className='minPCAdded'>{p_status === "Approved" ?"Added": p_status === "Pending" || p_status === "OnHold" ? "Pending" : p_status === "Rejected" ? "Rejected" : "Added"}</div> :
         <div onClick={()=>{
           if(storeStage===1){
             setCModalIsOpen(true);

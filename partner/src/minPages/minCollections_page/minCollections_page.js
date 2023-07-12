@@ -246,8 +246,7 @@ const MINCollectionsPage = () => {
             <>
             <div className='minCollModal-box'>
                 <div onClick={()=>{setModalIsOpen(false)}} className='minCollModalClose'>
-                <div className='minCollModalClose-div'>
-                </div>
+                <div className='minCollModalClose-div'></div>
             </div>
             <div className='minCollModal-box-head'>
             <i style={{color: '#554BDA', fontSize: '16px'}} class="fa-solid fa-layer-group"></i>
@@ -262,6 +261,9 @@ const MINCollectionsPage = () => {
                         if(ind === -1){
                             setShowProduct(true);
                             handleGetSellerProducts();
+                        } else{
+                          snackbarObject['message'] = `${cName} already exist`;
+                          showSnackbarMessage(snackbarObject);
                         }
                 }}} className='minCollModal-box-name-next'>Next</div>
             </div>}
@@ -302,10 +304,10 @@ const MINCollectionsPage = () => {
           <>
           <div className='minCollDelete-Head'>
           <i style={{color: 'red', fontSize: '16px'}} class="fa-solid fa-trash"></i>
-          <p className='minCollDelete-HeadT1'>Delete {userData === undefined ? "" : userData.collections[sIndex].name} Collection</p>
+          <p className='minCollDelete-HeadT1'>Delete {userData === undefined ? "" : userData.collections.length === 0 ? "" : userData.collections[sIndex].name} Collection</p>
           </div>
 
-          <p className='minCollDelete-BodyT1'>Do you want to delete the collection {userData === undefined ? "" : userData.collections[sIndex].name}?</p>
+          <p className='minCollDelete-BodyT1'>Do you want to delete the collection {userData === undefined ? "" : userData.collections.length === 0 ? "" : userData.collections[sIndex].name}?</p>
 
           <div className='minCollDelete-Action'>
             <p onClick={()=>{setDModal(false)}} className='minCollDelete-ActionN'>No</p>

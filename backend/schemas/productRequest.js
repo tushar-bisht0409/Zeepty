@@ -106,7 +106,7 @@ const productRequestSchema = new Schema({
         addressLine: { type: String, required: false },
         landmark: { type: String, required: false },
         city: { type: String, required: false },
-        postalcode: { type: String, required: false },
+        pincode: { type: String, required: false },
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },

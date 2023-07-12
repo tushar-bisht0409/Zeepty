@@ -1,12 +1,120 @@
 .apMainBox{
-    flex-direction: column;
+    position: relative;
+    flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2vh;
-    font-family:Arial, Helvetica, sans-serif;
+    padding: 1.5vh 5vw;
+    box-sizing: border-box;
+    font-family: sans-serif;
     color: #554BDA;
     position: relative;
+}
+
+.apMainBox-l1{
+    position: absolute;
+    top: calc(1.5vh + 8px);
+    left: calc(20vw + 8px)
+}
+
+.apMainBox-l2{
+    position: absolute;
+    top: calc(1.5vh + 8px);
+}
+
+.apMainBox-l3{
+    position: absolute;
+    top: calc(1.5vh + 8px);
+    right: calc(20vw + 8px)
+}
+
+.hr-inactive{
+    z-index: -1;
+    border: none;
+    align-self: center;
+    border-top: 2px solid lightgrey;
+    color: #fff;
+    background-color: transparent;
+    width: calc(20vw - 16px);
+}
+
+.hr-active{
+    z-index: -1;
+    border: none;
+    align-self: center;
+    border-top: 2px solid #554BDA;
+    color: #fff;
+    background-color: transparent;
+    width: calc(20vw - 16px);
+}
+
+.apBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+    width: 20vw;
+}
+
+.apBox-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #554BDA;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 500;
+    color: #554BDA;
+}
+
+.apBox-circle-inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 500;
+    color: lightgrey;
+}
+
+.apBox-circle-completed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #554BDA;
+    background-color: #554BDA;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 500;
+    color: white;
+}
+
+.apBox-circle-t{
+    font-size: 10px;
+}
+
+.apBox-t1{
+    font-size: 10px;
+    color: lightgrey;
+    font-weight: 500; 
+    margin-top: 4px;
+}
+
+.apBox-t2{
+    font-size: 10px;
+    color: #554BDA;
+    font-weight: 500;
+    margin-top: 4px;
 }
 
 .apBox1{
@@ -117,7 +225,7 @@
     background-color: white;
 }
 
-.hrActive{
+/* .hrActive{
     border: none;
     align-self: center;
     border-top: 2px dashed #554BDA;
@@ -135,7 +243,7 @@
     background-color: transparent;
     height: 0.5px;
     width: 20vw;
-}
+} */
 #class {
     width: 2rem;
     height: 2rem;

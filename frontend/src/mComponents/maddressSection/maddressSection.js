@@ -8,7 +8,7 @@ import "./maddressSection.css"
 import { API_URI } from '../../store/actions/auth_action';
 import {v4 as uuidv4} from 'uuid';
 
-export default function MAddressSection({setUserInfo, selectedAddress, setSelectedAddress, addresses}) {
+export default function MAddressSection({setUserInfo, selectedAddress, setSelectedAddress, addresses,changeSelectedAddress}) {
 
     const [items, setItems] = useState(addresses);
 
@@ -35,7 +35,7 @@ export default function MAddressSection({setUserInfo, selectedAddress, setSelect
     const [uName, setUName] = useState("");
     const [uPhone, setUPhone] = useState("");
     const [uAltPhone, setUAltPhone] = useState("");
-    const [postalcode, setPostalCode] = useState("");
+    const [pincode, setpincode] = useState("");
     const [aline, setAline] = useState("");
     const [landmark, setLandmark] = useState("");
     const [city, setCity] = useState("");
@@ -59,10 +59,10 @@ export default function MAddressSection({setUserInfo, selectedAddress, setSelect
                 full_name: uName,
                 phone_number: uPhone,
                 alternate_phone_number: uAltPhone,
-                address_line: aline,
+                address: aline,
                 landmark: landmark,
                 city: city,
-                postalcode: postalcode,
+                pincode: pincode,
                 country: "",
                 mode: hMode,
               },
@@ -85,7 +85,7 @@ export default function MAddressSection({setUserInfo, selectedAddress, setSelect
         setCity("");
         setUPhone("");
         setUAltPhone("");
-        setPostalCode("");
+        setpincode("");
         setHMode("home");
       };
 
@@ -103,7 +103,7 @@ export default function MAddressSection({setUserInfo, selectedAddress, setSelect
             {items.length === 0 ? <p onClick={()=>{setModalIsOpen(true)}} className='masNoAddress'>No Address Save Yet! Add New?</p> :null}
             {items.map((itm,index)=>{
                 return <div key={selectedAddress===undefined? itm.address_id+index : itm.address_id==selectedAddress.address_id? itm.address_id+index: itm.address_id}>
-                <MAddressCard selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress} refreshData={refreshData} item={itm}></MAddressCard>
+                <MAddressCard selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress} refreshData={refreshData} item={itm} changeSelectedAddress={changeSelectedAddress}></MAddressCard>
                 </div>
             })}
             <Modal
@@ -127,7 +127,7 @@ export default function MAddressSection({setUserInfo, selectedAddress, setSelect
         <input onChange={(val)=>{setUAltPhone(val.target.value);}} className='mnewAddress-modal-input' value={uAltPhone} placeholder='Alternate Mobile Number(Optional)' type='text'/>
 
         <p className='mnewAddress-modal-addressText'>Address</p>
-        <input onChange={(val)=>{setPostalCode(val.target.value);}} className='mnewAddress-modal-input' value={postalcode} placeholder='Pin Code*' type='text'/>
+        <input onChange={(val)=>{setpincode(val.target.value);}} className='mnewAddress-modal-input' value={pincode} placeholder='Pin Code*' type='text'/>
         <input onChange={(val)=>{setAline(val.target.value);}} className='mnewAddress-modal-input' value={aline} placeholder='Address*' type='text'/>
         <input onChange={(val)=>{setLandmark(val.target.value);}} className='mnewAddress-modal-input' value={landmark} placeholder='Landmark(Optional)' type='text'/>
         <input onChange={(val)=>{setCity(val.target.value);}} className='mnewAddress-modal-input' value={city} placeholder='City*' type='text'/>

@@ -7,6 +7,30 @@
     width: 92vw;
   }
 
+  .minCreateModalAPTB-bag{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #554BDA;
+  }
+
+  .minCreateModalAPTB-bag-text{
+    position: absolute;
+    right: -8px;
+    top: 2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: white;
+  }
+
   .minCreateModalTBT1{
     font-size: medium;
     font-weight: 500;
@@ -113,6 +137,7 @@
 }
 
 .minCreateModalFC {
+  position: relative;
   display: flex;
   align-items: center;
   width: 45vw;
@@ -177,7 +202,7 @@
 .minCreateModalAPTB{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin: 2vh 4vw;
   width: 92vw;
@@ -260,6 +285,25 @@
   font-weight: 500;
 }
 
+.minCreateModalBanner{
+  margin: 2vh 5vw;
+  border-radius: 5px;
+  background-color: #ecebff;
+  display: flex;
+  justify-content: flex-start;
+  padding: 2vh 4vw;
+  font-size: 12px;
+  font-weight: 500;
+  color: #554BDA;
+}
+
+.minCreateModalBanner-text{
+  font-weight: 500;
+  font-size: 10px;
+  color: #554BDA;
+  margin-left: 2vw;
+}
+
 .minCreateModalAPLaunchInActive{
   width: 90vw;
   margin: 2vh 5vw;
@@ -290,11 +334,11 @@
   width: 60vw;
   margin: 2vh 20vw;
   padding: 2vh 4vw;
-  background-color: greenyellow;
+  background-color: #554BDA;
   border-radius: 5px;
   font-size: small;
-  font-weight: 500;
-  color: black;
+  font-weight: 900;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -339,6 +383,64 @@
   border-radius: 50%;
   width: 10vw;
   height: 10vw;
+  animation: spin 1.5s linear infinite;
+}
+
+.minCreateModalUNDiv{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+  margin: 1vh 15vw;
+}
+
+.minCreateModalInputGreen{
+  margin-top: 1vh;
+  width: 70vw;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 1.5vh 4vw;
+  font-size: 12px;
+}
+
+.minCreateModalInputRed{
+  margin-top: 1vh;
+  width: 70vw;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 1.5vh 4vw;
+  font-size: 12px;
+}
+
+.minCreateModalUNValid{
+  font-size: 10px;
+  font-weight: 500;
+  color: green;
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+}
+
+.minCreateModalUNInvalid{
+  font-size: 10px;
+  font-weight: 500;
+  color: red;
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+}
+
+.minCreateModalLoader4{
+  position: absolute;
+  right: 6vw;
+  top: 2vh;
+  bottom: 2vh;
+  align-self: center;
+  border: 2px solid #cecece; /* Light grey */
+  border-top: 2px solid #554BDA; /* Blue */
+  border-radius: 50%;
+  width: 5vw;
+  height: 5vw;
   animation: spin 1.5s linear infinite;
 }
 

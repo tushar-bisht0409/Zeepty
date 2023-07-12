@@ -14,6 +14,7 @@ const MINHomePage = () => {
     const [userData, setUserData] = useState(undefined);
 
     const [modalIsOpen,setModalIsOpen] = useState(false);
+    const [modalIsOpen2,setModalIsOpen2] = useState(false);
 
     const [loader1, setLoader1] = useState(true);
 
@@ -56,6 +57,25 @@ const MINHomePage = () => {
         overlay: {zIndex: 1000}
       };
 
+      const customStyles2 ={
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.2)'
+        },
+        content: {
+          width: '70vw',
+          height: '70vw',
+          borderRadius: '10px',
+          margin: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'white',
+          border: 'none',
+          padding: '0',
+          alignSelf: 'center'
+        }
+      };    
 
     async function getUserData(sID) {
         const json = await getSellerInfo(sID);
@@ -133,7 +153,19 @@ const MINHomePage = () => {
         shouldCloseOnOverlayClick={true}
         onRequestClose={()=>{setModalIsOpen(false)}}
         style={customStyles}>
-         <MINCreateStore setModalIsOpen={setModalIsOpen} />
+         <MINCreateStore setModalIsOpen={setModalIsOpen} setModalIsOpen2={setModalIsOpen2} />
+        </Modal>
+
+        <Modal
+        className="minLSModal"
+        isOpen={modalIsOpen2}
+        shouldCloseOnOverlayClick={true}
+        onRequestClose={()=>{setModalIsOpen2(false)}}
+        style={customStyles2}>
+            <div className='minLSModal-box'>
+            <i style={{fontSize: '20vw', color: 'white'}} class="fa-solid fa-clock"></i>
+            <p className='minLSModal-box-text'>Your store will be live soon</p>
+            </div>
         </Modal>
     
     </>

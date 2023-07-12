@@ -10,23 +10,31 @@
 }
 
 .mobilevariantAnyActive{
-    padding: 1vh 4vw;
-    border: 1.5px solid #554BDA;
-    border-radius: 5px;
-    background-color: #ecebff;
-    color: #554BDA;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #554BDA;
+    border-radius: 50%;
+    background-color: #554BDA;
+    color: white;
 }
 
 .mobilevariantAny{
-    padding: 1vh 4vw;
-    border: 1.5px solid black;
-    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 50%;
+    color: black;
 }
 
 .mobilevariantAny p{
     font-size: 14px;
-    font-weight: 500;
-
+    font-weight: 700;
 }
 
 .mobilevariantAnyActive p{

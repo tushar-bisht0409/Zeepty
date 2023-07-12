@@ -11,28 +11,30 @@ const VariantColor = ({isPresentInCart,isPrimary, products,kkey,variant,setVaria
       }
 
     function handelSelect() {
-        if(isSelected){
-            if(isPrimary){
+        routeToProductDesc();
 
-            } else{
-                delete variant[`color`];
-                setVariant(variant);
-                setIsSelected(false);
-                isPresentInCart(products,products.sku_id,products.style_code);
-            }
-        } else{
-            if(isPrimary){
-                routeToProductDesc();
-            } else{
-                let ind = products.product_details.findIndex((obj)=>Object.keys(obj)[0] === "color");
-                variant[`color`] = products.product_details[ind][`color`];
-                setVariant(variant);
-                setIsSelected(true);
-                setSelectedProduct(products);
-                setSelectedSKUID(products.sku_id);
-                isPresentInCart(products,products.sku_id,products.style_code);
-                }
-        }
+        // if(isSelected){
+        //     if(isPrimary){
+
+        //     } else{
+        //         delete variant[`color`];
+        //         setVariant(variant);
+        //         setIsSelected(false);
+        //         isPresentInCart(products,products.sku_id,products.style_code);
+        //     }
+        // } else{
+        //     if(isPrimary){
+        //         routeToProductDesc();
+        //     } else{
+        //         let ind = products.product_details.findIndex((obj)=>Object.keys(obj)[0] === "color");
+        //         variant[`color`] = products.product_details[ind][`color`];
+        //         setVariant(variant);
+        //         setIsSelected(true);
+        //         setSelectedProduct(products);
+        //         setSelectedSKUID(products.sku_id);
+        //         isPresentInCart(products,products.sku_id,products.style_code);
+        //         }
+        // }
     }
 
     useEffect(()=> {

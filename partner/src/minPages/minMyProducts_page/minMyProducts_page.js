@@ -20,6 +20,7 @@ const MINMyProductsPage = () => {
   const [loader1, setLoader1] = useState(true);
   const [isError, setIsError] = useState(false);
 
+
   const params = useParams();
 
   const [sortMode, setSortMode] = useState('Relevance');
@@ -51,6 +52,7 @@ const MINMyProductsPage = () => {
 
     if (json.success) {
       groupProduct(json.msz)
+    } else if(json.success === false && json.err === null) {
     } else {
       setIsError(true);
     }
@@ -112,6 +114,7 @@ const MINMyProductsPage = () => {
         <div onClick={()=>{window.location.reload()}} className="minMP-error-refresh">Refresh</div>
       </div> : loader1 ? <div className='minMP-loader1'></div> : products[`${mode.toLowerCase()}`].length === 0 ? <div className="minMP-nothing">
          <img onClick={()=>{window.location.reload()}} className="minMP-nothing-img" src={nothingHere}></img>
+         <div onClick={()=>{window.open('/creator/home','_self')}} className="minMP-error-refresh">Search and add products now</div>
        </div> : <>
         <div className='minMP-searchbar'>
           <input value={keyword} onChange={(e)=>{handleLocalSearch(e.target.value)}} placeholder='Search Product ...' className='minMP-searchbar-input' type='text'/>

@@ -73,7 +73,7 @@ const handlegetManufacturerSummary = async()=>{
       setorderinfo(json.msz.orders);
       setproductinfo(json.msz.listings);
       setListingRequestInfo(json.msz.listing_request);
-      setStage(4)
+      setStage(json.msz.stage)
       setLoading(true);
       let index;
       let po = 0;

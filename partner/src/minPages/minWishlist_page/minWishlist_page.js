@@ -7,6 +7,7 @@ import './minWishlist_page.css'
 import Modal from 'react-modal';
 import { editSellerInfo, getSellerInfo } from '../../store/action/seller_action';
 import { postMultipleProductInMongoAndElastic } from '../../store/action/productaction';
+import MINProductCard from '../../minComponents/minProductCard/minProductCard';
 
 
 const MINWishlistPage = () => {
@@ -125,22 +126,30 @@ const MINWishlistPage = () => {
     <div className='minWPBox'>
         <div className='minWPTB'>
             <p className='minWPTBT1'>Wishlist</p>
+            {storeStage <3 ? <div className='minWPTB-bag'>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p className='minWPTB-bag-text'>{pCount}</p>
+                </div> : null}
         </div>
 
+        {storeStage <3 ? <div className='minWP-banner'>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <p className='minWP-banner-text'>Add At Least 3 Products To Launch Your Store</p>
+          </div> : null}
         {sellerInfo.wishlist === undefined ? <div></div> :
         <div style={{ overflow: sModalIsOpen || fModalIsOpen ? "hidden" : "scroll" }} className="minWP_mobile_cart">
           {sellerInfo.wishlist.map((p) => (
-            <MINWishCard setCModalIsOpen={setCModalIsOpen} storeStage={storeStage} item={p} wishlist={sellerInfo.wishlist} />
+            <MINProductCard setCModalIsOpen={setCModalIsOpen} storeStage={storeStage} item={p} wishlist={sellerInfo.wishlist} wishlistPage={true} />
           ))}
 
         </div>}
 
         <MINBottomNavBar bMode={"Wishlist"}/>
 
-        {storeStage === 2 ? <div className='minWPCountBox'>
+        {/* {storeStage === 2 ? <div className='minWPCountBox'>
         <div className='minWPCount'>{pCount}</div>
         {pCount === 3 ? <div></div> : <div className='minWPCountBoxT1'>Add ${3 - pCount} Products</div>}
-      </div> : <div></div>}
+      </div> : <div></div>} */}
 
       <Modal
         className="minCreateModal"

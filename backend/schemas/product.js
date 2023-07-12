@@ -94,22 +94,18 @@ const productSchema = new Schema({
     other_details: [Schema.Types.Mixed],
     rating_count: {
         type: Number,
-        require: false,
         default: 0,
     },
     rating_total: {
         type: Number,
-        require: false,
         default: 0,
     },
     sold_count: {
         type: Number,
-        require: false,
         default: 0,
     },
     return_count: {
         type: Number,
-        require: false,
         default: 0,
     },
     pickup_address: {
@@ -120,7 +116,7 @@ const productSchema = new Schema({
         addressLine: { type: String, required: false },
         landmark: { type: String, required: false },
         city: { type: String, required: false },
-        postalcode: { type: String, required: false },
+        pincode: { type: String, required: false },
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },

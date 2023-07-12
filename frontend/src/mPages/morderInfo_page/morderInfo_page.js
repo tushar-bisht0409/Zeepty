@@ -128,8 +128,8 @@ const MOrderInfoPage = () => {
 {/* <div className='oipShipBox'>
             <p className='oipShipHead'>Shipping Address</p>
             <p className='oipShipText'>{oInfo.shipping_address.full_name}</p>
-            <p className='oipShipText'>{oInfo.shipping_address.address_line}, {oInfo.shipping_address.landmark}</p>
-            <p className='oipShipText'>{oInfo.shipping_address.city}, {oInfo.shipping_address.postalcode}</p>
+            <p className='oipShipText'>{oInfo.shipping_address.address}, {oInfo.shipping_address.landmark}</p>
+            <p className='oipShipText'>{oInfo.shipping_address.city}, {oInfo.shipping_address.pincode}</p>
         </div> */}
 
         <div className='oipOrderDBox'>

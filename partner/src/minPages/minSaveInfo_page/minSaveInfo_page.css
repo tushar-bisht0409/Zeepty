@@ -18,11 +18,12 @@
     color: #554BDA;
     margin-left: 17.5vw;
     margin-top: 5vh;
+    margin-bottom: 4vh;
  }
 
  .siPerInputHead{
     font-weight: 500;
-    font-size: medium;
+    font-size: 12px;
  }
 
  .siPerInputBox{
@@ -36,6 +37,7 @@
     border: 1px solid lightgrey;
     border-radius: 5px;
     padding: 1.5vh 4vw;
+    font-size: 12px;
  }
 
  .siPerGenderHead{
@@ -231,17 +233,101 @@
 .siSocButtonBox{
     margin-top: 4vh;
     align-content: center;
-    justify-content: center;
+    justify-content: space-between;
     display: flex;
     margin-bottom: 10vh;
+    margin: 10vh 8vw;
 }
 
-.siSocButton{
+.siSocButtonBox-back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5vh 8vw;
+    border-radius: 5px;
+    color: #554BDA;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid #554BDA;
+    cursor: pointer;
+}
+
+.siSocButtonBox-save{
     padding: 1.5vh 12vw;
     border-radius: 5px;
     color: white;
-    font-size: medium;
+    font-size: 12px;
     font-weight: bold;
     background-color: #554BDA;
+    border: 2px solid #554BDA;
     box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.siSocUNDiv{
+    position: relative;
+}
+
+.siSocInputGreen{
+    margin-top: 1vh;
+    width: 65vw;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 1.5vh 4vw;
+    font-size: 12px;
+}
+
+.siSocInputRed{
+    margin-top: 1vh;
+    width: 65vw;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 1.5vh 4vw;
+    font-size: 12px;
+}
+
+.siSocUNValid{
+    font-size: 10px;
+    font-weight: 500;
+    color: green;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+}
+
+.siSocUNInvalid{
+    font-size: 10px;
+    font-weight: 500;
+    color: red;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+}
+
+.siLoader1{
+    align-self: center;
+    border: 2px solid #cecece; /* Light grey */
+    border-top: 2px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 8vw;
+    height: 8vw;
+    animation: spin 1.5s linear infinite;
+}
+
+.siLoader2{
+    position: absolute;
+    right: 6vw;
+    top: 2vh;
+    bottom: 2vh;
+    align-self: center;
+    border: 2px solid #cecece; /* Light grey */
+    border-top: 2px solid #554BDA; /* Blue */
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

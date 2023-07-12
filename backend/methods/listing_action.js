@@ -24,7 +24,12 @@ function flatTheListing (obj) {
         price: obj.price,
         mrp: obj.mrp,
         size: obj.product_size.size,
-        inventory: obj.product_size.inventory
+        inventory: obj.product_size.inventory,
+        rating_count: 0,
+        rating_total: 0,
+        sold_count: 0,
+        return_count: 0,
+        rating_score: 0,
     }
 
     const pDetails = obj.product_details.reduce((acc, object) => {

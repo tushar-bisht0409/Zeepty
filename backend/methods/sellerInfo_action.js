@@ -3,6 +3,9 @@ const Product = require("../schemas/product");
 const Rating = require("../schemas/review");
 const Payment = require("../schemas/payment");
 const Order = require("../schemas/order");
+const Listing = require("../schemas/listing");
+const ProductRequest = require("../schemas/productRequest");
+const { v4: uuidv4 } = require('uuid');
 
 var functions = {
     postSellerInfo: function (req, res) {
@@ -65,7 +68,7 @@ var functions = {
             },
             {
                 profile_image: obj.profile_image,
-                display_name: obj.display_name,
+                store_name: obj.store_name,
                 user_name: obj.user_name,
                 name: obj.name,
                 fav_categories: obj.fav_categories
@@ -78,33 +81,69 @@ var functions = {
                 }
             });
     },
-    // launchStore: function(req,res){
-    //     var obj = req.body;
-    //     Product.insertMany(obj.products, function(err,prd){
-    //         if(err) {
-    //             return res.json({
-    //                 success: false,
-    //                 msz: "Failed to Save"
-    //             });
-    //         }
-    //         else {
-    //             SellerInfo.findOneAndUpdate(
-    //                 {
-    //                     seller_id: obj.seller_id
-    //                 },
-    //                 {
-    //                     store_url: obj.store_url
-    //                 },
-    //                 function(err,uInfo){
-    //                     if(err) {
-    //                         return res.send({ success: false, msz: "Something Went Wrong" });
-    //                     } else {
-    //                         return res.send({ success: true, msz: uInfo});
-    //                     }
-    //                 });
-    //         }
-    //     })
-    // },
+    launchStore: async function(req, res) {
+        try {
+            var obj = req.body;
+            let allPR = [];
+            for(let i = 0; i < obj.allListings.length; i++) {
+                let p_id = uuidv4();
+                for(let j = 0; j < obj.allListings[i].new_info.length; j++) { 
+                    let pr_id = uuidv4();
+                    let e_id = uuidv4();
+                    let lInfo = await Listing.find({
+                        listing_id: obj.allListings[i].listing_id,
+                        style_code: obj.allListings[i].new_info[j].style_code
+                    });    
+                    let p_size = [];
+                    for(let k = 0; k < lInfo.length; k++) {
+                        p_size.push({
+                            size: lInfo[k].product_size.size,
+                            sku_id: lInfo[k].sku_id
+                        });
+                    }    
+                    let newPR = {
+                        product_request_id: pr_id,
+                        edit_id: e_id,
+                        request_type: 'Create',
+                        product_id: p_id,
+                        new_price: obj.allListings[i].new_info[j].new_price,
+                        new_title: obj.allListings[i].new_info[j].new_title,
+                        new_description: obj.allListings[i].new_info[j].new_description,
+                        seller_id: obj.seller_id,
+                        listing_id: lInfo[0].listing_id,
+                        style_code: lInfo[0].style_code,
+                        media_urls: lInfo[0].media_urls,
+                        brand: lInfo[0].brand,
+                        product_name: lInfo[0].product_name,
+                        product_size: p_size,
+                        price: lInfo[0].price,
+                        mrp: lInfo[0].mrp,
+                    };    
+                    allPR.push(newPR);
+                }
+            }
+            let prInfo = await ProductRequest.insertMany(allPR);
+            let sInfo = await SellerInfo.findOneAndUpdate(
+                {
+                    seller_id: obj.seller_id
+                },
+                {
+                    store_url: obj.store_url
+                }
+            );
+    
+            return res.json({
+                success: true,
+                msz: "Saved Successfully",
+            });
+        } catch (error) {
+            return res.json({
+                success: false,
+                msz: "Failed to Save",
+                err: error
+            });
+        }
+    },
     editSellerInfo: function (req, res) {
         var obj = req.body;
         if (obj.type === "name") {
@@ -493,7 +532,7 @@ var functions = {
         }
     },
 
-    checkIsStoreNameUnique: function (req, res) {
+    checkIsSellerUserNameUnique: function (req, res) {
         const obj = req.query;
         SellerInfo.findOne({
             user_name: obj.user_name
@@ -510,6 +549,28 @@ var functions = {
                 }
                 else {
                     return res.send({ success: false, msz: 'User Name Already Exist', err: null });
+                }
+            }
+        });
+    },
+
+    checkIsSellerStoreNameUnique: function (req, res) {
+        const obj = req.query;
+        SellerInfo.findOne({
+            store_name: obj.store_name
+        }, function (err, minfo) {
+            if (err) {
+                return res.send({ success: false, msz: "Something Went Wrong", err: err });
+            }
+            if (!minfo) {
+                return res.send({ success: true, msz: "Store Name Is Unique", err: null });
+            }
+            else {
+                if (minfo.length === 0) {
+                    return res.send({ success: true, msz: "Store Name Is Unique", err: null });
+                }
+                else {
+                    return res.send({ success: false, msz: 'Store Name Already Exist', err: null });
                 }
             }
         });
@@ -676,60 +737,186 @@ var functions = {
             return res.send({ success: false, err: error});
           });
 
-    }
-
+    },
+    isSellerEmailExist: function (req, res) {
+        var obj = req.query;
+        SellerInfo.findOne(
+            { email: obj.email },
+            function (err, doc) {
+                if (err) {
+                    return res.json({
+                        success: false,
+                        msz: "An Error Occurred",
+                    });
+                } else {
+                    if(doc === null) {
+                        return res.json({
+                            success: true,
+                            msz: "Email Doesn't Exist",
+                        });
+                    } else{
+                        return res.json({
+                            success: false,
+                            msz: "Email Already Exist",
+                        });
+                    }
+                }
+            }
+        )
+    },
 
 }
 
 module.exports = functions;
 
 
-// {
-//     "flag": true,
-//     "message": "GSTIN  found.",
-//     "data": {
-//         "ntcrbs": "MFT",
-//         "adhrVFlag": "Yes",
-//         "lgnm": "TUSHAR BISHT",
-//         "stj": "Commissionerate - Uttarakhand,Zone - Haridwar,Sector - Rudraprayag (Jurisdictional Office)",
-//         "dty": "Regular",
-//         "cxdt": "",
-//         "gstin": "05FICPB2597C1ZM",
-//         "nba": [
-//             "Retail Business",
-//             "Wholesale Business",
-//             "Factory / Manufacturing"
-//         ],
-//         "ekycVFlag": "Not Applicable",
-//         "cmpRt": "NA",
-//         "rgdt": "19/02/2022",
-//         "ctb": "Proprietorship",
-//         "pradr": {
-//             "adr": "00, HEET DANG,  GGIC, RUDRAPRAYAG, Rudraprayag, Uttarakhand, 246171",
-//             "addr": {
-//                 "flno": "",
-//                 "lg": "",
-//                 "loc": " RUDRAPRAYAG",
-//                 "pncd": " 246171",
-//                 "bnm": " HEET DANG",
-//                 "city": "",
-//                 "lt": "",
-//                 "stcd": " Uttarakhand",
-//                 "bno": "0",
-//                 "dst": " Rudraprayag",
-//                 "st": "  GGIC"
-//             }
-//         },
-//         "sts": "Active",
-//         "tradeNam": "NATURES HERBALK",
-//         "isFieldVisitConducted": "No",
-//         "adhrVdt": "21/02/2022",
-//         "ctj": "Commissionerate - DEHRADUN,Division - DIVISION RISHIKESH,Range - RANGE III RUDRAPRAYAG",
-//         "einvoiceStatus": "No",
-//         "lstupdt": "",
-//         "adadr": [],
-//         "ctjCd": "",
-//         "errorMsg": null,
-//         "stjCd": ""
-//     }
-// }
+const gsttt = {
+    "flag": true,
+    "message": "GSTIN  found.",
+    "data": {
+        "ntcrbs": "MFT",
+        "adhrVFlag": "Yes",
+        "lgnm": "TUSHAR BISHT",
+        "stj": "Commissionerate - Uttarakhand,Zone - Haridwar,Sector - Rudraprayag (Jurisdictional Office)",
+        "dty": "Regular",
+        "cxdt": "",
+        "gstin": "05FICPB2597C1ZM",
+        "nba": [
+            "Retail Business",
+            "Wholesale Business",
+            "Factory / Manufacturing"
+        ],
+        "ekycVFlag": "Not Applicable",
+        "cmpRt": "NA",
+        "rgdt": "19/02/2022",
+        "ctb": "Proprietorship",
+        "pradr": {
+            "adr": "00, HEET DANG,  GGIC, RUDRAPRAYAG, Rudraprayag, Uttarakhand, 246171",
+            "addr": {
+                "flno": "",
+                "lg": "",
+                "loc": " RUDRAPRAYAG",
+                "pncd": " 246171",
+                "bnm": " HEET DANG",
+                "city": "",
+                "lt": "",
+                "stcd": " Uttarakhand",
+                "bno": "0",
+                "dst": " Rudraprayag",
+                "st": "  GGIC"
+            }
+        },
+        "sts": "Active",
+        "tradeNam": "NATURES HERBALK",
+        "isFieldVisitConducted": "No",
+        "adhrVdt": "21/02/2022",
+        "ctj": "Commissionerate - DEHRADUN,Division - DIVISION RISHIKESH,Range - RANGE III RUDRAPRAYAG",
+        "einvoiceStatus": "No",
+        "lstupdt": "",
+        "adadr": [],
+        "ctjCd": "",
+        "errorMsg": null,
+        "stjCd": ""
+    }
+}
+
+const hst2 = {
+    "flag": true,
+    "message": "GSTIN  found.",
+    "data": {
+        "ntcrbs": "MFT",
+        "adhrVFlag": "Yes",
+        "lgnm": "MOHD FAREED",
+        "stj": "State - Delhi,Zone - Zone 7,Ward - Ward 75 (Jurisdictional Office)",
+        "dty": "Regular",
+        "cxdt": "",
+        "gstin": "07ACUPF1229N1Z8",
+        "nba": [
+            "Factory / Manufacturing",
+            "Supplier of Services",
+            "Works Contract",
+            "Office / Sale Office",
+            "Retail Business",
+            "Wholesale Business"
+        ],
+        "ekycVFlag": "Not Applicable",
+        "cmpRt": "NA",
+        "rgdt": "06/12/2022",
+        "ctb": "Proprietorship",
+        "pradr": {
+            "adr": "C-216, KH NO-152, GALI NO-6, Chauhan Bangar, New Delhi, North East Delhi, Delhi, 110053",
+            "addr": {
+                "flno": "",
+                "lg": "",
+                "loc": " New Delhi",
+                "pncd": " 110053",
+                "bnm": " GALI NO-6",
+                "city": "",
+                "lt": "",
+                "stcd": " Delhi",
+                "bno": "0",
+                "dst": " North East Delhi",
+                "st": " Chauhan Bangar"
+            }
+        },
+        "sts": "Active",
+        "tradeNam": "SAMEER FASHION",
+        "isFieldVisitConducted": "Yes",
+        "adhrVdt": "13/01/2023",
+        "ctj": "Commissionerate - DELHI EAST,Division - GANDHI NAGAR,Range - RANGE - 148",
+        "einvoiceStatus": "No",
+        "lstupdt": "",
+        "adadr": [],
+        "ctjCd": "",
+        "errorMsg": null,
+        "stjCd": ""
+    }
+}
+
+const compositGST = {
+    "flag": true,
+    "message": "GSTIN  found.",
+    "data": {
+        "ntcrbs": "TRD:TRR",
+        "adhrVFlag": "Yes",
+        "lgnm": "BHAGAT SINGH BIST",
+        "stj": "Commissionerate - Uttarakhand,Zone - Haridwar,Sector - Rudraprayag (Jurisdictional Office)",
+        "dty": "Composition",
+        "cxdt": "",
+        "gstin": "05ACAPB8717B1ZA",
+        "nba": [
+            "Retail Business"
+        ],
+        "ekycVFlag": "Not Applicable",
+        "cmpRt": "NA",
+        "rgdt": "01/07/2017",
+        "ctb": "Proprietorship",
+        "pradr": {
+            "adr": "00, 1, NH 7, Pandit Restaurant, Rudraprayag, Rudraprayag, Uttarakhand, 246171",
+            "addr": {
+                "flno": "",
+                "lg": "",
+                "loc": " Rudraprayag",
+                "pncd": " 246171",
+                "bnm": " NH 7",
+                "city": "",
+                "lt": "",
+                "stcd": " Uttarakhand",
+                "bno": "0",
+                "dst": " Rudraprayag",
+                "st": " Pandit Restaurant"
+            }
+        },
+        "sts": "Active",
+        "tradeNam": "M/S SARITA PUSTAK BHANDAR",
+        "isFieldVisitConducted": "No",
+        "adhrVdt": "25/11/2022",
+        "ctj": "Commissionerate - DEHRADUN,Division - DIVISION RISHIKESH,Range - RANGE III RUDRAPRAYAG",
+        "einvoiceStatus": "No",
+        "lstupdt": "",
+        "adadr": [],
+        "ctjCd": "",
+        "errorMsg": null,
+        "stjCd": ""
+    }
+}

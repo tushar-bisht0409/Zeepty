@@ -43,9 +43,11 @@ const MINOrdersPage = () => {
             setallOrders(json.msz);
             setLoader1(false);
         } else if(!json.success && json.err === null) { 
-            setOrders([]);
+            setallOrders([]);
             setLoader1(false)
         } else {
+            setallOrders([]);
+            setLoader1(false)
             setIsError(true);
             // window.alert("Something Went Wrong")
         }

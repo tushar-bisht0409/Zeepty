@@ -3,7 +3,7 @@ import "./maddressCard.css"
 import Modal from 'react-modal';
 import { API_URI } from '../../../store/actions/auth_action';
 import { useEffect } from 'react';
-export default function MAddressCard({selectedAddress,setSelectedAddress,item,refreshData}) {
+export default function MAddressCard({selectedAddress,setSelectedAddress,item,refreshData, changeSelectedAddress}) {
 
     const [isSelected,setIsSelected] = useState(false);
 
@@ -12,7 +12,7 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
     const [uName, setUName] = useState("");
     const [uPhone, setUPhone] = useState("");
     const [uAltPhone, setUAltPhone] = useState("");
-    const [postalcode, setPostalCode] = useState("");
+    const [pincode, setpincode] = useState("");
     const [aline, setAline] = useState("");
     const [landmark, setLandmark] = useState("");
     const [city, setCity] = useState("");
@@ -22,6 +22,7 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
       content: {
         alignSelf: 'center',
         padding: '0px',
+        zIndex: '9999'
       },
     };
 
@@ -90,10 +91,10 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
               full_name: uName,
               phone_number: uPhone,
               alternate_phone_number: uAltPhone,
-              address_line: aline,
+              address: aline,
               landmark: landmark,
               city: city,
-              postalcode: postalcode,
+              pincode: pincode,
               country: "",
               mode: hMode,
             },
@@ -113,12 +114,12 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
     const setOldValues = async () => {
       console.log("oset: ",item);
       setUName(item.full_name);
-      setAline(item.address_line);
+      setAline(item.address);
       setLandmark(item.landmark);
       setCity(item.city);
       setUPhone(item.phone_number);
       setUAltPhone(item.alternate_phone_number);
-      setPostalCode(item.postalcode);
+      setpincode(item.pincode);
       setHMode(item.mode);
     };
 
@@ -135,26 +136,25 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
             <div className='masAddressBoxTop'>
             <div className='masAddressBoxTopLeft'>
             <div onClick={handleSelection} className='mac-checkBox'>
-          {isSelected?<i style={{ fontSize: '10px', color: 'white',height:'15px',width: '15px',display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#554BDA'}}
-           class="fa-solid fa-check"></i>
-            :<div></div>}
+          {isSelected?<i class="fa-regular fa-circle-dot"></i>
+            :<i class="fa-regular fa-circle"></i>}
           </div>
             <p className='masAddressTextName'>{item.full_name}</p>
             </div>
             <div className='masAddressBoxTopRight'>
-          {item.mode==="home"?<i style={{fontSize: '15px', color: '#554BDA',height:'20px',width: '20px',display: 'flex', justifyContent: 'center', alignSelf: 'center'}}
+          {item.mode==="home"?<i style={{fontSize: '12px', color: 'grey',display: 'flex', justifyContent: 'center', alignSelf: 'center'}}
            class="fa-solid fa-house"></i>
-            :<i style={{fontSize: '15px', color: '#554BDA',height:'20px',width: '20px',display: 'flex', justifyContent: 'center', alignSelf: 'center'}}
+            :<i style={{fontSize: '12px', color: 'grey', display: 'flex', justifyContent: 'center', alignSelf: 'center'}}
             class="fa-solid fa-briefcase"></i>}
             <p className='masAddressTextMode'>{item.mode.toUpperCase()}</p>
             </div>
             </div>
-            <p className='masAddressText'>{item.address_line},{item.landmark},{item.city}</p>
-            <p className='masAddressText'>{item.phone_number}</p>
+            <p onClick={handleSelection} className='masAddressText'>{item.address},{item.landmark},{item.city}</p>
+            <p onClick={handleSelection} className='masAddressText'>{item.phone_number}</p>
             {item.alternate_phone_number == ""?null : <p className='masAddressText'>{item.alternate_phone_number} (Alternate Contact No.)</p>}
-            <div className='masPCRow'>
+            <div onClick={handleSelection} className='masPCRow'>
             <p className='masAddressTextPC'>Pin Code:</p>
-            <p className='masAddressTextPC2'>{item.postalcode}</p>
+            <p className='masAddressTextPC2'>{item.pincode}</p>
             </div>
             <div className='masActionBox'>
                 <div onClick={()=>{
@@ -164,13 +164,15 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
                   }
                 }
                   deleteAddress();
-                }} className='masActionButton'>Remove</div>
+                }} className='masActionBox-remove'>Remove</div>
                 <div onClick={()=>{
                   setOldValues();
                   setModalIsOpen(true);
                 }}
-                  className='masActionButton'>Edit</div>
+                  className='masActionBox-edit'>Edit</div>
             </div>
+
+            {isSelected ? <div onClick={changeSelectedAddress} className='masDeliver'>Deliver to this address</div> : null}
             <Modal
         onAfterClose={()=>{}}
         isOpen={modalIsOpen}
@@ -192,7 +194,7 @@ export default function MAddressCard({selectedAddress,setSelectedAddress,item,re
         <input onChange={(val)=>{setUAltPhone(val.target.value);}} className='mnewAddress-modal-input' value={uAltPhone} placeholder='Alternate Mobile Number(Optional)' type='text'/>
 
         <p className='mnewAddress-modal-addressText'>Address</p>
-        <input onChange={(val)=>{setPostalCode(val.target.value);}} className='mnewAddress-modal-input' value={postalcode} placeholder='Pin Code*' type='text'/>
+        <input onChange={(val)=>{setpincode(val.target.value);}} className='mnewAddress-modal-input' value={pincode} placeholder='Pin Code*' type='text'/>
         <input onChange={(val)=>{setAline(val.target.value);}} className='mnewAddress-modal-input' value={aline} placeholder='Address*' type='text'/>
         <input onChange={(val)=>{setLandmark(val.target.value);}} className='mnewAddress-modal-input' value={landmark} placeholder='Landmark(Optional)' type='text'/>
         <input onChange={(val)=>{setCity(val.target.value);}} className='mnewAddress-modal-input' value={city} placeholder='City*' type='text'/>

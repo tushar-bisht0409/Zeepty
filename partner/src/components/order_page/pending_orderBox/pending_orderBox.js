@@ -10,6 +10,8 @@ import Snackbar from "../../snackbar/snackbar";
 
 const PendingOrderBox = ({ item }) => {
 
+  const [order, setOrder] = useState({});
+
   const [listing, setListing] = useState(undefined)
 
   const [dispatchByDate, setDispatchByDate] = useState('')
@@ -146,11 +148,11 @@ const PendingOrderBox = ({ item }) => {
         type: 'manufacturer_id',
         manufacturer_id: localStorage.getItem('manufacturer_id')
       }
-      const json2 = await dispatch(getMyOrders(obj, "pending"));
+      const json2 = await dispatch(getMyOrders(obj2, "pending"));
       if (json2.success) {
         setLoader1(false);
-        for (let i = 0; i < json2.labelArray.length; i++) {
-          window.open(`${json2.labelArray[i].label_pdf_link}`)
+        for (let i = 0; i < json.labelArray.length; i++) {
+          window.open(`${json.labelArray[i].label_pdf_link}`)
         }
       } else {
         setLoader1(false);
@@ -166,7 +168,6 @@ const PendingOrderBox = ({ item }) => {
 
   async function handleCreatePickupRequest() {
     setLoader1(true);
-
     const currentDate = new Date();
     const nextDate = new Date(currentDate);
     nextDate.setDate(currentDate.getDate() + 1);
@@ -177,24 +178,22 @@ const PendingOrderBox = ({ item }) => {
     const formattedDate = `${year}-${month}-${day}`;
 
     const obj = {
-      "pickup_location": "Apple",
+      manufacturer_id: item.manufacturer_id,
       "expected_package_count": "1",
       "pickup_date": formattedDate,
       "pickup_time": "10:00:00",
       order_ids: [item.order_id]
     }
     const json = await createPickupRequest(obj);
+    console.log("LL: ",json)
     if (json.success) {
       const obj2 = {
         type: 'manufacturer_id',
         manufacturer_id: localStorage.getItem('manufacturer_id')
       }
-      const json2 = await dispatch(getMyOrders(obj, "pending"));
+      const json2 = await dispatch(getMyOrders(obj2, "pending"));
       if (json2.success) {
         setLoader1(false);
-        for (let i = 0; i < json2.labelArray.length; i++) {
-          window.open(`${json2.labelArray[i].label_pdf_link}`)
-        }
       } else {
         setLoader1(false);
         let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
@@ -205,36 +204,31 @@ const PendingOrderBox = ({ item }) => {
       let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
       showSnackbarMessage(sbObject)
     }
+    setLoader1(false);
   }
 
   async function handleCreateShipment() {
+    console.log(localStorage);
     setLoader2(true);
     const obj = {
       order_id: item.order_id,
+      manufacturer_id: item.manufacturer_id,
       "name": item.shipping_address.full_name,
-      "add": `${item.shipping_address.address_line}, ${item.shipping_address.landmark}, ${item.shipping_address.city}`,
-      "pin": item.shipping_address.postalcode,
+      "add": `${item.shipping_address.address}, ${item.shipping_address.landmark}, ${item.shipping_address.city}`,
+      "pin": item.shipping_address.pincode,
       "phone": item.shipping_address.phone_number,
       "payment_mode": item.payment_method,
-      "return_pin": item.return_address.postalcode,
-      "return_city": item.return_address.city,
-      "return_phone": item.return_address.phone_number,
-      "return_add": `${item.return_address.address_line}, ${item.return_address.landmark}, ${item.return_address.city}`,
       "cod_amount": item.is_paid ? "0" : `${item.total_amount}`,
       "quantity": item.qunatity,
       "weight": listing.weight,
       "shipping_mode": item.shipping_mode,
-      "pickup_location": {
-          "name": `${item.pickup_address.full_name}`,
-          "add": `${item.pickup_address.address_line}, ${item.pickup_address.landmark}, ${item.pickup_address.city}`,
-          "city": `${item.pickup_address.city}`,
-          "pin_code": `${item.pickup_address.postalcode}`,
-          "country": `${item.pickup_address.country}`,
-          "phone": `${item.pickup_address.phone_number}`
-        }
     }
 
+    console.log(obj);
+
     const json = await createShipment(obj);
+
+    console.log("PP: ",json)
 
     if(json.success) {
       setIsAccepted(true);
@@ -243,7 +237,7 @@ const PendingOrderBox = ({ item }) => {
       let sbObject = {message: "Something Went Wrong", backgroundColor: "#181818", color: "white", okColor: "white"}
       showSnackbarMessage(sbObject)
     }
-
+    setLoader2(false);
 
   }
 
@@ -301,9 +295,9 @@ const PendingOrderBox = ({ item }) => {
             </div>
             <div className="obc-action">
               {loader2 ? <div className="obc-loader2"></div> : <><div onClick={() => { setModalIsOpen(true) }} className="obc-action-cancel">Cancel</div>
-              { !isAccepted ? <div onClick={handleCreateShipment} className="obc-action-accept">Accept Order</div> : item.label_pdf_link === undefined ? <div onClick={handleGenerateShippingLabel} className="obc-action-accept">Print Label</div> : null}
-              {item.label_pdf_link === undefined ? null : <div onClick={() => { window.open(`${item.label_pdf_link}`) }} className="obc-action-label">Print Label</div>}
-              {item.label_pdf_link === undefined ? null : <div onClick={() => { handleCreatePickupRequest() }} className="obc-action-rts">Ready To Ship</div>}
+              { !isAccepted ? <div onClick={handleCreateShipment} className="obc-action-accept">Accept Order</div> : item.label_pdf_link === undefined || item.label_pdf_link === "" ? <div onClick={handleGenerateShippingLabel} className="obc-action-accept">Print Label</div> : null}
+              {item.label_pdf_link === undefined || item.label_pdf_link === "" ? null : <div onClick={() => { window.open(`${item.label_pdf_link}`) }} className="obc-action-label">Print Label</div>}
+              {item.label_pdf_link === undefined || item.label_pdf_link === "" ? null : <div onClick={() => { handleCreatePickupRequest() }} className="obc-action-rts">Ready To Ship</div>}
               </>}
             </div>
           </div>

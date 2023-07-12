@@ -41,7 +41,7 @@ const MCard = ({item}) => {
   function isInWishlist (prod,wList){
     setIsWishlisted(undefined)
     for(let i = 0; i<wList.length; i++){
-      if(wList[i].product_id === prod.product_id){
+      if(wList[i].product_id === prod.product_id && wList[i].style_code === prod.style_code ){
         setIsWishlisted(wList[i]);
         break;
       }

@@ -5,7 +5,7 @@
     /* border-radius: 2px; */
     margin: 1vh 0px;
     /* box-shadow: 1px 1px 2px 1px lightgrey; */
-    border-bottom: 1vh solid lightgrey;
+    border-bottom: 4px solid #ecebff;
     padding-bottom: 2vh;
 }
 
@@ -25,47 +25,48 @@
 }
 
 .mac-checkBox{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 15px;
-    width: 15px;
-    border-radius: 5px;
-    border: 2px solid #554BDA;
+    /* border: 2px solid orange; */
+    color: orange;
+    font-size: 20px;
 }
 
 .masAddressTextName{
     margin-left: 4vw;
     align-self: center;
     font-weight: bold;
-    font-size: small;
+    font-size: 12px;
     line-height: 22px;
-    color: #554BDA; 
+    color: black; 
 }
 
 .masAddressTextMode{
     margin-left: 1vw;
     align-self: center;
     font-weight: bold;
-    font-size: small;
-    line-height: 22px;
-    color: #554BDA; 
+    font-size: 10px;
+    color: grey; 
 }
 
 .masAddressBoxTopRight{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-bottom: 2vh;
 }
 
 .masAddressText{
     align-self: start;
     font-weight: 500;
-    font-size: small;
+    font-size: 12px;
     line-height: 22px; 
     margin: 0vh 6vw;
+    cursor: pointer;
 }
 
 .masPCRow{
@@ -74,18 +75,19 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 0.5vh; 
+    cursor: pointer;
 }
 
 .masAddressTextPC{
     font-weight: 600;
-    font-size: small; 
+    font-size: 12px; 
     margin-right: 0.7vw;
 }
 
 .masAddressTextPC2{
     align-self: start;
     font-weight: 500;
-    font-size: small;
+    font-size: 12px;
     line-height: 22px; 
 }
 
@@ -96,21 +98,50 @@
     margin-top: 2vh;
 }
 
-.masActionButton{
+.masActionBox-remove{
     width: 20vw;
     padding: 1vh 0;
     margin-right: 4vw;
     background-color: white;
     align-items: center;
     display: flex;
-    font-size: small;
+    font-size: 14px;
     justify-content: center;
     color: grey;
     border-radius: 2px;
-    font-weight: 500;
-    border: 2px solid lightgrey;
-    box-shadow: 1px 1px 2px 1px lightgrey;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.masActionBox-edit{
+    width: 20vw;
+    padding: 1vh 0;
+    margin-right: 4vw;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    color: #554BDA;
+    border-radius: 2px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.masDeliver{
+    width: 80vw;
+    margin: 2vh 10vw 0vh 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5vh 0vw;
+    font-size: 14px;
+    color: white;
+    background-color: orange;
     border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 2px 1px 1px rgb(0,0,0,0.2);
+    cursor: pointer;
 }
 
 .mnewAddress-modal{
@@ -134,7 +165,7 @@
 }
 
 .mnewAddress-modal-headText{
-    font-size: small;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -147,7 +178,7 @@
     margin-top: 3vh;
     margin-bottom: 1vh;
     align-self: start;
-    font-size: small;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -163,7 +194,7 @@
     margin-top: 2vh;
     margin-bottom: 1vh;
     align-self: start;
-    font-size: small;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -172,7 +203,7 @@
     margin-top: 2vh;
     margin-bottom: 1vh;
     align-self: start;
-    font-size: small;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -184,7 +215,7 @@
 
 .mnewAddress-modal-modeHeadButton-active{
     padding: 2vh 4vh;
-    font-size: small;
+    font-size: 12px;
     color: white;
     display: flex;
     align-items: center;
@@ -195,7 +226,7 @@
 
 .mnewAddress-modal-modeHeadButton-inActive{
     padding: 2vh 4vh;
-    font-size: small;
+    font-size: 12px;
     color: #554BDA;
     display: flex;
     align-items: center;

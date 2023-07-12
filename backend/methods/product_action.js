@@ -29,6 +29,11 @@ function flatTheProduct (obj) {
         inventory: obj.product_size.inventory,
         new_title: obj.new_title,
         new_description: obj.new_description,
+        rating_count: 0,
+        rating_total: 0,
+        sold_count: 0,
+        return_count: 0,
+        rating_score: 0,
     };
 
     const pDetails = obj.product_details.reduce((acc, object) => {
@@ -656,7 +661,30 @@ var functions = {
             }
         }
     },
-
+    
+    checkSellerProductAdded: function(req, res){
+        const obj = req.query
+        ProductRequest.findOne({
+            seller_id: obj.seller_id,
+            listing_id: obj.listing_id,
+            request_type: 'Create'
+        }, function (err, pinfo) {
+            if (err) {
+                return res.send({ success: false, msz: 'An Error Occured', err: err});
+            }
+            else if (!pinfo) {
+                return res.send({ success: false, msz: 'Not Product Found', err: null});
+            }
+            else {
+                if (pinfo.length === 0) {
+                    return res.send({ success: false, msz: 'No Product Found', err: null});
+                }
+                else {
+                    return res.send({ success: true, product_status: pinfo.product_status, err: null});
+                }
+            }
+        });        
+    },
     acceptProductRequest: function (req,res) {
         const obj = req.body;
         ProductRequest.find({

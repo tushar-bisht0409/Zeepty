@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { SAVE_ORDER_INFO ,SELECT_ALL,UPDATE_MODE, UPDATE_SELECTED_ARRAY } from "../../store/action/type";
 import './RightContent.css'
 import OrderHead from "./orderHead/orderHead";
-import { getMyOrders } from "../../store/action/order_action";
+import { getMyOrders, trackAndUpdateOrderStatus } from "../../store/action/order_action";
 
 import errorOccurred from '../../assets/supplier/images/errorOccurred.png'
 import nothingHere from '../../assets/supplier/images/nothingHere.png'
@@ -76,7 +76,6 @@ const  RightContent= (d) => {
         // select all
         let mode = d.data.mode;
         let dd = d.data[mode]
-        console.log("ritesh",dd)
         const array=[];
         for(let i=0;i<dd.length;i++){
             
@@ -113,6 +112,21 @@ const  RightContent= (d) => {
             payload: mMode
         })
       }
+
+      async function handleTrackAndUpdateOrderStatus () {
+        if(d.data.waybills.length > 0){
+            let obj = {
+                waybills: d.data.waybills,
+                orderStatusObject: d.data.orderStatusObject
+            }
+            const json = await trackAndUpdateOrderStatus(obj);
+            console.log("obj: ",json)
+        }
+        
+      }
+      useEffect(()=>{
+        handleTrackAndUpdateOrderStatus()
+      },[d])
    
     return (
        loader1 ? <div className="oprc-loader1"></div> :

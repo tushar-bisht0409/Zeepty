@@ -11,7 +11,10 @@ import MBottomNavBar from '../../mComponents/mBottomNavBar/mBottomNavBar';
 import MCartProductCard from '../../mComponents/mcartProductCard/mcartProductCard';
 import { checkAndHandleLocalUserInfo } from '../../store/actions/notLoggedInUser_action';
 import Modal from 'react-modal';
-
+import online_payment from '../../assets/images/online_payment.png'
+import cod_payment from '../../assets/images/cod_payment.webp'
+import { createPaymentAndOrder } from '../../store/actions/payment_action';
+import MFullScreenLoader from '../../mComponents/mFullScreen_loader/mFullScreen_loader';
 
 const MCartPage = ({itemsSelected, totalPrice}) => {
     const dispatch = useDispatch();
@@ -33,8 +36,11 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
     const [loader1, setLoader1] = useState(false);
     const [loader2, setLoader2] = useState(false);
     const [loader3, setLoader3] = useState(false);
+    const [loader4, setLoader4] = useState(false);
     const [otpStage, setOtpStage] = useState("Start");
     const [otpTimer, setOtpTimer] = useState(60);
+
+    const [paymentMode, setPaymentMode] = useState("")
 
     async function handelSendOtp() {
       setLoader1(true);
@@ -86,7 +92,6 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
               }
           } else {
             let json3 = await addCartAndWishlistData(obj)
-            console.log("333: ",json3, ":::", obj)
               setLoader3(false);
               window.open("/cart",'_self')
           }
@@ -131,7 +136,6 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
 
     async function handleLocalUserInfo() {
       let json = await checkAndHandleLocalUserInfo();
-      console.log(json)
       if(json.success){
         setItems(json.userInfo.cart);
       } else{
@@ -174,9 +178,9 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
         }),
       });
       const json = await response.json();
-      console.log(json,"\n::",selectedAddress)
       if (json.success) {
-        setCurrentPoint('Cart');
+        setPaymentMode("")
+        setCurrentPoint('Payment');
       }
     } catch (error) {
       console.log(error);
@@ -200,12 +204,12 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
     priceRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  async function handlePlaceOrder() {
+  async function handleCartPlaceOrder() {
     let c_id = localStorage.getItem('customer_id');
     if(c_id === undefined || c_id === null){
       setLoginModalIsOpen(true);
     } else{
-      console.log("Place Order")
+      setCurrentPoint('Address')
     }
   }
 
@@ -220,23 +224,104 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
     },
   };
 
+  async function handlePlaceOrder(){
+    setLoader4(true);
+      const obj = {
+        payment_type: "Customer_Order",
+        orders: itemsSelected,
+        customer_id: customerID,
+        amount: parseInt(totalPrice)*100,
+        shipping_address: selectedAddress,
+      }
+      if(paymentMode === "Online"){
+      const json = await createPaymentAndOrder(obj);
+      console.log('EREE: ',json)
+      if(json.success) {
+        setLoader4(false);
+        window.open(`${json.msz.data.instrumentResponse.redirectInfo.url}`,'_self')
+      } else {
+        setLoader4(false);
+        window.alert('Something Went Wrong');
+      }
+    } else{
+      //COD Just create order with pending status
+    }
+  }
+
   return (
     items===undefined?<div></div>:
-    currentPoint === "Address"? <div>
-      <div className="MobileCart-menu"><i class="fa-solid fa-arrow-left-long"></i>
+    currentPoint === "Address"? <div className='MobileCart-address'>
+      <div onClick={()=>{setCurrentPoint('Cart')}} className="MobileCart-menu"><i class="fa-solid fa-arrow-left-long"></i>
             <p className="MobileCart-menutext">Address</p>
         </div>
-          <MCartProgress mode1={"active"} mode2={"inActive"} mode3={"inActive"} on1={changeMode} on2={changeMode} on3={()=>{}}></MCartProgress>
+          <MCartProgress mode1={"completed"} mode2={"active"} mode3={"inactive"} mode4={"inactive"} on1={changeMode} on2={changeMode} on3={()=>{}}></MCartProgress>
       <div>
-        <MAddressSection setUserInfo={setUserInfo} selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress} addresses={userInfo.addresses}></MAddressSection>
+        <MAddressSection setUserInfo={setUserInfo} selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress} addresses={userInfo.addresses} changeSelectedAddress={changeSelectedAddress}></MAddressSection>
       </div>
-      <div onClick={()=>{
-      if(selectedAddress === undefined){
-      }else{
-        changeSelectedAddress();
-      }
-    }} className='mpoBottomButton'>Place Order</div>
-    </div> : items.length === 0 ? <div className="MobileCart">
+    </div> : currentPoint === "Payment" ? <div className='MobileCart-payment'>
+      <div onClick={()=>{setCurrentPoint('Address')}} className="MobileCart-menu"><i class="fa-solid fa-arrow-left-long"></i>
+            <p className="MobileCart-menutext">Payment Method</p>
+        </div>
+          <MCartProgress mode1={"completed"} mode2={"completed"} mode3={"active"} mode4={"inactive"} on1={changeMode} on2={changeMode} on3={()=>{}}></MCartProgress>
+          <p className='MobileCart-payment-head'>Select Payment</p>
+      <div className='MobileCart-payment-box'>
+        <div onClick={()=>{setPaymentMode("Online")}} className='MobileCart-payment-box-item'>
+          <div className='MobileCart-payment-box-item-checkBox'>
+            {paymentMode === "Online"?<i class="fa-regular fa-circle-dot"></i>
+            :<i class="fa-regular fa-circle"></i>}
+            </div>
+            <img className='MobileCart-payment-box-item-img' src={online_payment}/>
+            <p className='MobileCart-payment-box-item-t1'>Pay Online</p>
+        </div>
+        <div onClick={()=>{setPaymentMode("COD")}} className='MobileCart-payment-box-item'>
+          <div className='MobileCart-payment-box-item-checkBox'>
+            {paymentMode === "COD"?<i class="fa-regular fa-circle-dot"></i>
+            :<i class="fa-regular fa-circle"></i>}
+            </div>
+            <img className='MobileCart-payment-box-item-img' src={cod_payment}/>
+            <p className='MobileCart-payment-box-item-t1'>Pay On Delivery</p>
+        </div>
+      </div>
+      <div className='MobileCart-payment-pd'>
+        <MpriceDetails priceRef={priceRef} />
+      </div>
+      <div className='MobileCart-payment-bottom'>
+              <div onClick={()=>{scrollToPrice()}} className='MobileCart-payment-bottom-detail'>
+              <p className='MobileCart-payment-bottom-price'>Rs.{totalPrice}</p>
+              <p className='MobileCart-payment-bottom-view'>View Price Details</p>
+            </div>
+            <div onClick={()=>{if(paymentMode===""){window.alert('Select Payment Mode')}else{setCurrentPoint('Summary')}}} className='MobileCart-payment-bottom-button'>Continue</div>
+            </div>
+    </div> : currentPoint === "Summary" ? <div className="MobileCart">
+    <div onClick={()=>{setCurrentPoint('Payment')}} className="MobileCart-menu"><i class="fa-solid fa-arrow-left-long"></i>
+            <p className="MobileCart-menutext">Summary</p>
+        </div>
+            <MCartProgress mode1={'completed'} mode2={'completed'} mode3={'completed'} mode4={'active'} on1={changeMode} on2={customerID === undefined ? handleLoginModal : changeMode} on3={()=>{}} />
+            <MSelectedAddress setCurrentPoint={setCurrentPoint} item={selectedAddress}/> 
+            <div className="mitems-Selected">
+
+              <div className="mnumber">{itemsSelected.length} Items</div>
+            </div>
+            {loader4 ? <MFullScreenLoader/> : null}
+            {userInfo.cart === undefined ? <div></div>:
+            <div>
+             {items.map((p)=>(
+              //isselected
+                <MCartProductCard noAction={true} item={p} selected={true} quantity={1} cart={userInfo.cart}/>
+             ))} 
+            </div>}
+
+
+            <MpriceDetails priceRef={priceRef} />
+
+            <div className='MobileCart-payment-bottom'>
+              <div onClick={()=>{scrollToPrice()}} className='MobileCart-payment-bottom-detail'>
+              <p className='MobileCart-payment-bottom-price'>Rs.{totalPrice}</p>
+              <p className='MobileCart-payment-bottom-view'>View Price Details</p>
+            </div>
+            <div onClick={handlePlaceOrder} className='MobileCart-payment-bottom-button'>Place Order</div>
+            </div>
+        </div> : currentPoint === "Cart" ? items.length === 0 ? <div className="MobileCart">
         <div className="MobileCart-menu">
           <p className="MobileCart-menutext">Cart</p>
         </div>
@@ -248,8 +333,8 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
         <div className="MobileCart-menu">
           <p className="MobileCart-menutext">Cart</p>
         </div>
-            <MCartProgress newUser={customerID === undefined ? true : false } mode1={'completed'} mode2={customerID === undefined ? 'inActive' : 'active'} mode3={'inActive'} on1={changeMode} on2={customerID === undefined ? handleLoginModal : changeMode} on3={()=>{}} />
-            <MSelectedAddress setCurrentPoint={setCurrentPoint} item={selectedAddress}/> 
+            <MCartProgress mode1={'active'} mode2={'inactive'} mode3={'inactive'} mode4={'inactive'} on1={changeMode} on2={customerID === undefined ? handleLoginModal : changeMode} on3={()=>{}} />
+            {/* <MSelectedAddress setCurrentPoint={setCurrentPoint} item={selectedAddress}/>  */}
             <div className="mitems-Selected">
             <div onClick={()=>{}} className='mcheckBox'>
           {isSelected?<i style={{fontSize: '10px', color: 'white',height:'15px',width: '15px',display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#554BDA'}}
@@ -274,7 +359,7 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
               <p className='mpoBottomBoxDetailPrice'>Rs.{totalPrice}</p>
               <p className='mpoBottomBoxDetailView'>View Price Details</p>
             </div>
-            <div onClick={handlePlaceOrder} className='mpoBottomBoxButton'>Place Order</div>
+            <div onClick={handleCartPlaceOrder} className='mpoBottomBoxButton'>Continue</div>
             </div>
 
             <MBottomNavBar bMode={"Cart"}/>
@@ -301,6 +386,8 @@ const MCartPage = ({itemsSelected, totalPrice}) => {
           </div>
         </Modal>
 
+    </> : <>
+    
     </>
   )
 }

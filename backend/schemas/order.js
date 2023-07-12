@@ -8,11 +8,11 @@ const orderSchema = new Schema({
     },
     waybill: {
         type: String,
-        required: true
+        required: false
     },
     upload_wbn: {
         type: String,
-        required: true
+        required: false
     },
     customer_id: {
         type: String,
@@ -39,10 +39,10 @@ const orderSchema = new Schema({
         full_name: { type: String, required: false },
         phone_number: { type: String, required: false },
         alternative_phone_number: { type: String, required: false },
-        address_line: { type: String, required: false },
+        address: { type: String, required: false },
         landmark: { type: String, required: false },
         city: { type: String, required: false },
-        postalcode: { type: String, required: false },
+        pincode: { type: String, required: false },
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },
@@ -50,10 +50,10 @@ const orderSchema = new Schema({
         full_name: { type: String, required: false },
         phone_number: { type: String, required: false },
         alternative_phone_number: { type: String, required: false },
-        address_line: { type: String, required: false },
+        address: { type: String, required: false },
         landmark: { type: String, required: false },
         city: { type: String, required: false },
-        postalcode: { type: String, required: false },
+        pincode: { type: String, required: false },
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },
@@ -61,10 +61,10 @@ const orderSchema = new Schema({
         full_name: { type: String, required: false },
         phone_number: { type: String, required: false },
         alternative_phone_number: { type: String, required: false },
-        address_line: { type: String, required: false },
+        address: { type: String, required: false },
         landmark: { type: String, required: false },
         city: { type: String, required: false },
-        postalcode: { type: String, required: false },
+        pincode: { type: String, required: false },
         country: { type: String, required: false },
         mode: {type: String, required: false}
     },
@@ -106,35 +106,43 @@ const orderSchema = new Schema({
     },
     paid_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     pickedup_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     delivered_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     shipped_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     cancelled_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     returned_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     returnpickedup_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     returnreceived_at: {
         type: Date,
-        required: false
+        required: false,
+        default: Date.now,
     },
     return_waybill: {
         type: String,
@@ -149,12 +157,14 @@ const orderSchema = new Schema({
         required: false
     },
     estimated_delivery_at: {
-        type: String,
-        required: false
+        type: Date,
+        required: false,
+        default: Date.now,
     },
     estimated_returnpickup_at: {
-        type: String,
-        required: false
+        type: Date,
+        required: false,
+        default: Date.now,
     },
     delhivery_status: {
         type: Schema.Types.Mixed,

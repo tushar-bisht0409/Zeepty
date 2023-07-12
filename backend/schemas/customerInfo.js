@@ -56,10 +56,10 @@ const customerInfoSchema = new Schema({
         full_name: { type: String, required: false },
         phone_number: { type: String, required: false },
         alternate_phone_number: { type: String, required: false },
-        address_line: { type: String, required: false },
+        address: { type: String, required: false },
         landmark: { type: String, required: false },
         city: { type: String, required: false },
-        postalcode: { type: String, required: false },
+        pincode: { type: String, required: false },
         country: { type: String, required: false },
         mode: {type: String, required: false},
         country: {type: String, required: false, default: "India"}

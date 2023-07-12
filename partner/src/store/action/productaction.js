@@ -39,9 +39,7 @@ export const getlisting = async (obj) => {
         const response = await fetch(`${API_URI}/getlisting?type=${encodeURIComponent(obj.type)}&listing_id=${encodeURIComponent(obj.listing_id)}&seller_id=${encodeURIComponent(obj.seller_id)}&manufacturer_id=${encodeURIComponent(obj.manufacturer_id)}`, {
             method: 'GET'});
         const json = await response.json();
-        // console.log(json)
         if(json.success === true){
-          console.log("success")
   }
         return json;
       } catch (error) {
@@ -145,3 +143,18 @@ export const saveProduct = async (obj) => {
             return {"msz": "Something went wrong", "success": false, "userID": ""} 
           } 
         };
+
+        export const checkSellerProductAdded = async (obj) => {
+          try {
+               const response = await fetch(`${API_URI}/checksellerproductadded?listing_id=${encodeURIComponent(obj.listing_id)}&seller_id=${encodeURIComponent(obj.seller_id)}`, {
+                   method: 'GET'});
+               const json = await response.json();
+               if(json.success === true){
+         }
+               return json;
+             } catch (error) {
+               console.log(error);
+               return {"msz": "Something went wrong", "success": false, "manufacturerID": ""}
+             }
+       
+       };

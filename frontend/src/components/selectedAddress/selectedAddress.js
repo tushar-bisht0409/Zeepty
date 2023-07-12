@@ -24,7 +24,7 @@ const SelectedAddress = ({setCurrentPoint,item}) => {
         {/* </div> */}
         <div className='saRow'>
             <p className='saTitle'>Pin Code:</p>
-            <p className='saText'>{item.postalcode}</p>
+            <p className='saText'>{item.pincode}</p>
         </div>
     </div>
   )

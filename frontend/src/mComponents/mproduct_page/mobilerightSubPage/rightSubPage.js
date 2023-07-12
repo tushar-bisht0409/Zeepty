@@ -6,13 +6,24 @@ import VariantSize from "./variantSize/variantSize";
 import MRatingBox from "../../mratingBox/mratingBox";
 import { API_URI } from "../../../store/actions/auth_action";
 import { updateLocalUserInfo } from "../../../store/actions/notLoggedInUser_action";
+import Modal from 'react-modal';
 
 
 const RightSubPage = ({isInCart,setIsInCart,isPresentInCart,selectedSKUID, setSelectedSKUID, selectedStyleCode, cart,setCart, variant, setVariant,products,colorVariants, product_id}) => {
 
   const ratingRef = useRef(null);
   const [isFloating, setIsFloating] = useState(true);
-  const [isInViewPort, setIsInViewPort] = useState(false)
+  const [isInViewPort, setIsInViewPort] = useState(false);
+  const [sModal,setSModal] = useState(false);
+
+
+    const customStyles = {
+        content: {
+          padding: '0px',
+          height: 'fit-content',
+        },
+        overlay: {zIndex: 1000}
+      };
 
   let prevScrollpos = window.pageYOffset;
 
@@ -88,7 +99,8 @@ const addToCart = async()=> {
         setIsInCart(true);
     }
   } else {
-    window.alert('Select the size');
+    // window.alert('Select the size');
+    setSModal(true)
   }
   }
   else if(selectedSKUID != undefined) {
@@ -136,7 +148,7 @@ const addToCart = async()=> {
     return {"msz": "Something went wrong", "success": false}
   }
 } else {
-  window.alert('Select the size');
+  setSModal(true)
 }
 }
 
@@ -213,6 +225,35 @@ const goToCart = async()=> {
    <p>Add To Cart</p></div>}
    <div className="mobilebuyNow">Buy Now</div>
    </div>
+
+   <Modal
+        isOpen={sModal}
+        shouldCloseOnOverlayClick={true}
+        onRequestClose={()=>{setSModal(false)}}
+        overlayClassName="mobilerightSubPage-sizeModal-overlay"
+        className="mobilerightSubPage-sizeModal"
+        style={customStyles}>
+            <div className="mobilerightSubPage-sizeModal-box">
+            <div onClick={()=>{setSModal(false)}} className='mobilerightSubPage-sizeModal-box-close'>
+                <div className='mobilerightSubPage-sizeModal-box-close-div'></div>
+            </div>
+            <p className="mobilerightSubPage-sizeModal-box-head">Select Size</p>
+            <div className="mobilerightSubPage-sizeModal-box-body">
+        {products.map((p) => (
+        <VariantSize key={selectedSKUID === p.sku_id ?"OOO" : p.sku_id} isPresentInCart={isPresentInCart} isPrimary={false} selectedSKUID={selectedSKUID} setSelectedSKUID={setSelectedSKUID} products={p} kkey={"size"} variant={variant} setVariant={setVariant} setSelectedProduct={setSelectedProduct}></VariantSize>
+        ))}
+        </div>
+        <div className="mobilebuttons">
+    {isInCart?
+   <div onClick={goToCart} className="mobilegoToCartt">
+   <i style={{alignSelf: 'center', margin: '0px 8px' , fontSize: '16px', color: "orange",cursor:"pointer"}} className="fa fa-shopping-cart" ></i>
+   <p>Go To Cart</p></div>:<div className="mobileaddToCart" onClick={addToCart}>
+   <i style={{alignSelf: 'center', margin: '0px 8px' , fontSize: '16px', color: "white",cursor:"pointer"}} className="fa fa-shopping-cart" ></i>
+   <p>Add To Cart</p></div>}
+   <div className="mobilebuyNow">Buy Now</div>
+   </div>
+            </div>
+        </Modal>
 
     </div>
   );

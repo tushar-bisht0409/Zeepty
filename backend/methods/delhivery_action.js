@@ -1,27 +1,38 @@
 const axios = require('axios');
 const Order = require("../schemas/order");
 const { v4: uuidv4 } = require('uuid');
+const ManufacturerInfo = require("../schemas/manufacturerInfo");
 
 //LIVE TOKEN 4533cba3d09c37162d06cd3d416c7c80db7fff35
 //TEST TOKEN cac8f4b2dc2e10ecaf035b71827d8eedad616ce3
 
 function processOrderStatus(dstatus,ostatus,statusType) {
+    console.log(dstatus," : ",ostatus," : ",statusType)
     if(ostatus !== "Cancelled" && ostatus !== "Lost"){
         if(ostatus !== "Returned"){
-   if(dstatus === "Manifested" || dstatus === "Not Picked" && statusType === "UD") {
+            if(statusType === "UD"){
+   if(dstatus === "Manifested" || dstatus === "Not Picked" ) {
     if(ostatus === "RTS"){
         return "RTS";
     } else {
         return "Pending";
     }
-   } else if(dstatus === "In­ Transit" || dstatus === "Pending" || dstatus === "Dispatched" && statusType === "UD") {
+   } else if(dstatus === "In Transit" || dstatus === "Pending" || dstatus === "Dispatched") {
     return "Shipped";
-   } else if(dstatus === "Delivered" && statusType === "DL") {
-    return "Delivered";
-   }
- } else{ if(dstatus === "In­ Transit" || dstatus === "Pending" || dstatus === "Dispatched" && statusType === "RT") {
-    return "RIT";
-   } else if(dstatus === "RTO" && statusType === "DL") {
+   } 
+} else if(statusType === "DL"){
+    if(dstatus === "Delivered") {
+        return "Delivered";
+    }
+}
+   
+ } else{ 
+    if(statusType === "RT") {
+        if(dstatus === "In Transit" || dstatus === "Pending" || dstatus === "Dispatched") {
+            return "RIT";
+           }
+    }
+     else if(dstatus === "RTO" && statusType === "DL") {
     return "RD";
    }
 }
@@ -34,7 +45,7 @@ var functions = {
     checkPincodeServiceability: async function (req, res) {
         var obj = req.query;
 
-        const url = `https://track.delhivery.com/c/api/pin-codes/json/?filter_codes=${obj.postalcodes}`;
+        const url = `https://track.delhivery.com/c/api/pin-codes/json/?filter_codes=${obj.pincodes}`;
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -45,7 +56,7 @@ var functions = {
             let resultObject = [];
             for (let i = 0; i < resObj.length; i++) {
                 const newObj = {
-                    postalcode: resObj[i]['postal_code']['pin'],
+                    pincode: resObj[i]['postal_code']['pin'],
                     serviceable: resObj[i]['postal_code']['is_oda'] === "N" ? true : false,
                     cod: resObj[i]['postal_code']['cod'] === "Y" ? true : false
                 }
@@ -123,9 +134,9 @@ var functions = {
             "city": obj.pickup_address.city,
             "state": obj.pickup_address.state,
             "country": "India",
-            "pin": obj.pickup_address.postalcode,
-            "return_address": obj.return_address,
-            "return_pin": obj.return_address.postalcode,
+            "pin": obj.pickup_address.pincode,
+            "return_address": obj.return_address.address,
+            "return_pin": obj.return_address.pincode,
             "return_city": obj.return_address.city,
             "return_state": obj.return_address.state,
             "return_country": "India"
@@ -164,16 +175,20 @@ var functions = {
             });
     },
     createPickupRequest: async function (req, res) {
+        try{
         var obj = req.body;
-
+        let mInfo = await ManufacturerInfo.findOne({
+            manufacturer_id: obj.manufacturer_id
+        });
+        if(mInfo !== null){
         const requestData = {
-            "pickup_location": obj.store_name,
+            "pickup_location": mInfo.store_name,
             "expected_package_count": obj.expected_package_count,
             "pickup_date": obj.pickup_date,
-            "pickup_time": obj.time
+            "pickup_time": obj.pickup_time
         }
 
-        const url = 'https://track.delhivery.com/​fm/request/new/';
+        const url = 'https://track.delhivery.com/fm/request/new/';
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -181,6 +196,8 @@ var functions = {
         };
 
         await axios.post(url, requestData, { headers }).then(response => {
+            console.log(response.data)
+            if(response.data.pickup_id !== undefined && response.data.pickup_id !== null){
             Order.updateMany(
                 { order_id: obj.order_ids },
                 { order_status: "RTS" },
@@ -200,13 +217,29 @@ var functions = {
                         });
                     }
                 });
-        }).catch(error => {
-            return res.json({
-                success: false,
-                msz: "An Error Occured",
-                err: error
-            });
+            } else {
+                    return res.json({
+                        success: false,
+                        msz: "Failed to Create",
+                        err: err,
+                        response: response.data
+                    });
+            }
+        })
+    } else {
+        return res.json({
+            success: false,
+            msz: "Manufatcurer Info Not Found",
+            err: null
         });
+    }
+    } catch(err) {
+        return res.json({
+            success: false,
+            msz: "An Error Occured",
+            err: err
+        });
+    }
     },
     generateShippingLabel: async function (req, res) {
         var obj = req.body;
@@ -223,14 +256,14 @@ var functions = {
             let wbnLinkArray = [];
             for (let i = 0; i < response.data.packages_found; i++) {
                 wbnLinkArray.push({
-                    wbn: response.data.packages[i]['wbn'],
+                    waybill: response.data.packages[i]['wbn'],
                     label_pdf_link: response.data.packages[i]['pdf_download_link']
                 })
             }
 
-            const bulkOperations = wbnLinkArray.map(({ wbn, label_pdf_link }) => ({
+            const bulkOperations = wbnLinkArray.map(({ waybill, label_pdf_link }) => ({
                 updateOne: {
-                    filter: { wbn },
+                    filter: { waybill },
                     update: { $set: { label_pdf_link } }
                 }
             }));
@@ -245,7 +278,7 @@ var functions = {
                 } else {
                     return res.send({
                         success: true,
-                        msz: 'Successfully Generated And Savel Label',
+                        msz: 'Successfully Generated And Saved Label',
                         err: null,
                         response: response.data,
                         labelArray: wbnLinkArray,
@@ -265,7 +298,7 @@ var functions = {
     trackShipment: async function (req, res) {
         var obj = req.query;
 
-        const url = `https://track.delhivery.com/api/v1/packages/json/?waybill${obj.waybill}`;
+        const url = `https://track.delhivery.com/api/v1/packages/json/?waybill=${obj.waybill}`;
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -286,24 +319,28 @@ var functions = {
         });
     },
     createShipment: async function (req, res) {
-        var obj = req.body;
-
+        try{
+            var obj = req.body;
+            let mInfo = await ManufacturerInfo.findOne({
+                manufacturer_id: obj.manufacturer_id
+            });
+            if(mInfo !== null){
         var orderObj = {
             "shipments": [
               {
                 "name": obj.name,
                 "add": obj.add,
-                "pin": obj.postalcode,
+                "pin": obj.pin,
                 "city": "",
                 "state": "",
                 "country": "",
                 "phone": obj.phone,
                 "order": obj.order_id,
                 "payment_mode": obj.payment_mode,
-                "return_pin": obj.return_pin,
-                "return_city": obj.return_city,
-                "return_phone": obj.return_phone,
-                "return_add": obj.return_address,
+                "return_pin": mInfo.return_address.pincode,
+                "return_city": mInfo.return_address.city,
+                "return_phone": mInfo.phone,
+                "return_add": mInfo.return_address.address,
                 "return_state": "",
                 "return_country": "",
                 "products_desc": "",
@@ -320,19 +357,18 @@ var functions = {
                 "shipment_height": "",
                 "weight": "",
                 "seller_gst_tin": "",
-                "shipping_mode": obj.shipping_mode,
+                "shipping_mode": "Surface", //obj.shipping_mode,
                 "address_type": ""
               }
             ],
-            "pickup_location": obj.pickup_location
-            // {
-            //   "name": "Apple",
-            //   "add": "Apple Store",
-            //   "city": "Delhi",
-            //   "pin_code": 110078,
-            //   "country": "India",
-            //   "phone": "1234567890"
-            // }
+            "pickup_location": {
+                "name": mInfo.store_name,
+                "add": mInfo.pickup_address.address,
+                "city": mInfo.pickup_address.city,
+                "pin_code": mInfo.pickup_address.pincode,
+                "country": "India",
+                "phone": mInfo.phone
+            }
           }
 
         const formData = new URLSearchParams();
@@ -345,29 +381,8 @@ var functions = {
             'Content-Type': 'application/json',
             'Authorization': 'Token 4533cba3d09c37162d06cd3d416c7c80db7fff35'
         };
-
         await axios.post(url, formData, { headers }).then(response => {
             if (response.data.success) {
-                    // var orderinfo = new Order({
-                    //     order_id: obj.order_id,
-                    //     waybill: response.data.packages[0].waybill,
-                    //     customer_id: obj.customer_id,
-                    //     manufacturer_id: obj.manufacturer_id,
-                    //     seller_id: obj.seller_id,
-                    //     product: obj.product,
-                    //     pickup_address: obj.pickup_address,
-                    //     shipping_address: obj.shipping_address,
-                    //     return_address: obj.return_address,
-                    //     payment_method: obj.payment_method,
-                    //     shipping_amount: obj.shipping_amount,
-                    //     tax_info: obj.tax_info,
-                    //     total_amount: obj.total_amount,
-                    //     is_paid: obj.is_paid,
-                    //     paid_at: obj.paid_at,
-                    //     upload_wbn: response.data.upload_wbn
-                    // });
-                
-                    // orderinfo.save(async
                     Order.findOneAndUpdate(
                         {order_id: obj.order_id},
                         {waybill: response.data.packages[0].waybill},
@@ -396,13 +411,21 @@ var functions = {
                     response: response.data
                 });
             }
-        }).catch(error => {
-                return res.json({
-                    success: false,
-                    msz: "An Error Occured",
-                    err: error
-                });
+        })
+    } else{
+        return res.json({
+            success: false,
+            msz: "Manufatcurer Info Not Found",
+            err: null
+        });
+    }
+        }catch(err){
+            return res.json({
+                success: false,
+                msz: "An Error Occured",
+                err: err
             });
+        }
     },
 
     editShipment: async function (req, res) {
@@ -463,12 +486,14 @@ var functions = {
         };
 
         await axios.post(url, requestData, { headers }).then(response => {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toISOString();
             if (response.data.success) {
                 Order.findOneAndUpdate(
                     {waybill: obj.waybill},
                     {
                         order_status: "Cancelled",
-                        cancelled_at: Date.now()
+                        cancelled_at: formattedDate
                     },
                     function (err, oinfo) {
                         if (err) {
@@ -553,7 +578,7 @@ var functions = {
         var obj = req.body;
         const waybillString = obj.waybills.join(',');
 
-        const url = `https://track.delhivery.com/api/v1/packages/json/?waybill${waybillString}`;
+        const url = `https://track.delhivery.com/api/v1/packages/json/?waybill=${waybillString}`;
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -569,23 +594,26 @@ var functions = {
                 });
             } else{
                 let orderStatusArray = [];
-                for (let i = 0; i < response.data.ShipmentData; i++) {
+                const currentDate = new Date();
+                const formattedDate = currentDate.toISOString();
+                for (let i = 0; i < response.data.ShipmentData.length; i++) {
                     let cwbn = response.data.ShipmentData[i]['Shipment']['AWB'];
                     orderStatusArray.push({
-                    wbn: cwbn,
+                    waybill: cwbn,
                     order_status: processOrderStatus(response.data.ShipmentData[i]['Shipment']['Status']['Status'],obj.orderStatusObject[`${cwbn}`],response.data.ShipmentData[i]['Shipment']['Status']['StatusType']),
                     delhivery_status: response.data.ShipmentData[i]['Shipment'],
-                    shipped_at: response.data.ShipmentData[i]['Shipment']['PickedupDate'],
-                    delivered_at: response.data.ShipmentData[i]['Shipment']['DeliveryDate'],
-                    returnpickedup_at: response.data.ShipmentData[i]['Shipment']['RTOStartedDate'],
-                    returnreceived_at: response.data.ShipmentData[i]['Shipment']['ReturnedDate'],
+                    shipped_at: response.data.ShipmentData[i]['Shipment']['PickedupDate'] === null ? formattedDate : response.data.ShipmentData[i]['Shipment']['PickedupDate'],
+                    delivered_at: response.data.ShipmentData[i]['Shipment']['DeliveryDate'] === null ? formattedDate : response.data.ShipmentData[i]['Shipment']['DeliveryDate'],
+                    returnpickedup_at: response.data.ShipmentData[i]['Shipment']['RTOStartedDate'] === null ? formattedDate : response.data.ShipmentData[i]['Shipment']['RTOStartedDate'],
+                    returnreceived_at: response.data.ShipmentData[i]['Shipment']['ReturnedDate'] === null ? formattedDate : response.data.ShipmentData[i]['Shipment']['ReturnedDate'],
                 })
             }
 
-            const bulkOperations = orderStatusArray.map(({ wbn, order_status, delhivery_status }) => ({
+
+            const bulkOperations = orderStatusArray.map(({ waybill, order_status, delhivery_status, shipped_at, delivered_at,returnpickedup_at,returnreceived_at }) => ({
                 updateOne: {
-                    filter: { wbn },
-                    update: { $set: { order_status, delhivery_status } }
+                    filter: { waybill },
+                    update: { $set: { order_status, delhivery_status, shipped_at, delivered_at,returnpickedup_at,returnreceived_at  } }
                 }
             }));
 
@@ -599,7 +627,7 @@ var functions = {
                 } else {
                     return res.send({
                         success: true,
-                        msz: 'Successfully Generated And Savel Label',
+                        msz: 'Successfully Updated Orders',
                         err: null,
                         response: response.data,
                         result: result
@@ -608,13 +636,14 @@ var functions = {
 
             });
             }
-        }).catch(error => {
-            return res.json({
-                success: false,
-                msz: "An Error Occured",
-                err: error
-            });
-        });
+        })
+        // .catch(error => {
+        //     return res.json({
+        //         success: false,
+        //         msz: "An Error Occured",
+        //         err: error
+        //     });
+        // });
     },
 }
 

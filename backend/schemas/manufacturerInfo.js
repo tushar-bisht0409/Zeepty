@@ -25,7 +25,7 @@ const manufacturerInfoSchema = new Schema({
     store_name: {
         type: String,
         require: false,
-        unique: true
+        // unique: true
     },
     gst_details: {
         gstin: String,
@@ -57,6 +57,7 @@ const manufacturerInfoSchema = new Schema({
         bank_name: { type: String, required: false },
         ifsc_code: { type: String, required: false },
     },
+    gst_api_data: Schema.Types.Mixed
 });
 
 module.exports = mongoose.model("Manufacturer_Info", manufacturerInfoSchema);

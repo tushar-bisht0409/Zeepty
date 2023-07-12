@@ -279,7 +279,12 @@ const MinSearchPage = () => {
 
   return (
     <div style={{ overflow: sModalIsOpen || fModalIsOpen ? "hidden" : "scroll" }} className='minSPBox'>
-      <MINNavBar applyFilters={applyFilters} />
+      <MINNavBar applyFilters={applyFilters} showCount={storeStage <3 ? true : false} pCount={pCount}/>
+
+      {storeStage < 3 ? <div className='minSP-banner'>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <p className='minSP-banner-text'>Add At Least 3 Products To Launch Your Store</p>
+          </div> : null}
 
       <div className="minSP_categorybar">
         <div className="minSP_items items_left">
@@ -305,7 +310,7 @@ const MinSearchPage = () => {
 
       </div>
       {sellerInfo.wishlist === undefined || items === undefined ? <div></div> :
-        <div style={{ overflow: sModalIsOpen || fModalIsOpen ? "hidden" : "scroll" }} className="minSP_mobile_cart">
+        <div style={{margin: storeStage<3 ? '2vh 2vw' : '15vh 2vw'}} className="minSP_mobile_cart">
           {items.map((p) => (
             <MINProductCard setCModalIsOpen={setCModalIsOpen} storeStage={storeStage} item={p._source} wishlist={sellerInfo.wishlist} />
           ))}
@@ -413,11 +418,6 @@ const MinSearchPage = () => {
       </Modal>
 
       <MINBottomNavBar bMode={"Home"} />
-
-      {storeStage === 2 ? <div className='minSPCountBox'>
-        <div className='minSPCount'>{pCount}</div>
-        {pCount === 3 ? <div></div> : <div className='minSPCountBoxT1'>Add {3 - pCount} Products</div>}
-      </div> : <div></div>}
 
       <Modal
         className="minSPCreateModal"

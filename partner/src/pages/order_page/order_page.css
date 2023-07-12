@@ -413,7 +413,7 @@ li {
 .buyerLandmark{
   display: flex;
 }
-.buyerPostalcode{
+.buyerpincode{
   display: flex;
 }
 .buyerCity{

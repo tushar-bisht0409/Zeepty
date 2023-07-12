@@ -34,6 +34,25 @@
         color: #ccc;
     }
 
+    .minSP-banner{
+      margin: 15vh 5vw 0vh 5vw;
+      border-radius: 5px;
+      background-color: #ecebff;
+      display: flex;
+      justify-content: flex-start;
+      padding: 2vh 4vw;
+      font-size: 12px;
+      font-weight: 500;
+      color: #554BDA;
+    }
+    
+    .minSP-banner-text{
+      font-weight: 500;
+      font-size: 10px;
+      color: #554BDA;
+      margin-left: 2vw;
+    }
+
     .minSP_left{
         display: flex;
         align-items: center;
@@ -91,6 +110,7 @@
         width: auto;
         border-radius: 1.2rem;
         border: 2px solid #554BDA;
+        background-color: white;
         font-size: 0.9rem;
         align-items: center;
     }
@@ -137,7 +157,6 @@
     }
 
     .minSP_mobile_cart{
-      margin: 15vh 2vw;
       display: grid;
     }
 
@@ -403,7 +422,7 @@
         width: 60vw;
         margin: 8vh 20vw;
         padding: 2vh 4vw;
-        background-color: greenyellow;
+        background-color: #554BDA;
         border-radius: 5px;
         font-size: small;
         font-weight: 500;

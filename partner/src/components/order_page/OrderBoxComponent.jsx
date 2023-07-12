@@ -141,9 +141,9 @@ const dispatch = useDispatch();
                     <p className='title'>Landmark:</p>
                     <p className='buyerDesc'>{d.props.shippingAddress.landmark}</p>
                 </div>
-                <div className="buyerPostalcode">
+                <div className="buyerpincode">
                     <p className='title'>Code</p>
-                    <p>{d.props.shippingAddress.postalcode}</p>
+                    <p>{d.props.shippingAddress.pincode}</p>
                 </div>
                 <div className="buyerCity">
                     <p className='title'>City</p>

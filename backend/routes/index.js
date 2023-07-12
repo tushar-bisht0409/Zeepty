@@ -52,6 +52,9 @@ router.get('/verifypassword', authenticate_action.verifyPassword);
 // POST / Change Password
 router.post('/changepassword', authenticate_action.changePassword); 
 
+//GET / Check If Email Exist
+router.get('/isemailexist', authenticate_action.isEmailExist)
+
 // POST / Saving New User Information 
 router.post('/savecustomerinfo', customerinfo_action.postCustomerInfo);
 
@@ -77,7 +80,10 @@ router.post('/savestoreinfo',seller_action.saveStoreInfo);
 router.post('/handlefollowers', seller_action.handleFollowers);
 
 //GET / Check If A Seller User Name Is Unique Or Not
-router.get('/checkissellerusernameunique', seller_action.checkIsStoreNameUnique);
+router.get('/checkissellerusernameunique', seller_action.checkIsSellerUserNameUnique);
+
+//GET / Check If A Seller Store Name Is Unique Or Not
+router.get('/checkissellerstorenameunique', seller_action.checkIsSellerStoreNameUnique);
 
 
 //GET / Get Seller Store Information
@@ -86,11 +92,14 @@ router.get('/getstoreinformation',seller_action.getStoreInformation);
 //GET / Get Insight Page Data
 router.get('/insightspagedata',seller_action.getInsightsPageData)
 
-// //POST Launch Store (Saving Products and Store URL)
-// router.post('/launchstore',seller_action.launchStore);
+//POST Launch Store (Saving Products Request and Store URL)
+router.post('/launchstore',seller_action.launchStore);
 
 //POST / Edit Seller Info
 router.post('/editsellerinfo', seller_action.editSellerInfo);
+
+//POST /Edit Manufacturer Info and Create Warehouse
+router.post('/editminfoanddelwarehouse',manufacturer_action.editManufacturerInfoAndDelhiveryWarehouse)
 
 //GET / Get Manufacturer Info
 router.get('/getmanufacturerinfo', manufacturer_action.getManufacturerInfo);
@@ -110,8 +119,14 @@ router.get('/checkisstorenameunique', manufacturer_action.checkIsStoreNameUnique
 //GET / Get Manufacturer Summary For Home Screen
 router.get('/getmanufacturersummary', manufacturer_action.getManufacturerSummary);
 
+//GET / Get Manufacturer Summary For Home Screen
+router.get('/verifygstin', manufacturer_action.verifyGSTIN);
+
 //GET / Get Seller Info
 router.get('/getsellerinfo', seller_action.getSellerInfo);
+
+//GET / Check If Seller Email Exist
+router.get('/isselleremailexist', seller_action.isSellerEmailExist);
 
 //POST / Saving Many Product Information
 router.post('/savemanyproduct', product_action.postManyProducts);
@@ -136,6 +151,9 @@ router.post('/editproductes', product_action.editProductES);
 
 //POST / Accept Product Request
 router.post('/acceptproductrequest', product_action.acceptProductRequest);
+
+//GET / Check If A Product Is Added By Seller
+router.get('/checksellerproductadded', product_action.checkSellerProductAdded);
 
 //POST / Saving New Listing Information
 router.post('/savelisting', listing_action.postListing);
@@ -334,6 +352,9 @@ router.post('/ndractiondelhivery', delhivery_action.NDRAction)
 //GET / Delhivery NDR Status
 router.get('/ndrstatusdelhivery', delhivery_action.NDRStatus);
 
+//POST / Delhivery Track And Update Order Status
+router.post('/trackandupdateorderstatus', delhivery_action.trackAndUpdateOrderStatus)
+
 //POST / Save Vertical Information
 router.post('/savevertical', vertical_action.postVertical);
 
@@ -356,6 +377,13 @@ router.post('/creatpaymentphonepe', phonepe_action.makePayment);
 
 //GET / Phone Check Payment Status
 router.get('/checkpaymentstatus', phonepe_action.checkPaymentStatus);
+
+//POST / Create Order and Phonepe Payment Link
+router.post('/createpaymentandorder', phonepe_action.createPaymentAndOrder);
+
+//POST / Callback for phonepe payment gateway payment status verification and updating order status
+router.post('/updateorderafterpayment', phonepe_action.updateOrderAfterPayment);
+
 
 
 module.exports = router;
